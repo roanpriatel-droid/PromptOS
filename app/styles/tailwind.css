@@ -1,6 +1,27 @@
 /**
- * Configure Tailwind v4 in this file using CSS variables and directives:
- * https://tailwindcss.com/docs/v4-beta#css-first-configuration
+ * Tailwind v4 utility layer.
+ *
+ * The Promptos design tokens live in app/styles/promptos.css (the full design
+ * system, copied verbatim from the Claude design hand-off). We keep Tailwind
+ * around for one-off layout utilities; the bulk of styling is the named
+ * classes in promptos.css.
  */
 
 @import 'tailwindcss';
+
+@theme {
+  /* Mirror the design's brand colours so Tailwind utilities can use them. */
+  --color-brand-purple: #6b46c1;
+  --color-brand-purple-700: #5b36b0;
+  --color-brand-pink: #ec4899;
+  --color-brand-ink: #1f2937;
+  --color-brand-slate: #6b7280;
+  --color-brand-cream: #fafafa;
+  --color-brand-bone: #f5f2ec;
+  --color-brand-plum: #3b1f6b;
+  --color-brand-hairline: #e5e7eb;
+
+  --font-sans: 'Geist', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-serif: 'Instrument Serif', 'Tiempos Headline', Georgia, serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace;
+}

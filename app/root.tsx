@@ -13,10 +13,22 @@ import {
 import type {Route} from './+types/root';
 import favicon from '~/assets/favicon.svg';
 import {FOOTER_QUERY, HEADER_QUERY} from '~/lib/fragments';
-import resetStyles from '~/styles/reset.css?url';
 import appStyles from '~/styles/app.css?url';
 import tailwindCss from './styles/tailwind.css?url';
+import promptosStyles from './styles/promptos.css?url';
+import promptosV2Styles from './styles/promptos-v2.css?url';
+import promptosV3Styles from './styles/promptos-v3.css?url';
+import whyPromptosStyles from './styles/why-promptos.css?url';
+import promptosV32Styles from './styles/promptos-v32.css?url';
 import {PageLayout} from './components/PageLayout';
+import {RecentPurchaseToast} from './components/promptos/RecentPurchaseToast';
+import {WhatsNewBanner} from './components/promptos/WhatsNewBanner';
+import {ExitIntentModal} from './components/promptos/ExitIntentModal';
+import {
+  JsonLd,
+  organizationSchema,
+  websiteSchema,
+} from './components/promptos/JsonLd';
 
 export type RootLoader = typeof loader;
 
@@ -150,11 +162,18 @@ export function Layout({children}: {children?: React.ReactNode}) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="stylesheet" href={tailwindCss}></link>
-        <link rel="stylesheet" href={resetStyles}></link>
         <link rel="stylesheet" href={appStyles}></link>
+        <link rel="stylesheet" href={promptosStyles}></link>
+        <link rel="stylesheet" href={promptosV2Styles}></link>
+        <link rel="stylesheet" href={promptosV3Styles}></link>
+        <link rel="stylesheet" href={whyPromptosStyles}></link>
+        <link rel="stylesheet" href={promptosV32Styles}></link>
         <Meta />
         <Links />
+        <JsonLd data={[organizationSchema(), websiteSchema()]} />
       </head>
       <body>
         {children}
@@ -178,34 +197,91 @@ export default function App() {
       shop={data.shop}
       consent={data.consent}
     >
+      <WhatsNewBanner />
       <PageLayout {...data}>
         <Outlet />
       </PageLayout>
+      <RecentPurchaseToast />
+      <ExitIntentModal />
     </Analytics.Provider>
   );
 }
 
 export function ErrorBoundary() {
   const error = useRouteError();
-  let errorMessage = 'Unknown error';
   let errorStatus = 500;
+  let errorMessage: string | undefined;
 
   if (isRouteErrorResponse(error)) {
-    errorMessage = error?.data?.message ?? error.data;
     errorStatus = error.status;
+    const data = error?.data;
+    errorMessage = typeof data === 'string' ? data : data?.message;
   } else if (error instanceof Error) {
     errorMessage = error.message;
   }
 
+  const is404 = errorStatus === 404;
+
   return (
-    <div className="route-error">
-      <h1>Oops</h1>
-      <h2>{errorStatus}</h2>
-      {errorMessage && (
-        <fieldset>
-          <pre>{errorMessage}</pre>
-        </fieldset>
-      )}
-    </div>
+    <main className="notfound">
+      <div className="notfound-inner">
+        <div className="glitch" aria-hidden>{errorStatus}</div>
+        <h1>
+          {is404 ? 'This page took a wrong prompt.' : 'Something tripped on our end.'}
+        </h1>
+        <p>
+          {is404
+            ? "It may have moved or never existed. Try one of these instead."
+            : "We hit an error rendering this page. The team has seen worse and the catalog is still up."}
+        </p>
+
+        {is404 && (
+          <div className="notfound-cards" aria-label="Suggested destinations">
+            <a href="/packs" className="notfound-card">
+              <div className="notfound-card-eyebrow">Tier 1</div>
+              <h3>Prompt Packs</h3>
+              <p>Battle-tested prompts for the work you do every day.</p>
+              <span className="notfound-card-cta">Browse packs <span aria-hidden>→</span></span>
+            </a>
+            <a href="/authority" className="notfound-card">
+              <div className="notfound-card-eyebrow">Tier 2 · New</div>
+              <h3>Authority</h3>
+              <p>Build an audience. Productize your expertise.</p>
+              <span className="notfound-card-cta">Browse Authority <span aria-hidden>→</span></span>
+            </a>
+            <a href="/guides" className="notfound-card">
+              <div className="notfound-card-eyebrow">Tier 3</div>
+              <h3>Playbooks</h3>
+              <p>Real playbooks for the businesses operators are starting.</p>
+              <span className="notfound-card-cta">Browse playbooks <span aria-hidden>→</span></span>
+            </a>
+          </div>
+        )}
+
+        <form action="/" className="notfound-search" role="search">
+          <input
+            type="search"
+            name="q"
+            placeholder="Search for a pack, playbook, or topic"
+            aria-label="Search the catalog"
+          />
+          <button type="submit">Search</button>
+        </form>
+
+        <div className="actions">
+          <a href="/" className="btn btn-large btn-gradient btn-arrow">
+            Back to the homepage
+          </a>
+          <a href="/bundles/everything" className="btn btn-large btn-secondary">
+            See the bundle
+          </a>
+        </div>
+        {errorMessage && !is404 && (
+          <pre style={{marginTop: 40, fontSize: 12, color: 'var(--fg-3)', whiteSpace: 'pre-wrap'}}>
+            {errorMessage}
+          </pre>
+        )}
+      </div>
+    </main>
   );
 }
