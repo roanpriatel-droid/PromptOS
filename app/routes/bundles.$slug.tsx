@@ -1,6 +1,15 @@
 import {data, Link} from 'react-router';
 import type {Route} from './+types/bundles.$slug';
-import {getBundleBySlug, BUNDLES, PACKS, GUIDES, AUTHORITY, AUTHORITY_BUNDLE} from '~/lib/catalog';
+import {
+  getBundleBySlug,
+  BUNDLES,
+  PACKS,
+  GUIDES,
+  AUTHORITY,
+  AUTHORITY_BUNDLE,
+  fetchShopifyProduct,
+  type ShopifyEnrichment,
+} from '~/lib/catalog';
 import {AuthorityCover} from '~/components/promptos/AuthorityCover';
 
 /** Deterministic-from-day-of-week scarcity number. Cycles each day, feels real. */
@@ -27,6 +36,7 @@ import {AnimatedCounter} from '~/components/promptos/AnimatedCounter';
 import {FaqV2} from '~/components/promptos/FaqV2';
 import {NewsletterCTA} from '~/components/promptos/NewsletterCTA';
 import {BundleSelector} from '~/components/promptos/BundleSelector';
+import {AddToCartButton} from '~/components/AddToCartButton';
 import {
   JsonLd,
   breadcrumbSchema,
@@ -51,18 +61,19 @@ export const meta: Route.MetaFunction = ({data: loaderData}) => {
   ];
 };
 
-export async function loader({params}: Route.LoaderArgs) {
+export async function loader({params, context}: Route.LoaderArgs) {
   const bundle = params.slug ? getBundleBySlug(params.slug) : undefined;
   if (!bundle) {
     throw data('Bundle not found', {status: 404});
   }
+  const shopify = await fetchShopifyProduct(context.storefront, bundle.shopifyHandle);
   const reviews = getReviewsForProduct(bundle.id);
   const stats = getReviewStats(bundle.id);
-  return {bundle, reviews, stats};
+  return {bundle, reviews, stats, shopify};
 }
 
 export default function BundleRoute({loaderData}: Route.ComponentProps) {
-  const {bundle, stats} = loaderData;
+  const {bundle, stats, shopify} = loaderData;
   return (
     <>
       <JsonLd
@@ -84,13 +95,13 @@ export default function BundleRoute({loaderData}: Route.ComponentProps) {
         ]}
       />
       {bundle.slug === 'everything' ? (
-        <EverythingPage stats={stats} />
+        <EverythingPage stats={stats} shopify={shopify} />
       ) : bundle.slug === 'guides' ? (
-        <GuidesBundlePage stats={stats} />
+        <GuidesBundlePage stats={stats} shopify={shopify} />
       ) : bundle.slug === 'authority' ? (
-        <AuthorityBundlePage stats={stats} />
+        <AuthorityBundlePage stats={stats} shopify={shopify} />
       ) : (
-        <PacksBundlePage stats={stats} />
+        <PacksBundlePage stats={stats} shopify={shopify} />
       )}
     </>
   );
@@ -99,8 +110,9 @@ export default function BundleRoute({loaderData}: Route.ComponentProps) {
 // =====================================================================
 // /bundles/packs
 // =====================================================================
-function PacksBundlePage({stats}: {stats: ReturnType<typeof getReviewStats>}) {
+function PacksBundlePage({stats, shopify}: {stats: ReturnType<typeof getReviewStats>; shopify: ShopifyEnrichment | null}) {
   const bundle = BUNDLES[0];
+  const canBuy = !!shopify?.variantId && shopify.availableForSale;
   return (
     <main id="main" className="page is-active" data-page="bundle-packs">
       {/* Hero */}
@@ -127,9 +139,20 @@ function PacksBundlePage({stats}: {stats: ReturnType<typeof getReviewStats>}) {
           </div>
 
           <div className="actions">
-            <Link to={`/products/${bundle.shopifyHandle}`} prefetch="intent" className="btn btn-large btn-cream btn-arrow">
-              Get the packs bundle · ${bundle.priceUSD}
-            </Link>
+            {canBuy ? (
+              <AddToCartButton
+                className="btn btn-large btn-cream btn-arrow"
+                lines={[{merchandiseId: shopify!.variantId, quantity: 1}]}
+                analytics={{products: [{productGid: shopify!.variantId, quantity: 1}]}}
+                ariaLabel={`Add Packs Bundle to cart, $${bundle.priceUSD}`}
+              >
+                Get the packs bundle · ${bundle.priceUSD}
+              </AddToCartButton>
+            ) : (
+              <button type="button" className="btn btn-large btn-cream btn-arrow" disabled>
+                Currently unavailable
+              </button>
+            )}
             <a href="#breakdown" className="btn btn-large btn-ghost btn-arrow" style={{color: '#fff'}}>What's included</a>
           </div>
         </div>
@@ -189,7 +212,8 @@ function PacksBundlePage({stats}: {stats: ReturnType<typeof getReviewStats>}) {
 // =====================================================================
 // /bundles/guides
 // =====================================================================
-function GuidesBundlePage({stats}: {stats: ReturnType<typeof getReviewStats>}) {
+function GuidesBundlePage({stats, shopify}: {stats: ReturnType<typeof getReviewStats>; shopify: ShopifyEnrichment | null}) {
+  const canBuyGuides = !!shopify?.variantId && shopify.availableForSale;
   const bundle = BUNDLES[1];
   return (
     <main id="main" className="page is-active" data-page="bundle-guides">
@@ -216,9 +240,20 @@ function GuidesBundlePage({stats}: {stats: ReturnType<typeof getReviewStats>}) {
           </div>
 
           <div className="actions">
-            <Link to={`/products/${bundle.shopifyHandle}`} prefetch="intent" className="btn btn-large btn-cream btn-arrow">
-              Get the guides bundle · ${bundle.priceUSD}
-            </Link>
+            {canBuyGuides ? (
+              <AddToCartButton
+                className="btn btn-large btn-cream btn-arrow"
+                lines={[{merchandiseId: shopify!.variantId, quantity: 1}]}
+                analytics={{products: [{productGid: shopify!.variantId, quantity: 1}]}}
+                ariaLabel={`Add Guides Bundle to cart, $${bundle.priceUSD}`}
+              >
+                Get the guides bundle · ${bundle.priceUSD}
+              </AddToCartButton>
+            ) : (
+              <button type="button" className="btn btn-large btn-cream btn-arrow" disabled>
+                Currently unavailable
+              </button>
+            )}
             <a href="#breakdown" className="btn btn-large btn-ghost btn-arrow" style={{color: '#fff'}}>What's included</a>
           </div>
         </div>
@@ -278,7 +313,8 @@ function GuidesBundlePage({stats}: {stats: ReturnType<typeof getReviewStats>}) {
 // =====================================================================
 // /bundles/everything (mega)
 // =====================================================================
-function EverythingPage({stats}: {stats: ReturnType<typeof getReviewStats>}) {
+function EverythingPage({stats, shopify}: {stats: ReturnType<typeof getReviewStats>; shopify: ShopifyEnrichment | null}) {
+  const canBuyEverything = !!shopify?.variantId && shopify.availableForSale;
   const bundle = BUNDLES.find((b) => b.slug === 'everything')!;
   const totalPrompts =
     PACKS.reduce((s, p) => s + p.promptCount, 0) +
@@ -338,9 +374,20 @@ function EverythingPage({stats}: {stats: ReturnType<typeof getReviewStats>}) {
           </div>
 
           <div className="actions">
-            <Link to={`/products/${bundle.shopifyHandle}`} prefetch="intent" className="btn btn-large btn-cream btn-arrow">
-              Get everything · ${bundle.priceUSD}
-            </Link>
+            {canBuyEverything ? (
+              <AddToCartButton
+                className="btn btn-large btn-cream btn-arrow"
+                lines={[{merchandiseId: shopify!.variantId, quantity: 1}]}
+                analytics={{products: [{productGid: shopify!.variantId, quantity: 1}]}}
+                ariaLabel={`Add Everything Bundle to cart, $${bundle.priceUSD}`}
+              >
+                Get everything · ${bundle.priceUSD}
+              </AddToCartButton>
+            ) : (
+              <button type="button" className="btn btn-large btn-cream btn-arrow" disabled>
+                Currently unavailable
+              </button>
+            )}
             <a href="#mega-breakdown" className="btn btn-large btn-ghost btn-arrow" style={{color: '#fff'}}>See what's inside</a>
           </div>
 
@@ -438,7 +485,8 @@ function EverythingPage({stats}: {stats: ReturnType<typeof getReviewStats>}) {
 // =====================================================================
 // /bundles/authority
 // =====================================================================
-function AuthorityBundlePage({stats}: {stats: ReturnType<typeof getReviewStats>}) {
+function AuthorityBundlePage({stats, shopify}: {stats: ReturnType<typeof getReviewStats>; shopify: ShopifyEnrichment | null}) {
+  const canBuyAuthority = !!shopify?.variantId && shopify.availableForSale;
   const bundle = AUTHORITY_BUNDLE;
   return (
     <main id="main" className="page is-active" data-page="bundle-authority">
@@ -471,9 +519,20 @@ function AuthorityBundlePage({stats}: {stats: ReturnType<typeof getReviewStats>}
           </div>
 
           <div className="actions">
-            <Link to={`/products/${bundle.shopifyHandle}`} prefetch="intent" className="btn btn-large btn-cream btn-arrow">
-              Get the Authority bundle · ${bundle.priceUSD}
-            </Link>
+            {canBuyAuthority ? (
+              <AddToCartButton
+                className="btn btn-large btn-cream btn-arrow"
+                lines={[{merchandiseId: shopify!.variantId, quantity: 1}]}
+                analytics={{products: [{productGid: shopify!.variantId, quantity: 1}]}}
+                ariaLabel={`Add Authority Bundle to cart, $${bundle.priceUSD}`}
+              >
+                Get the Authority bundle · ${bundle.priceUSD}
+              </AddToCartButton>
+            ) : (
+              <button type="button" className="btn btn-large btn-cream btn-arrow" disabled>
+                Currently unavailable
+              </button>
+            )}
             <a href="#breakdown" className="btn btn-large btn-ghost btn-arrow" style={{color: '#fff'}}>What's included</a>
           </div>
         </div>

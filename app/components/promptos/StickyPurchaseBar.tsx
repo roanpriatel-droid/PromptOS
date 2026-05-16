@@ -1,11 +1,13 @@
 import {Link} from 'react-router';
 import {useEffect, useState} from 'react';
-import type {Pack, Guide} from '~/lib/catalog';
+import type {Pack, Guide, ShopifyEnrichment} from '~/lib/catalog';
 import {PackCover} from './PackCover';
 import {GuideCover} from './GuideCover';
+import {AddToCartButton} from '~/components/AddToCartButton';
 
 type Props = {
   product: Pack | Guide;
+  shopify?: ShopifyEnrichment | null;
   upsellLabel?: string;
   upsellTo?: string;
   showAfterPx?: number;
@@ -18,10 +20,12 @@ type Props = {
  */
 export function StickyPurchaseBar({
   product,
+  shopify,
   upsellLabel = 'Get the bundle instead?',
   upsellTo = '/bundles/everything',
   showAfterPx = 600,
 }: Props) {
+  const canBuy = !!shopify?.variantId && shopify.availableForSale;
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -49,13 +53,20 @@ export function StickyPurchaseBar({
           <Link to={upsellTo} prefetch="intent" className="secondary">
             {upsellLabel}
           </Link>
-          <Link
-            to={`/products/${product.shopifyHandle}`}
-            prefetch="intent"
-            className="btn btn-gradient btn-arrow"
-          >
-            Add to cart
-          </Link>
+          {canBuy ? (
+            <AddToCartButton
+              className="btn btn-gradient btn-arrow"
+              lines={[{merchandiseId: shopify!.variantId, quantity: 1}]}
+              analytics={{products: [{productGid: shopify!.variantId, quantity: 1}]}}
+              ariaLabel={`Add ${product.name} to cart, $${product.priceUSD}`}
+            >
+              Add to cart
+            </AddToCartButton>
+          ) : (
+            <button type="button" className="btn btn-gradient btn-arrow" disabled>
+              Unavailable
+            </button>
+          )}
         </div>
       </div>
     </div>

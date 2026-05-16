@@ -1,6 +1,11 @@
 import {data, Link} from 'react-router';
 import type {Route} from './+types/packs.$slug';
-import {getPackBySlug, getRelatedProducts, BUNDLES} from '~/lib/catalog';
+import {
+  getPackBySlug,
+  getRelatedProducts,
+  BUNDLES,
+  fetchShopifyProduct,
+} from '~/lib/catalog';
 import {getReviewsForProduct, getReviewStats} from '~/lib/reviews';
 import {ProductHeroV2} from '~/components/promptos/ProductHeroV2';
 import {ProductSectionsV2} from '~/components/promptos/ProductSectionsV2';
@@ -42,18 +47,19 @@ export const meta: Route.MetaFunction = ({data: loaderData}) => {
   ];
 };
 
-export async function loader({params}: Route.LoaderArgs) {
+export async function loader({params, context}: Route.LoaderArgs) {
   const pack = params.slug ? getPackBySlug(params.slug) : undefined;
   if (!pack) {
     throw data('Pack not found', {status: 404});
   }
+  const shopify = await fetchShopifyProduct(context.storefront, pack.shopifyHandle);
   const related = getRelatedProducts(pack.slug, 3).filter((p) => p.type === 'pack');
   const stats = getReviewStats(pack.id);
-  return {pack, related, stats};
+  return {pack, related, stats, shopify};
 }
 
 export default function PackRoute({loaderData}: Route.ComponentProps) {
-  const {pack, related, stats} = loaderData;
+  const {pack, related, stats, shopify} = loaderData;
   return (
     <>
       <JsonLd
@@ -75,7 +81,7 @@ export default function PackRoute({loaderData}: Route.ComponentProps) {
         ]}
       />
       <main id="main" className="page is-active" data-page="product">
-        <ProductHeroV2 pack={pack} />
+        <ProductHeroV2 pack={pack} shopify={shopify} />
 
         {/* Reviews summary widget under hero */}
         <section style={{padding: '0 0 32px'}}>
@@ -128,6 +134,7 @@ export default function PackRoute({loaderData}: Route.ComponentProps) {
 
       <StickyPurchaseBar
         product={pack}
+        shopify={shopify}
         upsellLabel={`Get everything for $${MEGA.priceUSD}?`}
       />
     </>

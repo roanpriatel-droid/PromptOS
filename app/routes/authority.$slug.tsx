@@ -5,9 +5,11 @@ import {
   getRelatedProducts,
   BUNDLES,
   AUTHORITY_BUNDLE,
+  fetchShopifyProduct,
   type Authority,
   type Pack,
   type Guide,
+  type ShopifyEnrichment,
 } from '~/lib/catalog';
 import {getReviewsForProduct, getReviewStats} from '~/lib/reviews';
 
@@ -37,6 +39,7 @@ import {StickyPurchaseBar} from '~/components/promptos/StickyPurchaseBar';
 import {NewsletterCTA} from '~/components/promptos/NewsletterCTA';
 import {SectionFade} from '~/components/promptos/SectionFade';
 import {RatingStars} from '~/components/promptos/RatingStars';
+import {AddToCartButton} from '~/components/AddToCartButton';
 import {
   JsonLd,
   breadcrumbSchema,
@@ -63,18 +66,19 @@ export const meta: Route.MetaFunction = ({data: loaderData}) => {
   ];
 };
 
-export async function loader({params}: Route.LoaderArgs) {
+export async function loader({params, context}: Route.LoaderArgs) {
   const product = params.slug ? getAuthorityBySlug(params.slug) : undefined;
   if (!product) {
     throw data('Authority product not found', {status: 404});
   }
+  const shopify = await fetchShopifyProduct(context.storefront, product.shopifyHandle);
   const related = getRelatedProducts(product.slug, 3);
   const stats = getReviewStats(product.id);
-  return {product, related, stats};
+  return {product, related, stats, shopify};
 }
 
 export default function AuthorityRoute({loaderData}: Route.ComponentProps) {
-  const {product, stats} = loaderData;
+  const {product, stats, shopify} = loaderData;
   return (
     <>
       <JsonLd
@@ -96,9 +100,9 @@ export default function AuthorityRoute({loaderData}: Route.ComponentProps) {
         ]}
       />
       {product.coverStyle === 'pack' ? (
-        <PackStyle product={product} stats={stats} />
+        <PackStyle product={product} stats={stats} shopify={shopify} />
       ) : (
-        <GuideStyle product={product} stats={stats} />
+        <GuideStyle product={product} stats={stats} shopify={shopify} />
       )}
     </>
   );
@@ -110,15 +114,17 @@ export default function AuthorityRoute({loaderData}: Route.ComponentProps) {
 function PackStyle({
   product,
   stats,
+  shopify,
 }: {
   product: Authority;
   stats: ReturnType<typeof getReviewStats>;
+  shopify: ShopifyEnrichment | null;
 }) {
   const pack = product as unknown as Pack;
   return (
     <>
       <main id="main" className="page is-active" data-page="authority-pack">
-        <ProductHeroV2 pack={pack} />
+        <ProductHeroV2 pack={pack} shopify={shopify} />
 
         <section style={{padding: '0 0 32px'}}>
           <div style={{maxWidth: 1080, margin: '0 auto', padding: '0 var(--space-5)', display: 'flex', alignItems: 'center', gap: 16, justifyContent: 'space-between', flexWrap: 'wrap'}}>
@@ -164,6 +170,7 @@ function PackStyle({
 
       <StickyPurchaseBar
         product={pack}
+        shopify={shopify}
         upsellLabel={`Get all 3 Authority products for $${AUTHORITY_BUNDLE.priceUSD}?`}
         upsellTo="/bundles/authority"
       />
@@ -177,10 +184,13 @@ function PackStyle({
 function GuideStyle({
   product,
   stats,
+  shopify,
 }: {
   product: Authority;
   stats: ReturnType<typeof getReviewStats>;
+  shopify: ShopifyEnrichment | null;
 }) {
+  const canBuy = !!shopify?.variantId && shopify.availableForSale;
   // Build a synthetic Guide-shape for components that expect Guide.sample
   const guideShape = {
     ...product,
@@ -234,16 +244,23 @@ function GuideStyle({
                   <span className="price">${product.priceUSD}</span>
                   <span className="one-time">one-time · lifetime updates</span>
                 </div>
-                <Link
-                  to={`/products/${product.shopifyHandle}`}
-                  prefetch="intent"
-                  className="product-buy-btn"
-                >
-                  Add to cart · ${product.priceUSD}
-                  <svg viewBox="0 0 16 16" width="14" height="14" fill="none" aria-hidden>
-                    <path d="M2 8h12M9 3l5 5-5 5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </Link>
+                {canBuy ? (
+                  <AddToCartButton
+                    className="product-buy-btn"
+                    lines={[{merchandiseId: shopify!.variantId, quantity: 1}]}
+                    analytics={{products: [{productGid: shopify!.variantId, quantity: 1}]}}
+                    ariaLabel={`Add ${product.name} to cart, $${product.priceUSD}`}
+                  >
+                    Add to cart · ${product.priceUSD}
+                    <svg viewBox="0 0 16 16" width="14" height="14" fill="none" aria-hidden>
+                      <path d="M2 8h12M9 3l5 5-5 5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </AddToCartButton>
+                ) : (
+                  <button type="button" className="product-buy-btn" disabled>
+                    Currently unavailable
+                  </button>
+                )}
                 <p className="upsell">
                   Or get all 3 Authority products for <Link to="/bundles/authority" prefetch="intent">${AUTHORITY_BUNDLE.priceUSD} (save ${AUTHORITY_BUNDLE.savings})</Link>.
                 </p>
@@ -257,7 +274,7 @@ function GuideStyle({
         <ThreePathsComparison
           title={`Three ways to build authority.`}
           subtitle="Only one of them doesn't waste your money or your year."
-          winnerCta={{label: `Get ${product.shortName}, $${product.priceUSD}`, to: `/products/${product.shopifyHandle}`}}
+          winnerCta={{label: `Get ${product.shortName}, $${product.priceUSD}`, to: '#main'}}
         />
 
         <ChapterList guide={guideShape} />
@@ -293,6 +310,7 @@ function GuideStyle({
 
       <StickyPurchaseBar
         product={guideShape}
+        shopify={shopify}
         upsellLabel={`Authority Bundle, $${AUTHORITY_BUNDLE.priceUSD}?`}
         upsellTo="/bundles/authority"
       />
