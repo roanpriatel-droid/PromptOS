@@ -26,7 +26,6 @@ interface HeaderProps {
 const FLAT_NAV_AFTER = [
   {label: 'Reviews', to: '/reviews', match: (p: string) => p.startsWith('/reviews')},
   {label: 'Method', to: '/method', match: (p: string) => p.startsWith('/method')},
-  {label: 'About', to: '/about', match: (p: string) => p.startsWith('/about')},
 ];
 
 const WHY_US = {
@@ -65,6 +64,30 @@ export function Header({isLoggedIn, cart}: HeaderProps) {
       document.documentElement.style.overflow = '';
     };
   }, [drawerOpen]);
+
+  // Esc closes any open dropdown or the mobile drawer.
+  useEffect(() => {
+    if (!open && !drawerOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        if (drawerOpen) setDrawerOpen(false);
+        else setOpen(null);
+      }
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [open, drawerOpen]);
+
+  // Click outside any open mega-menu closes it.
+  useEffect(() => {
+    if (!open) return;
+    const onClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (!target.closest('.appnav-links')) setOpen(null);
+    };
+    document.addEventListener('mousedown', onClick);
+    return () => document.removeEventListener('mousedown', onClick);
+  }, [open]);
 
   const enter = (k: DropdownKey) => {
     if (hoverTimeout.current) clearTimeout(hoverTimeout.current);
@@ -354,7 +377,6 @@ function MobileDrawer({open, onClose}: {open: boolean; onClose: () => void}) {
 
           <li><Link to="/reviews" onClick={onClose} prefetch="intent">Reviews</Link></li>
           <li><Link to="/method" onClick={onClose} prefetch="intent">Method</Link></li>
-          <li><Link to="/about" onClick={onClose} prefetch="intent">About</Link></li>
           <li><Link to="/contact" onClick={onClose} prefetch="intent">Contact</Link></li>
         </ul>
 

@@ -33,25 +33,19 @@ export function TwoSidesSection() {
           <div className="two-sides-divider-line" aria-hidden />
           <div className="two-sides-divider-inner">
             <span className="two-sides-or">Or both</span>
-            <div className="two-sides-arrow" aria-hidden>
-              <svg viewBox="0 0 36 36" width="36" height="36" fill="none">
-                <circle cx="18" cy="18" r="16" stroke="currentColor" strokeWidth="1.4" opacity="0.20" />
-                <path d="M18 9v18M12 21l6 6 6-6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+            <div className="two-sides-arrow two-sides-arrow-down" aria-hidden>
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none">
+                <path d="M12 5v14M6 13l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
             <Link
               to={`/bundles/${MEGA_BUNDLE.slug}`}
               prefetch="intent"
-              className="two-sides-cta"
+              className="two-sides-cta two-sides-cta-stacked"
               aria-label={`Everything Bundle, $${MEGA_BUNDLE.priceUSD} USD, save $${MEGA_BUNDLE.savings}`}
             >
-              <span className="two-sides-cta-title">
-                <span className="micro">Everything Bundle</span>
-                <span className="name">All 20 products</span>
-              </span>
-              <span className="two-sides-cta-divider" aria-hidden />
-              <span className="two-sides-cta-price">${MEGA_BUNDLE.priceUSD}</span>
-              <span className="two-sides-cta-arrow" aria-hidden>→</span>
+              <span className="two-sides-cta-eyebrow">Everything Bundle</span>
+              <span className="two-sides-cta-priceLarge">${MEGA_BUNDLE.priceUSD}</span>
             </Link>
             <span className="two-sides-save-badge">Save ${MEGA_BUNDLE.savings}</span>
           </div>

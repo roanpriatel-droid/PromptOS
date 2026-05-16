@@ -45,6 +45,10 @@ export function AuthorityCard({product}: {product: Authority}) {
             {highlights.map((h) => <li key={h}>{h}</li>)}
           </ul>
         )}
+        <hr className="card-pink-divider" aria-hidden />
+        <p className="card-best-for">
+          <span className="card-best-for-label">Best for:</span>{product.audience}
+        </p>
         <div className="card-rating">
           <RatingStars rating={stats.average} />
           <span className="card-rating-text">
