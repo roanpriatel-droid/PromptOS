@@ -93,6 +93,24 @@
 }
 
 /* ============================================================
+   v3.7: kill the leaked .promise section styling on card descriptions
+   ----------------------------------------------------------
+   promptos.css line ~576 has an unqualified `.promise { padding: 96px 0;
+   background: var(--bg-2); border-bottom: ... }` rule meant for a
+   homepage "promise" section block. It bleeds into card `<p class="promise">`
+   tagline paragraphs (the `.guide-card .promise` rule overrides font/margin
+   but leaves the bg/padding/border untouched).
+   ============================================================ */
+.guide-card .promise,
+.v2-card .promise,
+.pack-card .promise,
+.authority-card .promise {
+  padding: 0;
+  background: transparent;
+  border-bottom: none;
+}
+
+/* ============================================================
    Product card density — tighter cover, denser body (section 7)
    ============================================================ */
 .pack-card .cover,
