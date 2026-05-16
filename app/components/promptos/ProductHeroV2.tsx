@@ -21,16 +21,9 @@ export function ProductHeroV2({
   return (
     <section className="product-hero-v2">
       <div className="product-hero-v2-inner">
-        <div>
+        <div className="product-cover-col">
           <div className="product-cover-v2">
             <PackCover pack={pack} />
-          </div>
-          <div className="product-thumbs" aria-hidden>
-            {[0, 1, 2, 3].map((i) => (
-              <div key={i} className="thumb">
-                <PackCover pack={pack} />
-              </div>
-            ))}
           </div>
         </div>
 
