@@ -256,7 +256,7 @@ export const PACKS: Pack[] = [
     id: 'marketer',
     type: 'pack',
     slug: 'marketer',
-    shopifyHandle: 'promptos-marketers-pack',
+    shopifyHandle: 'marketer',
     number: '01',
     name: "The Marketer's Pack",
     shortName: "Marketer's",
@@ -293,7 +293,7 @@ export const PACKS: Pack[] = [
     id: 'writer',
     type: 'pack',
     slug: 'writer',
-    shopifyHandle: 'promptos-writers-pack',
+    shopifyHandle: 'writer',
     number: '02',
     name: "The Writer's Pack",
     shortName: "Writer's",
@@ -330,7 +330,7 @@ export const PACKS: Pack[] = [
     id: 'developer',
     type: 'pack',
     slug: 'developer',
-    shopifyHandle: 'promptos-developer-pack',
+    shopifyHandle: 'developer',
     number: '03',
     name: 'The Developer Pack',
     shortName: 'Developer',
@@ -367,7 +367,7 @@ export const PACKS: Pack[] = [
     id: 'solopreneur',
     type: 'pack',
     slug: 'solopreneur',
-    shopifyHandle: 'promptos-solopreneur-pack',
+    shopifyHandle: 'solopreneur',
     number: '04',
     name: 'The Solopreneur Pack',
     shortName: 'Solopreneur',
@@ -404,7 +404,7 @@ export const PACKS: Pack[] = [
     id: 'content-creator',
     type: 'pack',
     slug: 'content-creator',
-    shopifyHandle: 'promptos-content-creator-pack',
+    shopifyHandle: 'content-creator',
     number: '05',
     name: 'The Content Creator Pack',
     shortName: 'Creator',
@@ -441,7 +441,7 @@ export const PACKS: Pack[] = [
     id: 'ai-power-user',
     type: 'pack',
     slug: 'ai-power-user',
-    shopifyHandle: 'promptos-ai-power-user-pack',
+    shopifyHandle: 'ai-power-user',
     number: '06',
     name: 'The AI Power User Pack',
     shortName: 'AI Power User',
@@ -478,7 +478,7 @@ export const PACKS: Pack[] = [
     id: 'productivity',
     type: 'pack',
     slug: 'productivity',
-    shopifyHandle: 'promptos-productivity-pack',
+    shopifyHandle: 'productivity',
     number: '07',
     name: 'The Productivity Pack',
     shortName: 'Productivity',
@@ -578,7 +578,7 @@ export const GUIDES: Guide[] = [
     id: 'ai-automation-agency',
     type: 'guide',
     slug: 'ai-automation-agency',
-    shopifyHandle: 'promptos-ai-automation-agency',
+    shopifyHandle: 'ai-automation-agency',
     number: 'G1',
     name: 'The AI Automation Agency Playbook',
     shortName: 'AI Automation Agency',
@@ -671,7 +671,7 @@ export const GUIDES: Guide[] = [
     id: 'ai-agent-builder',
     type: 'guide',
     slug: 'ai-agent-builder',
-    shopifyHandle: 'promptos-ai-agent-builder',
+    shopifyHandle: 'ai-agent-builder',
     number: 'G2',
     name: 'The AI Agent Builder Playbook',
     shortName: 'AI Agent Builder',
@@ -762,7 +762,7 @@ export const GUIDES: Guide[] = [
     id: 'web-design-agency',
     type: 'guide',
     slug: 'web-design-agency',
-    shopifyHandle: 'promptos-web-design-agency',
+    shopifyHandle: 'web-design-agency',
     number: 'G3',
     name: 'The Web Design Agency Playbook',
     shortName: 'Web Design Agency',
@@ -851,7 +851,7 @@ export const GUIDES: Guide[] = [
     id: 'digital-products',
     type: 'guide',
     slug: 'digital-products',
-    shopifyHandle: 'promptos-digital-products',
+    shopifyHandle: 'digital-products',
     number: 'G4',
     name: 'The Digital Products Playbook',
     shortName: 'Digital Products',
@@ -938,7 +938,7 @@ export const GUIDES: Guide[] = [
     id: 'newsletter-business',
     type: 'guide',
     slug: 'newsletter-business',
-    shopifyHandle: 'promptos-newsletter-business',
+    shopifyHandle: 'newsletter-business',
     number: 'G5',
     name: 'The Newsletter Business Playbook',
     shortName: 'Newsletter',
@@ -1026,7 +1026,7 @@ export const GUIDES: Guide[] = [
     id: 'faceless-content',
     type: 'guide',
     slug: 'faceless-content',
-    shopifyHandle: 'promptos-faceless-content',
+    shopifyHandle: 'faceless-content',
     number: 'G6',
     name: 'The Faceless Content Playbook',
     shortName: 'Faceless Content',
@@ -1116,7 +1116,7 @@ export const GUIDES: Guide[] = [
     id: 'saas-side-project',
     type: 'guide',
     slug: 'saas-side-project',
-    shopifyHandle: 'promptos-saas-side-project',
+    shopifyHandle: 'saas-side-project',
     number: 'G7',
     name: 'The SaaS Side Project Playbook',
     shortName: 'SaaS Side Project',
@@ -1205,7 +1205,7 @@ export const GUIDES: Guide[] = [
     id: 'coaching-consulting',
     type: 'guide',
     slug: 'coaching-consulting',
-    shopifyHandle: 'promptos-coaching-consulting',
+    shopifyHandle: 'coaching-consulting',
     number: 'G8',
     name: 'The Coaching/Consulting Playbook',
     shortName: 'Coaching',
@@ -1316,7 +1316,7 @@ export const AUTHORITY: Authority[] = [
     id: 'personal-brand',
     type: 'authority',
     slug: 'personal-brand',
-    shopifyHandle: 'promptos-personal-brand',
+    shopifyHandle: 'personal-brand',
     number: 'A1',
     name: 'The Personal Brand Playbook',
     shortName: 'Personal Brand',
@@ -1397,7 +1397,7 @@ export const AUTHORITY: Authority[] = [
     id: 'content-engine',
     type: 'authority',
     slug: 'content-engine',
-    shopifyHandle: 'promptos-content-engine',
+    shopifyHandle: 'content-engine',
     number: 'A2',
     name: 'The Content Engine Pack',
     shortName: 'Content Engine',
@@ -1434,7 +1434,7 @@ export const AUTHORITY: Authority[] = [
     id: 'high-ticket-finder',
     type: 'authority',
     slug: 'high-ticket-finder',
-    shopifyHandle: 'promptos-high-ticket-finder',
+    shopifyHandle: 'high-ticket-finder',
     number: 'A3',
     name: 'The High-Ticket Product Finder',
     shortName: 'High-Ticket Finder',
@@ -1523,7 +1523,7 @@ export const PACKS_BUNDLE: Bundle = {
   id: 'packs',
   type: 'bundle',
   slug: 'packs',
-  shopifyHandle: 'promptos-packs-bundle',
+  shopifyHandle: 'packs',
   name: 'The Packs Bundle',
   shortName: 'Packs Bundle',
   tagline: 'All 7 prompt packs. 430 prompts. One price.',
@@ -1543,7 +1543,7 @@ export const AUTHORITY_BUNDLE: Bundle = {
   id: 'authority',
   type: 'bundle',
   slug: 'authority',
-  shopifyHandle: 'promptos-authority-bundle',
+  shopifyHandle: 'authority',
   name: 'The Authority Bundle',
   shortName: 'Authority Bundle',
   tagline: 'Build your audience. Productize your expertise. One bundle.',
@@ -1563,7 +1563,7 @@ export const GUIDES_BUNDLE: Bundle = {
   id: 'guides',
   type: 'bundle',
   slug: 'guides',
-  shopifyHandle: 'promptos-guides-bundle',
+  shopifyHandle: 'guides',
   name: 'The Guides Bundle',
   shortName: 'Guides Bundle',
   tagline: 'Every Promptos playbook. One price. 600+ pages of real frameworks.',
@@ -1598,7 +1598,7 @@ export const MEGA_BUNDLE: Bundle = {
   id: 'everything',
   type: 'bundle',
   slug: 'everything',
-  shopifyHandle: 'promptos-everything',
+  shopifyHandle: 'everything',
   name: 'Everything',
   shortName: 'Everything',
   tagline: 'Every pack. Every playbook. Every Authority product. One investment. Done.',
@@ -1694,3 +1694,81 @@ export const TOTAL_TEMPLATES =
   AUTHORITY.reduce((s, a) => s + (a.templateCount ?? 0), 0);
 export const TOTAL_PRODUCTS = ALL_PRODUCTS.length;
 export const TOTAL_AUTHORITY = AUTHORITY.length;
+
+// ===================================================================
+// Shopify Storefront enrichment
+// -------------------------------------------------------------------
+// Live data we need from Shopify per product: the variant ID for the
+// cart line item and an availability flag. Display content (taglines,
+// chapters, illustrations) stays in the hardcoded data above. Shopify
+// doesn't store any of it. If the API call fails or returns null, the
+// route still renders, but the Add-to-Cart button is disabled.
+// ===================================================================
+
+export type ShopifyEnrichment = {
+  variantId: string;
+  availableForSale: boolean;
+  priceAmount: number;
+  priceCurrency: string;
+};
+
+const SHOPIFY_VARIANT_QUERY = `#graphql
+  query ProductVariantForCheckout($handle: String!) {
+    productByHandle(handle: $handle) {
+      id
+      availableForSale
+      variants(first: 1) {
+        nodes {
+          id
+          availableForSale
+          price { amount currencyCode }
+        }
+      }
+    }
+  }
+` as const;
+
+type StorefrontLike = {
+  query: <T>(
+    query: string,
+    options?: {variables?: Record<string, unknown>; cache?: unknown},
+  ) => Promise<T>;
+};
+
+type StorefrontVariantResponse = {
+  productByHandle: null | {
+    availableForSale: boolean;
+    variants: {
+      nodes: Array<{
+        id: string;
+        availableForSale: boolean;
+        price: {amount: string; currencyCode: string};
+      }>;
+    };
+  };
+};
+
+export async function fetchShopifyProduct(
+  storefront: StorefrontLike,
+  handle: string,
+): Promise<ShopifyEnrichment | null> {
+  try {
+    const result = await storefront.query<StorefrontVariantResponse>(
+      SHOPIFY_VARIANT_QUERY,
+      {variables: {handle}},
+    );
+    const product = result?.productByHandle;
+    if (!product) return null;
+    const variant = product.variants.nodes[0];
+    if (!variant) return null;
+    return {
+      variantId: variant.id,
+      availableForSale: variant.availableForSale && product.availableForSale,
+      priceAmount: parseFloat(variant.price.amount),
+      priceCurrency: variant.price.currencyCode,
+    };
+  } catch (err) {
+    console.error(`[catalog] fetchShopifyProduct("${handle}") failed:`, err);
+    return null;
+  }
+}

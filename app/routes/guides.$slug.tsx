@@ -1,6 +1,6 @@
 import {data, Link} from 'react-router';
 import type {Route} from './+types/guides.$slug';
-import {getGuideBySlug, BUNDLES} from '~/lib/catalog';
+import {getGuideBySlug, BUNDLES, fetchShopifyProduct} from '~/lib/catalog';
 import {getReviewsForProduct, getReviewStats} from '~/lib/reviews';
 import {GuideCover} from '~/components/promptos/GuideCover';
 import {WhoForWhoNotFor} from '~/components/promptos/WhoForWhoNotFor';
@@ -17,6 +17,7 @@ import {PairWith} from '~/components/promptos/PairWith';
 import {StickyPurchaseBar} from '~/components/promptos/StickyPurchaseBar';
 import {SectionFade} from '~/components/promptos/SectionFade';
 import {RatingStars} from '~/components/promptos/RatingStars';
+import {AddToCartButton} from '~/components/AddToCartButton';
 import {
   JsonLd,
   breadcrumbSchema,
@@ -43,18 +44,20 @@ export const meta: Route.MetaFunction = ({data: loaderData}) => {
   ];
 };
 
-export async function loader({params}: Route.LoaderArgs) {
+export async function loader({params, context}: Route.LoaderArgs) {
   const guide = params.slug ? getGuideBySlug(params.slug) : undefined;
   if (!guide) {
     throw data('Guide not found', {status: 404});
   }
+  const shopify = await fetchShopifyProduct(context.storefront, guide.shopifyHandle);
   const reviews = getReviewsForProduct(guide.id);
   const stats = getReviewStats(guide.id);
-  return {guide, reviews, stats};
+  return {guide, reviews, stats, shopify};
 }
 
 export default function GuideRoute({loaderData}: Route.ComponentProps) {
-  const {guide, stats} = loaderData;
+  const {guide, stats, shopify} = loaderData;
+  const canBuy = !!shopify?.variantId && shopify.availableForSale;
   return (
     <>
       <JsonLd
@@ -121,16 +124,23 @@ export default function GuideRoute({loaderData}: Route.ComponentProps) {
                   <span className="price">${guide.priceUSD}</span>
                   <span className="one-time">one-time · lifetime updates</span>
                 </div>
-                <Link
-                  to={`/products/${guide.shopifyHandle}`}
-                  prefetch="intent"
-                  className="product-buy-btn"
-                >
-                  Add to cart · ${guide.priceUSD}
-                  <svg viewBox="0 0 16 16" width="14" height="14" fill="none" aria-hidden>
-                    <path d="M2 8h12M9 3l5 5-5 5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </Link>
+                {canBuy ? (
+                  <AddToCartButton
+                    className="product-buy-btn"
+                    lines={[{merchandiseId: shopify!.variantId, quantity: 1}]}
+                    analytics={{products: [{productGid: shopify!.variantId, quantity: 1}]}}
+                    ariaLabel={`Add ${guide.name} to cart, $${guide.priceUSD}`}
+                  >
+                    Add to cart · ${guide.priceUSD}
+                    <svg viewBox="0 0 16 16" width="14" height="14" fill="none" aria-hidden>
+                      <path d="M2 8h12M9 3l5 5-5 5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </AddToCartButton>
+                ) : (
+                  <button type="button" className="product-buy-btn" disabled>
+                    Currently unavailable
+                  </button>
+                )}
                 <p className="upsell">
                   Or pair with prompts, get <Link to="/bundles/everything" prefetch="intent">everything for ${MEGA.priceUSD}</Link> (save ${MEGA.savings}).
                 </p>
@@ -144,7 +154,7 @@ export default function GuideRoute({loaderData}: Route.ComponentProps) {
         <ThreePathsComparison
           title={`Three ways to start a ${guide.shortName.toLowerCase()} business.`}
           subtitle="Only one of them doesn't waste your money or your year."
-          winnerCta={{label: `Get ${guide.shortName}, $${guide.priceUSD}`, to: `/products/${guide.shopifyHandle}`}}
+          winnerCta={{label: `Get ${guide.shortName}, $${guide.priceUSD}`, to: '#main'}}
         />
 
         <ChapterList guide={guide} />
@@ -178,7 +188,7 @@ export default function GuideRoute({loaderData}: Route.ComponentProps) {
         <PairWith slug={guide.slug} heading="Operators buy these together." />
       </main>
 
-      <StickyPurchaseBar product={guide} />
+      <StickyPurchaseBar product={guide} shopify={shopify} />
     </>
   );
 }
