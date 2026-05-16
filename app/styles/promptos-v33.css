@@ -1,7 +1,10 @@
 /* ============================================================
-   v3.3 — final polish + mobile pass
-   Loaded LAST so it can override v3, v3.2, why-promptos in
-   targeted ways without `!important` cascades wherever possible.
+   v3.3 — base styles only
+   v3.5 mobile-architecture refactor (2026-05-16): all
+   @media (max-width|min-width) blocks moved to inline Tailwind
+   responsive utilities on the consuming components. The two
+   non-width queries below (prefers-reduced-motion + hover:none
+   pointer:coarse) remain because they are not width queries.
    ============================================================ */
 
 /* ============================================================
@@ -23,29 +26,29 @@
 }
 
 .two-sides-cta.two-sides-cta-stacked {
-  display: inline-flex !important;
+  display: inline-flex;
   flex-direction: column;
   align-items: center;
   gap: 4px;
-  padding: 20px 32px !important;
+  padding: 20px 32px;
   min-width: 220px;
   border-radius: 9999px;
-  background: linear-gradient(135deg, #6B46C1 0%, #5B3AB0 100%) !important;
-  color: var(--paper) !important;
+  background: linear-gradient(135deg, #6B46C1 0%, #5B3AB0 100%);
+  color: var(--paper);
   text-align: center;
   text-decoration: none;
   border: 1px solid rgba(255,255,255,0.18);
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,0.20),
-    0 14px 36px -10px rgba(107,70,193,0.55) !important;
+    0 14px 36px -10px rgba(107,70,193,0.55);
   transition: transform 220ms var(--ease), box-shadow 220ms var(--ease);
 }
 .two-sides-cta.two-sides-cta-stacked:hover {
-  transform: scale(1.03) translateY(-2px) !important;
+  transform: scale(1.03) translateY(-2px);
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,0.24),
     0 18px 40px -10px rgba(236,72,153,0.45),
-    0 14px 36px -10px rgba(107,70,193,0.55) !important;
+    0 14px 36px -10px rgba(107,70,193,0.55);
 }
 .two-sides-cta-eyebrow {
   font-size: 11px;
@@ -64,25 +67,6 @@
   line-height: 1.05;
 }
 
-/* Mobile: stack the whole Two-Sides section into a column and
-   make the middle pill full-width with breathing room. */
-@media (max-width: 900px) {
-  .two-sides-inner {
-    grid-template-columns: 1fr !important;
-    gap: 28px !important;
-  }
-  .two-sides-divider {
-    flex-direction: column;
-    padding: 12px 0 !important;
-  }
-  .two-sides-divider-line { display: none; }
-  .two-sides-cta.two-sides-cta-stacked {
-    width: 100%;
-    max-width: 320px;
-    min-width: 0;
-  }
-}
-
 /* ============================================================
    Bundle covers — prevent numeral/text overflow (section 6)
    ============================================================ */
@@ -98,7 +82,6 @@
   height: 100%;
   display: block;
 }
-/* Constrain big numeral covers that overflow at small sizes. */
 .bundle-cover [data-overflow-text],
 .bundle-card [data-overflow-text] {
   max-width: 88%;
@@ -115,7 +98,7 @@
 .pack-card .cover,
 .guide-card .cover,
 .authority-card .cover {
-  flex-basis: 35% !important;
+  flex-basis: 35%;
   min-height: 0;
 }
 .pack-card .meta,
@@ -147,164 +130,39 @@
 }
 
 /* ============================================================
-   Trust strip → footer spacing (section 8)
+   Footer 5-column grid + accordion behavior
+   Grid (display + columns + gap) and accordion behavior are
+   now inline Tailwind utilities on Footer.tsx (see v3.5 refactor).
+   The only thing kept here is hiding the default <details>/<summary>
+   marker so the wrapped <h6> renders identically to a bare h6.
    ============================================================ */
-.footer-trust-strip {
-  padding-top: 64px;
-  padding-bottom: 48px;
-}
-@media (min-width: 768px) {
-  .footer-trust-strip {
-    padding-top: 96px;
-    padding-bottom: 80px;
-  }
-}
-
-/* ============================================================
-   Footer 5-column grid (section 9)
-   ============================================================ */
-.footer-v3 .footer-v2-top.footer-v3-top {
-  display: grid;
-  grid-template-columns: 1.4fr repeat(5, 1fr);
-  gap: 48px;
-}
-/* Hide the default <details>/<summary> marker site-wide in the footer
-   so the wrapped headings render identically to plain h6 on desktop. */
+/* Hide the default <details>/<summary> marker so the wrapped
+   headings render identically to plain h6. */
 .footer-v2-col details > summary {
   list-style: none;
   cursor: default;
 }
 .footer-v2-col details > summary::-webkit-details-marker { display: none; }
 .footer-v2-col details > summary::marker { display: none; content: ''; }
-@media (max-width: 1100px) {
-  .footer-v3 .footer-v2-top.footer-v3-top {
-    grid-template-columns: 1fr 1fr;
-    gap: 36px;
-  }
-}
-@media (max-width: 640px) {
-  .footer-v3 .footer-v2-top.footer-v3-top {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-  .footer-v2-col details > summary {
-    cursor: pointer;
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 12px 0;
-  }
-  .footer-v2-col details > summary::-webkit-details-marker { display: none; }
-  .footer-v2-col details > summary::after {
-    content: '+';
-    color: var(--paper);
-    font-size: 18px;
-    line-height: 1;
-  }
-  .footer-v2-col details[open] > summary::after { content: '−'; }
-  .footer-v2-col details > summary h6 { margin: 0; }
-}
 
 /* ============================================================
-   Popout / dropdown — ensure visible close affordance (section 4)
+   Footer trust strip + bottom layout base
+   Responsive padding handled inline via Tailwind on Footer.tsx.
    ============================================================ */
-.popout-close {
-  position: absolute;
-  top: 12px; right: 12px;
-  width: 32px; height: 32px;
-  display: inline-flex; align-items: center; justify-content: center;
-  border-radius: 999px;
-  background: transparent;
-  color: inherit;
-  border: 1px solid rgba(0,0,0,0.10);
-  cursor: pointer;
-  transition: background 160ms var(--ease), border-color 160ms var(--ease);
-  z-index: 2;
+.footer-v2-bottom-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
-.popout-close:hover {
-  background: rgba(0,0,0,0.05);
-  border-color: rgba(0,0,0,0.20);
-}
-.popout-close svg { width: 14px; height: 14px; }
-@media (max-width: 640px) {
-  .popout-close { width: 40px; height: 40px; top: 10px; right: 10px; }
+.footer-currency-note {
+  font-size: 12px;
+  color: rgba(250, 250, 250, 0.55);
+  margin: 0;
 }
 
 /* ============================================================
-   Mobile typography baseline (section 11a)
-   We don't have desktop classes from Tailwind to override; we
-   constrain the worst-offending custom rules with mobile-only
-   scaling. Desktop styles are untouched above the 768px gate.
-   ============================================================ */
-@media (max-width: 767px) {
-  .hero-headline,
-  .hero h1,
-  .why-hero h1 {
-    font-size: clamp(36px, 10vw, 52px) !important;
-    line-height: 1.05 !important;
-  }
-  .section-h1,
-  section h1 {
-    font-size: clamp(32px, 8vw, 44px) !important;
-    line-height: 1.08 !important;
-  }
-  section h2 {
-    font-size: clamp(26px, 6.5vw, 36px) !important;
-    line-height: 1.1 !important;
-  }
-  section h3 {
-    font-size: clamp(20px, 5vw, 26px) !important;
-    line-height: 1.15 !important;
-  }
-  body, .body { font-size: 16px; }
-  small, .small { font-size: 13px; }
-  /* Form inputs: prevent iOS auto-zoom on focus. */
-  input[type="text"],
-  input[type="email"],
-  input[type="search"],
-  input[type="tel"],
-  input[type="number"],
-  input[type="password"],
-  textarea,
-  select {
-    font-size: 16px !important;
-  }
-}
-
-/* ============================================================
-   Mobile layout — stack key grids (section 11b)
-   ============================================================ */
-@media (max-width: 767px) {
-  /* Pack/Guide/Authority grids → single column */
-  .pack-grid-v2,
-  .guide-grid,
-  .authority-grid,
-  .v2-card-grid {
-    grid-template-columns: 1fr !important;
-    gap: 20px !important;
-  }
-
-  /* Three Tiers, Three Paths → vertical stack */
-  .three-tiers-grid,
-  .three-paths-grid,
-  .three-tiers,
-  .three-paths {
-    grid-template-columns: 1fr !important;
-    gap: 16px !important;
-  }
-
-  /* Trust strip stays horizontal-wrapping (already flex-wrap), but
-     give each badge more space and let it grow to 2x2. */
-  .footer-trust-strip-inner {
-    justify-content: center !important;
-    gap: 16px 24px !important;
-  }
-  .footer-trust-badge { flex-basis: 45%; }
-}
-
-/* ============================================================
-   Mobile touch targets + tap states (section 11e)
+   Touch device hardening — 44px tap targets + scale-down on press
+   (not a width media query; targets coarse-pointer devices)
    ============================================================ */
 @media (hover: none) and (pointer: coarse) {
   .product-buy-btn,
@@ -319,83 +177,5 @@
   .product-buy-btn:active {
     transform: scale(0.98);
     opacity: 0.92;
-  }
-}
-
-/* ============================================================
-   Sticky purchase bar — full-width + safe-area bottom (11d)
-   ============================================================ */
-@media (max-width: 767px) {
-  .sticky-purchase {
-    left: 0; right: 0;
-    border-radius: 0;
-    padding-bottom: calc(8px + env(safe-area-inset-bottom, 0));
-  }
-  .sticky-purchase-inner {
-    flex-wrap: wrap;
-    gap: 8px 12px;
-    padding: 10px 14px;
-  }
-  .sticky-purchase .left .name {
-    font-size: 14px;
-    max-width: 50vw;
-  }
-}
-
-/* ============================================================
-   Recent purchase toast — bottom-center on mobile (11d)
-   ============================================================ */
-@media (max-width: 767px) {
-  .recent-purchase-toast {
-    left: 50% !important;
-    right: auto !important;
-    bottom: calc(16px + env(safe-area-inset-bottom, 0)) !important;
-    transform: translateX(-50%);
-    width: 90vw;
-    max-width: 320px;
-  }
-}
-
-/* ============================================================
-   What's New banner — slightly tighter on mobile (11d)
-   ============================================================ */
-@media (max-width: 640px) {
-  .whats-new-banner {
-    font-size: 13px;
-    padding-block: 8px;
-  }
-  .whats-new-banner-close,
-  .whats-new-banner button[aria-label*="ismiss" i],
-  .whats-new-banner button[aria-label*="lose" i] {
-    width: 40px;
-    height: 40px;
-  }
-}
-
-/* ============================================================
-   Reviews carousel — 1-up on mobile (11b)
-   ============================================================ */
-@media (max-width: 767px) {
-  .review-carousel-track,
-  .review-carousel-grid {
-    grid-template-columns: 1fr !important;
-  }
-}
-
-/* ============================================================
-   Newsletter CTA — cleaner stack on mobile (section 9)
-   ============================================================ */
-@media (max-width: 640px) {
-  .newsletter-form,
-  .footer-newsletter form {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 10px;
-  }
-  .newsletter-form input,
-  .newsletter-form button,
-  .footer-newsletter input,
-  .footer-newsletter button {
-    width: 100%;
   }
 }

@@ -193,7 +193,7 @@ export function Header({isLoggedIn, cart}: HeaderProps) {
             <Link
               to={`/bundles/${MEGA_BUNDLE_SLUG}`}
               prefetch="intent"
-              className="appnav-cta appnav-cta-pill"
+              className="appnav-cta appnav-cta-pill hidden md:inline-flex"
               aria-label="Everything Bundle, $798 USD, save $914"
             >
               <span className="appnav-cta-savetag" aria-hidden>Save $914</span>

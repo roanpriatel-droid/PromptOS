@@ -41,7 +41,7 @@ export function TwoSidesSection() {
             <Link
               to={`/bundles/${MEGA_BUNDLE.slug}`}
               prefetch="intent"
-              className="two-sides-cta two-sides-cta-stacked"
+              className="two-sides-cta two-sides-cta-stacked w-full max-w-[320px] min-w-0 md:w-auto md:max-w-none md:min-w-[220px]"
               aria-label={`Everything Bundle, $${MEGA_BUNDLE.priceUSD} USD, save $${MEGA_BUNDLE.savings}`}
             >
               <span className="two-sides-cta-eyebrow">Everything Bundle</span>

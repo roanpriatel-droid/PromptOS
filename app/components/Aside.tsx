@@ -53,6 +53,17 @@ export function Aside({
     return () => abortController.abort();
   }, [close, expanded]);
 
+  // v3.5: cart aside takes full screen on mobile + responsive width on desktop;
+  // search and mobile-menu asides keep the default Aside layout.
+  const asideClass =
+    type === 'cart'
+      ? 'w-full max-w-full md:w-[min(480px,92vw)] md:max-w-[480px]'
+      : '';
+  const mainClass =
+    type === 'cart'
+      ? 'pb-[calc(20px+env(safe-area-inset-bottom,0))] md:pb-0'
+      : '';
+
   return (
     <div
       aria-modal
@@ -62,14 +73,14 @@ export function Aside({
       aria-labelledby={id}
     >
       <button className="close-outside" onClick={close} />
-      <aside>
+      <aside className={asideClass}>
         <header>
           <h3 id={id}>{heading}</h3>
           <button className="close reset" onClick={close} aria-label="Close">
             &times;
           </button>
         </header>
-        <main>{children}</main>
+        <main className={mainClass}>{children}</main>
       </aside>
     </div>
   );

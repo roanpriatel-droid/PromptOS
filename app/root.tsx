@@ -163,7 +163,7 @@ export function Layout({children}: {children?: React.ReactNode}) {
     <html lang="en">
       <head>
         <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#6B46C1" />
         <meta name="msapplication-TileColor" content="#6B46C1" />
         <meta property="og:image" content="/og-default.png" />
