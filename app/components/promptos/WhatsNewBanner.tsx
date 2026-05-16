@@ -40,7 +40,7 @@ export function WhatsNewBanner() {
   if (dismissed) return null;
 
   return (
-    <div className="whats-new-banner" role="region" aria-label="What's new at Promptos">
+    <div className="whats-new-banner text-[13px] sm:text-base" role="region" aria-label="What's new at Promptos">
       <Link to="/authority" prefetch="intent" className="whats-new-text">
         <span className="whats-new-tag">New</span>
         <span className="whats-new-message">
@@ -50,7 +50,7 @@ export function WhatsNewBanner() {
       </Link>
       <button
         type="button"
-        className="whats-new-close"
+        className="whats-new-close min-w-[40px] min-h-[40px] sm:min-w-0 sm:min-h-0"
         aria-label="Dismiss banner"
         onClick={dismiss}
       >

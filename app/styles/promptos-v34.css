@@ -40,21 +40,9 @@
   padding: 0;
 }
 
-/* Make the drawer width feel premium on desktop; full-screen on mobile. */
-@media (min-width: 640px) {
-  .overlay[data-aside-type="cart"] aside {
-    width: min(480px, 92vw);
-  }
-}
-@media (max-width: 639px) {
-  .overlay[data-aside-type="cart"] aside {
-    width: 100vw;
-    max-width: 100vw;
-  }
-  .overlay[data-aside-type="cart"] aside main {
-    padding-bottom: calc(20px + env(safe-area-inset-bottom, 0));
-  }
-}
+/* Cart aside width + mobile full-screen + iOS safe-area are now
+   inline Tailwind responsive utilities on the <aside> in Aside.tsx
+   (v3.5 refactor — see README). */
 
 /* ------------------------------------------------------------
    Branded cart header (rendered inside CartMain)
@@ -378,7 +366,8 @@
   gap: 10px;
   width: 100%;
   margin-top: 16px;
-  padding: 18px 24px;
+  padding-inline: 24px;
+  /* padding-block is set by the inline Tailwind utility "py-4 md:py-[18px]" */
   background: linear-gradient(135deg, #6B46C1 0%, #5B3AB0 100%);
   color: #FFF;
   font-weight: 700;
@@ -409,12 +398,8 @@
   font-size: 18px;
 }
 
-/* Mobile: keep the checkout button sticky-feeling by giving it
-   bottom safe area awareness (already handled at the aside main
-   level, but make sure it has breathing room here too). */
-@media (max-width: 639px) {
-  .cart-checkout-btn { padding-block: 16px; }
-}
+/* Mobile checkout padding-block is now inline on the element in
+   CartSummary.tsx (`py-4 md:py-[18px]`). */
 
 /* ------------------------------------------------------------
    Trust signals

@@ -53,10 +53,10 @@ export function Footer(_props: FooterProps) {
   const year = new Date().getFullYear();
   return (
     <footer className="footer-v2 footer-v3">
-      <div className="footer-trust-strip" aria-label="Trust indicators">
-        <div className="footer-trust-strip-inner">
+      <div className="footer-trust-strip pt-16 pb-12 md:pt-24 md:pb-20" aria-label="Trust indicators">
+        <div className="footer-trust-strip-inner justify-center md:justify-between gap-x-5 gap-y-3 md:gap-6">
           {TRUST_BADGES.map((b) => (
-            <div key={b.label} className="footer-trust-badge">
+            <div key={b.label} className="footer-trust-badge text-xs md:text-[13px]">
               <span className="footer-trust-icon" aria-hidden>{b.icon}</span>
               <span className="footer-trust-label">{b.label}</span>
             </div>
@@ -64,7 +64,7 @@ export function Footer(_props: FooterProps) {
         </div>
       </div>
       <div className="footer-v2-inner">
-        <div className="footer-v2-top footer-v3-top">
+        <div className="footer-v2-top footer-v3-top grid grid-cols-1 sm:grid-cols-2 lg:[grid-template-columns:1.4fr_repeat(5,1fr)] gap-8 md:gap-12">
           <div className="footer-v2-brand">
             <Wordmark color="#FAFAFA" width={150} />
             <p>

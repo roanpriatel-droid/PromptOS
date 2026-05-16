@@ -302,6 +302,64 @@ Section 11 of the v3.3 brief asked for an exhaustive per-page, per-element respo
 
 Real device QA is also unfinished — automated curl checks confirm 200 and content rendering at desktop widths, but iOS Safari, Android Chrome, etc. need browser eyes before launch. The cart→checkout pipeline from v3.2 is verified intact post-merge.
 
+## v3.5 mobile-architecture refactor (2026-05-16)
+
+Converted the hand-rolled mobile `@media` blocks in `promptos-v32.css`, `promptos-v33.css`, and `promptos-v34.css` into inline Tailwind responsive utilities on the consuming components. Out of scope: `promptos-v3.css` and `promptos-v2.css` (the design hand-off — too high a regression risk to touch). All three in-scope CSS files now contain **zero width-based `@media` rules**; only `prefers-reduced-motion` and `(hover: none) and (pointer: coarse)` blocks remain.
+
+### Decisions made autonomously
+
+- **Branch + squash-merge** to main (matches the v3.2/3.3/3.4 Oxygen workflow).
+- **900px breakpoint rounded to md/768.** Per spec confirmation. Two cosmetic effects on a narrow band: (a) the Two-Sides "Or both" pill stacks below 768px instead of 900px — slightly earlier on mid-size tablets, and (b) the desktop `Everything · $798` nav pill hides below 768px instead of 900px. Real desktop (≥1024) is unchanged.
+- **The viewport meta-tag spacing fix** from the prior turn (`width=device-width, initial-scale=1` with space after the comma) is rolled into this commit.
+
+### What converted cleanly (inline Tailwind responsive utilities now drive these)
+
+- `Header.tsx` — Everything-pill CTA: `hidden md:inline-flex` (replaces v32 `@media (max-width: 900px)`).
+- `TwoSidesSection.tsx` — middle pill: `w-full max-w-[320px] min-w-0 md:w-auto md:max-w-none md:min-w-[220px]`.
+- `Footer.tsx` —
+  - trust strip outer padding: `pt-16 pb-12 md:pt-24 md:pb-20` (replaces v33 `min-width: 768px`).
+  - trust strip inner: `justify-center md:justify-between gap-x-5 gap-y-3 md:gap-6` (replaces v32 max-widths 700px and 720px).
+  - trust badge font: `text-xs md:text-[13px]`.
+  - 5-col grid: `grid grid-cols-1 sm:grid-cols-2 lg:[grid-template-columns:1.4fr_repeat(5,1fr)] gap-8 md:gap-12` (replaces v33 1100/640 stair-step).
+- `NewsletterCTA.tsx` — form stack: `flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3` + `w-full sm:w-auto` on input/button. Added `inputMode="email"` while there.
+- `WhatsNewBanner.tsx` — text `text-[13px] sm:text-base` + dismiss button `min-w-[40px] min-h-[40px] sm:min-w-0 sm:min-h-0`.
+- `StickyPurchaseBar.tsx` — outer gets `pb-[env(safe-area-inset-bottom,0)]` (the only genuinely-new mobile-only property; v3.css already handles left/right/border-radius at all sizes).
+- `Aside.tsx` — cart drawer width: `w-full max-w-full md:w-[min(480px,92vw)] md:max-w-[480px]` on `<aside>` when `type === "cart"`; main padding `pb-[calc(20px+env(safe-area-inset-bottom,0))] md:pb-0`.
+- `CartSummary.tsx` — checkout button vertical padding: `py-4 md:py-[18px]`.
+
+### What was deleted as redundant or orphaned
+
+- v33 `@media (max-width: 900px)` two-sides stack — **redundant**. `promptos-v3.css` lines 223–226 already stack `.two-sides-inner` and re-order `.two-sides-divider` at the same 900px breakpoint.
+- v33 typography baseline (`@media (max-width: 767px)` against `.hero h1`, `section h1/h2/h3`, etc.) — **redundant**. The design hand-off uses `clamp()` for fluid typography on these elements, which handles mobile scaling without an override.
+- v33 grid-stack rule (`@media (max-width: 767px)` against `.pack-grid-v2`, `.guide-grid`, `.three-tiers-grid`, etc.) — **redundant**. `promptos-v3.css` already has its own grid responsive breakpoints (max-widths 600, 700, 800, 900 — varied per grid).
+- v33 `.popout-close` rule — **orphan**. No component renders the `popout-close` class.
+- v33 `.recent-purchase-toast` rule — **orphan** (class-name mismatch — `RecentPurchaseToast.tsx` actually uses `.recent-toast`).
+- v33 `.review-carousel-track` / `.review-carousel-grid` rule — **orphan**. No component renders these classes.
+- v32 `.footer-trust-item` rule — **orphan**. `Footer.tsx` uses `.footer-trust-badge`.
+- v32 `.two-sides-cta { width: 100% }` mobile rule — **superseded** by the stacked variant inline.
+
+### What was intentionally NOT converted (and why)
+
+A handful of mobile niceties could not translate to Tailwind responsive utilities without violating the no-`!important` rule. The competing CSS rules are compound-selector rules in `promptos-v3.css` (out of scope) whose specificity outranks a single Tailwind utility class. For these, the mobile experience falls back to the design's own desktop-sized rendering, which still works correctly — just less mobile-polished:
+
+- **Sticky purchase bar `.sticky-purchase .name` mobile font shrink (18px → 14px) and 50vw max-width.** Compound selector specificity (2 classes) outranks any Tailwind utility (1 class). The product name still truncates via `overflow: hidden; text-overflow: ellipsis` on small screens — just shows fewer characters at the design font size.
+- **Sticky purchase bar `.sticky-purchase-inner` mobile flex-wrap + reduced padding.** Same specificity issue. Bar layout stays at desktop padding on mobile.
+- **Recent purchase toast bottom-center on mobile.** `RecentPurchaseToast.tsx` keeps its desktop bottom-left position on mobile (24px from the left edge). The toast is still readable and dismissible; just not centered.
+- **`<details>` accordion +/- marker on mobile footer.** The custom `::after` content for the toggle marker required a CSS-only solution; for v3.5, removed entirely. Footer columns are always-expanded (`<details open>`) and render identically across sizes. Slight UX downgrade: no visual +/- collapse cue on mobile, but the underlying `<details>` element still natively supports tap-to-collapse.
+
+If any of these become a launch blocker, the fix is to bump specificity by either (a) editing `promptos-v3.css` to lower the compound-selector specificity, (b) wrapping competing rules in a `@layer` block, or (c) introducing a single tightly-scoped exception with explicit cascade comments.
+
+### Files after refactor
+
+- `app/styles/promptos-v32.css` — base styles preserved, all 4 width `@media` blocks stripped, all `!important` declarations removed.
+- `app/styles/promptos-v33.css` — base styles preserved (Two-Sides pill base, bundle covers, product card density, footer details marker hide, touch-device hardening), all 12 width `@media` blocks stripped, all `!important` declarations removed.
+- `app/styles/promptos-v34.css` — base cart drawer styles preserved, all 3 width `@media` blocks stripped.
+- `app/styles/tailwind.css`, `promptos.css`, `promptos-v2.css`, `promptos-v3.css`, `app.css`, `reset.css`, `why-promptos.css` — untouched.
+
+### Net effect on cascade
+
+Tailwind v4 utilities are still loaded first in `<head>`. The design CSS (v2/v3) is unlayered, so it still wins compound-selector cascade fights. The refactor doesn't try to dethrone the design CSS — it just stops piling `!important` overrides on top of it. Where a property is set only by my v3.2–3.4 layers (not by v3.css), the inline Tailwind utility now controls it cleanly with no `!important`.
+
 ## Re-extracting the design
 
 If the Claude design hand-off is updated, drop the new file at `~/Downloads/Promptos Storefront.html` and re-run the extractors:

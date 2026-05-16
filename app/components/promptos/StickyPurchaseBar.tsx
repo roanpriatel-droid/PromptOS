@@ -36,7 +36,7 @@ export function StickyPurchaseBar({
   }, [showAfterPx]);
 
   return (
-    <div className={`sticky-purchase${visible ? ' is-visible' : ''}`} aria-hidden={!visible}>
+    <div className={`sticky-purchase pb-[env(safe-area-inset-bottom,0)]${visible ? ' is-visible' : ''}`} aria-hidden={!visible}>
       <div className="sticky-purchase-inner">
         <div className="left">
           <div className="mini-cover">

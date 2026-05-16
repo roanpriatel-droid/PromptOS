@@ -107,7 +107,7 @@ function CartCheckoutActions({
         }).format(totalAmount)
       : null;
   return (
-    <a href={checkoutUrl} target="_self" className="cart-checkout-btn">
+    <a href={checkoutUrl} target="_self" className="cart-checkout-btn py-4 md:py-[18px]">
       <span className="cart-checkout-label">Checkout</span>
       {formatted && (
         <>

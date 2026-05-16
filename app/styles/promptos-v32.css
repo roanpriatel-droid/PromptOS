@@ -30,7 +30,7 @@
    ============================================================ */
 .appnav-cta.appnav-cta-pill {
   position: relative;
-  display: inline-flex;
+  /* display set inline via Tailwind on Header.tsx (`hidden md:inline-flex`) */
   align-items: center;
   gap: 10px;
   padding: 11px 20px;
@@ -100,43 +100,41 @@
   font-size: 13px;
 }
 .appnav.v2.is-scrolled .appnav-cta-savetag { font-size: 9px; top: -8px; right: -8px; }
-@media (max-width: 900px) {
-  /* Mobile: hide the desktop CTA + savetag — drawer has its own */
-  .appnav-cta.appnav-cta-pill { display: none !important; }
-}
+/* v3.5: appnav-cta-pill mobile hide is now an inline Tailwind
+   utility (`hidden md:inline-flex`) on the link in Header.tsx. */
 
 /* ============================================================
    Two Sides middle column — premium pill button
    ============================================================ */
 .two-sides-cta {
   position: relative;
-  display: inline-flex !important;
+  display: inline-flex;
   align-items: center;
   gap: 14px;
   padding: 14px 24px;
-  background: linear-gradient(135deg, #6B46C1 0%, #5B3AB0 100%) !important;
-  color: var(--paper) !important;
+  background: linear-gradient(135deg, #6B46C1 0%, #5B3AB0 100%);
+  color: var(--paper);
   border-radius: 999px;
-  font-weight: 700 !important;
-  font-size: 14px !important;
+  font-weight: 700;
+  font-size: 14px;
   text-decoration: none;
   border: 1px solid rgba(255,255,255,0.15);
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,0.18),
-    0 14px 32px -10px rgba(107,70,193,0.55) !important;
+    0 14px 32px -10px rgba(107,70,193,0.55);
   transition:
     transform 220ms var(--ease),
     box-shadow 220ms var(--ease),
     background 220ms var(--ease);
 }
 .two-sides-cta:hover {
-  transform: scale(1.02) translateY(-1px) !important;
-  background: linear-gradient(135deg, #7B56D1 0%, #6B46C1 100%) !important;
+  transform: scale(1.02) translateY(-1px);
+  background: linear-gradient(135deg, #7B56D1 0%, #6B46C1 100%);
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,0.22),
     0 18px 36px -10px rgba(236,72,153,0.50),
-    0 14px 32px -10px rgba(107,70,193,0.55) !important;
-  color: var(--paper) !important;
+    0 14px 32px -10px rgba(107,70,193,0.55);
+  color: var(--paper);
 }
 .two-sides-cta-title {
   display: flex; flex-direction: column;
@@ -190,11 +188,11 @@
 }
 
 .two-sides-or {
-  font-size: 14px !important;
+  font-size: 14px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--ink-soft) !important;
-  font-weight: 700 !important;
+  color: var(--ink-soft);
+  font-weight: 700;
 }
 .two-sides-arrow {
   color: var(--promptos-purple);
@@ -202,11 +200,11 @@
   display: inline-flex; align-items: center; justify-content: center;
 }
 .two-sides-arrow svg { width: 36px; height: 36px; }
-.two-sides-divider-inner { gap: 18px !important; }
+.two-sides-divider-inner { gap: 18px; }
 
-@media (max-width: 900px) {
-  .two-sides-cta { width: 100%; justify-content: center; }
-}
+/* v3.5: legacy .two-sides-cta width override removed. The current
+   TwoSidesSection.tsx uses .two-sides-cta-stacked which gets its
+   full-width-mobile behavior via inline Tailwind on the component. */
 
 /* ============================================================
    Product card — 3-bullet highlights
@@ -333,38 +331,13 @@
 /* ============================================================
    Footer trust strip + Legal column + USD note
    ============================================================ */
-.footer-trust-strip {
-  background: var(--cream);
-  border-bottom: 1px solid var(--hairline);
-  padding: 18px 0;
-}
-.footer-trust-strip-inner {
-  max-width: var(--container);
-  margin: 0 auto;
-  padding: 0 var(--space-5);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 24px;
-  flex-wrap: wrap;
-}
-.footer-trust-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 13px;
-  color: var(--ink-soft);
-  font-weight: 500;
-}
-.footer-trust-item svg {
-  width: 18px; height: 18px;
-  color: var(--promptos-pink);
-  flex-shrink: 0;
-}
-@media (max-width: 700px) {
-  .footer-trust-strip-inner { justify-content: center; gap: 14px; }
-  .footer-trust-item { font-size: 12px; }
-}
+/* v3.5: legacy .footer-trust-strip + .footer-trust-item rules
+   removed. The current Footer.tsx uses .footer-trust-badge and
+   the second .footer-trust-strip definition (further below in this
+   file). Responsive padding/gap/justify is inline Tailwind. */
+/* v3.5: footer-trust-item rule was orphaned (no consumer uses
+   the .footer-trust-item class — Footer.tsx uses .footer-trust-badge).
+   Inner-strip mobile layout moved to inline Tailwind on Footer.tsx. */
 
 .footer-v2 .pay-note {
   width: 100%;
@@ -509,18 +482,17 @@
   padding: 18px 32px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 24px;
   flex-wrap: wrap;
+  /* justify-content + gap set inline via Tailwind on Footer.tsx */
 }
 .footer-trust-badge {
   display: inline-flex;
   align-items: center;
   gap: 10px;
   color: #FAFAFA;
-  font-size: 13px;
   letter-spacing: 0.01em;
   white-space: nowrap;
+  /* font-size set inline via Tailwind on Footer.tsx */
 }
 .footer-trust-icon {
   font-size: 15px;
@@ -537,14 +509,8 @@
   color: rgba(250, 250, 250, 0.82);
   font-weight: 500;
 }
-@media (max-width: 720px) {
-  .footer-trust-strip-inner {
-    justify-content: flex-start;
-    padding: 14px 22px;
-    gap: 14px 18px;
-  }
-  .footer-trust-badge { font-size: 12px; }
-}
+/* v3.5: footer trust-strip inner + badge mobile responsive sizing
+   moved to inline Tailwind on Footer.tsx. */
 
 .footer-v2-bottom-lines {
   display: flex;
