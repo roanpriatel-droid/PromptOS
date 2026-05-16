@@ -20,6 +20,7 @@ import promptosV2Styles from './styles/promptos-v2.css?url';
 import promptosV3Styles from './styles/promptos-v3.css?url';
 import whyPromptosStyles from './styles/why-promptos.css?url';
 import promptosV32Styles from './styles/promptos-v32.css?url';
+import promptosV33Styles from './styles/promptos-v33.css?url';
 import {PageLayout} from './components/PageLayout';
 import {RecentPurchaseToast} from './components/promptos/RecentPurchaseToast';
 import {WhatsNewBanner} from './components/promptos/WhatsNewBanner';
@@ -66,15 +67,15 @@ export const shouldRevalidate: ShouldRevalidateFunction = ({
  */
 export function links() {
   return [
-    {
-      rel: 'preconnect',
-      href: 'https://cdn.shopify.com',
-    },
-    {
-      rel: 'preconnect',
-      href: 'https://shop.app',
-    },
+    {rel: 'preconnect', href: 'https://cdn.shopify.com'},
+    {rel: 'preconnect', href: 'https://shop.app'},
+    // Favicon set generated via scripts/generate-favicons.mjs.
+    {rel: 'icon', href: '/favicon.ico', sizes: 'any'},
     {rel: 'icon', type: 'image/svg+xml', href: favicon},
+    {rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png'},
+    {rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png'},
+    {rel: 'apple-touch-icon', href: '/apple-touch-icon.png'},
+    {rel: 'manifest', href: '/site.webmanifest'},
   ];
 }
 
@@ -162,6 +163,12 @@ export function Layout({children}: {children?: React.ReactNode}) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta name="theme-color" content="#6B46C1" />
+        <meta name="msapplication-TileColor" content="#6B46C1" />
+        <meta property="og:image" content="/og-default.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:image" content="/og-default.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="stylesheet" href={tailwindCss}></link>
@@ -171,6 +178,7 @@ export function Layout({children}: {children?: React.ReactNode}) {
         <link rel="stylesheet" href={promptosV3Styles}></link>
         <link rel="stylesheet" href={whyPromptosStyles}></link>
         <link rel="stylesheet" href={promptosV32Styles}></link>
+        <link rel="stylesheet" href={promptosV33Styles}></link>
         <Meta />
         <Links />
         <JsonLd data={[organizationSchema(), websiteSchema()]} />

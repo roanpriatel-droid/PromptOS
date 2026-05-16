@@ -19,6 +19,24 @@ export function WhatsNewBanner() {
     }
   }, []);
 
+  const dismiss = () => {
+    setDismissed(true);
+    try {
+      localStorage.setItem(STORAGE_KEY, '1');
+    } catch {
+      // localStorage blocked — banner stays dismissed for this session only
+    }
+  };
+
+  useEffect(() => {
+    if (dismissed) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') dismiss();
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [dismissed]);
+
   if (dismissed) return null;
 
   return (
@@ -34,14 +52,7 @@ export function WhatsNewBanner() {
         type="button"
         className="whats-new-close"
         aria-label="Dismiss banner"
-        onClick={() => {
-          setDismissed(true);
-          try {
-            localStorage.setItem(STORAGE_KEY, '1');
-          } catch {
-            // localStorage blocked — banner stays dismissed for this session only
-          }
-        }}
+        onClick={dismiss}
       >
         <svg viewBox="0 0 16 16" width="12" height="12" fill="none" aria-hidden>
           <path d="m4 4 8 8M12 4 4 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />

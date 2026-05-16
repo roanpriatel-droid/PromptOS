@@ -25,21 +25,18 @@ const COMPANY_LINKS = [
   {label: 'Updates', to: '/updates'},
 ];
 
+// v3.3 — Support now includes the legal links (Legal column removed
+// per the 5-column spec). FAQ anchor kept on homepage where the
+// FaqV2 section actually lives.
 const SUPPORT_LINKS = [
   {label: 'Contact', to: '/contact'},
   {label: 'FAQ', to: '/#faq'},
   {label: 'License', to: '/license'},
   {label: 'Refunds', to: '/refunds'},
-  {label: 'Account', to: '/account'},
-];
-
-const LEGAL_LINKS = [
-  {label: 'Terms of Service', to: '/legal/terms'},
-  {label: 'Privacy Policy', to: '/privacy'},
-  {label: 'Refund Policy', to: '/refunds'},
-  {label: 'License Agreement', to: '/license'},
-  {label: 'Cookie Policy', to: '/legal/cookies'},
-  {label: 'DMCA Policy', to: '/legal/dmca'},
+  {label: 'Terms', to: '/legal/terms'},
+  {label: 'Privacy', to: '/privacy'},
+  {label: 'Cookies', to: '/legal/cookies'},
+  {label: 'DMCA', to: '/legal/dmca'},
   {label: 'Acceptable Use', to: '/legal/acceptable-use'},
 ];
 
@@ -77,78 +74,79 @@ export function Footer(_props: FooterProps) {
           </div>
 
           <div className="footer-v2-col">
-            <h6>Packs</h6>
-            <ul>
-              {PACKS.map((p) => (
-                <li key={p.slug}>
-                  <Link to={`/packs/${p.slug}`} prefetch="intent">{p.name}</Link>
+            <details open>
+              <summary><h6>Packs</h6></summary>
+              <ul>
+                {PACKS.map((p) => (
+                  <li key={p.slug}>
+                    <Link to={`/packs/${p.slug}`} prefetch="intent">{p.name}</Link>
+                  </li>
+                ))}
+                <li>
+                  <Link to={`/bundles/packs`} prefetch="intent">
+                    Packs Bundle, $99
+                  </Link>
                 </li>
-              ))}
-              <li>
-                <Link to={`/bundles/packs`} prefetch="intent">
-                  Packs Bundle, $99
-                </Link>
-              </li>
-            </ul>
+              </ul>
+            </details>
           </div>
 
           <div className="footer-v2-col">
-            <h6>Authority</h6>
-            <ul>
-              {AUTHORITY.map((a) => (
-                <li key={a.slug}>
-                  <Link to={`/authority/${a.slug}`} prefetch="intent">{a.name}</Link>
+            <details open>
+              <summary><h6>Playbooks</h6></summary>
+              <ul>
+                {GUIDES.map((g) => (
+                  <li key={g.slug}>
+                    <Link to={`/guides/${g.slug}`} prefetch="intent">{g.name}</Link>
+                  </li>
+                ))}
+                <li>
+                  <Link to={`/bundles/guides`} prefetch="intent">
+                    Guides Bundle, $497
+                  </Link>
                 </li>
-              ))}
-              <li>
-                <Link to={`/bundles/authority`} prefetch="intent">
-                  Authority Bundle, $249
-                </Link>
-              </li>
-            </ul>
+              </ul>
+            </details>
           </div>
 
           <div className="footer-v2-col">
-            <h6>Playbooks</h6>
-            <ul>
-              {GUIDES.map((g) => (
-                <li key={g.slug}>
-                  <Link to={`/guides/${g.slug}`} prefetch="intent">{g.name}</Link>
+            <details open>
+              <summary><h6>Authority</h6></summary>
+              <ul>
+                {AUTHORITY.map((a) => (
+                  <li key={a.slug}>
+                    <Link to={`/authority/${a.slug}`} prefetch="intent">{a.name}</Link>
+                  </li>
+                ))}
+                <li>
+                  <Link to={`/bundles/authority`} prefetch="intent">
+                    Authority Bundle, $249
+                  </Link>
                 </li>
-              ))}
-              <li>
-                <Link to={`/bundles/guides`} prefetch="intent">
-                  Guides Bundle, $497
-                </Link>
-              </li>
-            </ul>
+              </ul>
+            </details>
           </div>
 
           <div className="footer-v2-col">
-            <h6>Company</h6>
-            <ul>
-              {COMPANY_LINKS.map((l) => (
-                <li key={l.label}><Link to={l.to} prefetch="intent">{l.label}</Link></li>
-              ))}
-            </ul>
+            <details open>
+              <summary><h6>Company</h6></summary>
+              <ul>
+                {COMPANY_LINKS.map((l) => (
+                  <li key={l.label}><Link to={l.to} prefetch="intent">{l.label}</Link></li>
+                ))}
+              </ul>
+            </details>
           </div>
 
           <div className="footer-v2-col">
-            <h6>Support</h6>
-            <ul>
-              {SUPPORT_LINKS.map((l) => (
-                <li key={l.label}><Link to={l.to} prefetch="intent">{l.label}</Link></li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="footer-v2-col">
-            <h6>Legal</h6>
-            <ul>
-              {LEGAL_LINKS.map((l) => (
-                <li key={l.label}><Link to={l.to} prefetch="intent">{l.label}</Link></li>
-              ))}
-            </ul>
+            <details open>
+              <summary><h6>Support</h6></summary>
+              <ul>
+                {SUPPORT_LINKS.map((l) => (
+                  <li key={l.label}><Link to={l.to} prefetch="intent">{l.label}</Link></li>
+                ))}
+              </ul>
+            </details>
           </div>
         </div>
 

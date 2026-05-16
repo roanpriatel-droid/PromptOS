@@ -59,6 +59,10 @@ function PackCardV2({pack}: {pack: typeof PACKS[number]}) {
         <ul className="card-highlights">
           {highlights.map((h) => <li key={h}>{h}</li>)}
         </ul>
+        <hr className="card-pink-divider" aria-hidden />
+        <p className="card-best-for">
+          <span className="card-best-for-label">Best for:</span>{pack.audience}
+        </p>
         <div className="card-rating">
           <RatingStars rating={stats.average} />
           <span className="card-rating-text">

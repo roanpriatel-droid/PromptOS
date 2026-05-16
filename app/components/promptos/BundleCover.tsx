@@ -14,7 +14,7 @@ export function BundleCover() {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 800 1000"
-      preserveAspectRatio="xMidYMid slice"
+      preserveAspectRatio="xMidYMid meet"
       role="img"
       aria-label="The Complete Bundle"
     >
