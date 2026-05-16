@@ -204,7 +204,7 @@ export function Header({isLoggedIn, cart}: HeaderProps) {
             </Link>
             <button
               type="button"
-              className={`hamburger${drawerOpen ? ' is-open' : ''}`}
+              className={`hamburger flex-col min-w-[44px] min-h-[44px]${drawerOpen ? ' is-open' : ''}`}
               aria-label={drawerOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={drawerOpen}
               onClick={() => setDrawerOpen((v) => !v)}
@@ -282,7 +282,7 @@ function MobileDrawer({open, onClose}: {open: boolean; onClose: () => void}) {
           <Wordmark width={120} />
           <button
             type="button"
-            className="hamburger is-open"
+            className="hamburger is-open flex-col min-w-[44px] min-h-[44px]"
             aria-label="Close menu"
             onClick={onClose}
           >
