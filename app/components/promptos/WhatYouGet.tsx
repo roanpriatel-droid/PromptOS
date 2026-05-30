@@ -1,9 +1,11 @@
 import {SectionFade} from './SectionFade';
 
+// v3.8a Phase 4G — reframed from deliverable list to value props.
+// Title labels the deliverable; body frames the buyer benefit.
 const ITEMS = [
   {
-    title: 'Editable .docx',
-    body: 'Open in Word, Google Docs, or any editor that handles docx. Fork it, brand it, tune it.',
+    title: 'Editable .docx + PDF',
+    body: 'Fork it for your clients. License includes commercial use.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" aria-hidden>
         <path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" />
@@ -12,8 +14,8 @@ const ITEMS = [
     ),
   },
   {
-    title: 'Polished PDF',
-    body: 'A typeset, page-broken PDF mirror, the version you keep on the desktop.',
+    title: 'Polished PDF mirror',
+    body: 'The version that lives on your desktop. Type-set, page-broken, looks like a book.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" aria-hidden>
         <path d="M6 3h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" />
@@ -23,8 +25,8 @@ const ITEMS = [
     ),
   },
   {
-    title: 'Notion template',
-    body: 'Select packs ship with a Notion mirror so you can drop prompts into your workspace.',
+    title: 'Notion template (select packs)',
+    body: 'Drop prompts into your workspace. No reformatting.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" aria-hidden>
         <rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" strokeWidth="1.7" />
@@ -34,7 +36,7 @@ const ITEMS = [
   },
   {
     title: 'Lifetime updates',
-    body: 'Every future version of the packs you bought, free, as long as Promptos exists.',
+    body: 'Every future version of this pack, free, forever. Most packs gain 10-15 prompts per year.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" aria-hidden>
         <path d="M20 12a8 8 0 1 1-3-6.24M20 4v5h-5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
