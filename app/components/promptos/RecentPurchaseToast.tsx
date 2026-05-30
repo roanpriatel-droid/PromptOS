@@ -134,7 +134,7 @@ export function RecentPurchaseToast() {
           </p>
           <p className="recent-toast-meta">
             <span className="recent-toast-time">{timestamp}</span>
-            <span className="recent-toast-badge">Verified buyer</span>
+            <span className="recent-toast-badge">Early access buyer</span>
           </p>
         </div>
       </Link>

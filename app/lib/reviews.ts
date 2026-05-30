@@ -4,7 +4,7 @@
  *
  * 1407 reviews across all 20 products, distributed per spec
  * (70/20/8/2 rating split). Disclosure copy lives on the /reviews page , 
- * every review here is labeled "Early Access · Verified Buyer".
+ * every review here is labeled "Early Access · Honest Feedback".
  */
 
 export type Review = {
