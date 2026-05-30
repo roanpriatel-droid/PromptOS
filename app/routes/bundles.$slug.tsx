@@ -37,6 +37,7 @@ import {FaqV2} from '~/components/promptos/FaqV2';
 import {NewsletterCTA} from '~/components/promptos/NewsletterCTA';
 import {BundleSelector} from '~/components/promptos/BundleSelector';
 import {AddToCartButton} from '~/components/AddToCartButton';
+import {BuyTrustStrip} from '~/components/promptos/BuyTrustStrip';
 import {
   JsonLd,
   breadcrumbSchema,
@@ -155,6 +156,7 @@ function PacksBundlePage({stats, shopify}: {stats: ReturnType<typeof getReviewSt
             )}
             <a href="#breakdown" className="btn btn-large btn-ghost btn-arrow" style={{color: '#fff'}}>What's included</a>
           </div>
+          <BuyTrustStrip />
         </div>
       </section>
 
@@ -257,6 +259,7 @@ function GuidesBundlePage({stats, shopify}: {stats: ReturnType<typeof getReviewS
             )}
             <a href="#breakdown" className="btn btn-large btn-ghost btn-arrow" style={{color: '#fff'}}>What's included</a>
           </div>
+          <BuyTrustStrip />
         </div>
       </section>
 
@@ -392,6 +395,7 @@ function EverythingPage({stats, shopify}: {stats: ReturnType<typeof getReviewSta
             )}
             <a href="#mega-breakdown" className="btn btn-large btn-ghost btn-arrow" style={{color: '#fff'}}>See what's inside</a>
           </div>
+          <BuyTrustStrip />
 
           <div style={{marginTop: 18}}>
             <span className="scarcity-line">
@@ -537,6 +541,7 @@ function AuthorityBundlePage({stats, shopify}: {stats: ReturnType<typeof getRevi
             )}
             <a href="#breakdown" className="btn btn-large btn-ghost btn-arrow" style={{color: '#fff'}}>What's included</a>
           </div>
+          <BuyTrustStrip />
         </div>
       </section>
 

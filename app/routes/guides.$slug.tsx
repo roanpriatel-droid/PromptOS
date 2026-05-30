@@ -19,6 +19,7 @@ import {StickyPurchaseBar} from '~/components/promptos/StickyPurchaseBar';
 import {SectionFade} from '~/components/promptos/SectionFade';
 import {RatingStars} from '~/components/promptos/RatingStars';
 import {AddToCartButton} from '~/components/AddToCartButton';
+import {BuyTrustStrip} from '~/components/promptos/BuyTrustStrip';
 import {
   JsonLd,
   breadcrumbSchema,
@@ -142,6 +143,7 @@ export default function GuideRoute({loaderData}: Route.ComponentProps) {
                     Currently unavailable
                   </button>
                 )}
+                <BuyTrustStrip />
                 <p className="upsell">
                   Or pair with prompts, get <Link to="/bundles/everything" prefetch="intent">everything for ${MEGA.priceUSD}</Link> (save ${MEGA.savings}).
                 </p>

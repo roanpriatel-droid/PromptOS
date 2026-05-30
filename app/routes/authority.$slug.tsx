@@ -41,6 +41,7 @@ import {NewsletterCTA} from '~/components/promptos/NewsletterCTA';
 import {SectionFade} from '~/components/promptos/SectionFade';
 import {RatingStars} from '~/components/promptos/RatingStars';
 import {AddToCartButton} from '~/components/AddToCartButton';
+import {BuyTrustStrip} from '~/components/promptos/BuyTrustStrip';
 import {
   JsonLd,
   breadcrumbSchema,
@@ -263,6 +264,7 @@ function GuideStyle({
                     Currently unavailable
                   </button>
                 )}
+                <BuyTrustStrip />
                 <p className="upsell">
                   Or get all 3 Authority products for <Link to="/bundles/authority" prefetch="intent">${AUTHORITY_BUNDLE.priceUSD} (save ${AUTHORITY_BUNDLE.savings})</Link>.
                 </p>
