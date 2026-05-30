@@ -35,6 +35,7 @@ import {ThreePathsComparison} from '~/components/promptos/ThreePathsComparison';
 import {ReviewSummary} from '~/components/promptos/ReviewSummary';
 import {ReviewGrid} from '~/components/promptos/ReviewGrid';
 import {GuaranteeBlock} from '~/components/promptos/GuaranteeBlock';
+import {WhyThisWorks} from '~/components/promptos/WhyThisWorks';
 import {PairWith} from '~/components/promptos/PairWith';
 import {StickyPurchaseBar} from '~/components/promptos/StickyPurchaseBar';
 import {NewsletterCTA} from '~/components/promptos/NewsletterCTA';
@@ -149,6 +150,7 @@ function PackStyle({
         <SamplePromptFull pack={pack} />
         <WhoForV2 pack={pack} />
         <WhatYouGet />
+        <WhyThisWorks />
 
         <section id="reviews" style={{padding: '96px 0', background: 'var(--bone)', borderBlock: '1px solid var(--hairline)'}}>
           <div style={{maxWidth: 1080, margin: '0 auto', padding: '0 var(--space-5)'}}>
@@ -291,6 +293,7 @@ function GuideStyle({
         )}
         {product.templates && <TemplateShowcase guide={guideShape} />}
         {product.roadmap && <RoadmapTimeline guide={guideShape} />}
+        <WhyThisWorks />
 
         <section style={{padding: '96px 0', background: 'var(--bone)', borderBlock: '1px solid var(--hairline)'}}>
           <div style={{maxWidth: 1080, margin: '0 auto', padding: '0 var(--space-5)'}}>

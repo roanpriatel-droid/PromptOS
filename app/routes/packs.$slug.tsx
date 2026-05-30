@@ -19,6 +19,7 @@ import {PairWith} from '~/components/promptos/PairWith';
 import {ReviewSummary} from '~/components/promptos/ReviewSummary';
 import {ReviewGrid} from '~/components/promptos/ReviewGrid';
 import {GuaranteeBlock} from '~/components/promptos/GuaranteeBlock';
+import {WhyThisWorks} from '~/components/promptos/WhyThisWorks';
 import {StickyPurchaseBar} from '~/components/promptos/StickyPurchaseBar';
 import {SectionFade} from '~/components/promptos/SectionFade';
 import {RatingStars} from '~/components/promptos/RatingStars';
@@ -106,6 +107,7 @@ export default function PackRoute({loaderData}: Route.ComponentProps) {
         <SamplePromptFull pack={pack} />
         <WhoForV2 pack={pack} />
         <WhatYouGet />
+        <WhyThisWorks />
 
         <section id="reviews" style={{padding: '96px 0', background: 'var(--bone)', borderBlock: '1px solid var(--hairline)'}}>
           <div style={{maxWidth: 1080, margin: '0 auto', padding: '0 var(--space-5)'}}>

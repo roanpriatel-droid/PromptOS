@@ -14,6 +14,7 @@ import {RoadmapTimeline} from '~/components/promptos/RoadmapTimeline';
 import {ReviewSummary} from '~/components/promptos/ReviewSummary';
 import {ReviewGrid} from '~/components/promptos/ReviewGrid';
 import {GuaranteeBlock} from '~/components/promptos/GuaranteeBlock';
+import {WhyThisWorks} from '~/components/promptos/WhyThisWorks';
 import {PairWith} from '~/components/promptos/PairWith';
 import {StickyPurchaseBar} from '~/components/promptos/StickyPurchaseBar';
 import {SectionFade} from '~/components/promptos/SectionFade';
@@ -165,6 +166,7 @@ export default function GuideRoute({loaderData}: Route.ComponentProps) {
         <OutcomesGrid title={outcomeHeadline(guide.shortName)} outcomes={guide.outcomes} />
         <TemplateShowcase guide={guide} />
         <RoadmapTimeline guide={guide} />
+        <WhyThisWorks />
 
         {/* Reviews for this guide */}
         <section style={{padding: '96px 0', background: 'var(--bone)', borderBlock: '1px solid var(--hairline)'}}>
