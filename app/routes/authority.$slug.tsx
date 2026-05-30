@@ -212,7 +212,7 @@ function GuideStyle({
             </div>
             <SectionFade as="div" className="guide-info" delayMs={120}>
               <div className="vol">Authority · {product.role}</div>
-              <h1>{product.name}.</h1>
+              <h1>{product.headline ?? `${product.name}.`}</h1>
               <p className="tagline">{product.tagline}</p>
 
               <div style={{marginTop: 18, display: 'flex', alignItems: 'center', gap: 10}}>

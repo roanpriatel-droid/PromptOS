@@ -30,7 +30,7 @@ export function ProductHeroV2({
 
         <div className="product-info-v2">
           <div className="vol">Vol. {pack.number}</div>
-          <h1>{pack.name}.</h1>
+          <h1>{pack.headline ?? `${pack.name}.`}</h1>
           <p className="tagline">{pack.tagline}</p>
 
           <div className="product-price-row">

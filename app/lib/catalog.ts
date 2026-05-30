@@ -75,6 +75,9 @@ export type Pack = {
   shopifyHandle: string;
   number: string;            // 01–07
   name: string;
+  /** v3.8a Phase 4B — conversion-tuned outcome headline used in the hero
+   *  in place of `name`. Falls back to `name` if undefined. */
+  headline?: string;
   shortName: string;
   audience: string;
   role: string;
@@ -99,6 +102,8 @@ export type Guide = {
   shopifyHandle: string;
   number: string;            // G1–G8
   name: string;
+  /** v3.8a Phase 4B — see Pack.headline. */
+  headline?: string;
   shortName: string;
   category: 'agency' | 'solo' | 'premium';
   tone: PackTone;
@@ -129,6 +134,8 @@ export type Bundle = {
   slug: string;
   shopifyHandle: string;
   name: string;
+  /** v3.8a Phase 4B — see Pack.headline. */
+  headline?: string;
   shortName: string;
   tagline: string;
   description: string;
@@ -156,6 +163,8 @@ export type Authority = {
   shopifyHandle: string;
   number: string;            // A1, A2, A3
   name: string;
+  /** v3.8a Phase 4B — see Pack.headline. */
+  headline?: string;
   shortName: string;
   audience: string;
   role: string;
@@ -259,6 +268,7 @@ export const PACKS: Pack[] = [
     shopifyHandle: 'marketer',
     number: '01',
     name: "The Marketer's Pack",
+    headline: '65 prompts that replace the $300/hr agency you can\'t afford.',
     shortName: "Marketer's",
     audience: 'Marketers, content creators, growth pros',
     role: 'For marketers & content pros',
@@ -296,6 +306,7 @@ export const PACKS: Pack[] = [
     shopifyHandle: 'writer',
     number: '02',
     name: "The Writer's Pack",
+    headline: '65 prompts for fiction, non-fiction, and copy that doesn\'t read like AI.',
     shortName: "Writer's",
     audience: 'Fiction, non-fiction, copywriters',
     role: 'For fiction, non-fiction, copy',
@@ -333,6 +344,7 @@ export const PACKS: Pack[] = [
     shopifyHandle: 'developer',
     number: '03',
     name: 'The Developer Pack',
+    headline: '55 prompts for code review, debugging, and architecture. Built by an engineer.',
     shortName: 'Developer',
     audience: 'Software engineers and technical builders',
     role: 'For software engineers',
@@ -370,6 +382,7 @@ export const PACKS: Pack[] = [
     shopifyHandle: 'solopreneur',
     number: '04',
     name: 'The Solopreneur Pack',
+    headline: '65 prompts for the seven hats. Especially the 11pm investor-update one.',
     shortName: 'Solopreneur',
     audience: 'Solo founders, freelancers, indie hackers',
     role: 'For founders & freelancers',
@@ -407,6 +420,7 @@ export const PACKS: Pack[] = [
     shopifyHandle: 'content-creator',
     number: '05',
     name: 'The Content Creator Pack',
+    headline: '65 prompts for YouTube, newsletters, and short-form. Three channels, one Saturday back.',
     shortName: 'Creator',
     audience: 'YouTubers, newsletter writers, TikTokers',
     role: 'For YouTubers, newsletter writers',
@@ -444,6 +458,7 @@ export const PACKS: Pack[] = [
     shopifyHandle: 'ai-power-user',
     number: '06',
     name: 'The AI Power User Pack',
+    headline: '60 meta-prompts for power users. Including the ones we use internally.',
     shortName: 'AI Power User',
     audience: 'Anyone who uses AI every day',
     role: 'For daily AI users',
@@ -481,6 +496,7 @@ export const PACKS: Pack[] = [
     shopifyHandle: 'productivity',
     number: '07',
     name: 'The Productivity Pack',
+    headline: '55 prompts for knowledge work that doesn\'t bury you in process.',
     shortName: 'Productivity',
     audience: 'Knowledge workers, executives, students',
     role: 'For knowledge workers',
@@ -581,6 +597,7 @@ export const GUIDES: Guide[] = [
     shopifyHandle: 'ai-automation-agency',
     number: 'G1',
     name: 'The AI Automation Agency Playbook',
+    headline: 'First $5k retainer in 90 days. 180 pages. 14 templates.',
     shortName: 'AI Automation Agency',
     category: 'premium',
     tone: 'midnight',
@@ -674,6 +691,7 @@ export const GUIDES: Guide[] = [
     shopifyHandle: 'ai-agent-builder',
     number: 'G2',
     name: 'The AI Agent Builder Playbook',
+    headline: 'Production agents that don\'t break. Eval-first. 180 pages.',
     shortName: 'AI Agent Builder',
     category: 'premium',
     tone: 'midnight',
@@ -765,6 +783,7 @@ export const GUIDES: Guide[] = [
     shopifyHandle: 'web-design-agency',
     number: 'G3',
     name: 'The Web Design Agency Playbook',
+    headline: '$10k months by week 13. Productized. 140 pages.',
     shortName: 'Web Design Agency',
     category: 'agency',
     tone: 'plum',
@@ -854,6 +873,7 @@ export const GUIDES: Guide[] = [
     shopifyHandle: 'digital-products',
     number: 'G4',
     name: 'The Digital Products Playbook',
+    headline: 'Ship a $97-$297 digital product in 90 days. Without quitting your job.',
     shortName: 'Digital Products',
     category: 'solo',
     tone: 'pink',
@@ -941,6 +961,7 @@ export const GUIDES: Guide[] = [
     shopifyHandle: 'newsletter-business',
     number: 'G5',
     name: 'The Newsletter Business Playbook',
+    headline: 'First 100 subscribers to first $1,000/month. 90 pages, 12 chapters.',
     shortName: 'Newsletter',
     category: 'solo',
     tone: 'sand',
@@ -1029,6 +1050,7 @@ export const GUIDES: Guide[] = [
     shopifyHandle: 'faceless-content',
     number: 'G6',
     name: 'The Faceless Content Playbook',
+    headline: '10k subs and $1k/mo on 4 videos a week. Faceless. 130 pages.',
     shortName: 'Faceless Content',
     category: 'solo',
     tone: 'plum',
@@ -1119,6 +1141,7 @@ export const GUIDES: Guide[] = [
     shopifyHandle: 'saas-side-project',
     number: 'G7',
     name: 'The SaaS Side Project Playbook',
+    headline: '$1,000 MRR in 90 days. Without quitting your job. 140 pages.',
     shortName: 'SaaS Side Project',
     category: 'solo',
     tone: 'forest',
@@ -1208,6 +1231,7 @@ export const GUIDES: Guide[] = [
     shopifyHandle: 'coaching-consulting',
     number: 'G8',
     name: 'The Coaching/Consulting Playbook',
+    headline: '$200/hr (or $5k packages) for the work you already do. 130 pages.',
     shortName: 'Coaching',
     category: 'agency',
     tone: 'gold',
@@ -1319,6 +1343,7 @@ export const AUTHORITY: Authority[] = [
     shopifyHandle: 'personal-brand',
     number: 'A1',
     name: 'The Personal Brand Playbook',
+    headline: 'Build distribution you own. Without daily posting.',
     shortName: 'Personal Brand',
     audience: 'Creators, founders, and operators ready to build an audience',
     role: 'For audience builders',
@@ -1400,6 +1425,7 @@ export const AUTHORITY: Authority[] = [
     shopifyHandle: 'content-engine',
     number: 'A2',
     name: 'The Content Engine Pack',
+    headline: '75 prompts for daily content that compounds.',
     shortName: 'Content Engine',
     audience: 'Creators and operators shipping content daily',
     role: 'For daily posters',
@@ -1437,6 +1463,7 @@ export const AUTHORITY: Authority[] = [
     shopifyHandle: 'high-ticket-finder',
     number: 'A3',
     name: 'The High-Ticket Product Finder',
+    headline: 'Find the $4k offer hidden in what you already know.',
     shortName: 'High-Ticket Finder',
     audience: 'Creators with 1K+ followers ready to monetize beyond sponsors',
     role: 'For audience-to-product',
@@ -1525,6 +1552,7 @@ export const PACKS_BUNDLE: Bundle = {
   slug: 'packs',
   shopifyHandle: 'packs',
   name: 'The Packs Bundle',
+  headline: 'All 7 packs. 430 prompts. Save $154.',
   shortName: 'Packs Bundle',
   tagline: 'All 7 prompt packs. 430 prompts. One price.',
   description:
@@ -1545,6 +1573,7 @@ export const AUTHORITY_BUNDLE: Bundle = {
   slug: 'authority',
   shopifyHandle: 'authority',
   name: 'The Authority Bundle',
+  headline: 'Build the audience. Productize it. Save $34.',
   shortName: 'Authority Bundle',
   tagline: 'Build your audience. Productize your expertise. One bundle.',
   description:
@@ -1565,6 +1594,7 @@ export const GUIDES_BUNDLE: Bundle = {
   slug: 'guides',
   shopifyHandle: 'guides',
   name: 'The Guides Bundle',
+  headline: 'Every playbook. 1,220+ pages. Save $679.',
   shortName: 'Guides Bundle',
   tagline: 'Every Promptos playbook. One price. 600+ pages of real frameworks.',
   description:
@@ -1600,6 +1630,7 @@ export const MEGA_BUNDLE: Bundle = {
   slug: 'everything',
   shopifyHandle: 'everything',
   name: 'Everything',
+  headline: 'Every product. One investment. Save $914.',
   shortName: 'Everything',
   tagline: 'Every pack. Every playbook. Every Authority product. One investment. Done.',
   description:

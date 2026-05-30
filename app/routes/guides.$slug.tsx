@@ -91,7 +91,7 @@ export default function GuideRoute({loaderData}: Route.ComponentProps) {
             </div>
             <SectionFade as="div" className="guide-info" delayMs={120}>
               <div className="vol">Vol. {guide.number} · {guide.role}</div>
-              <h1>{guide.name}.</h1>
+              <h1>{guide.headline ?? `${guide.name}.`}</h1>
               <p className="tagline">{guide.tagline}</p>
 
               <div style={{marginTop: 18, display: 'flex', alignItems: 'center', gap: 10}}>
