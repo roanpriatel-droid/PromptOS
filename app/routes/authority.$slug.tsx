@@ -15,6 +15,7 @@ import {getReviewsForProduct, getReviewStats} from '~/lib/reviews';
 
 // Pack-style components (used for content-engine)
 import {ProductHeroV2} from '~/components/promptos/ProductHeroV2';
+import {ReviewsTransparencyLine} from '~/components/promptos/ReviewsTransparencyLine';
 import {ProductSectionsV2} from '~/components/promptos/ProductSectionsV2';
 import {SamplePromptFull} from '~/components/promptos/SamplePromptFull';
 import {WhoForV2} from '~/components/promptos/WhoForV2';
@@ -34,12 +35,14 @@ import {ThreePathsComparison} from '~/components/promptos/ThreePathsComparison';
 import {ReviewSummary} from '~/components/promptos/ReviewSummary';
 import {ReviewGrid} from '~/components/promptos/ReviewGrid';
 import {GuaranteeBlock} from '~/components/promptos/GuaranteeBlock';
+import {WhyThisWorks} from '~/components/promptos/WhyThisWorks';
 import {PairWith} from '~/components/promptos/PairWith';
 import {StickyPurchaseBar} from '~/components/promptos/StickyPurchaseBar';
 import {NewsletterCTA} from '~/components/promptos/NewsletterCTA';
 import {SectionFade} from '~/components/promptos/SectionFade';
 import {RatingStars} from '~/components/promptos/RatingStars';
 import {AddToCartButton} from '~/components/AddToCartButton';
+import {BuyTrustStrip} from '~/components/promptos/BuyTrustStrip';
 import {
   JsonLd,
   breadcrumbSchema,
@@ -147,10 +150,12 @@ function PackStyle({
         <SamplePromptFull pack={pack} />
         <WhoForV2 pack={pack} />
         <WhatYouGet />
+        <WhyThisWorks />
 
         <section id="reviews" style={{padding: '96px 0', background: 'var(--bone)', borderBlock: '1px solid var(--hairline)'}}>
           <div style={{maxWidth: 1080, margin: '0 auto', padding: '0 var(--space-5)'}}>
             <SectionFade as="div" style={{maxWidth: 760, margin: '0 auto 48px', textAlign: 'center'}}>
+              <ReviewsTransparencyLine />
               <div className="section-eyebrow">Early access reviews</div>
               <h2 style={{fontFamily: 'var(--font-serif)', fontSize: 'clamp(36px, 4.4vw, 56px)', letterSpacing: '-0.02em', lineHeight: 1.05}}>
                 What buyers said.
@@ -209,7 +214,7 @@ function GuideStyle({
             </div>
             <SectionFade as="div" className="guide-info" delayMs={120}>
               <div className="vol">Authority · {product.role}</div>
-              <h1>{product.name}.</h1>
+              <h1>{product.headline ?? `${product.name}.`}</h1>
               <p className="tagline">{product.tagline}</p>
 
               <div style={{marginTop: 18, display: 'flex', alignItems: 'center', gap: 10}}>
@@ -261,6 +266,7 @@ function GuideStyle({
                     Currently unavailable
                   </button>
                 )}
+                <BuyTrustStrip />
                 <p className="upsell">
                   Or get all 3 Authority products for <Link to="/bundles/authority" prefetch="intent">${AUTHORITY_BUNDLE.priceUSD} (save ${AUTHORITY_BUNDLE.savings})</Link>.
                 </p>
@@ -287,10 +293,12 @@ function GuideStyle({
         )}
         {product.templates && <TemplateShowcase guide={guideShape} />}
         {product.roadmap && <RoadmapTimeline guide={guideShape} />}
+        <WhyThisWorks />
 
         <section style={{padding: '96px 0', background: 'var(--bone)', borderBlock: '1px solid var(--hairline)'}}>
           <div style={{maxWidth: 1080, margin: '0 auto', padding: '0 var(--space-5)'}}>
             <SectionFade as="div" style={{maxWidth: 760, margin: '0 auto 48px', textAlign: 'center'}}>
+              <ReviewsTransparencyLine />
               <div className="section-eyebrow">Early access reviews</div>
               <h2 style={{fontFamily: 'var(--font-serif)', fontSize: 'clamp(36px, 4.4vw, 56px)', letterSpacing: '-0.02em', lineHeight: 1.05}}>
                 What buyers said.

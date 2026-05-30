@@ -8,6 +8,7 @@ import {
 } from '~/lib/catalog';
 import {getReviewsForProduct, getReviewStats} from '~/lib/reviews';
 import {ProductHeroV2} from '~/components/promptos/ProductHeroV2';
+import {ReviewsTransparencyLine} from '~/components/promptos/ReviewsTransparencyLine';
 import {ProductSectionsV2} from '~/components/promptos/ProductSectionsV2';
 import {SamplePromptFull} from '~/components/promptos/SamplePromptFull';
 import {WhoForV2} from '~/components/promptos/WhoForV2';
@@ -18,6 +19,7 @@ import {PairWith} from '~/components/promptos/PairWith';
 import {ReviewSummary} from '~/components/promptos/ReviewSummary';
 import {ReviewGrid} from '~/components/promptos/ReviewGrid';
 import {GuaranteeBlock} from '~/components/promptos/GuaranteeBlock';
+import {WhyThisWorks} from '~/components/promptos/WhyThisWorks';
 import {StickyPurchaseBar} from '~/components/promptos/StickyPurchaseBar';
 import {SectionFade} from '~/components/promptos/SectionFade';
 import {RatingStars} from '~/components/promptos/RatingStars';
@@ -105,10 +107,12 @@ export default function PackRoute({loaderData}: Route.ComponentProps) {
         <SamplePromptFull pack={pack} />
         <WhoForV2 pack={pack} />
         <WhatYouGet />
+        <WhyThisWorks />
 
         <section id="reviews" style={{padding: '96px 0', background: 'var(--bone)', borderBlock: '1px solid var(--hairline)'}}>
           <div style={{maxWidth: 1080, margin: '0 auto', padding: '0 var(--space-5)'}}>
             <SectionFade as="div" style={{maxWidth: 760, margin: '0 auto 48px', textAlign: 'center'}}>
+              <ReviewsTransparencyLine />
               <div className="section-eyebrow">Early access reviews</div>
               <h2 style={{fontFamily: 'var(--font-serif)', fontSize: 'clamp(36px, 4.4vw, 56px)', letterSpacing: '-0.02em', lineHeight: 1.05}}>
                 What buyers said.

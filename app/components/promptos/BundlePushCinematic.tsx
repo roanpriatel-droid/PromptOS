@@ -1,5 +1,6 @@
 import {Link} from 'react-router';
 import {BUNDLES, PACKS, GUIDES, AUTHORITY, AUTHORITY_BUNDLE, MEGA_BUNDLE, PACKS_BUNDLE, GUIDES_BUNDLE} from '~/lib/catalog';
+import {LaunchDiscountLine} from './LaunchDiscountLine';
 import {PackCover} from './PackCover';
 import {GuideCover} from './GuideCover';
 import {AuthorityCover} from './AuthorityCover';
@@ -60,6 +61,7 @@ export function BundlePushCinematic() {
                   <span className="price">${PACKS_BUNDLE.priceUSD}</span>
                   <span className="strike">${PACKS_BUNDLE.individualTotal}</span>
                 </div>
+                <LaunchDiscountLine priceUSD={PACKS_BUNDLE.priceUSD} />
                 <span className="cta">Get the packs <span aria-hidden>→</span></span>
               </div>
             </Link>
@@ -91,6 +93,7 @@ export function BundlePushCinematic() {
                   <span className="price">${AUTHORITY_BUNDLE.priceUSD}</span>
                   <span className="strike">${AUTHORITY_BUNDLE.individualTotal}</span>
                 </div>
+                <LaunchDiscountLine priceUSD={AUTHORITY_BUNDLE.priceUSD} />
                 <span className="cta">Get Authority <span aria-hidden>→</span></span>
               </div>
             </Link>
@@ -131,6 +134,7 @@ export function BundlePushCinematic() {
                   <span className="price">${MEGA_BUNDLE.priceUSD}</span>
                   <span className="strike">${MEGA_BUNDLE.individualTotal}</span>
                 </div>
+                <LaunchDiscountLine priceUSD={MEGA_BUNDLE.priceUSD} light />
                 <span className="cta">Get everything <span aria-hidden>→</span></span>
               </div>
             </Link>
@@ -162,6 +166,7 @@ export function BundlePushCinematic() {
                   <span className="price">${GUIDES_BUNDLE.priceUSD}</span>
                   <span className="strike">${GUIDES_BUNDLE.individualTotal}</span>
                 </div>
+                <LaunchDiscountLine priceUSD={GUIDES_BUNDLE.priceUSD} />
                 <span className="cta">Get the guides <span aria-hidden>→</span></span>
               </div>
             </Link>

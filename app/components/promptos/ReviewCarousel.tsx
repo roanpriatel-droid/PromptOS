@@ -2,6 +2,7 @@ import {Link} from 'react-router';
 import {REVIEWS, getReviewStats} from '~/lib/reviews';
 import {ReviewCard} from './ReviewCard';
 import {RatingStars} from './RatingStars';
+import {ReviewsTransparencyLine} from './ReviewsTransparencyLine';
 
 /**
  * Auto-scrolling review carousel for the homepage. Hand-picks 24 strong
@@ -15,6 +16,7 @@ export function ReviewCarousel() {
       <div className="review-carousel-inner">
         <div className="review-carousel-head">
           <div>
+            <ReviewsTransparencyLine />
             <div className="section-eyebrow">Early access reviews</div>
             <h2>1,000+ buyers said it worked.</h2>
             <p className="sub">From our pre-launch group. Honest feedback in exchange for products.</p>

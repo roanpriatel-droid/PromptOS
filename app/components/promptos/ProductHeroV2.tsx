@@ -4,6 +4,7 @@ import type {ShopifyEnrichment} from '~/lib/catalog';
 import {PackCover} from './PackCover';
 import {BUNDLE} from '~/lib/packs';
 import {AddToCartButton} from '~/components/AddToCartButton';
+import {BuyTrustStrip} from './BuyTrustStrip';
 
 /**
  * Product hero v2 — two-column with the cover on the left and the buy box
@@ -29,7 +30,7 @@ export function ProductHeroV2({
 
         <div className="product-info-v2">
           <div className="vol">Vol. {pack.number}</div>
-          <h1>{pack.name}.</h1>
+          <h1>{pack.headline ?? `${pack.name}.`}</h1>
           <p className="tagline">{pack.tagline}</p>
 
           <div className="product-price-row">
@@ -54,6 +55,7 @@ export function ProductHeroV2({
               Currently unavailable
             </button>
           )}
+          <BuyTrustStrip />
           <p className="product-upsell">
             Or get all 7 packs for ${BUNDLE.priceUSD}.{' '}
             <Link to="/packs/complete-bundle" prefetch="intent">See the bundle →</Link>

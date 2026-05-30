@@ -70,7 +70,7 @@ export function ReviewCard({review, hideProduct}: Props) {
       </div>
       <p className="body">{review.body}</p>
       <div className="meta-row">
-        <span className="ea-badge">Early Access · Verified Buyer</span>
+        <span className="ea-badge">Early Access · Honest Feedback</span>
         {!hideProduct && product && productLink && (
           <Link to={productLink} prefetch="intent" className="product-link">
             {product.name}

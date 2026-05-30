@@ -11,7 +11,7 @@ import {
   type ShopifyEnrichment,
 } from '~/lib/catalog';
 import {AuthorityCover} from '~/components/promptos/AuthorityCover';
-
+import {ReviewsTransparencyLine} from '~/components/promptos/ReviewsTransparencyLine';
 /** Deterministic-from-day-of-week scarcity number. Cycles each day, feels real. */
 function scarcityCount(slug: string): number {
   const day = new Date().toISOString().slice(0, 10);
@@ -37,6 +37,8 @@ import {FaqV2} from '~/components/promptos/FaqV2';
 import {NewsletterCTA} from '~/components/promptos/NewsletterCTA';
 import {BundleSelector} from '~/components/promptos/BundleSelector';
 import {AddToCartButton} from '~/components/AddToCartButton';
+import {BuyTrustStrip} from '~/components/promptos/BuyTrustStrip';
+import {LaunchDiscountLine} from '~/components/promptos/LaunchDiscountLine';
 import {
   JsonLd,
   breadcrumbSchema,
@@ -136,6 +138,7 @@ function PacksBundlePage({stats, shopify}: {stats: ReturnType<typeof getReviewSt
             <span className="arrow">→</span>
             <span className="now">${bundle.priceUSD}</span>
             <span className="save-badge">Save ${bundle.savings}</span>
+            <LaunchDiscountLine priceUSD={bundle.priceUSD} light />
           </div>
 
           <div className="actions">
@@ -155,6 +158,7 @@ function PacksBundlePage({stats, shopify}: {stats: ReturnType<typeof getReviewSt
             )}
             <a href="#breakdown" className="btn btn-large btn-ghost btn-arrow" style={{color: '#fff'}}>What's included</a>
           </div>
+          <BuyTrustStrip />
         </div>
       </section>
 
@@ -189,7 +193,8 @@ function PacksBundlePage({stats, shopify}: {stats: ReturnType<typeof getReviewSt
       <section style={{padding: '96px 0'}}>
         <div style={{maxWidth: 1080, margin: '0 auto', padding: '0 var(--space-5)'}}>
           <SectionFade as="div" style={{maxWidth: 760, margin: '0 auto 48px', textAlign: 'center'}}>
-            <div className="section-eyebrow">Early access reviews</div>
+            <ReviewsTransparencyLine />
+              <div className="section-eyebrow">Early access reviews</div>
             <h2 style={{fontFamily: 'var(--font-serif)', fontSize: 'clamp(36px, 4.4vw, 56px)', letterSpacing: '-0.02em', lineHeight: 1.05}}>
               What bundle buyers said.
             </h2>
@@ -237,6 +242,7 @@ function GuidesBundlePage({stats, shopify}: {stats: ReturnType<typeof getReviewS
             <span className="arrow">→</span>
             <span className="now">${bundle.priceUSD}</span>
             <span className="save-badge">Save ${bundle.savings}</span>
+            <LaunchDiscountLine priceUSD={bundle.priceUSD} light />
           </div>
 
           <div className="actions">
@@ -256,6 +262,7 @@ function GuidesBundlePage({stats, shopify}: {stats: ReturnType<typeof getReviewS
             )}
             <a href="#breakdown" className="btn btn-large btn-ghost btn-arrow" style={{color: '#fff'}}>What's included</a>
           </div>
+          <BuyTrustStrip />
         </div>
       </section>
 
@@ -290,7 +297,8 @@ function GuidesBundlePage({stats, shopify}: {stats: ReturnType<typeof getReviewS
       <section style={{padding: '96px 0'}}>
         <div style={{maxWidth: 1080, margin: '0 auto', padding: '0 var(--space-5)'}}>
           <SectionFade as="div" style={{maxWidth: 760, margin: '0 auto 48px', textAlign: 'center'}}>
-            <div className="section-eyebrow">Early access reviews</div>
+            <ReviewsTransparencyLine />
+              <div className="section-eyebrow">Early access reviews</div>
             <h2 style={{fontFamily: 'var(--font-serif)', fontSize: 'clamp(36px, 4.4vw, 56px)', letterSpacing: '-0.02em', lineHeight: 1.05}}>
               What bundle buyers said.
             </h2>
@@ -371,6 +379,7 @@ function EverythingPage({stats, shopify}: {stats: ReturnType<typeof getReviewSta
             <span className="arrow">→</span>
             <span className="now">${bundle.priceUSD}</span>
             <span className="save-badge">Save ${bundle.savings}</span>
+            <LaunchDiscountLine priceUSD={bundle.priceUSD} light />
           </div>
 
           <div className="actions">
@@ -390,6 +399,7 @@ function EverythingPage({stats, shopify}: {stats: ReturnType<typeof getReviewSta
             )}
             <a href="#mega-breakdown" className="btn btn-large btn-ghost btn-arrow" style={{color: '#fff'}}>See what's inside</a>
           </div>
+          <BuyTrustStrip />
 
           <div style={{marginTop: 18}}>
             <span className="scarcity-line">
@@ -516,6 +526,7 @@ function AuthorityBundlePage({stats, shopify}: {stats: ReturnType<typeof getRevi
             <span className="arrow">→</span>
             <span className="now">${bundle.priceUSD}</span>
             <span className="save-badge">Save ${bundle.savings}</span>
+            <LaunchDiscountLine priceUSD={bundle.priceUSD} light />
           </div>
 
           <div className="actions">
@@ -535,6 +546,7 @@ function AuthorityBundlePage({stats, shopify}: {stats: ReturnType<typeof getRevi
             )}
             <a href="#breakdown" className="btn btn-large btn-ghost btn-arrow" style={{color: '#fff'}}>What's included</a>
           </div>
+          <BuyTrustStrip />
         </div>
       </section>
 
@@ -601,7 +613,8 @@ function AuthorityBundlePage({stats, shopify}: {stats: ReturnType<typeof getRevi
       <section style={{padding: '96px 0'}}>
         <div style={{maxWidth: 1080, margin: '0 auto', padding: '0 var(--space-5)'}}>
           <SectionFade as="div" style={{maxWidth: 760, margin: '0 auto 48px', textAlign: 'center'}}>
-            <div className="section-eyebrow">Early access reviews</div>
+            <ReviewsTransparencyLine />
+              <div className="section-eyebrow">Early access reviews</div>
             <h2 style={{fontFamily: 'var(--font-serif)', fontSize: 'clamp(36px, 4.4vw, 56px)', letterSpacing: '-0.02em', lineHeight: 1.05}}>
               What bundle buyers said.
             </h2>
