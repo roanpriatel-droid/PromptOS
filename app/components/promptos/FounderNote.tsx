@@ -10,7 +10,7 @@ const DEFAULT_HEADING =
 
 const DEFAULT_BODY = [
   "The honest version: I'd been writing prompts in a Google Doc for a year. Every time a friend asked \"how do you get Claude to do X?\", I'd copy three lines into a DM. After enough DMs, I realized I had a product.",
-  'So I sorted them into packs. I tested every prompt against three models, twenty times each, and threw out anything that didn’t survive. Then I wrote new ones for the gaps. Then I wrote playbooks for the questions buyers kept asking after the prompts. The result is what’s on this site.',
+  'So I sorted them into packs. I tested every prompt across Claude, ChatGPT, and Gemini, twenty times each, and threw out anything that didn’t survive. Then I wrote new ones for the gaps. Then I wrote playbooks for the questions buyers kept asking after the prompts. The result is what’s on this site.',
   "It's not magic. It's just better than what you'd write at 11pm on a Tuesday.",
 ];
 
