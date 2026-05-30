@@ -38,6 +38,7 @@ import {NewsletterCTA} from '~/components/promptos/NewsletterCTA';
 import {BundleSelector} from '~/components/promptos/BundleSelector';
 import {AddToCartButton} from '~/components/AddToCartButton';
 import {BuyTrustStrip} from '~/components/promptos/BuyTrustStrip';
+import {LaunchDiscountLine} from '~/components/promptos/LaunchDiscountLine';
 import {
   JsonLd,
   breadcrumbSchema,
@@ -137,6 +138,7 @@ function PacksBundlePage({stats, shopify}: {stats: ReturnType<typeof getReviewSt
             <span className="arrow">→</span>
             <span className="now">${bundle.priceUSD}</span>
             <span className="save-badge">Save ${bundle.savings}</span>
+            <LaunchDiscountLine priceUSD={bundle.priceUSD} light />
           </div>
 
           <div className="actions">
@@ -240,6 +242,7 @@ function GuidesBundlePage({stats, shopify}: {stats: ReturnType<typeof getReviewS
             <span className="arrow">→</span>
             <span className="now">${bundle.priceUSD}</span>
             <span className="save-badge">Save ${bundle.savings}</span>
+            <LaunchDiscountLine priceUSD={bundle.priceUSD} light />
           </div>
 
           <div className="actions">
@@ -376,6 +379,7 @@ function EverythingPage({stats, shopify}: {stats: ReturnType<typeof getReviewSta
             <span className="arrow">→</span>
             <span className="now">${bundle.priceUSD}</span>
             <span className="save-badge">Save ${bundle.savings}</span>
+            <LaunchDiscountLine priceUSD={bundle.priceUSD} light />
           </div>
 
           <div className="actions">
@@ -522,6 +526,7 @@ function AuthorityBundlePage({stats, shopify}: {stats: ReturnType<typeof getRevi
             <span className="arrow">→</span>
             <span className="now">${bundle.priceUSD}</span>
             <span className="save-badge">Save ${bundle.savings}</span>
+            <LaunchDiscountLine priceUSD={bundle.priceUSD} light />
           </div>
 
           <div className="actions">
