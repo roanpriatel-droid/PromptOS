@@ -1,0 +1,67 @@
+/* ============================================================
+   v3.8a — conversion overhaul CSS layer (last in cascade)
+   ============================================================ */
+
+/* ============================================================
+   Phase 4E — primary CTA visual prominence
+   The Add-to-cart button across all product pages gets bumped to
+   spec dimensions: solid brand purple, larger text, more padding,
+   subtle elevation on hover. Mobile: full width. Desktop: ~280px.
+   ============================================================ */
+.product-buy-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #6B46C1;
+  color: #FFFFFF;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  padding: 16px 32px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.16),
+    0 6px 16px -8px rgba(107, 70, 193, 0.45);
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .product-buy-btn {
+    width: auto;
+    min-width: 280px;
+  }
+}
+.product-buy-btn:hover {
+  background: #5535A8;
+  color: #FFFFFF;
+  transform: translateY(-1px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.20),
+    0 12px 28px -8px rgba(107, 70, 193, 0.50),
+    0 4px 10px -4px rgba(236, 72, 153, 0.30);
+}
+.product-buy-btn:active {
+  transform: translateY(0);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    0 4px 12px -6px rgba(107, 70, 193, 0.40);
+}
+.product-buy-btn:disabled,
+.product-buy-btn[aria-disabled="true"] {
+  background: rgba(15, 10, 31, 0.14);
+  color: rgba(15, 10, 31, 0.55);
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+.product-buy-btn:focus-visible {
+  outline: 2px solid #EC4899;
+  outline-offset: 3px;
+}
