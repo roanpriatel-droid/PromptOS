@@ -28,6 +28,25 @@ export function ReviewGrid({initialProductId, hideProductFilter, hideProductLink
     if (state.sort === 'recent') list = [...list].sort((a, b) => (a.date < b.date ? 1 : -1));
     if (state.sort === 'highest') list = [...list].sort((a, b) => b.rating - a.rating || b.helpfulCount - a.helpfulCount);
     if (state.sort === 'lowest') list = [...list].sort((a, b) => a.rating - b.rating);
+
+    // v3.8a Phase 2C: surface the most-helpful non-5★ review into the
+    // top 6 when the default helpful sort is active and the user hasn't
+    // filtered by rating. Builds trust ("we left the critical ones up")
+    // — doesn't bury negatives, doesn't fabricate them either: only
+    // applied when at least one non-5★ review actually exists.
+    if (
+      state.sort === 'helpful' &&
+      state.rating === 'all' &&
+      list.length > 6 &&
+      list.slice(0, 6).every((r) => r.rating === 5)
+    ) {
+      const critIdx = list.findIndex((r) => r.rating < 5);
+      if (critIdx >= 0 && critIdx > 5) {
+        const [critical] = list.splice(critIdx, 1);
+        list.splice(4, 0, critical); // position 5 (visible top 6)
+      }
+    }
+
     return list;
   }, [state]);
 
