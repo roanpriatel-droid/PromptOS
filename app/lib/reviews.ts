@@ -60,7 +60,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-05-14",
     "rating": 5,
     "title": "Honestly didn't expect it to be this useful",
-    "body": "The \"pro tip\" field at the end of each prompt is the unsung hero. the Voice Lock's pro tip alone changed how I follow up on the outputs. the Cut List is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
+    "body": "The \"pro tip\" field at the end of each prompt is the unsung hero. the Voice Lock's pro tip alone changed how I follow up on the outputs. the Cut List is doesn't oversell, just delivers. Right away I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
     "helpfulCount": 5,
     "verified": true
   },
@@ -85,7 +85,7 @@ export const REVIEWS: Review[] = [
     "role": "Solo creator + coach",
     "date": "2026-05-13",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "Easy 5. Already passed it to a teammate.",
     "body": "As a independent consultant + creator, I'd been stuck on positioning for half a year. chapter 4 on running the interview with AI unstuck me in an evening. the validation prompts alone saved me three months of trial and error. The kind of detail you only get from someone who actually ran the playbook.",
     "helpfulCount": 2,
     "verified": true
@@ -111,7 +111,7 @@ export const REVIEWS: Review[] = [
     "role": "Solo creator, growing audience",
     "date": "2026-05-13",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "Five from me. Already passed it to a teammate.",
     "body": "Read it in one weekend, started implementing Monday. As a career coach, the two-axis positioning grid alone justified the buy. the bio template set is genuinely the cleanest treatment of the topic I've seen. Worth more than the price.",
     "helpfulCount": 157,
     "verified": true
@@ -137,7 +137,7 @@ export const REVIEWS: Review[] = [
     "role": "Solo channel runner",
     "date": "2026-05-13",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "All five stars. My business partner has a copy now too.",
     "body": "Read it in one weekend, started implementing Monday. As a solo channel runner, the niche scoring sheet alone justified the buy.",
     "helpfulCount": 105,
     "verified": true
@@ -176,7 +176,7 @@ export const REVIEWS: Review[] = [
     "role": "Operations consultant",
     "date": "2026-05-13",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "More value than I paid for",
     "body": "chapter 10 on retainers hit harder than I expected. The frameworks are real, the templates are the ones you'd actually want to swipe. What I appreciated: it's not \"manifesting your future business.\" It's operator content. the retainer contract is the kind of thing you can implement Tuesday. chapter 3 on pricing is worth the price by itself. Walked into a discovery call the next week and closed.",
     "helpfulCount": 54,
     "verified": true
@@ -215,8 +215,8 @@ export const REVIEWS: Review[] = [
     "role": "Essayist",
     "date": "2026-05-13",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
-    "body": "the Beat Sheet Builder is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
+    "title": "Five from me. Two friends already asked where I got it.",
+    "body": "the Beat Sheet Builder is more useful than it lets on. First session in I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
     "helpfulCount": 105,
     "verified": true
   },
@@ -281,7 +281,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-05-12",
     "rating": 5,
     "title": "The bundle math is silly",
-    "body": "the Quote-Tweet Reply is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
+    "body": "the Quote-Tweet Reply is better than I expected. First session in I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
     "helpfulCount": 33,
     "verified": true
   },
@@ -294,7 +294,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-05-12",
     "rating": 5,
     "title": "Operator content, not theory",
-    "body": "the Launch Story is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
+    "body": "the Launch Story is quietly impressive. On my first attempt I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
     "helpfulCount": 6,
     "verified": true
   },
@@ -319,7 +319,7 @@ export const REVIEWS: Review[] = [
     "role": "Consultant",
     "date": "2026-05-12",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "Five from me. Already passed it to a teammate.",
     "body": "As a executive coach, I'd been stuck on positioning for half a year. the discovery call script unstuck me in an evening. Read it in one weekend, started implementing Monday. As a leadership coach, chapter 9 on group programs alone justified the buy.",
     "helpfulCount": 91,
     "verified": true
@@ -449,8 +449,8 @@ export const REVIEWS: Review[] = [
     "role": "YouTuber, finance niche",
     "date": "2026-05-12",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
-    "body": "As a substack writer, 8k subs, I'd been hand-rolling prompts in a Doc for a year. the 8-Second Hook replaced about half of them, and the new versions are tighter. the 1-to-10 repurposing prompt is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
+    "title": "Five stars without hesitation. Sent the link to a colleague within an hour.",
+    "body": "As a substack writer, 8k subs, I'd been hand-rolling prompts in a Doc for a year. the 8-Second Hook replaced about half of them, and the new versions are tighter. the 1-to-10 repurposing prompt is better than I expected. On my first attempt I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
     "helpfulCount": 91,
     "verified": true
   },
@@ -618,7 +618,7 @@ export const REVIEWS: Review[] = [
     "role": "Independent consultant",
     "date": "2026-05-11",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "Five from me. Sent the link to a colleague within an hour.",
     "body": "Read it in one weekend, started implementing Monday. As a founder + creator, the launch templates alone justified the buy. the monetization paths chapter hit harder than I expected. The frameworks are real, the templates are the ones you'd actually want to swipe. Not theory. The chapters read like an operator handing you their actual notes. the two-axis positioning grid in particular has the kind of detail you can't fake.",
     "helpfulCount": 22,
     "verified": true
@@ -683,7 +683,7 @@ export const REVIEWS: Review[] = [
     "role": "Director of program management",
     "date": "2026-05-11",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "5/5 from me. Already passed it to a teammate.",
     "body": "Bought this on a Tuesday, used the 1-Page Summary on Wednesday, had a real result by Friday. As a pm, b2b saas, that's the bar. the Inbox Cut saved me a meeting. Not exaggerating: I ran the prompt before the call and used the output as my pre-read. Got 90% of what would've taken a half-hour brainstorm.",
     "helpfulCount": 22,
     "verified": true
@@ -865,7 +865,7 @@ export const REVIEWS: Review[] = [
     "role": "MBA candidate",
     "date": "2026-05-09",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "Full 5 stars from me. Already shared it with my team.",
     "body": "As a senior pm, I'd been hand-rolling prompts in a Doc for a year. the Eisenhower Cut replaced about half of them, and the new versions are tighter. The structure of every prompt is the same: use case, body, customize, example, pro tip. That consistency makes the pack usable on the actual job. the Weekly Pre-Mortem is the one I keep going back to. The \"pro tip\" field at the end of each prompt is the unsung hero. the 1-Page Summary's pro tip alone changed how I follow up on the outputs.",
     "helpfulCount": 0,
     "verified": true
@@ -1061,7 +1061,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-05-08",
     "rating": 5,
     "title": "Real prompts, real outputs",
-    "body": "the Guest Brief is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
+    "body": "the Guest Brief is doesn't oversell, just delivers. Out of the gate I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
     "helpfulCount": 21,
     "verified": true
   },
@@ -1074,7 +1074,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-05-08",
     "rating": 5,
     "title": "Real prompts, real outputs",
-    "body": "Bought this on a Tuesday, used the 1-to-10 repurposing prompt on Wednesday, had a real result by Friday. As a tiktok creator, that's the bar. the Guest Brief is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
+    "body": "Bought this on a Tuesday, used the 1-to-10 repurposing prompt on Wednesday, had a real result by Friday. As a tiktok creator, that's the bar. the Guest Brief is low-hype, high-utility. On run one I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
     "helpfulCount": 1,
     "verified": true
   },
@@ -1100,7 +1100,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-05-08",
     "rating": 5,
     "title": "The Security Sweep saved me a meeting",
-    "body": "the PR Description is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
+    "body": "the PR Description is more useful than it lets on. On run one I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
     "helpfulCount": 23,
     "verified": true
   },
@@ -1139,7 +1139,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-05-08",
     "rating": 5,
     "title": "This is what good prompts look like",
-    "body": "Most prompt packs are a Notion template in a tuxedo. This one isn't. the README Spine is the kind of prompt you only get from someone who has actually shipped the work. the Trade-Off Matrix is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
+    "body": "Most prompt packs are a Notion template in a tuxedo. This one isn't. the README Spine is the kind of prompt you only get from someone who has actually shipped the work. the Trade-Off Matrix is quietly impressive. First session in I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
     "helpfulCount": 164,
     "verified": true
   },
@@ -1229,7 +1229,7 @@ export const REVIEWS: Review[] = [
     "role": "Newsletter + product founder",
     "date": "2026-05-07",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "Genuinely worth what I paid",
     "body": "As a side-project creator, I'd been stuck on positioning for half a year. the 5-post social playbook unstuck me in an evening. the pre-launch landing page hit harder than I expected. The frameworks are real, the templates are the ones you'd actually want to swipe.",
     "helpfulCount": 55,
     "verified": true
@@ -1294,7 +1294,7 @@ export const REVIEWS: Review[] = [
     "role": "Productized service founder",
     "date": "2026-05-07",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "Best playbook I've bought in a while",
     "body": "As a bootstrapped saas founder, I'd been hand-rolling prompts in a Doc for a year. the Tiering Frame replaced about half of them, and the new versions are tighter. Bought this on a Tuesday, used the Niche Slice on Wednesday, had a real result by Friday. As a solo founder, productized, that's the bar.",
     "helpfulCount": 55,
     "verified": true
@@ -1333,7 +1333,7 @@ export const REVIEWS: Review[] = [
     "role": "Solo operator",
     "date": "2026-05-06",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "Worth every cent",
     "body": "the full bundle alone is worth more than the bundle price. Going to be using both for the foreseeable future. the Authority products + the matching guide is the kind of \"buy everything\" pricing you don't see often. Almost feels like a launch promo, but if it's not, ship it.",
     "helpfulCount": 173,
     "verified": true
@@ -1398,7 +1398,7 @@ export const REVIEWS: Review[] = [
     "role": "Solo digital products founder",
     "date": "2026-05-06",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "Best playbook I've bought in a while",
     "body": "What I appreciated: it's not \"manifesting your future business.\" It's operator content. the validation worksheet is the kind of thing you can implement Tuesday. Read it in one weekend, started implementing Monday. As a newsletter + product founder, chapter 6 on the launch week alone justified the buy.",
     "helpfulCount": 173,
     "verified": true
@@ -1476,8 +1476,8 @@ export const REVIEWS: Review[] = [
     "role": "One-person business owner",
     "date": "2026-05-06",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
-    "body": "The \"pro tip\" field at the end of each prompt is the unsung hero. the Cold Email Autopsy's pro tip alone changed how I follow up on the outputs. the Objection Pivot is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
+    "title": "Genuinely worth what I paid",
+    "body": "The \"pro tip\" field at the end of each prompt is the unsung hero. the Cold Email Autopsy's pro tip alone changed how I follow up on the outputs. the Objection Pivot is better than I expected. From the very first try I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
     "helpfulCount": 173,
     "verified": true
   },
@@ -1516,7 +1516,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-05-06",
     "rating": 5,
     "title": "The \"pro tip\" field is the unsung hero",
-    "body": "I've bought four prompt packs this year. This is the only one I didn't delete after a month. the Cluster Map prompt is the standout. The Hook Ladder is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. The Hook Ladder alone made the whole pack worth it. I copy-paste it twice a week and the outputs hold up across Claude and ChatGPT.",
+    "body": "I've bought four prompt packs this year. This is the only one I didn't delete after a month. the Cluster Map prompt is the standout. The Hook Ladder is more useful than it lets on. From the very first try I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. The Hook Ladder alone made the whole pack worth it. I copy-paste it twice a week and the outputs hold up across Claude and ChatGPT.",
     "helpfulCount": 2,
     "verified": true
   },
@@ -1528,7 +1528,7 @@ export const REVIEWS: Review[] = [
     "role": "Solo operator",
     "date": "2026-05-05",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "Five stars without hesitation. Sent the link to a colleague within an hour.",
     "body": "the Coaching/Consulting playbook alone is worth more than the bundle price. Going to be using both for the foreseeable future. Bought the AI Automation Agency playbook after picking up two of the packs separately. Should have just done this from the start.",
     "helpfulCount": 4,
     "verified": true
@@ -1580,7 +1580,7 @@ export const REVIEWS: Review[] = [
     "role": "Senior product designer",
     "date": "2026-05-05",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "Genuinely worth what I paid",
     "body": "Read it in one weekend, started implementing Monday. As a senior product designer, the niche-picker exercise alone justified the buy. The 90-day roadmap is the part that doesn't show up in the marketing but is the most useful thing in the playbook. Combined with the discovery script, it's basically a quarter's worth of planning done for you. As a webflow specialist, I'd been stuck on positioning for half a year. the build-week SOP unstuck me in an evening.",
     "helpfulCount": 10,
     "verified": true
@@ -1632,8 +1632,8 @@ export const REVIEWS: Review[] = [
     "role": "Side-project operator",
     "date": "2026-05-05",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
-    "body": "the Tiering Frame is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. I've bought four prompt packs this year. This is the only one I didn't delete after a month. the SOP Skeleton is the standout. As a founder, niche newsletter, I'd been hand-rolling prompts in a Doc for a year. the Cold Email Autopsy replaced about half of them, and the new versions are tighter.",
+    "title": "Best playbook I've bought in a while",
+    "body": "the Tiering Frame is low-hype, high-utility. Right away I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. I've bought four prompt packs this year. This is the only one I didn't delete after a month. the SOP Skeleton is the standout. As a founder, niche newsletter, I'd been hand-rolling prompts in a Doc for a year. the Cold Email Autopsy replaced about half of them, and the new versions are tighter.",
     "helpfulCount": 10,
     "verified": true
   },
@@ -1645,7 +1645,7 @@ export const REVIEWS: Review[] = [
     "role": "Independent researcher",
     "date": "2026-05-05",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "All five stars. My business partner has a copy now too.",
     "body": "Bought this on a Tuesday, used the Synthesis Brief on Wednesday, had a real result by Friday. As a solo ai builder, that's the bar. the Red-Team Run saved me a meeting. Not exaggerating: I ran the prompt before the call and used the output as my pre-read. Got 90% of what would've taken a half-hour brainstorm.",
     "helpfulCount": 4,
     "verified": true
@@ -1723,7 +1723,7 @@ export const REVIEWS: Review[] = [
     "role": "Founder, AI agency",
     "date": "2026-05-04",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Easily worth the price",
     "body": "The 90-day roadmap is the part that doesn't show up in the marketing but is the most useful thing in the playbook. Combined with the retainer contract, it's basically a quarter's worth of planning done for you. What I appreciated: it's not \"manifesting your future business.\" It's operator content. chapter 3 on pricing is the kind of thing you can implement Tuesday. the fixed-fee proposal template hit harder than I expected. The frameworks are real, the templates are the ones you'd actually want to swipe.",
     "helpfulCount": 44,
     "verified": true
@@ -1789,7 +1789,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-05-04",
     "rating": 5,
     "title": "Honestly didn't expect it to be this useful",
-    "body": "the CoT Spine is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. the Output Schema alone made the whole pack worth it. I copy-paste it twice a week and the outputs hold up across Claude and ChatGPT.",
+    "body": "the CoT Spine is quietly impressive. On my first attempt I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. the Output Schema alone made the whole pack worth it. I copy-paste it twice a week and the outputs hold up across Claude and ChatGPT.",
     "helpfulCount": 10,
     "verified": true
   },
@@ -1802,7 +1802,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-05-04",
     "rating": 5,
     "title": "Replaced a half-dozen scratchpad prompts",
-    "body": "the Output Schema is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. The \"pro tip\" field at the end of each prompt is the unsung hero. the Output Schema's pro tip alone changed how I follow up on the outputs.",
+    "body": "the Output Schema is quietly impressive. On run one I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. The \"pro tip\" field at the end of each prompt is the unsung hero. the Output Schema's pro tip alone changed how I follow up on the outputs.",
     "helpfulCount": 235,
     "verified": true
   },
@@ -1840,8 +1840,8 @@ export const REVIEWS: Review[] = [
     "role": "Content marketer at startup",
     "date": "2026-05-03",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
-    "body": "the Quote-Tweet Reply is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. the Comment Magnet alone made the whole pack worth it. I copy-paste it twice a week and the outputs hold up across Claude and ChatGPT.",
+    "title": "All five stars. Two friends already asked where I got it.",
+    "body": "the Quote-Tweet Reply is more useful than it lets on. Out of the gate I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. the Comment Magnet alone made the whole pack worth it. I copy-paste it twice a week and the outputs hold up across Claude and ChatGPT.",
     "helpfulCount": 3,
     "verified": true
   },
@@ -2022,7 +2022,7 @@ export const REVIEWS: Review[] = [
     "role": "AI consultant",
     "date": "2026-05-03",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Best money I've spent on AI tooling all year",
     "body": "the Pre-Mortem is the kind of prompt I'd have written in three years if I'd thought hard enough. It's there in fifteen seconds instead. As a ai operations lead, I'd been hand-rolling prompts in a Doc for a year. the Red-Team Run replaced about half of them, and the new versions are tighter.",
     "helpfulCount": 0,
     "verified": true
@@ -2061,7 +2061,7 @@ export const REVIEWS: Review[] = [
     "role": "Solo operator",
     "date": "2026-05-02",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "Easily worth the price",
     "body": "all 7 packs alone is worth more than the bundle price. Going to be using both for the foreseeable future. Bought the Productivity Pack after picking up two of the packs separately. Should have just done this from the start.",
     "helpfulCount": 103,
     "verified": true
@@ -2139,7 +2139,7 @@ export const REVIEWS: Review[] = [
     "role": "Freelance designer",
     "date": "2026-05-02",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "Genuinely worth what I paid",
     "body": "Not theory. The chapters read like an operator handing you their actual notes. the cold outreach to local businesses in particular has the kind of detail you can't fake.",
     "helpfulCount": 103,
     "verified": true
@@ -2165,7 +2165,7 @@ export const REVIEWS: Review[] = [
     "role": "Founding engineer, AI startup",
     "date": "2026-05-02",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Best AI-tooling buy this quarter",
     "body": "the trial-to-paid sequence hit harder than I expected. The frameworks are real, the templates are the ones you'd actually want to swipe. Read it in one weekend, started implementing Monday. As a solo agent builder, the eval harness starter alone justified the buy.",
     "helpfulCount": 23,
     "verified": true
@@ -2179,7 +2179,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-05-02",
     "rating": 5,
     "title": "Honestly didn't expect it to be this useful",
-    "body": "the Want vs. Need is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. As a newsletter writer, I'd been hand-rolling prompts in a Doc for a year. the Synopsis Skeleton replaced about half of them, and the new versions are tighter.",
+    "body": "the Want vs. Need is low-hype, high-utility. On run one I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. As a newsletter writer, I'd been hand-rolling prompts in a Doc for a year. the Synopsis Skeleton replaced about half of them, and the new versions are tighter.",
     "helpfulCount": 9,
     "verified": true
   },
@@ -2204,7 +2204,7 @@ export const REVIEWS: Review[] = [
     "role": "Solo founder, productized",
     "date": "2026-05-02",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "Most useful playbook I've bought this year",
     "body": "the Niche Slice saved me a meeting. Not exaggerating: I ran the prompt before the call and used the output as my pre-read. Got 90% of what would've taken a half-hour brainstorm.",
     "helpfulCount": 103,
     "verified": true
@@ -2230,7 +2230,7 @@ export const REVIEWS: Review[] = [
     "role": "AI operations lead",
     "date": "2026-05-02",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "Full 5 stars from me. Forwarded to my Slack the same day.",
     "body": "As a ai tinkerer, I'd been hand-rolling prompts in a Doc for a year. the CoT Spine replaced about half of them, and the new versions are tighter.",
     "helpfulCount": 19,
     "verified": true
@@ -2282,7 +2282,7 @@ export const REVIEWS: Review[] = [
     "role": "Indie author with audience",
     "date": "2026-05-01",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Easily worth the price",
     "body": "Better than three courses I've bought combined. the synthesis prompts is the one I keep going back to. the 3 product archetypes chapter alone saved me three months of trial and error. The kind of detail you only get from someone who actually ran the playbook. Read it in one weekend, started implementing Monday. As a founder + audience builder, the 3 product archetypes chapter alone justified the buy.",
     "helpfulCount": 5,
     "verified": true
@@ -2295,7 +2295,7 @@ export const REVIEWS: Review[] = [
     "role": "Leadership coach",
     "date": "2026-05-01",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "Easy 5. Already passed it to a teammate.",
     "body": "As a founder, coaching practice, I'd been stuck on positioning for half a year. the proposal template unstuck me in an evening. Not theory. The chapters read like an operator handing you their actual notes. the proposal template in particular has the kind of detail you can't fake.",
     "helpfulCount": 120,
     "verified": true
@@ -2308,7 +2308,7 @@ export const REVIEWS: Review[] = [
     "role": "Solo channel runner",
     "date": "2026-05-01",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Easily worth the price",
     "body": "the niche scoring sheet is worth the price by itself. Walked into a discovery call the next week and closed. chapter 4 on the first 30 videos hit harder than I expected. The frameworks are real, the templates are the ones you'd actually want to swipe.",
     "helpfulCount": 315,
     "verified": true
@@ -2360,7 +2360,7 @@ export const REVIEWS: Review[] = [
     "role": "Director of operations",
     "date": "2026-05-01",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "Full 5 stars from me. Sent the link to a colleague within an hour.",
     "body": "As a project manager, I'd been hand-rolling prompts in a Doc for a year. the Eisenhower Cut replaced about half of them, and the new versions are tighter. the Eisenhower Cut saved me a meeting. Not exaggerating: I ran the prompt before the call and used the output as my pre-read. Got 90% of what would've taken a half-hour brainstorm.",
     "helpfulCount": 120,
     "verified": true
@@ -2373,7 +2373,7 @@ export const REVIEWS: Review[] = [
     "role": "Backend engineer, AI",
     "date": "2026-05-01",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Money well spent",
     "body": "Most prompt packs are a Notion template in a tuxedo. This one isn't. the Security Sweep is the kind of prompt you only get from someone who has actually shipped the work. Bought this on a Tuesday, used the ADR Template on Wednesday, had a real result by Friday. As a senior developer, saas, that's the bar.",
     "helpfulCount": 178,
     "verified": true
@@ -2516,7 +2516,7 @@ export const REVIEWS: Review[] = [
     "role": "AI platform engineer",
     "date": "2026-04-30",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Easily worth the price",
     "body": "The 90-day roadmap is the part that doesn't show up in the marketing but is the most useful thing in the playbook. Combined with the agent system prompt scaffold, it's basically a quarter's worth of planning done for you. As a ai product engineer, I'd been stuck on positioning for half a year. the tool spec template unstuck me in an evening.",
     "helpfulCount": 9,
     "verified": true
@@ -2542,7 +2542,7 @@ export const REVIEWS: Review[] = [
     "role": "AI operations lead",
     "date": "2026-04-30",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "Best playbook I've bought in a while",
     "body": "the Pre-Mortem is the kind of prompt I'd have written in three years if I'd thought hard enough. It's there in fifteen seconds instead. the Self-Critique Loop alone made the whole pack worth it. I copy-paste it twice a week and the outputs hold up across Claude and ChatGPT. Bought this on a Tuesday, used the Self-Critique Loop on Wednesday, had a real result by Friday. As a prompt engineer, agency, that's the bar.",
     "helpfulCount": 163,
     "verified": true
@@ -2776,7 +2776,7 @@ export const REVIEWS: Review[] = [
     "role": "Consultant",
     "date": "2026-04-28",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Best money I've spent on AI tooling all year",
     "body": "chapter 9 on group programs is worth the price by itself. Walked into a discovery call the next week and closed.",
     "helpfulCount": 12,
     "verified": true
@@ -2789,7 +2789,7 @@ export const REVIEWS: Review[] = [
     "role": "AI product engineer",
     "date": "2026-04-28",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "Easily worth the price",
     "body": "the agent system prompt scaffold is genuinely the cleanest treatment of the topic I've seen. Worth more than the price. As a ai platform engineer, I'd been stuck on positioning for half a year. the eval harness starter unstuck me in an evening. Not theory. The chapters read like an operator handing you their actual notes. the demo script for CFOs in particular has the kind of detail you can't fake.",
     "helpfulCount": 3,
     "verified": true
@@ -2802,7 +2802,7 @@ export const REVIEWS: Review[] = [
     "role": "MBA candidate",
     "date": "2026-04-28",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Best AI-tooling buy this quarter",
     "body": "Most prompt packs are a Notion template in a tuxedo. This one isn't. the Deep-Work Brief is the kind of prompt you only get from someone who has actually shipped the work.",
     "helpfulCount": 12,
     "verified": true
@@ -2958,7 +2958,7 @@ export const REVIEWS: Review[] = [
     "role": "Solo agent builder",
     "date": "2026-04-27",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Genuinely worth what I paid",
     "body": "As a solo agent builder, I'd been stuck on positioning for half a year. chapter 4 on the eval-first workflow unstuck me in an evening. Read it in one weekend, started implementing Monday. As a engineering lead, ai, the agent system prompt scaffold alone justified the buy.",
     "helpfulCount": 7,
     "verified": true
@@ -2998,7 +2998,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-04-27",
     "rating": 5,
     "title": "Worth it on day one",
-    "body": "I've bought four prompt packs this year. This is the only one I didn't delete after a month. the Trade-Off Matrix is the standout. the Hypothesis Tree is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. Most prompt packs are a Notion template in a tuxedo. This one isn't. the README Spine is the kind of prompt you only get from someone who has actually shipped the work.",
+    "body": "I've bought four prompt packs this year. This is the only one I didn't delete after a month. the Trade-Off Matrix is the standout. the Hypothesis Tree is quietly impressive. From the very first try I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. Most prompt packs are a Notion template in a tuxedo. This one isn't. the README Spine is the kind of prompt you only get from someone who has actually shipped the work.",
     "helpfulCount": 96,
     "verified": true
   },
@@ -3036,7 +3036,7 @@ export const REVIEWS: Review[] = [
     "role": "Designer + dev",
     "date": "2026-04-26",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "Easy 5. Two friends already asked where I got it.",
     "body": "Bought the Playbook + the Content Engine combo after picking up two of the packs separately. Should have just done this from the start. the Playbook + the Content Engine combo alone is worth more than the bundle price. Going to be using both for the foreseeable future.",
     "helpfulCount": 8,
     "verified": true
@@ -3128,7 +3128,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-04-26",
     "rating": 5,
     "title": "Real prompts, real outputs",
-    "body": "The structure of every prompt is the same: use case, body, customize, example, pro tip. That consistency makes the pack usable on the actual job. the Case Study Mine is the one I keep going back to. the Carousel Spine is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
+    "body": "The structure of every prompt is the same: use case, body, customize, example, pro tip. That consistency makes the pack usable on the actual job. the Case Study Mine is the one I keep going back to. the Carousel Spine is low-hype, high-utility. Out of the gate I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
     "helpfulCount": 12,
     "verified": true
   },
@@ -3192,7 +3192,7 @@ export const REVIEWS: Review[] = [
     "role": "Webflow specialist",
     "date": "2026-04-25",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Money well spent",
     "body": "the website-as-asset pitch is genuinely the cleanest treatment of the topic I've seen. Worth more than the price. Read it in one weekend, started implementing Monday. As a senior product designer, chapter 7 on the 10-day build alone justified the buy.",
     "helpfulCount": 42,
     "verified": true
@@ -3258,7 +3258,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-04-25",
     "rating": 5,
     "title": "Worth it on day one",
-    "body": "the Tiering Frame is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. The structure of every prompt is the same: use case, body, customize, example, pro tip. That consistency makes the pack usable on the actual job. the Weekly Review prompt is the one I keep going back to. I've bought four prompt packs this year. This is the only one I didn't delete after a month. the Niche Slice is the standout.",
+    "body": "the Tiering Frame is more useful than it lets on. First session in I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. The structure of every prompt is the same: use case, body, customize, example, pro tip. That consistency makes the pack usable on the actual job. the Weekly Review prompt is the one I keep going back to. I've bought four prompt packs this year. This is the only one I didn't delete after a month. the Niche Slice is the standout.",
     "helpfulCount": 12,
     "verified": true
   },
@@ -3270,7 +3270,7 @@ export const REVIEWS: Review[] = [
     "role": "Indie hacker, SaaS",
     "date": "2026-04-25",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Genuinely worth what I paid",
     "body": "The \"pro tip\" field at the end of each prompt is the unsung hero. the SOP Skeleton's pro tip alone changed how I follow up on the outputs. the Tiering Frame saved me a meeting. Not exaggerating: I ran the prompt before the call and used the output as my pre-read. Got 90% of what would've taken a half-hour brainstorm.",
     "helpfulCount": 5,
     "verified": true
@@ -3374,8 +3374,8 @@ export const REVIEWS: Review[] = [
     "role": "Junior executive",
     "date": "2026-04-24",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
-    "body": "the 1-Page Summary is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. I've bought four prompt packs this year. This is the only one I didn't delete after a month. the 5-Minute Prep is the standout. Most prompt packs are a Notion template in a tuxedo. This one isn't. the Deep-Work Brief is the kind of prompt you only get from someone who has actually shipped the work.",
+    "title": "All five stars. Already passed it to a teammate.",
+    "body": "the 1-Page Summary is low-hype, high-utility. From the very first try I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. I've bought four prompt packs this year. This is the only one I didn't delete after a month. the 5-Minute Prep is the standout. Most prompt packs are a Notion template in a tuxedo. This one isn't. the Deep-Work Brief is the kind of prompt you only get from someone who has actually shipped the work.",
     "helpfulCount": 11,
     "verified": true
   },
@@ -3388,7 +3388,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-04-24",
     "rating": 5,
     "title": "Real prompts, real outputs",
-    "body": "the Eisenhower Cut is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. Most prompt packs are a Notion template in a tuxedo. This one isn't. the Eisenhower Cut is the kind of prompt you only get from someone who has actually shipped the work.",
+    "body": "the Eisenhower Cut is better than I expected. Right away I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. Most prompt packs are a Notion template in a tuxedo. This one isn't. the Eisenhower Cut is the kind of prompt you only get from someone who has actually shipped the work.",
     "helpfulCount": 17,
     "verified": true
   },
@@ -3492,7 +3492,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-04-23",
     "rating": 5,
     "title": "The \"pro tip\" field is the unsung hero",
-    "body": "the CoT Spine is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
+    "body": "the CoT Spine is low-hype, high-utility. Right away I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
     "helpfulCount": 23,
     "verified": true
   },
@@ -3517,8 +3517,8 @@ export const REVIEWS: Review[] = [
     "role": "Growth contractor",
     "date": "2026-04-23",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
-    "body": "the Cluster Map prompt is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. The \"pro tip\" field at the end of each prompt is the unsung hero. the Win-Back Brief's pro tip alone changed how I follow up on the outputs.",
+    "title": "Money well spent",
+    "body": "the Cluster Map prompt is better than I expected. On my first attempt I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. The \"pro tip\" field at the end of each prompt is the unsung hero. the Win-Back Brief's pro tip alone changed how I follow up on the outputs.",
     "helpfulCount": 5,
     "verified": true
   },
@@ -3530,8 +3530,8 @@ export const REVIEWS: Review[] = [
     "role": "Solo marketing operator",
     "date": "2026-04-23",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
-    "body": "the Cluster Map prompt is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. Most prompt packs are a Notion template in a tuxedo. This one isn't. the Carousel Spine is the kind of prompt you only get from someone who has actually shipped the work. the Subject-Line Battery is the kind of prompt I'd have written in three years if I'd thought hard enough. It's there in fifteen seconds instead.",
+    "title": "Genuinely worth what I paid",
+    "body": "the Cluster Map prompt is underrated. From the very first try I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. Most prompt packs are a Notion template in a tuxedo. This one isn't. the Carousel Spine is the kind of prompt you only get from someone who has actually shipped the work. the Subject-Line Battery is the kind of prompt I'd have written in three years if I'd thought hard enough. It's there in fifteen seconds instead.",
     "helpfulCount": 1,
     "verified": true
   },
@@ -3764,7 +3764,7 @@ export const REVIEWS: Review[] = [
     "role": "Newsletter writer, 6k subs",
     "date": "2026-04-21",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "Five stars without hesitation. My business partner has a copy now too.",
     "body": "the monetization paths chapter is genuinely the cleanest treatment of the topic I've seen. Worth more than the price.",
     "helpfulCount": 52,
     "verified": true
@@ -3803,7 +3803,7 @@ export const REVIEWS: Review[] = [
     "role": "Operations consultant",
     "date": "2026-04-21",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "5/5 from me. Two friends already asked where I got it.",
     "body": "chapter 10 on retainers is worth the price by itself. Walked into a discovery call the next week and closed. As a make.com consultant, I'd been stuck on positioning for half a year. chapter 10 on retainers unstuck me in an evening. the fixed-fee proposal template hit harder than I expected. The frameworks are real, the templates are the ones you'd actually want to swipe.",
     "helpfulCount": 102,
     "verified": true
@@ -3856,7 +3856,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-04-21",
     "rating": 5,
     "title": "The \"pro tip\" field is the unsung hero",
-    "body": "the Cluster Map prompt is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. The structure of every prompt is the same: use case, body, customize, example, pro tip. That consistency makes the pack usable on the actual job. The Hook Ladder is the one I keep going back to.",
+    "body": "the Cluster Map prompt is quietly impressive. Right away I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. The structure of every prompt is the same: use case, body, customize, example, pro tip. That consistency makes the pack usable on the actual job. The Hook Ladder is the one I keep going back to.",
     "helpfulCount": 67,
     "verified": true
   },
@@ -3933,7 +3933,7 @@ export const REVIEWS: Review[] = [
     "role": "Solo SaaS builder",
     "date": "2026-04-20",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Best money I've spent on AI tooling all year",
     "body": "The 90-day roadmap is the part that doesn't show up in the marketing but is the most useful thing in the playbook. Combined with the quit-the-job calculator, it's basically a quarter's worth of planning done for you. As a solo mrr operator, I'd been stuck on positioning for half a year. the launch week sequence unstuck me in an evening.",
     "helpfulCount": 15,
     "verified": true
@@ -3946,7 +3946,7 @@ export const REVIEWS: Review[] = [
     "role": "Notion template creator",
     "date": "2026-04-20",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "Genuinely worth what I paid",
     "body": "the 5-post social playbook is worth the price by itself. Walked into a discovery call the next week and closed. the pre-launch landing page alone saved me three months of trial and error. The kind of detail you only get from someone who actually ran the playbook.",
     "helpfulCount": 130,
     "verified": true
@@ -4037,7 +4037,7 @@ export const REVIEWS: Review[] = [
     "role": "Newsletter writer, 12k subs",
     "date": "2026-04-20",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Best AI-tooling buy this quarter",
     "body": "I've bought four prompt packs this year. This is the only one I didn't delete after a month. the Guest Brief is the standout. As a independent journalist, I'd been hand-rolling prompts in a Doc for a year. the Title Battery replaced about half of them, and the new versions are tighter.",
     "helpfulCount": 15,
     "verified": true
@@ -4050,7 +4050,7 @@ export const REVIEWS: Review[] = [
     "role": "Memoirist",
     "date": "2026-04-20",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "More useful than playbooks twice the price",
     "body": "Most prompt packs are a Notion template in a tuxedo. This one isn't. the Cut List is the kind of prompt you only get from someone who has actually shipped the work. the Query Letter prompt alone made the whole pack worth it. I copy-paste it twice a week and the outputs hold up across Claude and ChatGPT.",
     "helpfulCount": 130,
     "verified": true
@@ -4076,7 +4076,7 @@ export const REVIEWS: Review[] = [
     "role": "Solo AI builder",
     "date": "2026-04-20",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Money well spent",
     "body": "As a ai tinkerer, I'd been hand-rolling prompts in a Doc for a year. the Red-Team Run replaced about half of them, and the new versions are tighter. the Output Schema is the kind of prompt I'd have written in three years if I'd thought hard enough. It's there in fifteen seconds instead. the Output Schema alone made the whole pack worth it. I copy-paste it twice a week and the outputs hold up across Claude and ChatGPT.",
     "helpfulCount": 9,
     "verified": true
@@ -4167,7 +4167,7 @@ export const REVIEWS: Review[] = [
     "role": "Executive assistant",
     "date": "2026-04-19",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "Full 5 stars from me. Already shared it with my team.",
     "body": "The structure of every prompt is the same: use case, body, customize, example, pro tip. That consistency makes the pack usable on the actual job. the Inbox Cut is the one I keep going back to. the 5-Minute Prep alone made the whole pack worth it. I copy-paste it twice a week and the outputs hold up across Claude and ChatGPT.",
     "helpfulCount": 343,
     "verified": true
@@ -4181,7 +4181,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-04-19",
     "rating": 5,
     "title": "Real prompts, real outputs",
-    "body": "Bought this on a Tuesday, used the Collab Pitch on Wednesday, had a real result by Friday. As a youtube + podcast operator, that's the bar. the Title Battery is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. As a youtube + podcast operator, I'd been hand-rolling prompts in a Doc for a year. the 1-to-10 repurposing prompt replaced about half of them, and the new versions are tighter.",
+    "body": "Bought this on a Tuesday, used the Collab Pitch on Wednesday, had a real result by Friday. As a youtube + podcast operator, that's the bar. the Title Battery is doesn't oversell, just delivers. First session in I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. As a youtube + podcast operator, I'd been hand-rolling prompts in a Doc for a year. the 1-to-10 repurposing prompt replaced about half of them, and the new versions are tighter.",
     "helpfulCount": 439,
     "verified": true
   },
@@ -4232,7 +4232,7 @@ export const REVIEWS: Review[] = [
     "role": "Substack writer ready to launch a product",
     "date": "2026-04-18",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "5/5 from me. My business partner has a copy now too.",
     "body": "Better than three courses I've bought combined. the pre-sell email drafts is the one I keep going back to.",
     "helpfulCount": 1,
     "verified": true
@@ -4258,7 +4258,7 @@ export const REVIEWS: Review[] = [
     "role": "Indie hacker",
     "date": "2026-04-18",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "More value than I paid for",
     "body": "the pricing test framework is genuinely the cleanest treatment of the topic I've seen. Worth more than the price. The 90-day roadmap is the part that doesn't show up in the marketing but is the most useful thing in the playbook. Combined with the quit-the-job calculator, it's basically a quarter's worth of planning done for you.",
     "helpfulCount": 19,
     "verified": true
@@ -4310,7 +4310,7 @@ export const REVIEWS: Review[] = [
     "role": "Indie hacker",
     "date": "2026-04-18",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Easily worth the price",
     "body": "the PR Description is the kind of prompt I'd have written in three years if I'd thought hard enough. It's there in fifteen seconds instead. I've bought four prompt packs this year. This is the only one I didn't delete after a month. the README Spine is the standout.",
     "helpfulCount": 19,
     "verified": true
@@ -4454,7 +4454,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-04-17",
     "rating": 5,
     "title": "Bought twice. Different team, same outcome.",
-    "body": "the Inbox Cut saved me a meeting. Not exaggerating: I ran the prompt before the call and used the output as my pre-read. Got 90% of what would've taken a half-hour brainstorm. the 5-Minute Prep is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
+    "body": "the Inbox Cut saved me a meeting. Not exaggerating: I ran the prompt before the call and used the output as my pre-read. Got 90% of what would've taken a half-hour brainstorm. the 5-Minute Prep is quietly impressive. Out of the gate I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
     "helpfulCount": 12,
     "verified": true
   },
@@ -4480,7 +4480,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-04-17",
     "rating": 5,
     "title": "The Trade-Off Matrix alone is worth the price",
-    "body": "the Security Sweep is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. The \"pro tip\" field at the end of each prompt is the unsung hero. the Security Sweep's pro tip alone changed how I follow up on the outputs. the README Spine is the kind of prompt I'd have written in three years if I'd thought hard enough. It's there in fifteen seconds instead.",
+    "body": "the Security Sweep is better than I expected. First session in I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. The \"pro tip\" field at the end of each prompt is the unsung hero. the Security Sweep's pro tip alone changed how I follow up on the outputs. the README Spine is the kind of prompt I'd have written in three years if I'd thought hard enough. It's there in fifteen seconds instead.",
     "helpfulCount": 15,
     "verified": true
   },
@@ -4557,7 +4557,7 @@ export const REVIEWS: Review[] = [
     "role": "Indie author + coach",
     "date": "2026-04-16",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "Genuinely worth what I paid",
     "body": "Not theory. The chapters read like an operator handing you their actual notes. the sponsor pitch deck in particular has the kind of detail you can't fake. the monetization paths chapter alone saved me three months of trial and error. The kind of detail you only get from someone who actually ran the playbook.",
     "helpfulCount": 5,
     "verified": true
@@ -4792,7 +4792,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-04-15",
     "rating": 5,
     "title": "Worth it on day one",
-    "body": "the Win-Back Brief is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
+    "body": "the Win-Back Brief is quietly impressive. Right away I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
     "helpfulCount": 16,
     "verified": true
   },
@@ -4830,7 +4830,7 @@ export const REVIEWS: Review[] = [
     "role": "Framer designer",
     "date": "2026-04-14",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "Most useful playbook I've bought this year",
     "body": "What I appreciated: it's not \"manifesting your future business.\" It's operator content. the discovery script is the kind of thing you can implement Tuesday.",
     "helpfulCount": 281,
     "verified": true
@@ -4869,7 +4869,7 @@ export const REVIEWS: Review[] = [
     "role": "Bootstrapped SaaS founder",
     "date": "2026-04-14",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "Easily worth the price",
     "body": "The \"pro tip\" field at the end of each prompt is the unsung hero. the SOP Skeleton's pro tip alone changed how I follow up on the outputs.",
     "helpfulCount": 230,
     "verified": true
@@ -4909,7 +4909,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-04-13",
     "rating": 5,
     "title": "The Mid-Cut CTA saved me a meeting",
-    "body": "the Soft Pitch alone made the whole pack worth it. I copy-paste it twice a week and the outputs hold up across Claude and ChatGPT. the 7-Slide Lesson is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
+    "body": "the Soft Pitch alone made the whole pack worth it. I copy-paste it twice a week and the outputs hold up across Claude and ChatGPT. the 7-Slide Lesson is low-hype, high-utility. On run one I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
     "helpfulCount": 1,
     "verified": true
   },
@@ -4947,7 +4947,7 @@ export const REVIEWS: Review[] = [
     "role": "Indie hacker",
     "date": "2026-04-13",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "More value than I paid for",
     "body": "The 90-day roadmap is the part that doesn't show up in the marketing but is the most useful thing in the playbook. Combined with the pricing test framework, it's basically a quarter's worth of planning done for you. What I appreciated: it's not \"manifesting your future business.\" It's operator content. the pricing test framework is the kind of thing you can implement Tuesday.",
     "helpfulCount": 10,
     "verified": true
@@ -5012,7 +5012,7 @@ export const REVIEWS: Review[] = [
     "role": "Podcaster",
     "date": "2026-04-13",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Best money I've spent on AI tooling all year",
     "body": "I've bought four prompt packs this year. This is the only one I didn't delete after a month. the Collab Pitch is the standout. The \"pro tip\" field at the end of each prompt is the unsung hero. the Collab Pitch's pro tip alone changed how I follow up on the outputs.",
     "helpfulCount": 10,
     "verified": true
@@ -5051,7 +5051,7 @@ export const REVIEWS: Review[] = [
     "role": "Marketing lead",
     "date": "2026-04-12",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Genuinely worth what I paid",
     "body": "the daily-driver packs + the playbook I needed is the kind of \"buy everything\" pricing you don't see often. Almost feels like a launch promo, but if it's not, ship it. Honestly bought the full bundle for two packs and ended up using six. Then went and bought the matching playbook too. Just get the bundle.",
     "helpfulCount": 36,
     "verified": true
@@ -5064,7 +5064,7 @@ export const REVIEWS: Review[] = [
     "role": "Marketing lead",
     "date": "2026-04-12",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "All five stars. My business partner has a copy now too.",
     "body": "the AI Power User pack alone is worth more than the bundle price. Going to be using both for the foreseeable future.",
     "helpfulCount": 4,
     "verified": true
@@ -5129,7 +5129,7 @@ export const REVIEWS: Review[] = [
     "role": "Solo founder",
     "date": "2026-04-12",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "All five stars. Sent the link to a colleague within an hour.",
     "body": "the monetization paths chapter is genuinely the cleanest treatment of the topic I've seen. Worth more than the price. What I appreciated: it's not \"manifesting your future business.\" It's operator content. the hook formula library is the kind of thing you can implement Tuesday.",
     "helpfulCount": 11,
     "verified": true
@@ -5142,7 +5142,7 @@ export const REVIEWS: Review[] = [
     "role": "Performance coach",
     "date": "2026-04-12",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "Easy 5. Already shared it with my team.",
     "body": "Read it in one weekend, started implementing Monday. As a consultant, the outcome-based packaging template alone justified the buy. the productized IP outline hit harder than I expected. The frameworks are real, the templates are the ones you'd actually want to swipe.",
     "helpfulCount": 6,
     "verified": true
@@ -5181,7 +5181,7 @@ export const REVIEWS: Review[] = [
     "role": "Indie maker",
     "date": "2026-04-12",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Easily worth the price",
     "body": "Read it in one weekend, started implementing Monday. As a indie maker, the pre-launch landing page alone justified the buy. The 90-day roadmap is the part that doesn't show up in the marketing but is the most useful thing in the playbook. Combined with the validation worksheet, it's basically a quarter's worth of planning done for you.",
     "helpfulCount": 36,
     "verified": true
@@ -5194,8 +5194,8 @@ export const REVIEWS: Review[] = [
     "role": "Senior PM",
     "date": "2026-04-12",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
-    "body": "the Inbox Cut is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. Bought this on a Tuesday, used the 1-Page Summary on Wednesday, had a real result by Friday. As a senior pm, that's the bar.",
+    "title": "Easy 5. Already shared it with my team.",
+    "body": "the Inbox Cut is quietly impressive. On my first attempt I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. Bought this on a Tuesday, used the 1-Page Summary on Wednesday, had a real result by Friday. As a senior pm, that's the bar.",
     "helpfulCount": 6,
     "verified": true
   },
@@ -5233,8 +5233,8 @@ export const REVIEWS: Review[] = [
     "role": "Freelance consultant",
     "date": "2026-04-12",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
-    "body": "the Niche Slice is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. I've bought four prompt packs this year. This is the only one I didn't delete after a month. the Cold Email Autopsy is the standout.",
+    "title": "Easily worth the price",
+    "body": "the Niche Slice is quietly impressive. On run one I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. I've bought four prompt packs this year. This is the only one I didn't delete after a month. the Cold Email Autopsy is the standout.",
     "helpfulCount": 36,
     "verified": true
   },
@@ -5298,8 +5298,8 @@ export const REVIEWS: Review[] = [
     "role": "Founder, building in public",
     "date": "2026-04-11",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
-    "body": "the Story Thread alone made the whole pack worth it. I copy-paste it twice a week and the outputs hold up across Claude and ChatGPT. The \"pro tip\" field at the end of each prompt is the unsung hero. the Mid-Cut CTA's pro tip alone changed how I follow up on the outputs. the Mid-Cut CTA is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
+    "title": "Easily worth the price",
+    "body": "the Story Thread alone made the whole pack worth it. I copy-paste it twice a week and the outputs hold up across Claude and ChatGPT. The \"pro tip\" field at the end of each prompt is the unsung hero. the Mid-Cut CTA's pro tip alone changed how I follow up on the outputs. the Mid-Cut CTA is low-hype, high-utility. On run one I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
     "helpfulCount": 18,
     "verified": true
   },
@@ -5415,7 +5415,7 @@ export const REVIEWS: Review[] = [
     "role": "Director, AI ops",
     "date": "2026-04-10",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "More value than I paid for",
     "body": "As a operations consultant, I'd been stuck on positioning for half a year. the cold outreach sequence unstuck me in an evening. the pilot SOW alone saved me three months of trial and error. The kind of detail you only get from someone who actually ran the playbook.",
     "helpfulCount": 15,
     "verified": true
@@ -5467,7 +5467,7 @@ export const REVIEWS: Review[] = [
     "role": "Brand marketer, DTC",
     "date": "2026-04-10",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "Genuinely worth what I paid",
     "body": "Bought this on a Tuesday, used the Case Study Mine on Wednesday, had a real result by Friday. As a marketing lead, fintech, that's the bar. the Subject-Line Battery is the kind of prompt I'd have written in three years if I'd thought hard enough. It's there in fifteen seconds instead.",
     "helpfulCount": 17,
     "verified": true
@@ -5480,7 +5480,7 @@ export const REVIEWS: Review[] = [
     "role": "Content director",
     "date": "2026-04-10",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "5/5 from me. My business partner has a copy now too.",
     "body": "I've bought four prompt packs this year. This is the only one I didn't delete after a month. the Cluster Map prompt is the standout. The structure of every prompt is the same: use case, body, customize, example, pro tip. That consistency makes the pack usable on the actual job. the Win-Back Brief is the one I keep going back to. The Hook Ladder saved me a meeting. Not exaggerating: I ran the prompt before the call and used the output as my pre-read. Got 90% of what would've taken a half-hour brainstorm.",
     "helpfulCount": 8,
     "verified": true
@@ -5506,7 +5506,7 @@ export const REVIEWS: Review[] = [
     "role": "Newsletter operator, 8k subs",
     "date": "2026-04-09",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Money well spent",
     "body": "Better than three courses I've bought combined. chapter 4 on running the interview with AI is the one I keep going back to. The 90-day roadmap is the part that doesn't show up in the marketing but is the most useful thing in the playbook. Combined with the master prompt sequence, it's basically a quarter's worth of planning done for you. Not theory. The chapters read like an operator handing you their actual notes. the 3 product archetypes chapter in particular has the kind of detail you can't fake.",
     "helpfulCount": 38,
     "verified": true
@@ -5519,7 +5519,7 @@ export const REVIEWS: Review[] = [
     "role": "YouTube + X creator",
     "date": "2026-04-09",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "Full 5 stars from me. Already passed it to a teammate.",
     "body": "Bought this on a Tuesday, used the Soft Pitch on Wednesday, had a real result by Friday. As a daily linkedin poster, that's the bar. Most prompt packs are a Notion template in a tuxedo. This one isn't. the Quote-Tweet Reply is the kind of prompt you only get from someone who has actually shipped the work. The \"pro tip\" field at the end of each prompt is the unsung hero. the Launch Story's pro tip alone changed how I follow up on the outputs.",
     "helpfulCount": 83,
     "verified": true
@@ -5883,7 +5883,7 @@ export const REVIEWS: Review[] = [
     "role": "AI integration consultant",
     "date": "2026-04-07",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Genuinely worth what I paid",
     "body": "Read it in one weekend, started implementing Monday. As a make.com consultant, the fixed-fee proposal template alone justified the buy.",
     "helpfulCount": 13,
     "verified": true
@@ -5948,7 +5948,7 @@ export const REVIEWS: Review[] = [
     "role": "Growth contractor",
     "date": "2026-04-07",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "Worth every cent",
     "body": "As a solo marketing operator, I'd been hand-rolling prompts in a Doc for a year. the Carousel Spine replaced about half of them, and the new versions are tighter.",
     "helpfulCount": 6,
     "verified": true
@@ -5974,7 +5974,7 @@ export const REVIEWS: Review[] = [
     "role": "Daily LinkedIn poster",
     "date": "2026-04-06",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "Easy 5. Forwarded to my Slack the same day.",
     "body": "Bought this on a Tuesday, used the Quote-Tweet Reply on Wednesday, had a real result by Friday. As a tiktok + reels operator, that's the bar.",
     "helpfulCount": 6,
     "verified": true
@@ -5987,7 +5987,7 @@ export const REVIEWS: Review[] = [
     "role": "Solo MRR operator",
     "date": "2026-04-06",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "Easily worth the price",
     "body": "The 90-day roadmap is the part that doesn't show up in the marketing but is the most useful thing in the playbook. Combined with the pricing test framework, it's basically a quarter's worth of planning done for you. the MVP scope doc is genuinely the cleanest treatment of the topic I've seen. Worth more than the price.",
     "helpfulCount": 6,
     "verified": true
@@ -6026,7 +6026,7 @@ export const REVIEWS: Review[] = [
     "role": "YT shorts operator",
     "date": "2026-04-06",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "Most useful playbook I've bought this year",
     "body": "I've bought four prompt packs this year. This is the only one I didn't delete after a month. the Collab Pitch is the standout. the 8-Second Hook is the kind of prompt I'd have written in three years if I'd thought hard enough. It's there in fifteen seconds instead.",
     "helpfulCount": 6,
     "verified": true
@@ -6053,7 +6053,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-04-06",
     "rating": 5,
     "title": "The Subject-Line Battery saved me a meeting",
-    "body": "the Carousel Spine is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. the Win-Back Brief alone made the whole pack worth it. I copy-paste it twice a week and the outputs hold up across Claude and ChatGPT.",
+    "body": "the Carousel Spine is low-hype, high-utility. On my first attempt I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. the Win-Back Brief alone made the whole pack worth it. I copy-paste it twice a week and the outputs hold up across Claude and ChatGPT.",
     "helpfulCount": 9,
     "verified": true
   },
@@ -6104,7 +6104,7 @@ export const REVIEWS: Review[] = [
     "role": "Indie maker",
     "date": "2026-04-05",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "More useful than playbooks twice the price",
     "body": "chapter 6 on the launch week alone saved me three months of trial and error. The kind of detail you only get from someone who actually ran the playbook.",
     "helpfulCount": 9,
     "verified": true
@@ -6156,7 +6156,7 @@ export const REVIEWS: Review[] = [
     "role": "Solo operator",
     "date": "2026-04-05",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "Worth every cent",
     "body": "the Objection Pivot alone made the whole pack worth it. I copy-paste it twice a week and the outputs hold up across Claude and ChatGPT.",
     "helpfulCount": 9,
     "verified": true
@@ -6195,7 +6195,7 @@ export const REVIEWS: Review[] = [
     "role": "Designer + dev",
     "date": "2026-04-04",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "Most useful playbook I've bought this year",
     "body": "the Coaching/Consulting playbook is the kind of \"buy everything\" pricing you don't see often. Almost feels like a launch promo, but if it's not, ship it. Honestly bought the Coaching/Consulting playbook for two packs and ended up using six. Then went and bought the matching playbook too. Just get the bundle.",
     "helpfulCount": 13,
     "verified": true
@@ -6442,7 +6442,7 @@ export const REVIEWS: Review[] = [
     "role": "Automation agency owner",
     "date": "2026-04-03",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "Genuinely worth what I paid",
     "body": "What I appreciated: it's not \"manifesting your future business.\" It's operator content. chapter 3 on pricing is the kind of thing you can implement Tuesday.",
     "helpfulCount": 12,
     "verified": true
@@ -6482,7 +6482,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-04-03",
     "rating": 5,
     "title": "Bought twice. Different team, same outcome.",
-    "body": "the Guest Brief is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. Bought this on a Tuesday, used the Guest Brief on Wednesday, had a real result by Friday. As a independent journalist, that's the bar. the Collab Pitch alone made the whole pack worth it. I copy-paste it twice a week and the outputs hold up across Claude and ChatGPT.",
+    "body": "the Guest Brief is doesn't oversell, just delivers. Right away I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. Bought this on a Tuesday, used the Guest Brief on Wednesday, had a real result by Friday. As a independent journalist, that's the bar. the Collab Pitch alone made the whole pack worth it. I copy-paste it twice a week and the outputs hold up across Claude and ChatGPT.",
     "helpfulCount": 16,
     "verified": true
   },
@@ -6612,7 +6612,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-04-02",
     "rating": 5,
     "title": "Worth it on day one",
-    "body": "the Title Battery is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. Most prompt packs are a Notion template in a tuxedo. This one isn't. the 1-to-10 repurposing prompt is the kind of prompt you only get from someone who has actually shipped the work.",
+    "body": "the Title Battery is quietly impressive. Right away I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. Most prompt packs are a Notion template in a tuxedo. This one isn't. the 1-to-10 repurposing prompt is the kind of prompt you only get from someone who has actually shipped the work.",
     "helpfulCount": 0,
     "verified": true
   },
@@ -6702,7 +6702,7 @@ export const REVIEWS: Review[] = [
     "role": "Designer + dev",
     "date": "2026-04-01",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "Genuinely worth what I paid",
     "body": "the Authority bundle math is the move. Especially because the packs and the playbooks pair so well: the daily-driver tools plus the long-arc business book. Honestly bought the strategy + execution combo for two packs and ended up using six. Then went and bought the matching playbook too. Just get the bundle. the playbook and the prompt pack pairing is the right call. The bundle math is silly. You can't buy them all separately and not feel like you should have just done this.",
     "helpfulCount": 71,
     "verified": true
@@ -6715,7 +6715,7 @@ export const REVIEWS: Review[] = [
     "role": "Independent consultant + creator",
     "date": "2026-04-01",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "More useful than playbooks twice the price",
     "body": "the validation prompts alone saved me three months of trial and error. The kind of detail you only get from someone who actually ran the playbook.",
     "helpfulCount": 3,
     "verified": true
@@ -7002,7 +7002,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-03-31",
     "rating": 5,
     "title": "The Inbox Cut saved me a meeting",
-    "body": "the Deep-Work Brief alone made the whole pack worth it. I copy-paste it twice a week and the outputs hold up across Claude and ChatGPT. the Inbox Cut is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
+    "body": "the Deep-Work Brief alone made the whole pack worth it. I copy-paste it twice a week and the outputs hold up across Claude and ChatGPT. the Inbox Cut is more useful than it lets on. On my first attempt I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
     "helpfulCount": 22,
     "verified": true
   },
@@ -7015,7 +7015,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-03-31",
     "rating": 5,
     "title": "This is what good prompts look like",
-    "body": "the 8-Second Hook is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. Most prompt packs are a Notion template in a tuxedo. This one isn't. the Guest Brief is the kind of prompt you only get from someone who has actually shipped the work.",
+    "body": "the 8-Second Hook is quietly impressive. First session in I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. Most prompt packs are a Notion template in a tuxedo. This one isn't. the Guest Brief is the kind of prompt you only get from someone who has actually shipped the work.",
     "helpfulCount": 0,
     "verified": true
   },
@@ -7028,7 +7028,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-03-31",
     "rating": 5,
     "title": "Honestly didn't expect it to be this useful",
-    "body": "the Title Battery alone made the whole pack worth it. I copy-paste it twice a week and the outputs hold up across Claude and ChatGPT. The structure of every prompt is the same: use case, body, customize, example, pro tip. That consistency makes the pack usable on the actual job. the 8-Second Hook is the one I keep going back to. the Collab Pitch is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
+    "body": "the Title Battery alone made the whole pack worth it. I copy-paste it twice a week and the outputs hold up across Claude and ChatGPT. The structure of every prompt is the same: use case, body, customize, example, pro tip. That consistency makes the pack usable on the actual job. the 8-Second Hook is the one I keep going back to. the Collab Pitch is better than I expected. From the very first try I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
     "helpfulCount": 13,
     "verified": true
   },
@@ -7041,7 +7041,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-03-31",
     "rating": 5,
     "title": "This is what good prompts look like",
-    "body": "the README Spine is the kind of prompt I'd have written in three years if I'd thought hard enough. It's there in fifteen seconds instead. the PR Description saved me a meeting. Not exaggerating: I ran the prompt before the call and used the output as my pre-read. Got 90% of what would've taken a half-hour brainstorm. the ADR Template is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
+    "body": "the README Spine is the kind of prompt I'd have written in three years if I'd thought hard enough. It's there in fifteen seconds instead. the PR Description saved me a meeting. Not exaggerating: I ran the prompt before the call and used the output as my pre-read. Got 90% of what would've taken a half-hour brainstorm. the ADR Template is doesn't oversell, just delivers. On my first attempt I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
     "helpfulCount": 32,
     "verified": true
   },
@@ -7054,7 +7054,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-03-31",
     "rating": 5,
     "title": "Real prompts, real outputs",
-    "body": "the Security Sweep saved me a meeting. Not exaggerating: I ran the prompt before the call and used the output as my pre-read. Got 90% of what would've taken a half-hour brainstorm. the ADR Template is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. I've bought four prompt packs this year. This is the only one I didn't delete after a month. the ADR Template is the standout.",
+    "body": "the Security Sweep saved me a meeting. Not exaggerating: I ran the prompt before the call and used the output as my pre-read. Got 90% of what would've taken a half-hour brainstorm. the ADR Template is underrated. Right away I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. I've bought four prompt packs this year. This is the only one I didn't delete after a month. the ADR Template is the standout.",
     "helpfulCount": 4,
     "verified": true
   },
@@ -7105,7 +7105,7 @@ export const REVIEWS: Review[] = [
     "role": "Marketing lead, fintech",
     "date": "2026-03-31",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "Five stars without hesitation. Two friends already asked where I got it.",
     "body": "Most prompt packs are a Notion template in a tuxedo. This one isn't. the Win-Back Brief is the kind of prompt you only get from someone who has actually shipped the work.",
     "helpfulCount": 6,
     "verified": true
@@ -7183,7 +7183,7 @@ export const REVIEWS: Review[] = [
     "role": "Independent consultant",
     "date": "2026-03-30",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "Full 5 stars from me. My business partner has a copy now too.",
     "body": "What I appreciated: it's not \"manifesting your future business.\" It's operator content. the bio template set is the kind of thing you can implement Tuesday.",
     "helpfulCount": 12,
     "verified": true
@@ -7210,7 +7210,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-03-30",
     "rating": 5,
     "title": "Real prompts, real outputs",
-    "body": "Most prompt packs are a Notion template in a tuxedo. This one isn't. the Cold Email Autopsy is the kind of prompt you only get from someone who has actually shipped the work. the Niche Slice is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. the Weekly Review prompt saved me a meeting. Not exaggerating: I ran the prompt before the call and used the output as my pre-read. Got 90% of what would've taken a half-hour brainstorm.",
+    "body": "Most prompt packs are a Notion template in a tuxedo. This one isn't. the Cold Email Autopsy is the kind of prompt you only get from someone who has actually shipped the work. the Niche Slice is underrated. Right away I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. the Weekly Review prompt saved me a meeting. Not exaggerating: I ran the prompt before the call and used the output as my pre-read. Got 90% of what would've taken a half-hour brainstorm.",
     "helpfulCount": 1,
     "verified": true
   },
@@ -7274,7 +7274,7 @@ export const REVIEWS: Review[] = [
     "role": "Substack writer, niche audience",
     "date": "2026-03-29",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Best AI-tooling buy this quarter",
     "body": "the lead magnet outline hit harder than I expected. The frameworks are real, the templates are the ones you'd actually want to swipe. the lead magnet outline alone saved me three months of trial and error. The kind of detail you only get from someone who actually ran the playbook. Better than three courses I've bought combined. the re-engagement campaign is the one I keep going back to.",
     "helpfulCount": 16,
     "verified": true
@@ -7352,7 +7352,7 @@ export const REVIEWS: Review[] = [
     "role": "Substack writer",
     "date": "2026-03-29",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Best AI-tooling buy this quarter",
     "body": "Bought this on a Tuesday, used the Want vs. Need on Wednesday, had a real result by Friday. As a ghostwriter, that's the bar. the Want vs. Need alone made the whole pack worth it. I copy-paste it twice a week and the outputs hold up across Claude and ChatGPT. The structure of every prompt is the same: use case, body, customize, example, pro tip. That consistency makes the pack usable on the actual job. the Query Letter prompt is the one I keep going back to.",
     "helpfulCount": 16,
     "verified": true
@@ -7625,7 +7625,7 @@ export const REVIEWS: Review[] = [
     "role": "Performance marketer",
     "date": "2026-03-28",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "Easily worth the price",
     "body": "the Carousel Spine alone made the whole pack worth it. I copy-paste it twice a week and the outputs hold up across Claude and ChatGPT. I've bought four prompt packs this year. This is the only one I didn't delete after a month. the Win-Back Brief is the standout.",
     "helpfulCount": 22,
     "verified": true
@@ -7638,7 +7638,7 @@ export const REVIEWS: Review[] = [
     "role": "Head of Growth, B2B SaaS",
     "date": "2026-03-28",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "Genuinely worth what I paid",
     "body": "The structure of every prompt is the same: use case, body, customize, example, pro tip. That consistency makes the pack usable on the actual job. the Cluster Map prompt is the one I keep going back to.",
     "helpfulCount": 6,
     "verified": true
@@ -7742,7 +7742,7 @@ export const REVIEWS: Review[] = [
     "role": "Brand marketer, DTC",
     "date": "2026-03-27",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Best money I've spent on AI tooling all year",
     "body": "As a director of marketing, I'd been hand-rolling prompts in a Doc for a year. The Hook Ladder replaced about half of them, and the new versions are tighter. the Carousel Spine saved me a meeting. Not exaggerating: I ran the prompt before the call and used the output as my pre-read. Got 90% of what would've taken a half-hour brainstorm.",
     "helpfulCount": 45,
     "verified": true
@@ -7781,8 +7781,8 @@ export const REVIEWS: Review[] = [
     "role": "Solo creator",
     "date": "2026-03-26",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
-    "body": "Bought this on a Tuesday, used the Pattern-Interrupt Hook on Wednesday, had a real result by Friday. As a content marketer at startup, that's the bar. the 7-Slide Lesson is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
+    "title": "Most useful playbook I've bought this year",
+    "body": "Bought this on a Tuesday, used the Pattern-Interrupt Hook on Wednesday, had a real result by Friday. As a content marketer at startup, that's the bar. the 7-Slide Lesson is better than I expected. Right away I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
     "helpfulCount": 22,
     "verified": true
   },
@@ -7977,7 +7977,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-03-26",
     "rating": 5,
     "title": "Better than three of the courses I've bought",
-    "body": "the Pre-Mortem is the kind of prompt I'd have written in three years if I'd thought hard enough. It's there in fifteen seconds instead. the Self-Critique Loop is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. I've bought four prompt packs this year. This is the only one I didn't delete after a month. the CoT Spine is the standout.",
+    "body": "the Pre-Mortem is the kind of prompt I'd have written in three years if I'd thought hard enough. It's there in fifteen seconds instead. the Self-Critique Loop is doesn't oversell, just delivers. From the very first try I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. I've bought four prompt packs this year. This is the only one I didn't delete after a month. the CoT Spine is the standout.",
     "helpfulCount": 152,
     "verified": true
   },
@@ -8002,7 +8002,7 @@ export const REVIEWS: Review[] = [
     "role": "Solo operator",
     "date": "2026-03-25",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "More useful than playbooks twice the price",
     "body": "the bundle math is the move. Especially because the packs and the playbooks pair so well: the daily-driver tools plus the long-arc business book. Honestly bought the Marketer's Pack for two packs and ended up using six. Then went and bought the matching playbook too. Just get the bundle.",
     "helpfulCount": 63,
     "verified": true
@@ -8015,7 +8015,7 @@ export const REVIEWS: Review[] = [
     "role": "Product designer, building audience",
     "date": "2026-03-25",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "Easy 5. My business partner has a copy now too.",
     "body": "chapter 2 on positioning is worth the price by itself. Walked into a discovery call the next week and closed. What I appreciated: it's not \"manifesting your future business.\" It's operator content. chapter 2 on positioning is the kind of thing you can implement Tuesday. Not theory. The chapters read like an operator handing you their actual notes. the bio template set in particular has the kind of detail you can't fake.",
     "helpfulCount": 12,
     "verified": true
@@ -8028,7 +8028,7 @@ export const REVIEWS: Review[] = [
     "role": "Side-project founder",
     "date": "2026-03-25",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "Five from me. Sent the link to a colleague within an hour.",
     "body": "What I appreciated: it's not \"manifesting your future business.\" It's operator content. the launch week sequence is the kind of thing you can implement Tuesday. chapter 7 on the first 10 customers alone saved me three months of trial and error. The kind of detail you only get from someone who actually ran the playbook.",
     "helpfulCount": 20,
     "verified": true
@@ -8080,7 +8080,7 @@ export const REVIEWS: Review[] = [
     "role": "Faceless YT operator",
     "date": "2026-03-25",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "5/5 from me. My business partner has a copy now too.",
     "body": "The \"pro tip\" field at the end of each prompt is the unsung hero. the Title Battery's pro tip alone changed how I follow up on the outputs. the 1-to-10 repurposing prompt alone made the whole pack worth it. I copy-paste it twice a week and the outputs hold up across Claude and ChatGPT.",
     "helpfulCount": 20,
     "verified": true
@@ -8132,7 +8132,7 @@ export const REVIEWS: Review[] = [
     "role": "Solo operator building in public",
     "date": "2026-03-24",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "All five stars. Sent the link to a colleague within an hour.",
     "body": "the sponsor pitch deck is worth the price by itself. Walked into a discovery call the next week and closed.",
     "helpfulCount": 21,
     "verified": true
@@ -8223,7 +8223,7 @@ export const REVIEWS: Review[] = [
     "role": "Newsletter writer, 6k subs",
     "date": "2026-03-23",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "Best playbook I've bought in a while",
     "body": "The 90-day roadmap is the part that doesn't show up in the marketing but is the most useful thing in the playbook. Combined with the consistency system, it's basically a quarter's worth of planning done for you. Not theory. The chapters read like an operator handing you their actual notes. the two-axis positioning grid in particular has the kind of detail you can't fake.",
     "helpfulCount": 14,
     "verified": true
@@ -8328,7 +8328,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-03-23",
     "rating": 5,
     "title": "Bought twice. Different team, same outcome.",
-    "body": "the Tiering Frame is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. I've bought four prompt packs this year. This is the only one I didn't delete after a month. the Objection Pivot is the standout.",
+    "body": "the Tiering Frame is low-hype, high-utility. Right away I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. I've bought four prompt packs this year. This is the only one I didn't delete after a month. the Objection Pivot is the standout.",
     "helpfulCount": 12,
     "verified": true
   },
@@ -8340,7 +8340,7 @@ export const REVIEWS: Review[] = [
     "role": "Head of Growth, B2B SaaS",
     "date": "2026-03-23",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "Easily worth the price",
     "body": "As a content marketer, agency, I'd been hand-rolling prompts in a Doc for a year. The Hook Ladder replaced about half of them, and the new versions are tighter. the Win-Back Brief saved me a meeting. Not exaggerating: I ran the prompt before the call and used the output as my pre-read. Got 90% of what would've taken a half-hour brainstorm. the Case Study Mine alone made the whole pack worth it. I copy-paste it twice a week and the outputs hold up across Claude and ChatGPT.",
     "helpfulCount": 507,
     "verified": true
@@ -8444,7 +8444,7 @@ export const REVIEWS: Review[] = [
     "role": "Channel owner, 14k subs",
     "date": "2026-03-22",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "Most useful playbook I've bought this year",
     "body": "Read it in one weekend, started implementing Monday. As a faceless youtube operator, the cross-post pipeline alone justified the buy. The 90-day roadmap is the part that doesn't show up in the marketing but is the most useful thing in the playbook. Combined with the title formula library, it's basically a quarter's worth of planning done for you.",
     "helpfulCount": 82,
     "verified": true
@@ -8509,7 +8509,7 @@ export const REVIEWS: Review[] = [
     "role": "Independent automation builder",
     "date": "2026-03-22",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "All five stars. Already shared it with my team.",
     "body": "Not theory. The chapters read like an operator handing you their actual notes. chapter 10 on retainers in particular has the kind of detail you can't fake. the cold outreach sequence hit harder than I expected. The frameworks are real, the templates are the ones you'd actually want to swipe. Read it in one weekend, started implementing Monday. As a make.com consultant, the pilot SOW alone justified the buy.",
     "helpfulCount": 9,
     "verified": true
@@ -8535,8 +8535,8 @@ export const REVIEWS: Review[] = [
     "role": "Substack writer",
     "date": "2026-03-22",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
-    "body": "the Synopsis Skeleton is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. I've bought four prompt packs this year. This is the only one I didn't delete after a month. the Cut List is the standout.",
+    "title": "Most useful playbook I've bought this year",
+    "body": "the Synopsis Skeleton is doesn't oversell, just delivers. Out of the gate I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. I've bought four prompt packs this year. This is the only one I didn't delete after a month. the Cut List is the standout.",
     "helpfulCount": 82,
     "verified": true
   },
@@ -8613,8 +8613,8 @@ export const REVIEWS: Review[] = [
     "role": "Knowledge worker, fintech",
     "date": "2026-03-21",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
-    "body": "the Weekly Pre-Mortem is the kind of prompt I'd have written in three years if I'd thought hard enough. It's there in fifteen seconds instead. Most prompt packs are a Notion template in a tuxedo. This one isn't. the Eisenhower Cut is the kind of prompt you only get from someone who has actually shipped the work. the Deep-Work Brief is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
+    "title": "Best playbook I've bought in a while",
+    "body": "the Weekly Pre-Mortem is the kind of prompt I'd have written in three years if I'd thought hard enough. It's there in fifteen seconds instead. Most prompt packs are a Notion template in a tuxedo. This one isn't. the Eisenhower Cut is the kind of prompt you only get from someone who has actually shipped the work. the Deep-Work Brief is better than I expected. On my first attempt I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
     "helpfulCount": 18,
     "verified": true
   },
@@ -8627,7 +8627,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-03-21",
     "rating": 5,
     "title": "The \"pro tip\" field is the unsung hero",
-    "body": "the Weekly Pre-Mortem is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. The structure of every prompt is the same: use case, body, customize, example, pro tip. That consistency makes the pack usable on the actual job. the Eisenhower Cut is the one I keep going back to.",
+    "body": "the Weekly Pre-Mortem is low-hype, high-utility. Out of the gate I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. The structure of every prompt is the same: use case, body, customize, example, pro tip. That consistency makes the pack usable on the actual job. the Eisenhower Cut is the one I keep going back to.",
     "helpfulCount": 15,
     "verified": true
   },
@@ -8796,7 +8796,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-03-20",
     "rating": 5,
     "title": "Worth it on day one",
-    "body": "the README Spine is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. the Security Sweep saved me a meeting. Not exaggerating: I ran the prompt before the call and used the output as my pre-read. Got 90% of what would've taken a half-hour brainstorm.",
+    "body": "the README Spine is doesn't oversell, just delivers. Right away I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. the Security Sweep saved me a meeting. Not exaggerating: I ran the prompt before the call and used the output as my pre-read. Got 90% of what would've taken a half-hour brainstorm.",
     "helpfulCount": 3,
     "verified": true
   },
@@ -8834,7 +8834,7 @@ export const REVIEWS: Review[] = [
     "role": "Founder + audience builder",
     "date": "2026-03-19",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "Genuinely worth what I paid",
     "body": "the 3 product archetypes chapter is genuinely the cleanest treatment of the topic I've seen. Worth more than the price. Better than three courses I've bought combined. the synthesis prompts is the one I keep going back to. the synthesis prompts alone saved me three months of trial and error. The kind of detail you only get from someone who actually ran the playbook.",
     "helpfulCount": 22,
     "verified": true
@@ -8848,7 +8848,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-03-19",
     "rating": 5,
     "title": "Better than three of the courses I've bought",
-    "body": "As a founder, building in public, I'd been hand-rolling prompts in a Doc for a year. the Soft Pitch replaced about half of them, and the new versions are tighter. the Mid-Cut CTA alone made the whole pack worth it. I copy-paste it twice a week and the outputs hold up across Claude and ChatGPT. the 7-Slide Lesson is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
+    "body": "As a founder, building in public, I'd been hand-rolling prompts in a Doc for a year. the Soft Pitch replaced about half of them, and the new versions are tighter. the Mid-Cut CTA alone made the whole pack worth it. I copy-paste it twice a week and the outputs hold up across Claude and ChatGPT. the 7-Slide Lesson is doesn't oversell, just delivers. First session in I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
     "helpfulCount": 186,
     "verified": true
   },
@@ -8899,7 +8899,7 @@ export const REVIEWS: Review[] = [
     "role": "Make.com consultant",
     "date": "2026-03-19",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "Best playbook I've bought in a while",
     "body": "Better than three courses I've bought combined. the retainer contract is the one I keep going back to. the retainer contract alone saved me three months of trial and error. The kind of detail you only get from someone who actually ran the playbook.",
     "helpfulCount": 22,
     "verified": true
@@ -8913,7 +8913,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-03-19",
     "rating": 5,
     "title": "The Title Battery saved me a meeting",
-    "body": "the Series Spine is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
+    "body": "the Series Spine is more useful than it lets on. First session in I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
     "helpfulCount": 14,
     "verified": true
   },
@@ -9003,7 +9003,7 @@ export const REVIEWS: Review[] = [
     "role": "Indie author with audience",
     "date": "2026-03-18",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "Best playbook I've bought in a while",
     "body": "Read it in one weekend, started implementing Monday. As a independent consultant + creator, the 3 product archetypes chapter alone justified the buy. The 90-day roadmap is the part that doesn't show up in the marketing but is the most useful thing in the playbook. Combined with the synthesis prompts, it's basically a quarter's worth of planning done for you.",
     "helpfulCount": 20,
     "verified": true
@@ -9173,7 +9173,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-03-18",
     "rating": 5,
     "title": "Honestly didn't expect it to be this useful",
-    "body": "As a solo founder, productized, I'd been hand-rolling prompts in a Doc for a year. the SOP Skeleton replaced about half of them, and the new versions are tighter. the Cold Email Autopsy is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
+    "body": "As a solo founder, productized, I'd been hand-rolling prompts in a Doc for a year. the SOP Skeleton replaced about half of them, and the new versions are tighter. the Cold Email Autopsy is better than I expected. First session in I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
     "helpfulCount": 143,
     "verified": true
   },
@@ -9186,7 +9186,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-03-18",
     "rating": 5,
     "title": "Bought twice. Different team, same outcome.",
-    "body": "the Tiering Frame is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. The \"pro tip\" field at the end of each prompt is the unsung hero. the Tiering Frame's pro tip alone changed how I follow up on the outputs. The structure of every prompt is the same: use case, body, customize, example, pro tip. That consistency makes the pack usable on the actual job. the Cold Email Autopsy is the one I keep going back to.",
+    "body": "the Tiering Frame is doesn't oversell, just delivers. First session in I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. The \"pro tip\" field at the end of each prompt is the unsung hero. the Tiering Frame's pro tip alone changed how I follow up on the outputs. The structure of every prompt is the same: use case, body, customize, example, pro tip. That consistency makes the pack usable on the actual job. the Cold Email Autopsy is the one I keep going back to.",
     "helpfulCount": 182,
     "verified": true
   },
@@ -9237,7 +9237,7 @@ export const REVIEWS: Review[] = [
     "role": "Marketing consultant",
     "date": "2026-03-18",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "All five stars. Two friends already asked where I got it.",
     "body": "the Subject-Line Battery alone made the whole pack worth it. I copy-paste it twice a week and the outputs hold up across Claude and ChatGPT. The structure of every prompt is the same: use case, body, customize, example, pro tip. That consistency makes the pack usable on the actual job. The Hook Ladder is the one I keep going back to.",
     "helpfulCount": 15,
     "verified": true
@@ -9524,7 +9524,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-03-15",
     "rating": 5,
     "title": "Real prompts, real outputs",
-    "body": "the CoT Spine is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. Bought this on a Tuesday, used the Output Schema on Wednesday, had a real result by Friday. As a independent researcher, that's the bar. The \"pro tip\" field at the end of each prompt is the unsung hero. the CoT Spine's pro tip alone changed how I follow up on the outputs.",
+    "body": "the CoT Spine is more useful than it lets on. On run one I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. Bought this on a Tuesday, used the Output Schema on Wednesday, had a real result by Friday. As a independent researcher, that's the bar. The \"pro tip\" field at the end of each prompt is the unsung hero. the CoT Spine's pro tip alone changed how I follow up on the outputs.",
     "helpfulCount": 22,
     "verified": true
   },
@@ -9537,7 +9537,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-03-15",
     "rating": 5,
     "title": "The CoT Spine alone is worth the price",
-    "body": "the Output Schema is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
+    "body": "the Output Schema is quietly impressive. On my first attempt I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
     "helpfulCount": 8,
     "verified": true
   },
@@ -9550,7 +9550,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-03-15",
     "rating": 5,
     "title": "Better than three of the courses I've bought",
-    "body": "the Carousel Spine is the kind of prompt I'd have written in three years if I'd thought hard enough. It's there in fifteen seconds instead. The Hook Ladder is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
+    "body": "the Carousel Spine is the kind of prompt I'd have written in three years if I'd thought hard enough. It's there in fifteen seconds instead. The Hook Ladder is quietly impressive. From the very first try I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
     "helpfulCount": 22,
     "verified": true
   },
@@ -9562,7 +9562,7 @@ export const REVIEWS: Review[] = [
     "role": "Leadership coach",
     "date": "2026-03-14",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "Best playbook I've bought in a while",
     "body": "the discovery call script alone saved me three months of trial and error. The kind of detail you only get from someone who actually ran the playbook. Better than three courses I've bought combined. chapter 9 on group programs is the one I keep going back to.",
     "helpfulCount": 39,
     "verified": true
@@ -9588,7 +9588,7 @@ export const REVIEWS: Review[] = [
     "role": "Newsletter + course creator",
     "date": "2026-03-14",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "Genuinely worth what I paid",
     "body": "the 8-Second Hook alone made the whole pack worth it. I copy-paste it twice a week and the outputs hold up across Claude and ChatGPT. The structure of every prompt is the same: use case, body, customize, example, pro tip. That consistency makes the pack usable on the actual job. the 1-to-10 repurposing prompt is the one I keep going back to.",
     "helpfulCount": 39,
     "verified": true
@@ -9627,7 +9627,7 @@ export const REVIEWS: Review[] = [
     "role": "Solo creator + coach",
     "date": "2026-03-13",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "Five from me. Already shared it with my team.",
     "body": "Read it in one weekend, started implementing Monday. As a independent consultant + creator, the interview framework alone justified the buy. As a solo creator going premium, I'd been stuck on positioning for half a year. chapter 4 on running the interview with AI unstuck me in an evening.",
     "helpfulCount": 13,
     "verified": true
@@ -9732,7 +9732,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-03-13",
     "rating": 5,
     "title": "The bundle math is silly",
-    "body": "I've bought four prompt packs this year. This is the only one I didn't delete after a month. the Output Schema is the standout. the CoT Spine is the kind of prompt I'd have written in three years if I'd thought hard enough. It's there in fifteen seconds instead. the CoT Spine is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
+    "body": "I've bought four prompt packs this year. This is the only one I didn't delete after a month. the Output Schema is the standout. the CoT Spine is the kind of prompt I'd have written in three years if I'd thought hard enough. It's there in fifteen seconds instead. the CoT Spine is doesn't oversell, just delivers. From the very first try I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
     "helpfulCount": 91,
     "verified": true
   },
@@ -9745,7 +9745,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-03-13",
     "rating": 5,
     "title": "This is what good prompts look like",
-    "body": "the Carousel Spine is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. Bought this on a Tuesday, used the Carousel Spine on Wednesday, had a real result by Friday. As a brand marketer, dtc, that's the bar.",
+    "body": "the Carousel Spine is more useful than it lets on. From the very first try I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. Bought this on a Tuesday, used the Carousel Spine on Wednesday, had a real result by Friday. As a brand marketer, dtc, that's the bar.",
     "helpfulCount": 108,
     "verified": true
   },
@@ -9796,7 +9796,7 @@ export const REVIEWS: Review[] = [
     "role": "Indie content operator",
     "date": "2026-03-12",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Best AI-tooling buy this quarter",
     "body": "the script structure template alone saved me three months of trial and error. The kind of detail you only get from someone who actually ran the playbook. What I appreciated: it's not \"manifesting your future business.\" It's operator content. the niche scoring sheet is the kind of thing you can implement Tuesday.",
     "helpfulCount": 21,
     "verified": true
@@ -9809,7 +9809,7 @@ export const REVIEWS: Review[] = [
     "role": "Newsletter writer, 4k subs",
     "date": "2026-03-12",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Easily worth the price",
     "body": "The 90-day roadmap is the part that doesn't show up in the marketing but is the most useful thing in the playbook. Combined with the topic-picker exercise, it's basically a quarter's worth of planning done for you. Better than three courses I've bought combined. the lead magnet outline is the one I keep going back to.",
     "helpfulCount": 428,
     "verified": true
@@ -9822,7 +9822,7 @@ export const REVIEWS: Review[] = [
     "role": "Newsletter founder, B2B",
     "date": "2026-03-12",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Easily worth the price",
     "body": "The 90-day roadmap is the part that doesn't show up in the marketing but is the most useful thing in the playbook. Combined with the topic-picker exercise, it's basically a quarter's worth of planning done for you. the topic-picker exercise hit harder than I expected. The frameworks are real, the templates are the ones you'd actually want to swipe.",
     "helpfulCount": 22,
     "verified": true
@@ -9887,7 +9887,7 @@ export const REVIEWS: Review[] = [
     "role": "Author + ghostwriter",
     "date": "2026-03-12",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Best money I've spent on AI tooling all year",
     "body": "the Voice Lock alone made the whole pack worth it. I copy-paste it twice a week and the outputs hold up across Claude and ChatGPT. The \"pro tip\" field at the end of each prompt is the unsung hero. the Beat Sheet Builder's pro tip alone changed how I follow up on the outputs.",
     "helpfulCount": 21,
     "verified": true
@@ -9900,7 +9900,7 @@ export const REVIEWS: Review[] = [
     "role": "Newsletter writer",
     "date": "2026-03-12",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Easily worth the price",
     "body": "I've bought four prompt packs this year. This is the only one I didn't delete after a month. the Beat Sheet Builder is the standout. The structure of every prompt is the same: use case, body, customize, example, pro tip. That consistency makes the pack usable on the actual job. the Want vs. Need is the one I keep going back to.",
     "helpfulCount": 428,
     "verified": true
@@ -9913,7 +9913,7 @@ export const REVIEWS: Review[] = [
     "role": "Content writer, SaaS",
     "date": "2026-03-12",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Best money I've spent on AI tooling all year",
     "body": "I've bought four prompt packs this year. This is the only one I didn't delete after a month. the Beat Sheet Builder is the standout. Bought this on a Tuesday, used the Beat Sheet Builder on Wednesday, had a real result by Friday. As a editor, indie press, that's the bar.",
     "helpfulCount": 22,
     "verified": true
@@ -9927,7 +9927,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-03-12",
     "rating": 5,
     "title": "This is what good prompts look like",
-    "body": "the Query Letter prompt is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. the Want vs. Need saved me a meeting. Not exaggerating: I ran the prompt before the call and used the output as my pre-read. Got 90% of what would've taken a half-hour brainstorm.",
+    "body": "the Query Letter prompt is quietly impressive. Out of the gate I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. the Want vs. Need saved me a meeting. Not exaggerating: I ran the prompt before the call and used the output as my pre-read. Got 90% of what would've taken a half-hour brainstorm.",
     "helpfulCount": 129,
     "verified": true
   },
@@ -10005,7 +10005,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-03-11",
     "rating": 5,
     "title": "The Mid-Cut CTA saved me a meeting",
-    "body": "the Mid-Cut CTA is the kind of prompt I'd have written in three years if I'd thought hard enough. It's there in fifteen seconds instead. the Pattern-Interrupt Hook is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
+    "body": "the Mid-Cut CTA is the kind of prompt I'd have written in three years if I'd thought hard enough. It's there in fifteen seconds instead. the Pattern-Interrupt Hook is low-hype, high-utility. Out of the gate I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
     "helpfulCount": 215,
     "verified": true
   },
@@ -10018,7 +10018,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-03-11",
     "rating": 5,
     "title": "The \"pro tip\" field is the unsung hero",
-    "body": "the Comment Magnet is the kind of prompt I'd have written in three years if I'd thought hard enough. It's there in fifteen seconds instead. the Pattern-Interrupt Hook is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
+    "body": "the Comment Magnet is the kind of prompt I'd have written in three years if I'd thought hard enough. It's there in fifteen seconds instead. the Pattern-Interrupt Hook is doesn't oversell, just delivers. From the very first try I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
     "helpfulCount": 38,
     "verified": true
   },
@@ -10043,7 +10043,7 @@ export const REVIEWS: Review[] = [
     "role": "Indie web designer",
     "date": "2026-03-11",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "More value than I paid for",
     "body": "What I appreciated: it's not \"manifesting your future business.\" It's operator content. the cold outreach to local businesses is the kind of thing you can implement Tuesday.",
     "helpfulCount": 2,
     "verified": true
@@ -10069,7 +10069,7 @@ export const REVIEWS: Review[] = [
     "role": "Make.com consultant",
     "date": "2026-03-11",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Money well spent",
     "body": "chapter 10 on retainers is genuinely the cleanest treatment of the topic I've seen. Worth more than the price. Not theory. The chapters read like an operator handing you their actual notes. the retainer contract in particular has the kind of detail you can't fake. What I appreciated: it's not \"manifesting your future business.\" It's operator content. the cancellation save script is the kind of thing you can implement Tuesday.",
     "helpfulCount": 13,
     "verified": true
@@ -10108,7 +10108,7 @@ export const REVIEWS: Review[] = [
     "role": "Founder, coaching business",
     "date": "2026-03-11",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Genuinely worth what I paid",
     "body": "The \"pro tip\" field at the end of each prompt is the unsung hero. the Niche Slice's pro tip alone changed how I follow up on the outputs.",
     "helpfulCount": 2,
     "verified": true
@@ -10200,7 +10200,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-03-10",
     "rating": 5,
     "title": "The \"pro tip\" field is the unsung hero",
-    "body": "the Objection Pivot is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
+    "body": "the Objection Pivot is low-hype, high-utility. On my first attempt I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
     "helpfulCount": 8,
     "verified": true
   },
@@ -10264,7 +10264,7 @@ export const REVIEWS: Review[] = [
     "role": "Newsletter + product founder",
     "date": "2026-03-09",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "Easy 5. My business partner has a copy now too.",
     "body": "As a notion template creator, I'd been stuck on positioning for half a year. the evergreen drip unstuck me in an evening.",
     "helpfulCount": 62,
     "verified": true
@@ -10303,7 +10303,7 @@ export const REVIEWS: Review[] = [
     "role": "Productized service founder",
     "date": "2026-03-09",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "Easy 5. Two friends already asked where I got it.",
     "body": "As a side-project operator, I'd been hand-rolling prompts in a Doc for a year. the Weekly Review prompt replaced about half of them, and the new versions are tighter.",
     "helpfulCount": 62,
     "verified": true
@@ -10355,7 +10355,7 @@ export const REVIEWS: Review[] = [
     "role": "Solo operator",
     "date": "2026-03-08",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "More useful than playbooks twice the price",
     "body": "the Solopreneur Pack is the kind of \"buy everything\" pricing you don't see often. Almost feels like a launch promo, but if it's not, ship it. Bought the AI Power User pack after picking up two of the packs separately. Should have just done this from the start.",
     "helpfulCount": 62,
     "verified": true
@@ -10394,7 +10394,7 @@ export const REVIEWS: Review[] = [
     "role": "Newsletter writer, 6k subs",
     "date": "2026-03-08",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Money well spent",
     "body": "What I appreciated: it's not \"manifesting your future business.\" It's operator content. the launch templates is the kind of thing you can implement Tuesday. As a product designer, building audience, I'd been stuck on positioning for half a year. chapter 2 on positioning unstuck me in an evening.",
     "helpfulCount": 3,
     "verified": true
@@ -10407,7 +10407,7 @@ export const REVIEWS: Review[] = [
     "role": "Side-project creator",
     "date": "2026-03-08",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Money well spent",
     "body": "The 90-day roadmap is the part that doesn't show up in the marketing but is the most useful thing in the playbook. Combined with the launch week sequence, it's basically a quarter's worth of planning done for you. the validation worksheet is genuinely the cleanest treatment of the topic I've seen. Worth more than the price.",
     "helpfulCount": 38,
     "verified": true
@@ -10446,7 +10446,7 @@ export const REVIEWS: Review[] = [
     "role": "Solo agency owner",
     "date": "2026-03-08",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "More value than I paid for",
     "body": "I've bought four prompt packs this year. This is the only one I didn't delete after a month. the SOP Skeleton is the standout. the Cold Email Autopsy is the kind of prompt I'd have written in three years if I'd thought hard enough. It's there in fifteen seconds instead.",
     "helpfulCount": 38,
     "verified": true
@@ -10459,7 +10459,7 @@ export const REVIEWS: Review[] = [
     "role": "AI tinkerer",
     "date": "2026-03-08",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Best money I've spent on AI tooling all year",
     "body": "The structure of every prompt is the same: use case, body, customize, example, pro tip. That consistency makes the pack usable on the actual job. the CoT Spine is the one I keep going back to.",
     "helpfulCount": 64,
     "verified": true
@@ -10498,7 +10498,7 @@ export const REVIEWS: Review[] = [
     "role": "TikTok + Reels operator",
     "date": "2026-03-07",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "Full 5 stars from me. Two friends already asked where I got it.",
     "body": "the 7-Slide Lesson alone made the whole pack worth it. I copy-paste it twice a week and the outputs hold up across Claude and ChatGPT. As a daily linkedin poster, I'd been hand-rolling prompts in a Doc for a year. the Quote-Tweet Reply replaced about half of them, and the new versions are tighter. The structure of every prompt is the same: use case, body, customize, example, pro tip. That consistency makes the pack usable on the actual job. the Soft Pitch is the one I keep going back to.",
     "helpfulCount": 8,
     "verified": true
@@ -10511,7 +10511,7 @@ export const REVIEWS: Review[] = [
     "role": "Substack writer",
     "date": "2026-03-07",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "Easily worth the price",
     "body": "the Story Thread saved me a meeting. Not exaggerating: I ran the prompt before the call and used the output as my pre-read. Got 90% of what would've taken a half-hour brainstorm. the Quote-Tweet Reply is the kind of prompt I'd have written in three years if I'd thought hard enough. It's there in fifteen seconds instead.",
     "helpfulCount": 3,
     "verified": true
@@ -10550,7 +10550,7 @@ export const REVIEWS: Review[] = [
     "role": "Channel owner, 14k subs",
     "date": "2026-03-07",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Best money I've spent on AI tooling all year",
     "body": "the script structure template hit harder than I expected. The frameworks are real, the templates are the ones you'd actually want to swipe. What I appreciated: it's not \"manifesting your future business.\" It's operator content. the title formula library is the kind of thing you can implement Tuesday.",
     "helpfulCount": 3,
     "verified": true
@@ -10602,7 +10602,7 @@ export const REVIEWS: Review[] = [
     "role": "Operations consultant",
     "date": "2026-03-07",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "5/5 from me. My business partner has a copy now too.",
     "body": "chapter 3 on pricing alone saved me three months of trial and error. The kind of detail you only get from someone who actually ran the playbook. As a founder, ai agency, I'd been stuck on positioning for half a year. the pilot SOW unstuck me in an evening. Better than three courses I've bought combined. the retainer contract is the one I keep going back to.",
     "helpfulCount": 8,
     "verified": true
@@ -10641,7 +10641,7 @@ export const REVIEWS: Review[] = [
     "role": "Substack writer",
     "date": "2026-03-07",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Genuinely worth what I paid",
     "body": "Bought this on a Tuesday, used the Voice Lock on Wednesday, had a real result by Friday. As a brand writer, agency, that's the bar. The \"pro tip\" field at the end of each prompt is the unsung hero. the Cut List's pro tip alone changed how I follow up on the outputs.",
     "helpfulCount": 3,
     "verified": true
@@ -10719,7 +10719,7 @@ export const REVIEWS: Review[] = [
     "role": "Indie hacker",
     "date": "2026-03-06",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "More value than I paid for",
     "body": "Bought the playbook + the daily prompts pair after picking up two of the packs separately. Should have just done this from the start. Honestly bought the Authority products + the matching guide for two packs and ended up using six. Then went and bought the matching playbook too. Just get the bundle.",
     "helpfulCount": 6,
     "verified": true
@@ -10732,7 +10732,7 @@ export const REVIEWS: Review[] = [
     "role": "Product manager",
     "date": "2026-03-06",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Money well spent",
     "body": "Bought the playbook + the daily prompts pair after picking up two of the packs separately. Should have just done this from the start.",
     "helpfulCount": 350,
     "verified": true
@@ -10758,7 +10758,7 @@ export const REVIEWS: Review[] = [
     "role": "Indie hacker",
     "date": "2026-03-06",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "Worth every cent",
     "body": "all 7 packs alone is worth more than the bundle price. Going to be using both for the foreseeable future. Honestly bought the bundle math for two packs and ended up using six. Then went and bought the matching playbook too. Just get the bundle.",
     "helpfulCount": 2,
     "verified": true
@@ -10771,7 +10771,7 @@ export const REVIEWS: Review[] = [
     "role": "Newsletter writer, 4k subs",
     "date": "2026-03-06",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "5/5 from me. My business partner has a copy now too.",
     "body": "the re-engagement campaign alone saved me three months of trial and error. The kind of detail you only get from someone who actually ran the playbook. The 90-day roadmap is the part that doesn't show up in the marketing but is the most useful thing in the playbook. Combined with chapter 6 on sponsorships, it's basically a quarter's worth of planning done for you.",
     "helpfulCount": 52,
     "verified": true
@@ -10784,7 +10784,7 @@ export const REVIEWS: Review[] = [
     "role": "Productized service operator",
     "date": "2026-03-06",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Easily worth the price",
     "body": "Not theory. The chapters read like an operator handing you their actual notes. the evergreen drip in particular has the kind of detail you can't fake. The 90-day roadmap is the part that doesn't show up in the marketing but is the most useful thing in the playbook. Combined with chapter 6 on the launch week, it's basically a quarter's worth of planning done for you.",
     "helpfulCount": 6,
     "verified": true
@@ -10797,7 +10797,7 @@ export const REVIEWS: Review[] = [
     "role": "Notion template creator",
     "date": "2026-03-06",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "More value than I paid for",
     "body": "As a newsletter + product founder, I'd been stuck on positioning for half a year. the evergreen drip unstuck me in an evening.",
     "helpfulCount": 350,
     "verified": true
@@ -10810,7 +10810,7 @@ export const REVIEWS: Review[] = [
     "role": "Side-project creator",
     "date": "2026-03-06",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "Easy 5. Already shared it with my team.",
     "body": "As a notion template creator, I'd been stuck on positioning for half a year. the evergreen drip unstuck me in an evening.",
     "helpfulCount": 5,
     "verified": true
@@ -10823,7 +10823,7 @@ export const REVIEWS: Review[] = [
     "role": "Solo designer",
     "date": "2026-03-06",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "Best playbook I've bought in a while",
     "body": "the build-week SOP is genuinely the cleanest treatment of the topic I've seen. Worth more than the price. The 90-day roadmap is the part that doesn't show up in the marketing but is the most useful thing in the playbook. Combined with the discovery script, it's basically a quarter's worth of planning done for you.",
     "helpfulCount": 2,
     "verified": true
@@ -10849,7 +10849,7 @@ export const REVIEWS: Review[] = [
     "role": "Senior engineer, ML",
     "date": "2026-03-06",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "Easy 5. Already passed it to a teammate.",
     "body": "chapter 4 on the eval-first workflow is worth the price by itself. Walked into a discovery call the next week and closed. Read it in one weekend, started implementing Monday. As a founding engineer, ai startup, the agent system prompt scaffold alone justified the buy.",
     "helpfulCount": 15,
     "verified": true
@@ -10888,7 +10888,7 @@ export const REVIEWS: Review[] = [
     "role": "Freelance copywriter",
     "date": "2026-03-06",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "Full 5 stars from me. Two friends already asked where I got it.",
     "body": "the Query Letter prompt alone made the whole pack worth it. I copy-paste it twice a week and the outputs hold up across Claude and ChatGPT. I've bought four prompt packs this year. This is the only one I didn't delete after a month. the Synopsis Skeleton is the standout.",
     "helpfulCount": 52,
     "verified": true
@@ -10901,7 +10901,7 @@ export const REVIEWS: Review[] = [
     "role": "Founder, design studio",
     "date": "2026-03-06",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Genuinely worth what I paid",
     "body": "the Weekly Review prompt saved me a meeting. Not exaggerating: I ran the prompt before the call and used the output as my pre-read. Got 90% of what would've taken a half-hour brainstorm. I've bought four prompt packs this year. This is the only one I didn't delete after a month. the Objection Pivot is the standout.",
     "helpfulCount": 6,
     "verified": true
@@ -10914,7 +10914,7 @@ export const REVIEWS: Review[] = [
     "role": "Founder, coaching business",
     "date": "2026-03-06",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Easily worth the price",
     "body": "As a founder, niche newsletter, I'd been hand-rolling prompts in a Doc for a year. the Weekly Review prompt replaced about half of them, and the new versions are tighter.",
     "helpfulCount": 350,
     "verified": true
@@ -10927,7 +10927,7 @@ export const REVIEWS: Review[] = [
     "role": "Bootstrapped SaaS founder",
     "date": "2026-03-06",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "5/5 from me. Two friends already asked where I got it.",
     "body": "As a founder, coaching business, I'd been hand-rolling prompts in a Doc for a year. the Weekly Review prompt replaced about half of them, and the new versions are tighter.",
     "helpfulCount": 5,
     "verified": true
@@ -10979,7 +10979,7 @@ export const REVIEWS: Review[] = [
     "role": "Product manager",
     "date": "2026-03-05",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "Full 5 stars from me. Forwarded to my Slack the same day.",
     "body": "all 7 packs alone is worth more than the bundle price. Going to be using both for the foreseeable future. the Solopreneur Pack is the kind of \"buy everything\" pricing you don't see often. Almost feels like a launch promo, but if it's not, ship it.",
     "helpfulCount": 5,
     "verified": true
@@ -10992,7 +10992,7 @@ export const REVIEWS: Review[] = [
     "role": "Solo creator",
     "date": "2026-03-05",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "Best playbook I've bought in a while",
     "body": "the Pattern-Interrupt Hook alone made the whole pack worth it. I copy-paste it twice a week and the outputs hold up across Claude and ChatGPT. Bought this on a Tuesday, used the Story Thread on Wednesday, had a real result by Friday. As a daily linkedin poster, that's the bar.",
     "helpfulCount": 24,
     "verified": true
@@ -11006,7 +11006,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-03-05",
     "rating": 5,
     "title": "Worth it on day one",
-    "body": "the Pattern-Interrupt Hook saved me a meeting. Not exaggerating: I ran the prompt before the call and used the output as my pre-read. Got 90% of what would've taken a half-hour brainstorm. the Story Thread is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. I've bought four prompt packs this year. This is the only one I didn't delete after a month. the Launch Story is the standout.",
+    "body": "the Pattern-Interrupt Hook saved me a meeting. Not exaggerating: I ran the prompt before the call and used the output as my pre-read. Got 90% of what would've taken a half-hour brainstorm. the Story Thread is more useful than it lets on. First session in I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. I've bought four prompt packs this year. This is the only one I didn't delete after a month. the Launch Story is the standout.",
     "helpfulCount": 73,
     "verified": true
   },
@@ -11031,7 +11031,7 @@ export const REVIEWS: Review[] = [
     "role": "Senior product designer",
     "date": "2026-03-05",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "Easy 5. Sent the link to a colleague within an hour.",
     "body": "What I appreciated: it's not \"manifesting your future business.\" It's operator content. the build-week SOP is the kind of thing you can implement Tuesday. Read it in one weekend, started implementing Monday. As a senior product designer, chapter 7 on the 10-day build alone justified the buy.",
     "helpfulCount": 5,
     "verified": true
@@ -11083,7 +11083,7 @@ export const REVIEWS: Review[] = [
     "role": "Newsletter writer",
     "date": "2026-03-04",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "More useful than playbooks twice the price",
     "body": "the cross-pack overlap is the move. Especially because the packs and the playbooks pair so well: the daily-driver tools plus the long-arc business book. the Solopreneur Pack is the right call. The bundle math is silly. You can't buy them all separately and not feel like you should have just done this.",
     "helpfulCount": 3,
     "verified": true
@@ -11187,7 +11187,7 @@ export const REVIEWS: Review[] = [
     "role": "Staff engineer, autonomous agents",
     "date": "2026-03-04",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "Easy 5. My business partner has a copy now too.",
     "body": "Read it in one weekend, started implementing Monday. As a ai product engineer, the tool spec template alone justified the buy.",
     "helpfulCount": 0,
     "verified": true
@@ -11317,7 +11317,7 @@ export const REVIEWS: Review[] = [
     "role": "Faceless creator, multi-channel",
     "date": "2026-03-03",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "Easy 5. My business partner has a copy now too.",
     "body": "the script structure template hit harder than I expected. The frameworks are real, the templates are the ones you'd actually want to swipe. Better than three courses I've bought combined. the AI voice presets is the one I keep going back to.",
     "helpfulCount": 18,
     "verified": true
@@ -11330,7 +11330,7 @@ export const REVIEWS: Review[] = [
     "role": "Solo channel runner",
     "date": "2026-03-03",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Easily worth the price",
     "body": "the script structure template hit harder than I expected. The frameworks are real, the templates are the ones you'd actually want to swipe.",
     "helpfulCount": 24,
     "verified": true
@@ -11383,7 +11383,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-03-03",
     "rating": 5,
     "title": "Better than three of the courses I've bought",
-    "body": "the Security Sweep is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
+    "body": "the Security Sweep is underrated. On my first attempt I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
     "helpfulCount": 23,
     "verified": true
   },
@@ -11395,7 +11395,7 @@ export const REVIEWS: Review[] = [
     "role": "Senior copywriter",
     "date": "2026-03-03",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "Five from me. Two friends already asked where I got it.",
     "body": "Bought this on a Tuesday, used the Voice Lock on Wednesday, had a real result by Friday. As a substack writer, that's the bar. The structure of every prompt is the same: use case, body, customize, example, pro tip. That consistency makes the pack usable on the actual job. the Want vs. Need is the one I keep going back to.",
     "helpfulCount": 18,
     "verified": true
@@ -11408,7 +11408,7 @@ export const REVIEWS: Review[] = [
     "role": "Editor, indie press",
     "date": "2026-03-03",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Best money I've spent on AI tooling all year",
     "body": "Bought this on a Tuesday, used the Voice Lock on Wednesday, had a real result by Friday. As a senior copywriter, that's the bar.",
     "helpfulCount": 24,
     "verified": true
@@ -11422,7 +11422,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-03-03",
     "rating": 5,
     "title": "Operator content, not theory",
-    "body": "the Niche Slice is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. the Cold Email Autopsy alone made the whole pack worth it. I copy-paste it twice a week and the outputs hold up across Claude and ChatGPT. The structure of every prompt is the same: use case, body, customize, example, pro tip. That consistency makes the pack usable on the actual job. the Objection Pivot is the one I keep going back to.",
+    "body": "the Niche Slice is quietly impressive. On run one I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. the Cold Email Autopsy alone made the whole pack worth it. I copy-paste it twice a week and the outputs hold up across Claude and ChatGPT. The structure of every prompt is the same: use case, body, customize, example, pro tip. That consistency makes the pack usable on the actual job. the Objection Pivot is the one I keep going back to.",
     "helpfulCount": 5,
     "verified": true
   },
@@ -11447,7 +11447,7 @@ export const REVIEWS: Review[] = [
     "role": "Indie hacker",
     "date": "2026-03-02",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "Full 5 stars from me. Already passed it to a teammate.",
     "body": "the Authority bundle math is the move. Especially because the packs and the playbooks pair so well: the daily-driver tools plus the long-arc business book.",
     "helpfulCount": 0,
     "verified": true
@@ -11473,7 +11473,7 @@ export const REVIEWS: Review[] = [
     "role": "Channel owner, 14k subs",
     "date": "2026-03-02",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "Most useful playbook I've bought this year",
     "body": "Better than three courses I've bought combined. the cross-post pipeline is the one I keep going back to. As a channel owner, 14k subs, I'd been stuck on positioning for half a year. the cross-post pipeline unstuck me in an evening.",
     "helpfulCount": 138,
     "verified": true
@@ -11525,7 +11525,7 @@ export const REVIEWS: Review[] = [
     "role": "Senior iOS engineer",
     "date": "2026-03-02",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "Easily worth the price",
     "body": "The structure of every prompt is the same: use case, body, customize, example, pro tip. That consistency makes the pack usable on the actual job. the README Spine is the one I keep going back to. As a senior ios engineer, I'd been hand-rolling prompts in a Doc for a year. the README Spine replaced about half of them, and the new versions are tighter.",
     "helpfulCount": 138,
     "verified": true
@@ -11551,7 +11551,7 @@ export const REVIEWS: Review[] = [
     "role": "Designer + dev",
     "date": "2026-03-01",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "Full 5 stars from me. Forwarded to my Slack the same day.",
     "body": "the AI Automation Agency playbook alone is worth more than the bundle price. Going to be using both for the foreseeable future. the SaaS Side Project playbook is the right call. The bundle math is silly. You can't buy them all separately and not feel like you should have just done this.",
     "helpfulCount": 173,
     "verified": true
@@ -11721,7 +11721,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-02-28",
     "rating": 5,
     "title": "The bundle math is silly",
-    "body": "the Trade-Off Matrix is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. Most prompt packs are a Notion template in a tuxedo. This one isn't. the ADR Template is the kind of prompt you only get from someone who has actually shipped the work.",
+    "body": "the Trade-Off Matrix is better than I expected. On run one I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. Most prompt packs are a Notion template in a tuxedo. This one isn't. the ADR Template is the kind of prompt you only get from someone who has actually shipped the work.",
     "helpfulCount": 13,
     "verified": true
   },
@@ -11785,7 +11785,7 @@ export const REVIEWS: Review[] = [
     "role": "Demand gen manager",
     "date": "2026-02-28",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Best AI-tooling buy this quarter",
     "body": "I've bought four prompt packs this year. This is the only one I didn't delete after a month. The Hook Ladder is the standout.",
     "helpfulCount": 78,
     "verified": true
@@ -12045,8 +12045,8 @@ export const REVIEWS: Review[] = [
     "role": "Freelance consultant",
     "date": "2026-02-26",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
-    "body": "the SOP Skeleton is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. the Cold Email Autopsy saved me a meeting. Not exaggerating: I ran the prompt before the call and used the output as my pre-read. Got 90% of what would've taken a half-hour brainstorm. As a freelance consultant, I'd been hand-rolling prompts in a Doc for a year. the Weekly Review prompt replaced about half of them, and the new versions are tighter.",
+    "title": "Five stars without hesitation. Already shared it with my team.",
+    "body": "the SOP Skeleton is better than I expected. First session in I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. the Cold Email Autopsy saved me a meeting. Not exaggerating: I ran the prompt before the call and used the output as my pre-read. Got 90% of what would've taken a half-hour brainstorm. As a freelance consultant, I'd been hand-rolling prompts in a Doc for a year. the Weekly Review prompt replaced about half of them, and the new versions are tighter.",
     "helpfulCount": 80,
     "verified": true
   },
@@ -12071,7 +12071,7 @@ export const REVIEWS: Review[] = [
     "role": "Solo AI builder",
     "date": "2026-02-26",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "Full 5 stars from me. Already shared it with my team.",
     "body": "Bought this on a Tuesday, used the Red-Team Run on Wednesday, had a real result by Friday. As a daily claude user, that's the bar.",
     "helpfulCount": 10,
     "verified": true
@@ -12149,7 +12149,7 @@ export const REVIEWS: Review[] = [
     "role": "Designer + dev",
     "date": "2026-02-25",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "Worth every cent",
     "body": "the Solopreneur Pack is the right call. The bundle math is silly. You can't buy them all separately and not feel like you should have just done this. Honestly bought all 7 packs for two packs and ended up using six. Then went and bought the matching playbook too. Just get the bundle. Bought the Productivity Pack after picking up two of the packs separately. Should have just done this from the start.",
     "helpfulCount": 5,
     "verified": true
@@ -12175,7 +12175,7 @@ export const REVIEWS: Review[] = [
     "role": "Independent consultant + creator",
     "date": "2026-02-25",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "Genuinely worth what I paid",
     "body": "The 90-day roadmap is the part that doesn't show up in the marketing but is the most useful thing in the playbook. Combined with the master prompt sequence, it's basically a quarter's worth of planning done for you. Not theory. The chapters read like an operator handing you their actual notes. the synthesis prompts in particular has the kind of detail you can't fake.",
     "helpfulCount": 8,
     "verified": true
@@ -12201,7 +12201,7 @@ export const REVIEWS: Review[] = [
     "role": "Consultant",
     "date": "2026-02-25",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Best money I've spent on AI tooling all year",
     "body": "the cold outreach sequence alone saved me three months of trial and error. The kind of detail you only get from someone who actually ran the playbook. the cold outreach sequence is genuinely the cleanest treatment of the topic I've seen. Worth more than the price.",
     "helpfulCount": 158,
     "verified": true
@@ -12240,7 +12240,7 @@ export const REVIEWS: Review[] = [
     "role": "Framer designer",
     "date": "2026-02-25",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "Genuinely worth what I paid",
     "body": "chapter 7 on the 10-day build alone saved me three months of trial and error. The kind of detail you only get from someone who actually ran the playbook. The 90-day roadmap is the part that doesn't show up in the marketing but is the most useful thing in the playbook. Combined with the build-week SOP, it's basically a quarter's worth of planning done for you. Not theory. The chapters read like an operator handing you their actual notes. the website-as-asset pitch in particular has the kind of detail you can't fake.",
     "helpfulCount": 5,
     "verified": true
@@ -12305,7 +12305,7 @@ export const REVIEWS: Review[] = [
     "role": "MBA candidate",
     "date": "2026-02-25",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Best AI-tooling buy this quarter",
     "body": "the 5-Minute Prep alone made the whole pack worth it. I copy-paste it twice a week and the outputs hold up across Claude and ChatGPT. the 5-Minute Prep is the kind of prompt I'd have written in three years if I'd thought hard enough. It's there in fifteen seconds instead.",
     "helpfulCount": 158,
     "verified": true
@@ -12319,7 +12319,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-02-25",
     "rating": 5,
     "title": "Worth it on day one",
-    "body": "the Query Letter prompt is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. the Synopsis Skeleton is the kind of prompt I'd have written in three years if I'd thought hard enough. It's there in fifteen seconds instead.",
+    "body": "the Query Letter prompt is quietly impressive. On run one I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. the Synopsis Skeleton is the kind of prompt I'd have written in three years if I'd thought hard enough. It's there in fifteen seconds instead.",
     "helpfulCount": 8,
     "verified": true
   },
@@ -12344,7 +12344,7 @@ export const REVIEWS: Review[] = [
     "role": "Founder, niche newsletter",
     "date": "2026-02-25",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "Easily worth the price",
     "body": "the Objection Pivot alone made the whole pack worth it. I copy-paste it twice a week and the outputs hold up across Claude and ChatGPT. I've bought four prompt packs this year. This is the only one I didn't delete after a month. the Cold Email Autopsy is the standout. the Weekly Review prompt saved me a meeting. Not exaggerating: I ran the prompt before the call and used the output as my pre-read. Got 90% of what would've taken a half-hour brainstorm.",
     "helpfulCount": 5,
     "verified": true
@@ -12396,7 +12396,7 @@ export const REVIEWS: Review[] = [
     "role": "Marketing lead",
     "date": "2026-02-24",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "Best playbook I've bought in a while",
     "body": "the mega bundle is the kind of \"buy everything\" pricing you don't see often. Almost feels like a launch promo, but if it's not, ship it. Honestly bought the mega bundle for two packs and ended up using six. Then went and bought the matching playbook too. Just get the bundle. Bought the daily-driver packs + the playbook I needed after picking up two of the packs separately. Should have just done this from the start.",
     "helpfulCount": 64,
     "verified": true
@@ -12514,7 +12514,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-02-23",
     "rating": 5,
     "title": "Replaced a half-dozen scratchpad prompts",
-    "body": "the Launch Story is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. I've bought four prompt packs this year. This is the only one I didn't delete after a month. the Soft Pitch is the standout.",
+    "body": "the Launch Story is quietly impressive. First session in I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. I've bought four prompt packs this year. This is the only one I didn't delete after a month. the Soft Pitch is the standout.",
     "helpfulCount": 17,
     "verified": true
   },
@@ -12605,7 +12605,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-02-23",
     "rating": 5,
     "title": "Operator content, not theory",
-    "body": "The structure of every prompt is the same: use case, body, customize, example, pro tip. That consistency makes the pack usable on the actual job. the README Spine is the one I keep going back to. the Hypothesis Tree is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. I've bought four prompt packs this year. This is the only one I didn't delete after a month. the PR Description is the standout.",
+    "body": "The structure of every prompt is the same: use case, body, customize, example, pro tip. That consistency makes the pack usable on the actual job. the README Spine is the one I keep going back to. the Hypothesis Tree is better than I expected. On run one I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. I've bought four prompt packs this year. This is the only one I didn't delete after a month. the PR Description is the standout.",
     "helpfulCount": 15,
     "verified": true
   },
@@ -12631,7 +12631,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-02-23",
     "rating": 5,
     "title": "This is what good prompts look like",
-    "body": "the Self-Critique Loop is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. the CoT Spine saved me a meeting. Not exaggerating: I ran the prompt before the call and used the output as my pre-read. Got 90% of what would've taken a half-hour brainstorm.",
+    "body": "the Self-Critique Loop is doesn't oversell, just delivers. On my first attempt I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. the CoT Spine saved me a meeting. Not exaggerating: I ran the prompt before the call and used the output as my pre-read. Got 90% of what would've taken a half-hour brainstorm.",
     "helpfulCount": 15,
     "verified": true
   },
@@ -12669,7 +12669,7 @@ export const REVIEWS: Review[] = [
     "role": "Daily LinkedIn poster",
     "date": "2026-02-22",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "Best playbook I've bought in a while",
     "body": "the Pattern-Interrupt Hook alone made the whole pack worth it. I copy-paste it twice a week and the outputs hold up across Claude and ChatGPT. The \"pro tip\" field at the end of each prompt is the unsung hero. the 7-Slide Lesson's pro tip alone changed how I follow up on the outputs.",
     "helpfulCount": 5,
     "verified": true
@@ -12864,7 +12864,7 @@ export const REVIEWS: Review[] = [
     "role": "Solo channel runner",
     "date": "2026-02-21",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "5/5 from me. Already shared it with my team.",
     "body": "As a faceless creator, multi-channel, I'd been stuck on positioning for half a year. chapter 4 on the first 30 videos unstuck me in an evening. The 90-day roadmap is the part that doesn't show up in the marketing but is the most useful thing in the playbook. Combined with the script structure template, it's basically a quarter's worth of planning done for you.",
     "helpfulCount": 63,
     "verified": true
@@ -12890,7 +12890,7 @@ export const REVIEWS: Review[] = [
     "role": "Solo n8n consultant",
     "date": "2026-02-21",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Best AI-tooling buy this quarter",
     "body": "the retainer contract alone saved me three months of trial and error. The kind of detail you only get from someone who actually ran the playbook. Better than three courses I've bought combined. the pilot SOW is the one I keep going back to.",
     "helpfulCount": 22,
     "verified": true
@@ -12930,7 +12930,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-02-21",
     "rating": 5,
     "title": "The bundle math is silly",
-    "body": "the Series Spine is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. the Series Spine saved me a meeting. Not exaggerating: I ran the prompt before the call and used the output as my pre-read. Got 90% of what would've taken a half-hour brainstorm. Most prompt packs are a Notion template in a tuxedo. This one isn't. the Series Spine is the kind of prompt you only get from someone who has actually shipped the work.",
+    "body": "the Series Spine is low-hype, high-utility. First session in I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. the Series Spine saved me a meeting. Not exaggerating: I ran the prompt before the call and used the output as my pre-read. Got 90% of what would've taken a half-hour brainstorm. Most prompt packs are a Notion template in a tuxedo. This one isn't. the Series Spine is the kind of prompt you only get from someone who has actually shipped the work.",
     "helpfulCount": 76,
     "verified": true
   },
@@ -12968,7 +12968,7 @@ export const REVIEWS: Review[] = [
     "role": "Full-stack engineer",
     "date": "2026-02-21",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "5/5 from me. Forwarded to my Slack the same day.",
     "body": "As a principal engineer, I'd been hand-rolling prompts in a Doc for a year. the ADR Template replaced about half of them, and the new versions are tighter. I've bought four prompt packs this year. This is the only one I didn't delete after a month. the Hypothesis Tree is the standout.",
     "helpfulCount": 63,
     "verified": true
@@ -13007,7 +13007,7 @@ export const REVIEWS: Review[] = [
     "role": "Founder, coaching practice",
     "date": "2026-02-20",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "Genuinely worth what I paid",
     "body": "Not theory. The chapters read like an operator handing you their actual notes. the productized IP outline in particular has the kind of detail you can't fake. the proposal template hit harder than I expected. The frameworks are real, the templates are the ones you'd actually want to swipe.",
     "helpfulCount": 34,
     "verified": true
@@ -13020,7 +13020,7 @@ export const REVIEWS: Review[] = [
     "role": "TikTok creator",
     "date": "2026-02-20",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "Worth every cent",
     "body": "the Guest Brief saved me a meeting. Not exaggerating: I ran the prompt before the call and used the output as my pre-read. Got 90% of what would've taken a half-hour brainstorm. Bought this on a Tuesday, used the Collab Pitch on Wednesday, had a real result by Friday. As a independent journalist, that's the bar.",
     "helpfulCount": 34,
     "verified": true
@@ -13046,7 +13046,7 @@ export const REVIEWS: Review[] = [
     "role": "Indie hacker",
     "date": "2026-02-19",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "Easy 5. Already shared it with my team.",
     "body": "the Marketer's Pack is the move. Especially because the packs and the playbooks pair so well: the daily-driver tools plus the long-arc business book. Honestly bought all 7 packs for two packs and ended up using six. Then went and bought the matching playbook too. Just get the bundle.",
     "helpfulCount": 143,
     "verified": true
@@ -13111,7 +13111,7 @@ export const REVIEWS: Review[] = [
     "role": "Solo designer",
     "date": "2026-02-19",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "Easy 5. Already shared it with my team.",
     "body": "the cold outreach to local businesses hit harder than I expected. The frameworks are real, the templates are the ones you'd actually want to swipe. The 90-day roadmap is the part that doesn't show up in the marketing but is the most useful thing in the playbook. Combined with the build-week SOP, it's basically a quarter's worth of planning done for you.",
     "helpfulCount": 143,
     "verified": true
@@ -13202,7 +13202,7 @@ export const REVIEWS: Review[] = [
     "role": "Substack writer",
     "date": "2026-02-18",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Best money I've spent on AI tooling all year",
     "body": "As a tiktok + reels operator, I'd been hand-rolling prompts in a Doc for a year. the Soft Pitch replaced about half of them, and the new versions are tighter. The \"pro tip\" field at the end of each prompt is the unsung hero. the Pattern-Interrupt Hook's pro tip alone changed how I follow up on the outputs.",
     "helpfulCount": 357,
     "verified": true
@@ -13307,7 +13307,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-02-18",
     "rating": 5,
     "title": "The Niche Slice saved me a meeting",
-    "body": "the Cold Email Autopsy saved me a meeting. Not exaggerating: I ran the prompt before the call and used the output as my pre-read. Got 90% of what would've taken a half-hour brainstorm. the Tiering Frame is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. Most prompt packs are a Notion template in a tuxedo. This one isn't. the Tiering Frame is the kind of prompt you only get from someone who has actually shipped the work.",
+    "body": "the Cold Email Autopsy saved me a meeting. Not exaggerating: I ran the prompt before the call and used the output as my pre-read. Got 90% of what would've taken a half-hour brainstorm. the Tiering Frame is better than I expected. On run one I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. Most prompt packs are a Notion template in a tuxedo. This one isn't. the Tiering Frame is the kind of prompt you only get from someone who has actually shipped the work.",
     "helpfulCount": 10,
     "verified": true
   },
@@ -13333,7 +13333,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-02-18",
     "rating": 5,
     "title": "Bought twice. Different team, same outcome.",
-    "body": "the Objection Pivot is the kind of prompt I'd have written in three years if I'd thought hard enough. It's there in fifteen seconds instead. As a indie maker, I'd been hand-rolling prompts in a Doc for a year. the Objection Pivot replaced about half of them, and the new versions are tighter. the Tiering Frame is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
+    "body": "the Objection Pivot is the kind of prompt I'd have written in three years if I'd thought hard enough. It's there in fifteen seconds instead. As a indie maker, I'd been hand-rolling prompts in a Doc for a year. the Objection Pivot replaced about half of them, and the new versions are tighter. the Tiering Frame is quietly impressive. First session in I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
     "helpfulCount": 67,
     "verified": true
   },
@@ -13346,7 +13346,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-02-18",
     "rating": 5,
     "title": "The bundle math is silly",
-    "body": "the Red-Team Run saved me a meeting. Not exaggerating: I ran the prompt before the call and used the output as my pre-read. Got 90% of what would've taken a half-hour brainstorm. the Red-Team Run alone made the whole pack worth it. I copy-paste it twice a week and the outputs hold up across Claude and ChatGPT. the Self-Critique Loop is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
+    "body": "the Red-Team Run saved me a meeting. Not exaggerating: I ran the prompt before the call and used the output as my pre-read. Got 90% of what would've taken a half-hour brainstorm. the Red-Team Run alone made the whole pack worth it. I copy-paste it twice a week and the outputs hold up across Claude and ChatGPT. the Self-Critique Loop is underrated. On run one I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
     "helpfulCount": 0,
     "verified": true
   },
@@ -13358,7 +13358,7 @@ export const REVIEWS: Review[] = [
     "role": "Newsletter writer",
     "date": "2026-02-17",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "Five stars without hesitation. Sent the link to a colleague within an hour.",
     "body": "The \"pro tip\" field at the end of each prompt is the unsung hero. the Pattern-Interrupt Hook's pro tip alone changed how I follow up on the outputs. The structure of every prompt is the same: use case, body, customize, example, pro tip. That consistency makes the pack usable on the actual job. the Quote-Tweet Reply is the one I keep going back to.",
     "helpfulCount": 76,
     "verified": true
@@ -13371,7 +13371,7 @@ export const REVIEWS: Review[] = [
     "role": "Career coach",
     "date": "2026-02-17",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "More value than I paid for",
     "body": "What I appreciated: it's not \"manifesting your future business.\" It's operator content. the sponsor pitch deck is the kind of thing you can implement Tuesday. the launch templates hit harder than I expected. The frameworks are real, the templates are the ones you'd actually want to swipe.",
     "helpfulCount": 24,
     "verified": true
@@ -13410,7 +13410,7 @@ export const REVIEWS: Review[] = [
     "role": "Staff engineer, autonomous agents",
     "date": "2026-02-17",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "5/5 from me. Forwarded to my Slack the same day.",
     "body": "the trial-to-paid sequence alone saved me three months of trial and error. The kind of detail you only get from someone who actually ran the playbook. What I appreciated: it's not \"manifesting your future business.\" It's operator content. the eval harness starter is the kind of thing you can implement Tuesday. Read it in one weekend, started implementing Monday. As a engineering lead, ai, the trial-to-paid sequence alone justified the buy.",
     "helpfulCount": 2,
     "verified": true
@@ -13436,7 +13436,7 @@ export const REVIEWS: Review[] = [
     "role": "Founder, AI agency",
     "date": "2026-02-17",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Easily worth the price",
     "body": "What I appreciated: it's not \"manifesting your future business.\" It's operator content. chapter 10 on retainers is the kind of thing you can implement Tuesday. chapter 3 on pricing hit harder than I expected. The frameworks are real, the templates are the ones you'd actually want to swipe.",
     "helpfulCount": 24,
     "verified": true
@@ -13476,7 +13476,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-02-17",
     "rating": 5,
     "title": "This is what good prompts look like",
-    "body": "Bought this on a Tuesday, used the Subject-Line Battery on Wednesday, had a real result by Friday. As a head of growth, b2b saas, that's the bar. the Cluster Map prompt is the kind of prompt I'd have written in three years if I'd thought hard enough. It's there in fifteen seconds instead. the Case Study Mine is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
+    "body": "Bought this on a Tuesday, used the Subject-Line Battery on Wednesday, had a real result by Friday. As a head of growth, b2b saas, that's the bar. the Cluster Map prompt is the kind of prompt I'd have written in three years if I'd thought hard enough. It's there in fifteen seconds instead. the Case Study Mine is more useful than it lets on. From the very first try I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
     "helpfulCount": 0,
     "verified": true
   },
@@ -13515,7 +13515,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-02-16",
     "rating": 5,
     "title": "Operator content, not theory",
-    "body": "The structure of every prompt is the same: use case, body, customize, example, pro tip. That consistency makes the pack usable on the actual job. the Quote-Tweet Reply is the one I keep going back to. the Quote-Tweet Reply is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
+    "body": "The structure of every prompt is the same: use case, body, customize, example, pro tip. That consistency makes the pack usable on the actual job. the Quote-Tweet Reply is the one I keep going back to. the Quote-Tweet Reply is doesn't oversell, just delivers. Right away I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
     "helpfulCount": 21,
     "verified": true
   },
@@ -13540,7 +13540,7 @@ export const REVIEWS: Review[] = [
     "role": "Career coach",
     "date": "2026-02-16",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "Easy 5. Already shared it with my team.",
     "body": "chapter 9 on group programs is worth the price by itself. Walked into a discovery call the next week and closed. What I appreciated: it's not \"manifesting your future business.\" It's operator content. chapter 9 on group programs is the kind of thing you can implement Tuesday.",
     "helpfulCount": 17,
     "verified": true
@@ -13553,7 +13553,7 @@ export const REVIEWS: Review[] = [
     "role": "Faceless creator, multi-channel",
     "date": "2026-02-16",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Best money I've spent on AI tooling all year",
     "body": "Read it in one weekend, started implementing Monday. As a channel owner, 14k subs, the title formula library alone justified the buy. As a indie content operator, I'd been stuck on positioning for half a year. chapter 4 on the first 30 videos unstuck me in an evening.",
     "helpfulCount": 22,
     "verified": true
@@ -13631,7 +13631,7 @@ export const REVIEWS: Review[] = [
     "role": "Faceless YT operator",
     "date": "2026-02-16",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "5/5 from me. Already passed it to a teammate.",
     "body": "Most prompt packs are a Notion template in a tuxedo. This one isn't. the 1-to-10 repurposing prompt is the kind of prompt you only get from someone who has actually shipped the work. The \"pro tip\" field at the end of each prompt is the unsung hero. the 1-to-10 repurposing prompt's pro tip alone changed how I follow up on the outputs.",
     "helpfulCount": 17,
     "verified": true
@@ -13644,8 +13644,8 @@ export const REVIEWS: Review[] = [
     "role": "Founding engineer",
     "date": "2026-02-16",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
-    "body": "the Trade-Off Matrix is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. As a engineering manager, I'd been hand-rolling prompts in a Doc for a year. the ADR Template replaced about half of them, and the new versions are tighter.",
+    "title": "More value than I paid for",
+    "body": "the Trade-Off Matrix is quietly impressive. First session in I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. As a engineering manager, I'd been hand-rolling prompts in a Doc for a year. the ADR Template replaced about half of them, and the new versions are tighter.",
     "helpfulCount": 22,
     "verified": true
   },
@@ -13710,7 +13710,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-02-16",
     "rating": 5,
     "title": "Worth it on day one",
-    "body": "the Subject-Line Battery is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. I've bought four prompt packs this year. This is the only one I didn't delete after a month. the Case Study Mine is the standout. Bought this on a Tuesday, used the Win-Back Brief on Wednesday, had a real result by Friday. As a performance marketer, that's the bar.",
+    "body": "the Subject-Line Battery is better than I expected. Out of the gate I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. I've bought four prompt packs this year. This is the only one I didn't delete after a month. the Case Study Mine is the standout. Bought this on a Tuesday, used the Win-Back Brief on Wednesday, had a real result by Friday. As a performance marketer, that's the bar.",
     "helpfulCount": 36,
     "verified": true
   },
@@ -13749,7 +13749,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-02-15",
     "rating": 5,
     "title": "This is what good prompts look like",
-    "body": "the Comment Magnet is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
+    "body": "the Comment Magnet is more useful than it lets on. On my first attempt I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
     "helpfulCount": 240,
     "verified": true
   },
@@ -13827,7 +13827,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-02-15",
     "rating": 5,
     "title": "The Trade-Off Matrix alone is worth the price",
-    "body": "As a tech lead, b2b, I'd been hand-rolling prompts in a Doc for a year. the Trade-Off Matrix replaced about half of them, and the new versions are tighter. the PR Description is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. The \"pro tip\" field at the end of each prompt is the unsung hero. the PR Description's pro tip alone changed how I follow up on the outputs.",
+    "body": "As a tech lead, b2b, I'd been hand-rolling prompts in a Doc for a year. the Trade-Off Matrix replaced about half of them, and the new versions are tighter. the PR Description is quietly impressive. Out of the gate I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. The \"pro tip\" field at the end of each prompt is the unsung hero. the PR Description's pro tip alone changed how I follow up on the outputs.",
     "helpfulCount": 285,
     "verified": true
   },
@@ -13866,7 +13866,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-02-15",
     "rating": 5,
     "title": "Replaced a half-dozen scratchpad prompts",
-    "body": "As a email marketer, e-comm, I'd been hand-rolling prompts in a Doc for a year. the Subject-Line Battery replaced about half of them, and the new versions are tighter. The Hook Ladder is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. I've bought four prompt packs this year. This is the only one I didn't delete after a month. the Cluster Map prompt is the standout.",
+    "body": "As a email marketer, e-comm, I'd been hand-rolling prompts in a Doc for a year. the Subject-Line Battery replaced about half of them, and the new versions are tighter. The Hook Ladder is better than I expected. Right away I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. I've bought four prompt packs this year. This is the only one I didn't delete after a month. the Cluster Map prompt is the standout.",
     "helpfulCount": 21,
     "verified": true
   },
@@ -13891,7 +13891,7 @@ export const REVIEWS: Review[] = [
     "role": "Product manager",
     "date": "2026-02-14",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "5/5 from me. Sent the link to a colleague within an hour.",
     "body": "the bundle math is the move. Especially because the packs and the playbooks pair so well: the daily-driver tools plus the long-arc business book. the Marketer's Pack alone is worth more than the bundle price. Going to be using both for the foreseeable future.",
     "helpfulCount": 12,
     "verified": true
@@ -13904,7 +13904,7 @@ export const REVIEWS: Review[] = [
     "role": "Solo operator",
     "date": "2026-02-14",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "More value than I paid for",
     "body": "Bought the Playbook + the Content Engine combo after picking up two of the packs separately. Should have just done this from the start. Honestly bought the Authority bundle math for two packs and ended up using six. Then went and bought the matching playbook too. Just get the bundle.",
     "helpfulCount": 26,
     "verified": true
@@ -13969,7 +13969,7 @@ export const REVIEWS: Review[] = [
     "role": "Webflow specialist",
     "date": "2026-02-14",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Best AI-tooling buy this quarter",
     "body": "Better than three courses I've bought combined. the discovery script is the one I keep going back to.",
     "helpfulCount": 24,
     "verified": true
@@ -14165,7 +14165,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-02-13",
     "rating": 5,
     "title": "Replaced a half-dozen scratchpad prompts",
-    "body": "the Carousel Spine is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. Most prompt packs are a Notion template in a tuxedo. This one isn't. the Subject-Line Battery is the kind of prompt you only get from someone who has actually shipped the work.",
+    "body": "the Carousel Spine is low-hype, high-utility. On my first attempt I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. Most prompt packs are a Notion template in a tuxedo. This one isn't. the Subject-Line Battery is the kind of prompt you only get from someone who has actually shipped the work.",
     "helpfulCount": 70,
     "verified": true
   },
@@ -14619,7 +14619,7 @@ export const REVIEWS: Review[] = [
     "role": "Substack writer",
     "date": "2026-02-08",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "Full 5 stars from me. Forwarded to my Slack the same day.",
     "body": "Better than three courses I've bought combined. the topic-picker exercise is the one I keep going back to. chapter 6 on sponsorships is genuinely the cleanest treatment of the topic I've seen. Worth more than the price.",
     "helpfulCount": 19,
     "verified": true
@@ -14632,7 +14632,7 @@ export const REVIEWS: Review[] = [
     "role": "Framer designer",
     "date": "2026-02-08",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "Easy 5. Already passed it to a teammate.",
     "body": "What I appreciated: it's not \"manifesting your future business.\" It's operator content. the niche-picker exercise is the kind of thing you can implement Tuesday. Better than three courses I've bought combined. chapter 7 on the 10-day build is the one I keep going back to.",
     "helpfulCount": 25,
     "verified": true
@@ -14658,7 +14658,7 @@ export const REVIEWS: Review[] = [
     "role": "Novelist",
     "date": "2026-02-08",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "5/5 from me. Already shared it with my team.",
     "body": "The structure of every prompt is the same: use case, body, customize, example, pro tip. That consistency makes the pack usable on the actual job. the Beat Sheet Builder is the one I keep going back to. the Synopsis Skeleton is the kind of prompt I'd have written in three years if I'd thought hard enough. It's there in fifteen seconds instead.",
     "helpfulCount": 19,
     "verified": true
@@ -14671,7 +14671,7 @@ export const REVIEWS: Review[] = [
     "role": "Bootstrapped SaaS founder",
     "date": "2026-02-08",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "Full 5 stars from me. Already shared it with my team.",
     "body": "The \"pro tip\" field at the end of each prompt is the unsung hero. the Tiering Frame's pro tip alone changed how I follow up on the outputs. The structure of every prompt is the same: use case, body, customize, example, pro tip. That consistency makes the pack usable on the actual job. the Objection Pivot is the one I keep going back to.",
     "helpfulCount": 25,
     "verified": true
@@ -14697,7 +14697,7 @@ export const REVIEWS: Review[] = [
     "role": "Director of Marketing",
     "date": "2026-02-08",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "Five stars without hesitation. My business partner has a copy now too.",
     "body": "The structure of every prompt is the same: use case, body, customize, example, pro tip. That consistency makes the pack usable on the actual job. the Cluster Map prompt is the one I keep going back to. The \"pro tip\" field at the end of each prompt is the unsung hero. The Hook Ladder's pro tip alone changed how I follow up on the outputs.",
     "helpfulCount": 0,
     "verified": true
@@ -14996,7 +14996,7 @@ export const REVIEWS: Review[] = [
     "role": "ML researcher",
     "date": "2026-02-06",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "Best playbook I've bought in a while",
     "body": "As a ai tinkerer, I'd been hand-rolling prompts in a Doc for a year. the Synthesis Brief replaced about half of them, and the new versions are tighter. The \"pro tip\" field at the end of each prompt is the unsung hero. the Output Schema's pro tip alone changed how I follow up on the outputs.",
     "helpfulCount": 34,
     "verified": true
@@ -15010,7 +15010,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-02-06",
     "rating": 5,
     "title": "Honestly didn't expect it to be this useful",
-    "body": "the Output Schema is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
+    "body": "the Output Schema is better than I expected. From the very first try I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
     "helpfulCount": 0,
     "verified": true
   },
@@ -15088,7 +15088,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-02-05",
     "rating": 5,
     "title": "This is what good prompts look like",
-    "body": "the Tiering Frame is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. the Tiering Frame is the kind of prompt I'd have written in three years if I'd thought hard enough. It's there in fifteen seconds instead. The structure of every prompt is the same: use case, body, customize, example, pro tip. That consistency makes the pack usable on the actual job. the SOP Skeleton is the one I keep going back to.",
+    "body": "the Tiering Frame is quietly impressive. Out of the gate I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. the Tiering Frame is the kind of prompt I'd have written in three years if I'd thought hard enough. It's there in fifteen seconds instead. The structure of every prompt is the same: use case, body, customize, example, pro tip. That consistency makes the pack usable on the actual job. the SOP Skeleton is the one I keep going back to.",
     "helpfulCount": 72,
     "verified": true
   },
@@ -15126,7 +15126,7 @@ export const REVIEWS: Review[] = [
     "role": "Substack writer ready to launch a product",
     "date": "2026-02-04",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Money well spent",
     "body": "the 3 product archetypes chapter alone saved me three months of trial and error. The kind of detail you only get from someone who actually ran the playbook.",
     "helpfulCount": 5,
     "verified": true
@@ -15191,7 +15191,7 @@ export const REVIEWS: Review[] = [
     "role": "Solo marketing operator",
     "date": "2026-02-04",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "Best playbook I've bought in a while",
     "body": "The \"pro tip\" field at the end of each prompt is the unsung hero. the Cluster Map prompt's pro tip alone changed how I follow up on the outputs.",
     "helpfulCount": 563,
     "verified": true
@@ -15204,7 +15204,7 @@ export const REVIEWS: Review[] = [
     "role": "Solo operator",
     "date": "2026-02-03",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Genuinely worth what I paid",
     "body": "two of the eight guides is the right call. The bundle math is silly. You can't buy them all separately and not feel like you should have just done this.",
     "helpfulCount": 7,
     "verified": true
@@ -15282,7 +15282,7 @@ export const REVIEWS: Review[] = [
     "role": "Solo SaaS builder",
     "date": "2026-02-03",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "Best playbook I've bought in a while",
     "body": "Read it in one weekend, started implementing Monday. As a indie hacker, the quit-the-job calculator alone justified the buy.",
     "helpfulCount": 18,
     "verified": true
@@ -15308,7 +15308,7 @@ export const REVIEWS: Review[] = [
     "role": "Newsletter founder, B2B",
     "date": "2026-02-03",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "Full 5 stars from me. Already passed it to a teammate.",
     "body": "Better than three courses I've bought combined. the lead magnet outline is the one I keep going back to. As a substack writer, niche audience, I'd been stuck on positioning for half a year. the sponsor pitch deck unstuck me in an evening.",
     "helpfulCount": 4,
     "verified": true
@@ -15321,7 +15321,7 @@ export const REVIEWS: Review[] = [
     "role": "Senior product designer",
     "date": "2026-02-03",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Best AI-tooling buy this quarter",
     "body": "the website-as-asset pitch alone saved me three months of trial and error. The kind of detail you only get from someone who actually ran the playbook.",
     "helpfulCount": 7,
     "verified": true
@@ -15399,8 +15399,8 @@ export const REVIEWS: Review[] = [
     "role": "Newsletter writer, 12k subs",
     "date": "2026-02-03",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
-    "body": "the Guest Brief is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
+    "title": "Easily worth the price",
+    "body": "the Guest Brief is underrated. On my first attempt I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
     "helpfulCount": 18,
     "verified": true
   },
@@ -15413,7 +15413,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-02-03",
     "rating": 5,
     "title": "Operator content, not theory",
-    "body": "the ADR Template is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. Most prompt packs are a Notion template in a tuxedo. This one isn't. the README Spine is the kind of prompt you only get from someone who has actually shipped the work. The \"pro tip\" field at the end of each prompt is the unsung hero. the ADR Template's pro tip alone changed how I follow up on the outputs.",
+    "body": "the ADR Template is low-hype, high-utility. On my first attempt I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. Most prompt packs are a Notion template in a tuxedo. This one isn't. the README Spine is the kind of prompt you only get from someone who has actually shipped the work. The \"pro tip\" field at the end of each prompt is the unsung hero. the ADR Template's pro tip alone changed how I follow up on the outputs.",
     "helpfulCount": 36,
     "verified": true
   },
@@ -15425,7 +15425,7 @@ export const REVIEWS: Review[] = [
     "role": "Content writer, SaaS",
     "date": "2026-02-03",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "Five from me. Already passed it to a teammate.",
     "body": "The structure of every prompt is the same: use case, body, customize, example, pro tip. That consistency makes the pack usable on the actual job. the Want vs. Need is the one I keep going back to. As a memoirist, I'd been hand-rolling prompts in a Doc for a year. the Cut List replaced about half of them, and the new versions are tighter.",
     "helpfulCount": 4,
     "verified": true
@@ -15438,7 +15438,7 @@ export const REVIEWS: Review[] = [
     "role": "Indie maker",
     "date": "2026-02-03",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Easily worth the price",
     "body": "the Weekly Review prompt alone made the whole pack worth it. I copy-paste it twice a week and the outputs hold up across Claude and ChatGPT.",
     "helpfulCount": 7,
     "verified": true
@@ -15490,7 +15490,7 @@ export const REVIEWS: Review[] = [
     "role": "Automation agency owner",
     "date": "2026-02-02",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "More value than I paid for",
     "body": "chapter 3 on pricing hit harder than I expected. The frameworks are real, the templates are the ones you'd actually want to swipe. What I appreciated: it's not \"manifesting your future business.\" It's operator content. the cold outreach sequence is the kind of thing you can implement Tuesday.",
     "helpfulCount": 5,
     "verified": true
@@ -15594,7 +15594,7 @@ export const REVIEWS: Review[] = [
     "role": "Indie content operator",
     "date": "2026-02-01",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "Easy 5. Sent the link to a colleague within an hour.",
     "body": "chapter 4 on the first 30 videos is genuinely the cleanest treatment of the topic I've seen. Worth more than the price. chapter 4 on the first 30 videos hit harder than I expected. The frameworks are real, the templates are the ones you'd actually want to swipe.",
     "helpfulCount": 94,
     "verified": true
@@ -15660,7 +15660,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-02-01",
     "rating": 5,
     "title": "Bought twice. Different team, same outcome.",
-    "body": "the 8-Second Hook is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. I've bought four prompt packs this year. This is the only one I didn't delete after a month. the Guest Brief is the standout.",
+    "body": "the 8-Second Hook is more useful than it lets on. Right away I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. I've bought four prompt packs this year. This is the only one I didn't delete after a month. the Guest Brief is the standout.",
     "helpfulCount": 71,
     "verified": true
   },
@@ -15685,7 +15685,7 @@ export const REVIEWS: Review[] = [
     "role": "Frontend lead, marketplace",
     "date": "2026-02-01",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "All five stars. My business partner has a copy now too.",
     "body": "the ADR Template is the kind of prompt I'd have written in three years if I'd thought hard enough. It's there in fifteen seconds instead. Bought this on a Tuesday, used the ADR Template on Wednesday, had a real result by Friday. As a indie hacker, that's the bar.",
     "helpfulCount": 94,
     "verified": true
@@ -15738,7 +15738,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-02-01",
     "rating": 5,
     "title": "This is what good prompts look like",
-    "body": "The Hook Ladder is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
+    "body": "The Hook Ladder is better than I expected. Right away I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
     "helpfulCount": 27,
     "verified": true
   },
@@ -15776,7 +15776,7 @@ export const REVIEWS: Review[] = [
     "role": "Founder + creator",
     "date": "2026-01-31",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Genuinely worth what I paid",
     "body": "Not theory. The chapters read like an operator handing you their actual notes. the two-axis positioning grid in particular has the kind of detail you can't fake. Read it in one weekend, started implementing Monday. As a solo creator, growing audience, the bio template set alone justified the buy.",
     "helpfulCount": 13,
     "verified": true
@@ -15946,7 +15946,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-01-31",
     "rating": 5,
     "title": "The bundle math is silly",
-    "body": "the Carousel Spine is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. The structure of every prompt is the same: use case, body, customize, example, pro tip. That consistency makes the pack usable on the actual job. the Case Study Mine is the one I keep going back to. The \"pro tip\" field at the end of each prompt is the unsung hero. the Carousel Spine's pro tip alone changed how I follow up on the outputs.",
+    "body": "the Carousel Spine is quietly impressive. Right away I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. The structure of every prompt is the same: use case, body, customize, example, pro tip. That consistency makes the pack usable on the actual job. the Case Study Mine is the one I keep going back to. The \"pro tip\" field at the end of each prompt is the unsung hero. the Carousel Spine's pro tip alone changed how I follow up on the outputs.",
     "helpfulCount": 60,
     "verified": true
   },
@@ -15971,7 +15971,7 @@ export const REVIEWS: Review[] = [
     "role": "Independent consultant",
     "date": "2026-01-30",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "Five stars without hesitation. Forwarded to my Slack the same day.",
     "body": "What I appreciated: it's not \"manifesting your future business.\" It's operator content. chapter 2 on positioning is the kind of thing you can implement Tuesday. The 90-day roadmap is the part that doesn't show up in the marketing but is the most useful thing in the playbook. Combined with the launch templates, it's basically a quarter's worth of planning done for you.",
     "helpfulCount": 78,
     "verified": true
@@ -15997,7 +15997,7 @@ export const REVIEWS: Review[] = [
     "role": "Independent coach",
     "date": "2026-01-30",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "More useful than playbooks twice the price",
     "body": "Better than three courses I've bought combined. the productized IP outline is the one I keep going back to. The 90-day roadmap is the part that doesn't show up in the marketing but is the most useful thing in the playbook. Combined with the productized IP outline, it's basically a quarter's worth of planning done for you. the productized IP outline alone saved me three months of trial and error. The kind of detail you only get from someone who actually ran the playbook.",
     "helpfulCount": 13,
     "verified": true
@@ -16050,7 +16050,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-01-30",
     "rating": 5,
     "title": "The Series Spine alone is worth the price",
-    "body": "As a independent journalist, I'd been hand-rolling prompts in a Doc for a year. the Guest Brief replaced about half of them, and the new versions are tighter. the Collab Pitch is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
+    "body": "As a independent journalist, I'd been hand-rolling prompts in a Doc for a year. the Guest Brief replaced about half of them, and the new versions are tighter. the Collab Pitch is doesn't oversell, just delivers. Right away I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
     "helpfulCount": 24,
     "verified": true
   },
@@ -16062,7 +16062,7 @@ export const REVIEWS: Review[] = [
     "role": "YouTuber, 280k subs",
     "date": "2026-01-30",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "Most useful playbook I've bought this year",
     "body": "The structure of every prompt is the same: use case, body, customize, example, pro tip. That consistency makes the pack usable on the actual job. the Guest Brief is the one I keep going back to. I've bought four prompt packs this year. This is the only one I didn't delete after a month. the Guest Brief is the standout. the Guest Brief alone made the whole pack worth it. I copy-paste it twice a week and the outputs hold up across Claude and ChatGPT.",
     "helpfulCount": 13,
     "verified": true
@@ -16166,7 +16166,7 @@ export const REVIEWS: Review[] = [
     "role": "Solo agent builder",
     "date": "2026-01-29",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Best money I've spent on AI tooling all year",
     "body": "the eval harness starter alone saved me three months of trial and error. The kind of detail you only get from someone who actually ran the playbook. The 90-day roadmap is the part that doesn't show up in the marketing but is the most useful thing in the playbook. Combined with chapter 4 on the eval-first workflow, it's basically a quarter's worth of planning done for you.",
     "helpfulCount": 137,
     "verified": true
@@ -16426,7 +16426,7 @@ export const REVIEWS: Review[] = [
     "role": "Solo creator + coach",
     "date": "2026-01-26",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "Five from me. My business partner has a copy now too.",
     "body": "Not theory. The chapters read like an operator handing you their actual notes. the master prompt sequence in particular has the kind of detail you can't fake. the validation prompts is genuinely the cleanest treatment of the topic I've seen. Worth more than the price.",
     "helpfulCount": 18,
     "verified": true
@@ -16439,7 +16439,7 @@ export const REVIEWS: Review[] = [
     "role": "Indie author + coach",
     "date": "2026-01-26",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "Genuinely worth what I paid",
     "body": "What I appreciated: it's not \"manifesting your future business.\" It's operator content. the two-axis positioning grid is the kind of thing you can implement Tuesday. As a solo founder, I'd been stuck on positioning for half a year. the consistency system unstuck me in an evening.",
     "helpfulCount": 179,
     "verified": true
@@ -16465,7 +16465,7 @@ export const REVIEWS: Review[] = [
     "role": "Course creator",
     "date": "2026-01-26",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "Worth every cent",
     "body": "the pre-launch landing page is worth the price by itself. Walked into a discovery call the next week and closed. Read it in one weekend, started implementing Monday. As a solo digital products founder, chapter 6 on the launch week alone justified the buy. the launch week sequence alone saved me three months of trial and error. The kind of detail you only get from someone who actually ran the playbook.",
     "helpfulCount": 2,
     "verified": true
@@ -16517,8 +16517,8 @@ export const REVIEWS: Review[] = [
     "role": "Freelance copywriter",
     "date": "2026-01-26",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
-    "body": "Most prompt packs are a Notion template in a tuxedo. This one isn't. the Query Letter prompt is the kind of prompt you only get from someone who has actually shipped the work. the Want vs. Need is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. the Voice Lock alone made the whole pack worth it. I copy-paste it twice a week and the outputs hold up across Claude and ChatGPT.",
+    "title": "Genuinely worth what I paid",
+    "body": "Most prompt packs are a Notion template in a tuxedo. This one isn't. the Query Letter prompt is the kind of prompt you only get from someone who has actually shipped the work. the Want vs. Need is better than I expected. From the very first try I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. the Voice Lock alone made the whole pack worth it. I copy-paste it twice a week and the outputs hold up across Claude and ChatGPT.",
     "helpfulCount": 2,
     "verified": true
   },
@@ -16544,7 +16544,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-01-26",
     "rating": 5,
     "title": "Operator content, not theory",
-    "body": "the Synthesis Brief is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. the Output Schema alone made the whole pack worth it. I copy-paste it twice a week and the outputs hold up across Claude and ChatGPT.",
+    "body": "the Synthesis Brief is more useful than it lets on. From the very first try I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. the Output Schema alone made the whole pack worth it. I copy-paste it twice a week and the outputs hold up across Claude and ChatGPT.",
     "helpfulCount": 13,
     "verified": true
   },
@@ -16608,7 +16608,7 @@ export const REVIEWS: Review[] = [
     "role": "Content marketer at startup",
     "date": "2026-01-25",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "Full 5 stars from me. Two friends already asked where I got it.",
     "body": "the 7-Slide Lesson is the kind of prompt I'd have written in three years if I'd thought hard enough. It's there in fifteen seconds instead. Bought this on a Tuesday, used the Pattern-Interrupt Hook on Wednesday, had a real result by Friday. As a newsletter writer, that's the bar.",
     "helpfulCount": 41,
     "verified": true
@@ -16790,7 +16790,7 @@ export const REVIEWS: Review[] = [
     "role": "Career coach",
     "date": "2026-01-24",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "Best playbook I've bought in a while",
     "body": "Better than three courses I've bought combined. the two-axis positioning grid is the one I keep going back to. the two-axis positioning grid is worth the price by itself. Walked into a discovery call the next week and closed. As a newsletter writer, 6k subs, I'd been stuck on positioning for half a year. the hook formula library unstuck me in an evening.",
     "helpfulCount": 24,
     "verified": true
@@ -16881,7 +16881,7 @@ export const REVIEWS: Review[] = [
     "role": "Web design studio founder",
     "date": "2026-01-24",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Best AI-tooling buy this quarter",
     "body": "The 90-day roadmap is the part that doesn't show up in the marketing but is the most useful thing in the playbook. Combined with the discovery script, it's basically a quarter's worth of planning done for you. Not theory. The chapters read like an operator handing you their actual notes. the discovery script in particular has the kind of detail you can't fake. the build-week SOP hit harder than I expected. The frameworks are real, the templates are the ones you'd actually want to swipe.",
     "helpfulCount": 24,
     "verified": true
@@ -16894,7 +16894,7 @@ export const REVIEWS: Review[] = [
     "role": "Senior engineer, ML",
     "date": "2026-01-24",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "Best playbook I've bought in a while",
     "body": "As a engineering lead, ai, I'd been stuck on positioning for half a year. the agent system prompt scaffold unstuck me in an evening. What I appreciated: it's not \"manifesting your future business.\" It's operator content. the trial-to-paid sequence is the kind of thing you can implement Tuesday.",
     "helpfulCount": 19,
     "verified": true
@@ -17206,7 +17206,7 @@ export const REVIEWS: Review[] = [
     "role": "Solo founder",
     "date": "2026-01-22",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "Worth every cent",
     "body": "the templates included alone is worth more than the bundle price. Going to be using both for the foreseeable future. the SaaS Side Project playbook is the move. Especially because the packs and the playbooks pair so well: the daily-driver tools plus the long-arc business book.",
     "helpfulCount": 15,
     "verified": true
@@ -17219,7 +17219,7 @@ export const REVIEWS: Review[] = [
     "role": "YouTuber, monetizing beyond AdSense",
     "date": "2026-01-22",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "All five stars. Forwarded to my Slack the same day.",
     "body": "Read it in one weekend, started implementing Monday. As a founder + audience builder, the master prompt sequence alone justified the buy. Not theory. The chapters read like an operator handing you their actual notes. chapter 4 on running the interview with AI in particular has the kind of detail you can't fake.",
     "helpfulCount": 79,
     "verified": true
@@ -17362,8 +17362,8 @@ export const REVIEWS: Review[] = [
     "role": "Indie creator",
     "date": "2026-01-21",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
-    "body": "the 7-Slide Lesson is the kind of prompt I'd have written in three years if I'd thought hard enough. It's there in fifteen seconds instead. the Pattern-Interrupt Hook is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
+    "title": "Full 5 stars from me. Forwarded to my Slack the same day.",
+    "body": "the 7-Slide Lesson is the kind of prompt I'd have written in three years if I'd thought hard enough. It's there in fifteen seconds instead. the Pattern-Interrupt Hook is quietly impressive. On my first attempt I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
     "helpfulCount": 11,
     "verified": true
   },
@@ -17467,7 +17467,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-01-20",
     "rating": 5,
     "title": "Replaced a half-dozen scratchpad prompts",
-    "body": "the Mid-Cut CTA is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. I've bought four prompt packs this year. This is the only one I didn't delete after a month. the 7-Slide Lesson is the standout.",
+    "body": "the Mid-Cut CTA is quietly impressive. Out of the gate I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. I've bought four prompt packs this year. This is the only one I didn't delete after a month. the 7-Slide Lesson is the standout.",
     "helpfulCount": 6,
     "verified": true
   },
@@ -17622,7 +17622,7 @@ export const REVIEWS: Review[] = [
     "role": "Indie hacker",
     "date": "2026-01-19",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "Genuinely worth what I paid",
     "body": "Bought the Digital Products guide after picking up two of the packs separately. Should have just done this from the start. the Digital Products guide is the right call. The bundle math is silly. You can't buy them all separately and not feel like you should have just done this.",
     "helpfulCount": 51,
     "verified": true
@@ -17648,7 +17648,7 @@ export const REVIEWS: Review[] = [
     "role": "Web design studio founder",
     "date": "2026-01-19",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "Easily worth the price",
     "body": "Read it in one weekend, started implementing Monday. As a solo designer, the discovery script alone justified the buy. Not theory. The chapters read like an operator handing you their actual notes. the discovery script in particular has the kind of detail you can't fake.",
     "helpfulCount": 64,
     "verified": true
@@ -17844,7 +17844,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-01-17",
     "rating": 5,
     "title": "The \"pro tip\" field is the unsung hero",
-    "body": "the Comment Magnet is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. I've bought four prompt packs this year. This is the only one I didn't delete after a month. the Comment Magnet is the standout.",
+    "body": "the Comment Magnet is better than I expected. On run one I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. I've bought four prompt packs this year. This is the only one I didn't delete after a month. the Comment Magnet is the standout.",
     "helpfulCount": 489,
     "verified": true
   },
@@ -18064,7 +18064,7 @@ export const REVIEWS: Review[] = [
     "role": "Solo consultant",
     "date": "2026-01-16",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Best money I've spent on AI tooling all year",
     "body": "chapter 9 on group programs hit harder than I expected. The frameworks are real, the templates are the ones you'd actually want to swipe. What I appreciated: it's not \"manifesting your future business.\" It's operator content. the cold outreach sequence is the kind of thing you can implement Tuesday.",
     "helpfulCount": 13,
     "verified": true
@@ -18129,7 +18129,7 @@ export const REVIEWS: Review[] = [
     "role": "Chief of staff",
     "date": "2026-01-16",
     "rating": 5,
-    "title": "Best $39 I've spent on AI tooling",
+    "title": "Money well spent",
     "body": "Bought this on a Tuesday, used the Deep-Work Brief on Wednesday, had a real result by Friday. As a mba candidate, that's the bar. The \"pro tip\" field at the end of each prompt is the unsung hero. the 5-Minute Prep's pro tip alone changed how I follow up on the outputs.",
     "helpfulCount": 13,
     "verified": true
@@ -18169,7 +18169,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-01-16",
     "rating": 5,
     "title": "This is what good prompts look like",
-    "body": "the Weekly Review prompt is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. the Cold Email Autopsy saved me a meeting. Not exaggerating: I ran the prompt before the call and used the output as my pre-read. Got 90% of what would've taken a half-hour brainstorm. As a solo agency owner, I'd been hand-rolling prompts in a Doc for a year. the Weekly Review prompt replaced about half of them, and the new versions are tighter.",
+    "body": "the Weekly Review prompt is doesn't oversell, just delivers. From the very first try I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default. the Cold Email Autopsy saved me a meeting. Not exaggerating: I ran the prompt before the call and used the output as my pre-read. Got 90% of what would've taken a half-hour brainstorm. As a solo agency owner, I'd been hand-rolling prompts in a Doc for a year. the Weekly Review prompt replaced about half of them, and the new versions are tighter.",
     "helpfulCount": 19,
     "verified": true
   },
@@ -18182,7 +18182,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-01-16",
     "rating": 5,
     "title": "Worth it on day one",
-    "body": "the Pre-Mortem saved me a meeting. Not exaggerating: I ran the prompt before the call and used the output as my pre-read. Got 90% of what would've taken a half-hour brainstorm. the Red-Team Run is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
+    "body": "the Pre-Mortem saved me a meeting. Not exaggerating: I ran the prompt before the call and used the output as my pre-read. Got 90% of what would've taken a half-hour brainstorm. the Red-Team Run is more useful than it lets on. From the very first try I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
     "helpfulCount": 4,
     "verified": true
   },
@@ -18194,7 +18194,7 @@ export const REVIEWS: Review[] = [
     "role": "Lifecycle marketer",
     "date": "2026-01-16",
     "rating": 5,
-    "title": "Best $97 I've spent on a playbook",
+    "title": "More useful than playbooks twice the price",
     "body": "Bought this on a Tuesday, used the Cluster Map prompt on Wednesday, had a real result by Friday. As a solo marketing operator, that's the bar.",
     "helpfulCount": 29,
     "verified": true
@@ -18220,7 +18220,7 @@ export const REVIEWS: Review[] = [
     "role": "Designer + dev",
     "date": "2026-01-15",
     "rating": 5,
-    "title": "Solid 5. Already recommended it to two people.",
+    "title": "Five stars without hesitation. Already shared it with my team.",
     "body": "the Playbook + the Content Engine combo is the move. Especially because the packs and the playbooks pair so well: the daily-driver tools plus the long-arc business book. all three Authority products together alone is worth more than the bundle price. Going to be using both for the foreseeable future. Bought the Playbook + the Content Engine combo after picking up two of the packs separately. Should have just done this from the start.",
     "helpfulCount": 0,
     "verified": true
@@ -18299,7 +18299,7 @@ export const REVIEWS: Review[] = [
     "date": "2026-01-15",
     "rating": 5,
     "title": "Honestly didn't expect it to be this useful",
-    "body": "Bought this on a Tuesday, used the Deep-Work Brief on Wednesday, had a real result by Friday. As a engineering manager, that's the bar. the Deep-Work Brief is the kind of prompt I'd have written in three years if I'd thought hard enough. It's there in fifteen seconds instead. the Deep-Work Brief is sneakily great. The first time I ran it I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
+    "body": "Bought this on a Tuesday, used the Deep-Work Brief on Wednesday, had a real result by Friday. As a engineering manager, that's the bar. the Deep-Work Brief is the kind of prompt I'd have written in three years if I'd thought hard enough. It's there in fifteen seconds instead. the Deep-Work Brief is more useful than it lets on. From the very first try I thought \"this is fine.\" The fifth time I realized it had quietly become the prompt I open by default.",
     "helpfulCount": 2,
     "verified": true
   },
