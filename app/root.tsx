@@ -25,6 +25,7 @@ import promptosV34Styles from './styles/promptos-v34.css?url';
 import {PageLayout} from './components/PageLayout';
 import {RecentPurchaseToast} from './components/promptos/RecentPurchaseToast';
 import {WhatsNewBanner} from './components/promptos/WhatsNewBanner';
+import {LaunchBar} from './components/promptos/LaunchBar';
 import {ExitIntentModal} from './components/promptos/ExitIntentModal';
 import {
   JsonLd,
@@ -207,6 +208,7 @@ export default function App() {
       shop={data.shop}
       consent={data.consent}
     >
+      <LaunchBar />
       <WhatsNewBanner />
       <PageLayout {...data}>
         <Outlet />
