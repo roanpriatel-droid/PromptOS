@@ -11,7 +11,7 @@ import {
   type ShopifyEnrichment,
 } from '~/lib/catalog';
 import {AuthorityCover} from '~/components/promptos/AuthorityCover';
-
+import {ReviewsTransparencyLine} from '~/components/promptos/ReviewsTransparencyLine';
 /** Deterministic-from-day-of-week scarcity number. Cycles each day, feels real. */
 function scarcityCount(slug: string): number {
   const day = new Date().toISOString().slice(0, 10);
@@ -189,7 +189,8 @@ function PacksBundlePage({stats, shopify}: {stats: ReturnType<typeof getReviewSt
       <section style={{padding: '96px 0'}}>
         <div style={{maxWidth: 1080, margin: '0 auto', padding: '0 var(--space-5)'}}>
           <SectionFade as="div" style={{maxWidth: 760, margin: '0 auto 48px', textAlign: 'center'}}>
-            <div className="section-eyebrow">Early access reviews</div>
+            <ReviewsTransparencyLine />
+              <div className="section-eyebrow">Early access reviews</div>
             <h2 style={{fontFamily: 'var(--font-serif)', fontSize: 'clamp(36px, 4.4vw, 56px)', letterSpacing: '-0.02em', lineHeight: 1.05}}>
               What bundle buyers said.
             </h2>
@@ -290,7 +291,8 @@ function GuidesBundlePage({stats, shopify}: {stats: ReturnType<typeof getReviewS
       <section style={{padding: '96px 0'}}>
         <div style={{maxWidth: 1080, margin: '0 auto', padding: '0 var(--space-5)'}}>
           <SectionFade as="div" style={{maxWidth: 760, margin: '0 auto 48px', textAlign: 'center'}}>
-            <div className="section-eyebrow">Early access reviews</div>
+            <ReviewsTransparencyLine />
+              <div className="section-eyebrow">Early access reviews</div>
             <h2 style={{fontFamily: 'var(--font-serif)', fontSize: 'clamp(36px, 4.4vw, 56px)', letterSpacing: '-0.02em', lineHeight: 1.05}}>
               What bundle buyers said.
             </h2>
@@ -601,7 +603,8 @@ function AuthorityBundlePage({stats, shopify}: {stats: ReturnType<typeof getRevi
       <section style={{padding: '96px 0'}}>
         <div style={{maxWidth: 1080, margin: '0 auto', padding: '0 var(--space-5)'}}>
           <SectionFade as="div" style={{maxWidth: 760, margin: '0 auto 48px', textAlign: 'center'}}>
-            <div className="section-eyebrow">Early access reviews</div>
+            <ReviewsTransparencyLine />
+              <div className="section-eyebrow">Early access reviews</div>
             <h2 style={{fontFamily: 'var(--font-serif)', fontSize: 'clamp(36px, 4.4vw, 56px)', letterSpacing: '-0.02em', lineHeight: 1.05}}>
               What bundle buyers said.
             </h2>

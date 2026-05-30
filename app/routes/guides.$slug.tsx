@@ -3,6 +3,7 @@ import type {Route} from './+types/guides.$slug';
 import {getGuideBySlug, BUNDLES, fetchShopifyProduct} from '~/lib/catalog';
 import {getReviewsForProduct, getReviewStats} from '~/lib/reviews';
 import {GuideCover} from '~/components/promptos/GuideCover';
+import {ReviewsTransparencyLine} from '~/components/promptos/ReviewsTransparencyLine';
 import {WhoForWhoNotFor} from '~/components/promptos/WhoForWhoNotFor';
 import {ThreePathsComparison} from '~/components/promptos/ThreePathsComparison';
 import {ChapterList} from '~/components/promptos/ChapterList';
@@ -167,6 +168,7 @@ export default function GuideRoute({loaderData}: Route.ComponentProps) {
         <section style={{padding: '96px 0', background: 'var(--bone)', borderBlock: '1px solid var(--hairline)'}}>
           <div style={{maxWidth: 1080, margin: '0 auto', padding: '0 var(--space-5)'}}>
             <SectionFade as="div" style={{maxWidth: 760, margin: '0 auto 48px', textAlign: 'center'}}>
+              <ReviewsTransparencyLine />
               <div className="section-eyebrow">Early access reviews</div>
               <h2 style={{fontFamily: 'var(--font-serif)', fontSize: 'clamp(36px, 4.4vw, 56px)', letterSpacing: '-0.02em', lineHeight: 1.05}}>
                 What buyers said.
