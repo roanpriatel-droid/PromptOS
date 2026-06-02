@@ -1,8 +1,14 @@
 import {SectionFade} from './SectionFade';
+import {GradientOrb} from '~/components/atmosphere/GradientOrb';
+import {NoiseTexture} from '~/components/atmosphere/NoiseTexture';
 
 export function NewsletterCTA() {
   return (
-    <section className="newsletter-cta">
+    <section className="newsletter-cta v39a-section">
+      {/* v3.9b D13 — dual purple/pink orbs */}
+      <GradientOrb color="purple" intensity="soft" size={460} top="50%" left="14%" />
+      <GradientOrb color="pink" intensity="soft" size={460} top="50%" right="14%" />
+      <NoiseTexture />
       <SectionFade as="div" className="newsletter-inner">
         <div className="section-eyebrow">Newsletter</div>
         <h2>One free prompt. Every Tuesday.</h2>
@@ -13,7 +19,7 @@ export function NewsletterCTA() {
             e.preventDefault();
           }}
         >
-          <input type="email" inputMode="email" placeholder="you@work.com" aria-label="Email address" required className="w-full sm:w-auto" />
+          <input type="email" inputMode="email" placeholder="you@work.com" aria-label="Email address" required className="w-full sm:w-auto v39a-newsletter-input" />
           <button type="submit" className="w-full sm:w-auto">
             Subscribe
             <svg viewBox="0 0 16 16" width="14" height="14" fill="none" aria-hidden>

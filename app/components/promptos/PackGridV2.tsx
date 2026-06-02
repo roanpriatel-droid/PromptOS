@@ -5,6 +5,8 @@ import {PackCover} from './PackCover';
 import {BundleCover} from './BundleCover';
 import {SectionFade} from './SectionFade';
 import {RatingStars} from './RatingStars';
+import {GradientOrb} from '~/components/atmosphere/GradientOrb';
+import {NoiseTexture} from '~/components/atmosphere/NoiseTexture';
 
 /**
  * Pack grid v2 — clean 4+3 grid of seven pack cards, followed by a
@@ -14,7 +16,11 @@ import {RatingStars} from './RatingStars';
  */
 export function PackGridV2() {
   return (
-    <section className="packs-v2" id="packs">
+    <section className="packs-v2 v39a-section" id="packs">
+      {/* v3.9b D4 — packs grid leans purple-dominant */}
+      <GradientOrb color="purple" intensity="soft" size={560} top="15%" right="-8%" />
+      <GradientOrb color="purple" intensity="soft" size={420} bottom="20%" left="-6%" />
+      <NoiseTexture />
       <SectionFade as="div" className="packs-v2-head">
         <div className="section-eyebrow">The packs</div>
         <h2>Built for the work you actually do.</h2>
@@ -46,7 +52,7 @@ function PackCardV2({pack}: {pack: typeof PACKS[number]}) {
     <Link
       to={`/packs/${pack.slug}`}
       prefetch="intent"
-      className="v2-card v2-card-clickable"
+      className="v2-card v2-card-clickable v39a-hover-lift"
       data-tone={pack.tone}
       aria-label={`${pack.name}, ${stats.count} reviews, $${pack.priceUSD}`}
     >
@@ -88,13 +94,13 @@ function BundleFeatureRow() {
     <Link
       to={`/bundles/${PACKS_BUNDLE.slug}`}
       prefetch="intent"
-      className="bundle-feature-row"
+      className="bundle-feature-row v39a-hover-lift v39a-hover-lift-strong"
       aria-label={`${PACKS_BUNDLE.name}, $${PACKS_BUNDLE.priceUSD}, save $${PACKS_BUNDLE.savings}`}
     >
       <div className="bundle-feature-mesh" aria-hidden />
       <div className="bundle-feature-grid">
         <div className="bundle-feature-cover">
-          <BundleCover />
+          <BundleCover slug={PACKS_BUNDLE.slug} alt={PACKS_BUNDLE.name} />
         </div>
         <div className="bundle-feature-meta">
           <span className="badge">Best value</span>

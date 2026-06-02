@@ -2,6 +2,8 @@ import {Link} from 'react-router';
 import {GUIDES, BUNDLES} from '~/lib/catalog';
 import {GuideCard} from './GuideCard';
 import {SectionFade} from './SectionFade';
+import {GradientOrb} from '~/components/atmosphere/GradientOrb';
+import {NoiseTexture} from '~/components/atmosphere/NoiseTexture';
 
 /**
  * Homepage guides strip — same card pattern as /guides but no filters,
@@ -10,7 +12,11 @@ import {SectionFade} from './SectionFade';
 export function GuideHomeStrip() {
   const bundle = BUNDLES[1];
   return (
-    <section className="packs-v2" id="guides-home">
+    <section className="packs-v2 v39a-section" id="guides-home">
+      {/* v3.9b D5 — playbooks lean pink-dominant (higher-ticket energy) */}
+      <GradientOrb color="pink" intensity="soft" size={520} top="15%" left="-8%" />
+      <GradientOrb color="pink" intensity="soft" size={440} bottom="20%" right="-6%" />
+      <NoiseTexture />
       <SectionFade as="div" className="packs-v2-head">
         <div className="section-eyebrow">The playbooks</div>
         <h2>One finished plan. Per business.</h2>
@@ -18,15 +24,17 @@ export function GuideHomeStrip() {
       </SectionFade>
 
       <div className="guides-grid" style={{maxWidth: 'var(--container)', margin: '0 auto', padding: '0 var(--space-5)'}}>
-        {GUIDES.map((g) => (
-          <SectionFade key={g.slug} as="div">
-            <GuideCard guide={g} />
+        {GUIDES.map((g, i) => (
+          <SectionFade key={g.slug} as="div" delayMs={i * 55}>
+            <div className="v39a-hover-lift v39a-hover-lift-strong">
+              <GuideCard guide={g} />
+            </div>
           </SectionFade>
         ))}
       </div>
 
       <SectionFade as="div">
-        <div className="packs-banner" style={{background: 'var(--ink-deep)'}}>
+        <div className="packs-banner v39a-hover-lift" style={{background: 'var(--ink-deep)'}}>
           <div className="copy">
             <strong>Or get all 8 playbooks, save ${bundle.savings}</strong>
             <p>Every playbook. Lifetime updates. New playbooks free.</p>

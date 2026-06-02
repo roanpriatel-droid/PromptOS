@@ -1,5 +1,7 @@
 import {SectionFade} from './SectionFade';
 import {JsonLd, faqSchema} from './JsonLd';
+import {GradientOrb} from '~/components/atmosphere/GradientOrb';
+import {NoiseTexture} from '~/components/atmosphere/NoiseTexture';
 
 export const FAQS = [
   {
@@ -38,8 +40,11 @@ export const FAQS = [
 
 export function FaqV2() {
   return (
-    <section className="faq-v2" id="faq">
+    <section className="faq-v2 v39a-section" id="faq">
       <JsonLd data={faqSchema(FAQS)} />
+      {/* v3.9b D12 — atmospheric pass on FAQ */}
+      <GradientOrb color="purple" intensity="soft" size={440} top="20%" right="-4%" />
+      <NoiseTexture />
       <div className="faq-v2-inner">
         <SectionFade as="h2">Questions, answered.</SectionFade>
         <div className="accordion">

@@ -1,3 +1,6 @@
+import {GradientOrb} from '~/components/atmosphere/GradientOrb';
+import {NoiseTexture} from '~/components/atmosphere/NoiseTexture';
+
 type FounderNoteProps = {
   /** Override the heading paragraph; defaults to the homepage copy. */
   heading?: string;
@@ -19,15 +22,19 @@ export function FounderNote({
   body = DEFAULT_BODY,
 }: FounderNoteProps) {
   return (
-    <section className="founder">
+    <section className="founder v39a-section">
+      {/* v3.9b D11 — deep purple orb behind the founder note + pink quote mark */}
+      <GradientOrb color="purple" intensity="medium" size={460} top="25%" left="14%" />
+      <NoiseTexture />
       <div className="founder-inner">
         <div className="eyebrow">A note from the founder</div>
+        <span aria-hidden style={{display: 'block', fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 96, lineHeight: 0.7, color: '#EC4899', marginBottom: 12, marginLeft: -6, opacity: 0.85}}>&ldquo;</span>
         <h3>{heading}</h3>
         {body.map((p) => (
           <p key={p.slice(0, 30)}>{p}</p>
         ))}
         <div className="signature">
-          <div className="avatar">N</div>
+          <div className="avatar v39a-pulse-purple">N</div>
           <div className="text">
             <div className="name">Nathan</div>
             <div className="role">Founder, Promptos</div>

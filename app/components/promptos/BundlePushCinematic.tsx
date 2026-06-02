@@ -39,21 +39,29 @@ export function BundlePushCinematic() {
           {/* Packs */}
           <SectionFade as="div" delayMs={0}>
             <Link to={`/bundles/${PACKS_BUNDLE.slug}`} prefetch="intent" className="cinematic-card">
-              <div className="stack" aria-hidden>
-                {PACKS.slice(0, 5).map((p, i) => (
-                  <div
-                    key={p.slug}
-                    className="mini"
-                    style={{
-                      left: `${i * 16}px`,
-                      transform: `rotate(${(i - 2) * 3}deg)`,
-                      zIndex: 10 - i,
-                    }}
-                  >
-                    <PackCover pack={p} />
+              {hasV39Cover(PACKS_BUNDLE.slug) ? (
+                <div className="stack" aria-hidden style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                  <div style={{width: '100%', maxWidth: 280, aspectRatio: '1 / 1', borderRadius: 16, overflow: 'hidden', boxShadow: 'var(--v39a-elevation-raised)'}}>
+                    <CoverV39 slug={PACKS_BUNDLE.slug} alt={PACKS_BUNDLE.name} />
                   </div>
-                ))}
-              </div>
+                </div>
+              ) : (
+                <div className="stack" aria-hidden>
+                  {PACKS.slice(0, 5).map((p, i) => (
+                    <div
+                      key={p.slug}
+                      className="mini"
+                      style={{
+                        left: `${i * 16}px`,
+                        transform: `rotate(${(i - 2) * 3}deg)`,
+                        zIndex: 10 - i,
+                      }}
+                    >
+                      <PackCover pack={p} />
+                    </div>
+                  ))}
+                </div>
+              )}
               <div className="meta">
                 <div className="kicker">For daily tools</div>
                 <h3>{PACKS_BUNDLE.name}</h3>
@@ -71,21 +79,29 @@ export function BundlePushCinematic() {
           {/* Authority */}
           <SectionFade as="div" delayMs={100}>
             <Link to={`/bundles/${AUTHORITY_BUNDLE.slug}`} prefetch="intent" className="cinematic-card">
-              <div className="stack" aria-hidden>
-                {AUTHORITY.map((a, i) => (
-                  <div
-                    key={a.slug}
-                    className="mini"
-                    style={{
-                      left: `${i * 22}px`,
-                      transform: `rotate(${(i - 1) * 5}deg)`,
-                      zIndex: 10 - i,
-                    }}
-                  >
-                    <AuthorityCover product={a} />
+              {hasV39Cover(AUTHORITY_BUNDLE.slug) ? (
+                <div className="stack" aria-hidden style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                  <div style={{width: '100%', maxWidth: 280, aspectRatio: '1 / 1', borderRadius: 16, overflow: 'hidden', boxShadow: 'var(--v39a-elevation-raised)'}}>
+                    <CoverV39 slug={AUTHORITY_BUNDLE.slug} alt={AUTHORITY_BUNDLE.name} />
                   </div>
-                ))}
-              </div>
+                </div>
+              ) : (
+                <div className="stack" aria-hidden>
+                  {AUTHORITY.map((a, i) => (
+                    <div
+                      key={a.slug}
+                      className="mini"
+                      style={{
+                        left: `${i * 22}px`,
+                        transform: `rotate(${(i - 1) * 5}deg)`,
+                        zIndex: 10 - i,
+                      }}
+                    >
+                      <AuthorityCover product={a} />
+                    </div>
+                  ))}
+                </div>
+              )}
               <div className="meta">
                 <div className="kicker">For audience &amp; product</div>
                 <h3>{AUTHORITY_BUNDLE.name}</h3>
@@ -152,21 +168,29 @@ export function BundlePushCinematic() {
           {/* Guides */}
           <SectionFade as="div" delayMs={300}>
             <Link to={`/bundles/${GUIDES_BUNDLE.slug}`} prefetch="intent" className="cinematic-card">
-              <div className="stack" aria-hidden>
-                {GUIDES.slice(0, 5).map((g, i) => (
-                  <div
-                    key={g.slug}
-                    className="mini"
-                    style={{
-                      left: `${i * 16}px`,
-                      transform: `rotate(${(i - 2) * 3}deg)`,
-                      zIndex: 10 - i,
-                    }}
-                  >
-                    <GuideCover guide={g} />
+              {hasV39Cover(GUIDES_BUNDLE.slug) ? (
+                <div className="stack" aria-hidden style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                  <div style={{width: '100%', maxWidth: 280, aspectRatio: '1 / 1', borderRadius: 16, overflow: 'hidden', boxShadow: 'var(--v39a-elevation-raised)'}}>
+                    <CoverV39 slug={GUIDES_BUNDLE.slug} alt={GUIDES_BUNDLE.name} />
                   </div>
-                ))}
-              </div>
+                </div>
+              ) : (
+                <div className="stack" aria-hidden>
+                  {GUIDES.slice(0, 5).map((g, i) => (
+                    <div
+                      key={g.slug}
+                      className="mini"
+                      style={{
+                        left: `${i * 16}px`,
+                        transform: `rotate(${(i - 2) * 3}deg)`,
+                        zIndex: 10 - i,
+                      }}
+                    >
+                      <GuideCover guide={g} />
+                    </div>
+                  ))}
+                </div>
+              )}
               <div className="meta">
                 <div className="kicker">For the business</div>
                 <h3>{GUIDES_BUNDLE.name}</h3>
