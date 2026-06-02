@@ -46,11 +46,13 @@ import {
   productSchema,
   withReviews,
 } from '~/components/promptos/JsonLd';
+import {getOgImageUrl} from '~/lib/og-images';
 
 export const meta: Route.MetaFunction = ({data: loaderData}) => {
   if (!loaderData?.bundle) return [{title: 'Bundle not found · Promptos'}];
   const b = loaderData.bundle;
   const url = `https://promptos.store/bundles/${b.slug}`;
+  const ogImage = getOgImageUrl(b.slug);
   return [
     {title: `${b.name} · Promptos`},
     {name: 'description', content: b.tagline},
@@ -61,6 +63,12 @@ export const meta: Route.MetaFunction = ({data: loaderData}) => {
     {property: 'product:price:amount', content: String(b.priceUSD)},
     {property: 'product:price:currency', content: 'USD'},
     {name: 'twitter:card', content: 'summary_large_image'},
+    ...(ogImage ? [
+      {property: 'og:image', content: ogImage},
+      {property: 'og:image:width', content: '1200'},
+      {property: 'og:image:height', content: '630'},
+      {name: 'twitter:image', content: ogImage},
+    ] : []),
     {tagName: 'link', rel: 'canonical', href: url},
   ];
 };
@@ -101,6 +109,7 @@ export default function BundleRoute({loaderData}: Route.ComponentProps) {
               priceUSD: bundle.priceUSD,
               reviewCount: stats.count,
               averageRating: stats.average,
+              image: getOgImageUrl(bundle.slug),
             }),
             topReviews,
           ),

@@ -52,6 +52,7 @@ import {
   productSchema,
   withReviews,
 } from '~/components/promptos/JsonLd';
+import {getOgImageUrl} from '~/lib/og-images';
 
 const MEGA = BUNDLES[3];
 
@@ -59,6 +60,7 @@ export const meta: Route.MetaFunction = ({data: loaderData}) => {
   if (!loaderData?.product) return [{title: 'Authority product not found · Promptos'}];
   const a = loaderData.product;
   const url = `https://promptos.store/authority/${a.slug}`;
+  const ogImage = getOgImageUrl(a.slug);
   return [
     {title: `${a.name} · Promptos`},
     {name: 'description', content: a.tagline},
@@ -69,6 +71,12 @@ export const meta: Route.MetaFunction = ({data: loaderData}) => {
     {property: 'product:price:amount', content: String(a.priceUSD)},
     {property: 'product:price:currency', content: 'USD'},
     {name: 'twitter:card', content: 'summary_large_image'},
+    ...(ogImage ? [
+      {property: 'og:image', content: ogImage},
+      {property: 'og:image:width', content: '1200'},
+      {property: 'og:image:height', content: '630'},
+      {name: 'twitter:image', content: ogImage},
+    ] : []),
     {tagName: 'link', rel: 'canonical', href: url},
   ];
 };
@@ -109,6 +117,7 @@ export default function AuthorityRoute({loaderData}: Route.ComponentProps) {
               priceUSD: product.priceUSD,
               reviewCount: stats.count,
               averageRating: stats.average,
+              image: getOgImageUrl(product.slug),
             }),
             topReviews,
           ),

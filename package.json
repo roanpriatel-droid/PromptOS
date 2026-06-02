@@ -11,7 +11,8 @@
     "lint": "eslint --no-error-on-unmatched-pattern .",
     "typecheck": "react-router typegen && tsc --noEmit",
     "codegen": "shopify hydrogen codegen && react-router typegen",
-    "audit-links": "node scripts/audit-internal-links.mjs"
+    "audit-links": "node scripts/audit-internal-links.mjs",
+    "generate-og": "node scripts/generate-og-images.mjs"
   },
   "prettier": "@shopify/prettier-config",
   "dependencies": {
@@ -32,6 +33,7 @@
     "@graphql-codegen/cli": "5.0.2",
     "@react-router/dev": "7.14.0",
     "@react-router/fs-routes": "7.14.0",
+    "@resvg/resvg-js": "^2.6.2",
     "@shopify/cli": "3.93.2",
     "@shopify/hydrogen-codegen": "0.3.3",
     "@shopify/mini-oxygen": "4.1.0",

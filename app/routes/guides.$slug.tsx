@@ -30,6 +30,7 @@ import {
   productSchema,
   withReviews,
 } from '~/components/promptos/JsonLd';
+import {getOgImageUrl} from '~/lib/og-images';
 
 const MEGA = BUNDLES[2];
 
@@ -37,6 +38,7 @@ export const meta: Route.MetaFunction = ({data: loaderData}) => {
   if (!loaderData?.guide) return [{title: 'Playbook not found · Promptos'}];
   const g = loaderData.guide;
   const url = `https://promptos.store/guides/${g.slug}`;
+  const ogImage = getOgImageUrl(g.slug);
   return [
     {title: `${g.name} · Promptos`},
     {name: 'description', content: g.tagline},
@@ -47,6 +49,12 @@ export const meta: Route.MetaFunction = ({data: loaderData}) => {
     {property: 'product:price:amount', content: String(g.priceUSD)},
     {property: 'product:price:currency', content: 'USD'},
     {name: 'twitter:card', content: 'summary_large_image'},
+    ...(ogImage ? [
+      {property: 'og:image', content: ogImage},
+      {property: 'og:image:width', content: '1200'},
+      {property: 'og:image:height', content: '630'},
+      {name: 'twitter:image', content: ogImage},
+    ] : []),
     {tagName: 'link', rel: 'canonical', href: url},
   ];
 };
@@ -88,6 +96,7 @@ export default function GuideRoute({loaderData}: Route.ComponentProps) {
               priceUSD: guide.priceUSD,
               reviewCount: stats.count,
               averageRating: stats.average,
+              image: getOgImageUrl(guide.slug),
             }),
             topReviews,
           ),

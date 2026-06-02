@@ -32,6 +32,7 @@ import {
   productSchema,
   withReviews,
 } from '~/components/promptos/JsonLd';
+import {getOgImageUrl} from '~/lib/og-images';
 
 const MEGA = BUNDLES[2];
 
@@ -39,6 +40,7 @@ export const meta: Route.MetaFunction = ({data: loaderData}) => {
   if (!loaderData?.pack) return [{title: 'Pack not found · Promptos'}];
   const p = loaderData.pack;
   const url = `https://promptos.store/packs/${p.slug}`;
+  const ogImage = getOgImageUrl(p.slug);
   return [
     {title: `${p.name} · Promptos`},
     {name: 'description', content: p.tagline},
@@ -49,6 +51,12 @@ export const meta: Route.MetaFunction = ({data: loaderData}) => {
     {property: 'product:price:amount', content: String(p.priceUSD)},
     {property: 'product:price:currency', content: 'USD'},
     {name: 'twitter:card', content: 'summary_large_image'},
+    ...(ogImage ? [
+      {property: 'og:image', content: ogImage},
+      {property: 'og:image:width', content: '1200'},
+      {property: 'og:image:height', content: '630'},
+      {name: 'twitter:image', content: ogImage},
+    ] : []),
     {tagName: 'link', rel: 'canonical', href: url},
   ];
 };
@@ -128,6 +136,7 @@ export default function PackRoute({loaderData}: Route.ComponentProps) {
               priceUSD: pack.priceUSD,
               reviewCount: stats.count,
               averageRating: stats.average,
+              image: getOgImageUrl(pack.slug),
             }),
             topReviews,
           ),
