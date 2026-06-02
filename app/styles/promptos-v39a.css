@@ -187,6 +187,15 @@
 
 .two-sides {
   position: relative;
+  /* v3.9c-mobile fix: clip the two GradientOrbs that sit absolutely-
+     positioned with negative right/left offsets. Without this, the
+     520px-wide purple orb extends ~290px past the right viewport edge
+     on a 375px mobile viewport, growing document scroll-width past
+     the device width and forcing mobile browsers to zoom the page
+     out (which presents as "desktop layout on mobile"). Every other
+     v3.9 atmospheric section gets this via the .v39a-section rule
+     below; the Two-Sides demo predates that rule and was missed. */
+  overflow: hidden;
 }
 .two-sides .two-sides-inner {
   position: relative;
