@@ -1,7 +1,19 @@
 /**
  * Inline SVG cover for the complete bundle — dark ink background with a wall
  * of serif numbers and the "450 prompts" line.
+ *
+ * v3.9a Phase B — if a designed v3.9 cover exists for the slug
+ * (currently: 'everything'), render that instead. Falls back to the
+ * inline composition below for the other 3 bundles.
  */
+import {CoverV39, hasV39Cover} from './CoverV39';
+
+type BundleCoverProps = {
+  /** When given, opts into the v3.9 designed cover lookup. */
+  slug?: string;
+  /** Optional alt text for accessibility (only used in the v3.9 path). */
+  alt?: string;
+};
 
 const SERIF = "'Instrument Serif', Georgia, serif";
 const SANS = "'Geist', system-ui, sans-serif";
@@ -9,7 +21,10 @@ const CREAM = '#FAFAFA';
 const DIM = 'rgba(250,250,250,0.62)';
 const FAINT = 'rgba(255,255,255,0.18)';
 
-export function BundleCover() {
+export function BundleCover({slug, alt}: BundleCoverProps = {}) {
+  if (slug && hasV39Cover(slug)) {
+    return <CoverV39 slug={slug} alt={alt ?? 'Promptos bundle'} />;
+  }
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

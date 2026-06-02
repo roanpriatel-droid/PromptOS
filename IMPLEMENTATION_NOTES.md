@@ -74,3 +74,78 @@ git push origin main --force-with-lease
 ```
 
 (The snapshot will also be pushed to origin once the auth issue from the initial push is resolved.)
+
+---
+
+# v3.9a Implementation Notes
+
+## Scope
+
+v3.9a is the "foundation + direction proof" cut of the v3.9 visual overhaul, agreed up front before the autonomous run started. It is intentionally NOT the full v3.9 spec — it ships:
+
+1. Phase A entirely (tokens, motion primitives, atmosphere primitives) — invisible to users, every later phase depends on it.
+2. **3 proof-of-concept covers** (Marketer's Pack, Personal Brand Playbook, Everything Bundle) so the user can judge the cover system before the other 19 are committed.
+3. Phase C **path B** (CSS-animated mesh hero, not WebGL).
+4. Phase F CSS-only sub-items (refined focus rings, tabular numerals, link underline polish).
+5. Atmospheric primitives **demoed on the Two-Sides section only** so the user can evaluate the system in context.
+
+## Commits on `store-visual-overhaul-v3.9a`
+
+| Commit | Phase | What |
+|---|---|---|
+| `192d7d9` | A1 + F | Design tokens (`promptos-v39a.css`): elevation/glow scale, atmospheric gradients, motion timing, focus rings, tabular numerals, link underline polish. Stylesheet loaded last in the cascade — no existing surface is overridden until a component opts in. |
+| `1f4fa18` | A2-A4 | Motion primitives (FadeUp, Reveal, Parallax, Magnetic — pure React + IntersectionObserver, no framer-motion dep) and atmosphere primitives (GradientOrb, NoiseTexture, HeroMesh). Each primitive < 80 lines. |
+| `39b623c` | B | 3 designed SVG covers at `public/covers/*.svg` (marketer, personal-brand, everything) + `CoverV39` registry component. PackCover / AuthorityCover / BundleCover updated to check the registry first and fall back to the existing inline-SVG character-glyph treatment for the other 19 products. Additive — zero regression on slugs not in the registry. |
+| `091632f` | C + Two-Sides demo | HeroMesh wrapped around HeroV2's outer element so the homepage hero now drifts the v39a mesh gradient (path B, CSS-only). TwoSidesSection seeded with a purple/pink GradientOrb pair and NoiseTexture overlay; existing SectionFade entry animations preserved. |
+
+## Validation
+
+| Check | Result |
+|---|---|
+| `npm run build` | ✅ Succeeds (`✓ built in 7.35s`). |
+| `npx tsc --noEmit --skipLibCheck` | 24 pre-existing errors carried over from v3.8a baseline (SectionFade `style`/`as` prop gaps, Storefront cache-type mismatch). Verified by stash-diff: error count is identical with vs. without v3.9a changes. **Zero new errors introduced by v3.9a.** |
+| `git diff main --diff-filter=D` | ✅ Empty — nothing deleted. |
+| Reduced motion | ✅ HeroMesh mesh-drift keyframes set to `animation: none` under `@media (prefers-reduced-motion: reduce)`. FadeUp short-circuits to the entered state when the same media query matches. |
+
+Pre-existing typecheck errors are tracked here and are explicitly **not** in v3.9a's scope to fix — the autonomous spec scope was visual lift, not type debt.
+
+## What v3.9a deliberately does NOT ship (deferred to later v3.9 cuts)
+
+- **The other 19 product covers** (every pack except Marketer, every guide, the other Authority products, the other 3 bundles). Pending the user's review of the 3 prototypes.
+- **Atmospheric pass on the other 12 homepage sections** (D2-D13 in the spec).
+- **Product page transformation** (Phase E — 20 product pages).
+- **Polish & micro-details that need browser iteration** (Phase F2 loading skeletons, Phase F5 mobile-specific gradient tuning, Phase F6 Lighthouse verification).
+- **OG image regeneration per product** (Phase B5 — 20 raster outputs at 1200×630).
+- **Magnetic CTA wiring** (primitive exists; not yet applied to any CTA). Same for Marquee.
+- **framer-motion dependency** — intentionally skipped. The 4 motion primitives ship as pure React + IntersectionObserver instead, no runtime dep added. If a later cut needs spring physics that CSS can't do, the dep can be added then.
+
+## Rollback path
+
+Backup snapshot was NOT created as a separate branch this cut — the v3.9a branch lives independently of `main`, and `main` is unchanged. To revert if needed:
+
+```bash
+git checkout main      # main is untouched; this IS the rollback
+git branch -D store-visual-overhaul-v3.9a   # only if you want to discard the branch entirely
+```
+
+To roll back individual phases:
+
+```bash
+git revert 091632f   # roll back Phase C + Two-Sides demo
+git revert 39b623c   # roll back Phase B (3 covers + registry)
+git revert 1f4fa18   # roll back Phase A2-A4 (primitives)
+git revert 192d7d9   # roll back Phase A1 + F (tokens + CSS polish)
+```
+
+Each commit is atomic so any single phase can be reverted without disturbing the others.
+
+## Manual user actions
+
+**None required for v3.9a.** No discount codes, no email automation, no app installations, no Shopify Admin changes. The changes are 100% code + static assets. Oxygen auto-deploys when the squash-merge to `main` lands.
+
+## Next session (v3.9b proposal — pending user verdict on the 3 prototype covers)
+
+Once the user judges the live result of the marketer / personal-brand / everything covers + the new hero mesh, the next session can either:
+
+- **If the covers hit:** ship the other 19 covers in the same visual language as a single v3.9b batch + Phase D atmospheric pass on the remaining 12 homepage sections.
+- **If they don't:** iterate the 3 prototypes (style direction, density, color treatment) before committing the other 19 to the wrong direction.

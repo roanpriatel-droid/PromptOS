@@ -1,6 +1,8 @@
 import {Link} from 'react-router';
 import {SectionFade} from './SectionFade';
 import {MEGA_BUNDLE, PACKS, GUIDES} from '~/lib/catalog';
+import {GradientOrb} from '~/components/atmosphere/GradientOrb';
+import {NoiseTexture} from '~/components/atmosphere/NoiseTexture';
 
 /**
  * The homepage's pivotal "Two Sides of the Same Goal" section.
@@ -13,6 +15,12 @@ export function TwoSidesSection() {
   const totalPages = GUIDES.reduce((s, g) => s + g.pageCount, 0);
   return (
     <section className="two-sides">
+      {/* v3.9a Phase D demo — atmospheric primitives on a single section
+          (GradientOrb pair + noise overlay). Inner content sits above
+          them via the .two-sides-inner z-index rule in promptos-v39a.css. */}
+      <GradientOrb color="purple" intensity="soft" size={520} top="10%" right="-8%" />
+      <GradientOrb color="pink" intensity="soft" size={520} bottom="0%" left="-8%" />
+      <NoiseTexture />
       <div className="two-sides-inner">
         <SectionFade as="div" className="two-sides-card packs">
           <span className="label">Prompt Packs</span>

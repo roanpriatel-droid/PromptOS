@@ -1,6 +1,7 @@
 import {Link} from 'react-router';
 import {BUNDLES, PACKS, GUIDES, AUTHORITY, AUTHORITY_BUNDLE, MEGA_BUNDLE, PACKS_BUNDLE, GUIDES_BUNDLE} from '~/lib/catalog';
 import {LaunchDiscountLine} from './LaunchDiscountLine';
+import {CoverV39, hasV39Cover} from './CoverV39';
 import {PackCover} from './PackCover';
 import {GuideCover} from './GuideCover';
 import {AuthorityCover} from './AuthorityCover';
@@ -103,27 +104,35 @@ export function BundlePushCinematic() {
           <SectionFade as="div" delayMs={200}>
             <Link to={`/bundles/${MEGA_BUNDLE.slug}`} prefetch="intent" className="cinematic-card win">
               <span className="badge">Best value</span>
-              <div className="stack" aria-hidden>
-                {[...PACKS.slice(0, 2), AUTHORITY[0], AUTHORITY[2], ...GUIDES.slice(0, 3)].map((p, i) => (
-                  <div
-                    key={p.slug}
-                    className="mini"
-                    style={{
-                      left: `${i * 12}px`,
-                      transform: `rotate(${(i - 3) * 2.5}deg)`,
-                      zIndex: 20 - i,
-                    }}
-                  >
-                    {p.type === 'pack' ? (
-                      <PackCover pack={p} />
-                    ) : p.type === 'guide' ? (
-                      <GuideCover guide={p} />
-                    ) : (
-                      <AuthorityCover product={p} />
-                    )}
+              {hasV39Cover(MEGA_BUNDLE.slug) ? (
+                <div className="stack" aria-hidden style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                  <div style={{width: '100%', maxWidth: 320, aspectRatio: '1 / 1', borderRadius: 16, overflow: 'hidden', boxShadow: 'var(--v39a-elevation-raised)'}}>
+                    <CoverV39 slug={MEGA_BUNDLE.slug} alt={MEGA_BUNDLE.name} />
                   </div>
-                ))}
-              </div>
+                </div>
+              ) : (
+                <div className="stack" aria-hidden>
+                  {[...PACKS.slice(0, 2), AUTHORITY[0], AUTHORITY[2], ...GUIDES.slice(0, 3)].map((p, i) => (
+                    <div
+                      key={p.slug}
+                      className="mini"
+                      style={{
+                        left: `${i * 12}px`,
+                        transform: `rotate(${(i - 3) * 2.5}deg)`,
+                        zIndex: 20 - i,
+                      }}
+                    >
+                      {p.type === 'pack' ? (
+                        <PackCover pack={p} />
+                      ) : p.type === 'guide' ? (
+                        <GuideCover guide={p} />
+                      ) : (
+                        <AuthorityCover product={p} />
+                      )}
+                    </div>
+                  ))}
+                </div>
+              )}
               <div className="meta">
                 <div className="kicker">All 20 products</div>
                 <h3>{MEGA_BUNDLE.name}</h3>

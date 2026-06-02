@@ -3,6 +3,8 @@ import {Link} from 'react-router';
 import {PACKS, GUIDES} from '~/lib/catalog';
 import {PackCover} from './PackCover';
 import {GuideCover} from './GuideCover';
+import {HeroMesh} from '~/components/atmosphere/HeroMesh';
+import {NoiseTexture} from '~/components/atmosphere/NoiseTexture';
 
 const ROTOR_WORDS = ['work', 'sell', 'ship', 'scale', 'convert', 'land'];
 const ROTOR_INTERVAL = 2200;
@@ -37,8 +39,9 @@ export function HeroV2() {
   }, []);
 
   return (
-    <section className="hero-v2">
+    <HeroMesh as="section" className="hero-v2">
       <div className="hero-v2-bg" aria-hidden />
+      <NoiseTexture />
       <div className="hero-v2-inner">
         <div className="hero-v2-grid">
           <div className="hero-v2-text">
@@ -88,6 +91,6 @@ export function HeroV2() {
           </div>
         </div>
       </div>
-    </section>
+    </HeroMesh>
   );
 }

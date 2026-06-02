@@ -1,0 +1,241 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="The Personal Brand Playbook">
+  <defs>
+    <!-- Atmospheric background: deep purple at top, sunset pink → amber at bottom -->
+    <linearGradient id="pb-bg" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#150826"/>
+      <stop offset="40%" stop-color="#321053"/>
+      <stop offset="75%" stop-color="#7B2E63"/>
+      <stop offset="100%" stop-color="#C25A6A"/>
+    </linearGradient>
+    <radialGradient id="pb-sunset" cx="50%" cy="92%" r="60%">
+      <stop offset="0%" stop-color="#FFAE7B" stop-opacity="0.55"/>
+      <stop offset="60%" stop-color="#FFAE7B" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="pb-corona" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFD9F0" stop-opacity="1"/>
+      <stop offset="22%" stop-color="#FFAEDC" stop-opacity="0.9"/>
+      <stop offset="55%" stop-color="#EC4899" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#EC4899" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Per-ring dot color gradient (inner bright → outer fade) -->
+    <radialGradient id="pb-dot-grad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FAF8F5"/>
+      <stop offset="100%" stop-color="#FAF8F5" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="pb-glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="18" result="g"/>
+      <feMerge>
+        <feMergeNode in="g"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="pb-soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="38"/>
+    </filter>
+    <filter id="pb-noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.95" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1   0 0 0 0.06 0"/>
+    </filter>
+  </defs>
+
+  <!-- Base -->
+  <rect width="1080" height="1080" fill="url(#pb-bg)"/>
+  <rect width="1080" height="1080" fill="url(#pb-sunset)"/>
+
+  <!-- Concentric rings of dots. Center at (540, 540). -->
+  <g transform="translate(540, 540)">
+
+    <!-- Outermost soft halo behind everything (suggests broadcast) -->
+    <circle r="460" fill="url(#pb-corona)" opacity="0.20" filter="url(#pb-soft)"/>
+
+    <!-- Ring definitions (radius, dot-count, dot-radius, opacity) generated inline.
+         Inner rings: 1 dot per X°, larger dots. Outer rings: more dots per degree,
+         smaller dots, lower opacity. -->
+
+    <!-- Ring 1: 8 dots @ r=110 -->
+    <g opacity="0.95">
+      <circle cx="110" cy="0" r="5" fill="#FAF8F5"/>
+      <circle cx="77.78" cy="77.78" r="5" fill="#FAF8F5"/>
+      <circle cx="0" cy="110" r="5" fill="#FAF8F5"/>
+      <circle cx="-77.78" cy="77.78" r="5" fill="#FAF8F5"/>
+      <circle cx="-110" cy="0" r="5" fill="#FAF8F5"/>
+      <circle cx="-77.78" cy="-77.78" r="5" fill="#FAF8F5"/>
+      <circle cx="0" cy="-110" r="5" fill="#FAF8F5"/>
+      <circle cx="77.78" cy="-77.78" r="5" fill="#FAF8F5"/>
+    </g>
+
+    <!-- Ring 2: 16 dots @ r=180 -->
+    <g opacity="0.80" fill="#FAF8F5">
+      <circle cx="180" cy="0" r="4"/>
+      <circle cx="166.31" cy="68.88" r="4"/>
+      <circle cx="127.28" cy="127.28" r="4"/>
+      <circle cx="68.88" cy="166.31" r="4"/>
+      <circle cx="0" cy="180" r="4"/>
+      <circle cx="-68.88" cy="166.31" r="4"/>
+      <circle cx="-127.28" cy="127.28" r="4"/>
+      <circle cx="-166.31" cy="68.88" r="4"/>
+      <circle cx="-180" cy="0" r="4"/>
+      <circle cx="-166.31" cy="-68.88" r="4"/>
+      <circle cx="-127.28" cy="-127.28" r="4"/>
+      <circle cx="-68.88" cy="-166.31" r="4"/>
+      <circle cx="0" cy="-180" r="4"/>
+      <circle cx="68.88" cy="-166.31" r="4"/>
+      <circle cx="127.28" cy="-127.28" r="4"/>
+      <circle cx="166.31" cy="-68.88" r="4"/>
+    </g>
+
+    <!-- Ring 3: 24 dots @ r=250 -->
+    <g opacity="0.62" fill="#FAF8F5">
+      <circle cx="250" cy="0" r="3.5"/>
+      <circle cx="241.48" cy="64.70" r="3.5"/>
+      <circle cx="216.51" cy="125.00" r="3.5"/>
+      <circle cx="176.78" cy="176.78" r="3.5"/>
+      <circle cx="125.00" cy="216.51" r="3.5"/>
+      <circle cx="64.70" cy="241.48" r="3.5"/>
+      <circle cx="0" cy="250" r="3.5"/>
+      <circle cx="-64.70" cy="241.48" r="3.5"/>
+      <circle cx="-125.00" cy="216.51" r="3.5"/>
+      <circle cx="-176.78" cy="176.78" r="3.5"/>
+      <circle cx="-216.51" cy="125.00" r="3.5"/>
+      <circle cx="-241.48" cy="64.70" r="3.5"/>
+      <circle cx="-250" cy="0" r="3.5"/>
+      <circle cx="-241.48" cy="-64.70" r="3.5"/>
+      <circle cx="-216.51" cy="-125.00" r="3.5"/>
+      <circle cx="-176.78" cy="-176.78" r="3.5"/>
+      <circle cx="-125.00" cy="-216.51" r="3.5"/>
+      <circle cx="-64.70" cy="-241.48" r="3.5"/>
+      <circle cx="0" cy="-250" r="3.5"/>
+      <circle cx="64.70" cy="-241.48" r="3.5"/>
+      <circle cx="125.00" cy="-216.51" r="3.5"/>
+      <circle cx="176.78" cy="-176.78" r="3.5"/>
+      <circle cx="216.51" cy="-125.00" r="3.5"/>
+      <circle cx="241.48" cy="-64.70" r="3.5"/>
+    </g>
+
+    <!-- Ring 4: 36 dots @ r=325 -->
+    <g opacity="0.44" fill="#FAF8F5">
+      <circle cx="325" cy="0" r="3"/>
+      <circle cx="319.06" cy="56.43" r="3"/>
+      <circle cx="301.45" cy="111.18" r="3"/>
+      <circle cx="272.59" cy="162.50" r="3"/>
+      <circle cx="233.34" cy="208.84" r="3"/>
+      <circle cx="184.94" cy="248.79" r="3"/>
+      <circle cx="128.91" cy="281.08" r="3"/>
+      <circle cx="67.05" cy="304.39" r="3"/>
+      <circle cx="0" cy="325" r="3"/>
+      <circle cx="-67.05" cy="304.39" r="3"/>
+      <circle cx="-128.91" cy="281.08" r="3"/>
+      <circle cx="-184.94" cy="248.79" r="3"/>
+      <circle cx="-233.34" cy="208.84" r="3"/>
+      <circle cx="-272.59" cy="162.50" r="3"/>
+      <circle cx="-301.45" cy="111.18" r="3"/>
+      <circle cx="-319.06" cy="56.43" r="3"/>
+      <circle cx="-325" cy="0" r="3"/>
+      <circle cx="-319.06" cy="-56.43" r="3"/>
+      <circle cx="-301.45" cy="-111.18" r="3"/>
+      <circle cx="-272.59" cy="-162.50" r="3"/>
+      <circle cx="-233.34" cy="-208.84" r="3"/>
+      <circle cx="-184.94" cy="-248.79" r="3"/>
+      <circle cx="-128.91" cy="-281.08" r="3"/>
+      <circle cx="-67.05" cy="-304.39" r="3"/>
+      <circle cx="0" cy="-325" r="3"/>
+      <circle cx="67.05" cy="-304.39" r="3"/>
+      <circle cx="128.91" cy="-281.08" r="3"/>
+      <circle cx="184.94" cy="-248.79" r="3"/>
+      <circle cx="233.34" cy="-208.84" r="3"/>
+      <circle cx="272.59" cy="-162.50" r="3"/>
+      <circle cx="301.45" cy="-111.18" r="3"/>
+      <circle cx="319.06" cy="-56.43" r="3"/>
+    </g>
+
+    <!-- Ring 5: 48 dots @ r=395 (outer scatter) -->
+    <g opacity="0.26" fill="#FAF8F5">
+      <circle cx="395" cy="0" r="2.5"/>
+      <circle cx="390.62" cy="50.97" r="2.5"/>
+      <circle cx="377.46" cy="100.40" r="2.5"/>
+      <circle cx="355.83" cy="146.79" r="2.5"/>
+      <circle cx="326.41" cy="188.78" r="2.5"/>
+      <circle cx="290.16" cy="225.13" r="2.5"/>
+      <circle cx="248.13" cy="254.74" r="2.5"/>
+      <circle cx="201.71" cy="276.65" r="2.5"/>
+      <circle cx="152.23" cy="290.14" r="2.5"/>
+      <circle cx="101.21" cy="294.66" r="2.5"/>
+      <circle cx="50.00" cy="289.92" r="2.5"/>
+      <circle cx="0" cy="395" r="2.5"/>
+      <circle cx="-50.00" cy="289.92" r="2.5"/>
+      <circle cx="-101.21" cy="294.66" r="2.5"/>
+      <circle cx="-152.23" cy="290.14" r="2.5"/>
+      <circle cx="-201.71" cy="276.65" r="2.5"/>
+      <circle cx="-248.13" cy="254.74" r="2.5"/>
+      <circle cx="-290.16" cy="225.13" r="2.5"/>
+      <circle cx="-326.41" cy="188.78" r="2.5"/>
+      <circle cx="-355.83" cy="146.79" r="2.5"/>
+      <circle cx="-377.46" cy="100.40" r="2.5"/>
+      <circle cx="-390.62" cy="50.97" r="2.5"/>
+      <circle cx="-395" cy="0" r="2.5"/>
+      <circle cx="-390.62" cy="-50.97" r="2.5"/>
+      <circle cx="-377.46" cy="-100.40" r="2.5"/>
+      <circle cx="-355.83" cy="-146.79" r="2.5"/>
+      <circle cx="-326.41" cy="-188.78" r="2.5"/>
+      <circle cx="-290.16" cy="-225.13" r="2.5"/>
+      <circle cx="-248.13" cy="-254.74" r="2.5"/>
+      <circle cx="-201.71" cy="-276.65" r="2.5"/>
+      <circle cx="-152.23" cy="-290.14" r="2.5"/>
+      <circle cx="-101.21" cy="-294.66" r="2.5"/>
+      <circle cx="-50.00" cy="-289.92" r="2.5"/>
+      <circle cx="0" cy="-395" r="2.5"/>
+      <circle cx="50.00" cy="-289.92" r="2.5"/>
+      <circle cx="101.21" cy="-294.66" r="2.5"/>
+      <circle cx="152.23" cy="-290.14" r="2.5"/>
+      <circle cx="201.71" cy="-276.65" r="2.5"/>
+      <circle cx="248.13" cy="-254.74" r="2.5"/>
+      <circle cx="290.16" cy="-225.13" r="2.5"/>
+      <circle cx="326.41" cy="-188.78" r="2.5"/>
+      <circle cx="355.83" cy="-146.79" r="2.5"/>
+      <circle cx="377.46" cy="-100.40" r="2.5"/>
+      <circle cx="390.62" cy="-50.97" r="2.5"/>
+    </g>
+
+    <!-- Soft corona behind core (under) -->
+    <circle r="120" fill="url(#pb-corona)" filter="url(#pb-soft)"/>
+
+    <!-- Central glowing node -->
+    <g filter="url(#pb-glow)">
+      <circle r="32" fill="#FAF8F5"/>
+      <circle r="24" fill="#FFD9F0"/>
+      <circle r="14" fill="#EC4899"/>
+    </g>
+
+  </g>
+
+  <!-- Wordmark + label -->
+  <g transform="translate(72, 80)">
+    <g>
+      <path d="M0 8 L18 22 L0 36" fill="none" stroke="#FFAEDC" stroke-width="4" stroke-linecap="square"/>
+      <rect x="24" y="6" width="4" height="32" fill="#FAF8F5"/>
+      <text x="42" y="32" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" letter-spacing="-0.3" fill="#FAF8F5">promptos</text>
+    </g>
+    <text x="0" y="76" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" letter-spacing="2.8" fill="rgba(250,248,245,0.55)">THE PERSONAL BRAND PLAYBOOK</text>
+  </g>
+
+  <!-- Spine label -->
+  <g transform="translate(1008, 100)" text-anchor="end">
+    <text font-family="'Instrument Serif', Georgia, serif" font-size="32" font-style="italic" fill="rgba(250,248,245,0.50)">A1</text>
+    <text x="0" y="42" font-family="'Instrument Serif', Georgia, serif" font-size="38" font-weight="500" fill="#FAF8F5">85 pages</text>
+  </g>
+
+  <!-- Title placement (lower half) -->
+  <g transform="translate(540, 950)" text-anchor="middle">
+    <text font-family="'Instrument Serif', Georgia, serif" font-size="46" fill="#FAF8F5" font-style="italic">Build distribution you own.</text>
+  </g>
+
+  <!-- Footnote -->
+  <g transform="translate(72, 1000)">
+    <text font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" letter-spacing="2.8" fill="rgba(250,248,245,0.45)">AUTHORITY · A1</text>
+  </g>
+
+  <!-- Noise overlay -->
+  <rect width="1080" height="1080" filter="url(#pb-noise)" opacity="0.55"/>
+</svg>

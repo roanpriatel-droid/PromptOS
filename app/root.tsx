@@ -23,6 +23,7 @@ import promptosV32Styles from './styles/promptos-v32.css?url';
 import promptosV33Styles from './styles/promptos-v33.css?url';
 import promptosV34Styles from './styles/promptos-v34.css?url';
 import promptosV38aStyles from './styles/promptos-v38a.css?url';
+import promptosV39aStyles from './styles/promptos-v39a.css?url';
 import {PageLayout} from './components/PageLayout';
 import {RecentPurchaseToast} from './components/promptos/RecentPurchaseToast';
 import {WhatsNewBanner} from './components/promptos/WhatsNewBanner';
@@ -184,6 +185,7 @@ export function Layout({children}: {children?: React.ReactNode}) {
         <link rel="stylesheet" href={promptosV33Styles}></link>
         <link rel="stylesheet" href={promptosV34Styles}></link>
         <link rel="stylesheet" href={promptosV38aStyles}></link>
+        <link rel="stylesheet" href={promptosV39aStyles}></link>
         <Meta />
         <Links />
         <JsonLd data={[organizationSchema(), websiteSchema()]} />
