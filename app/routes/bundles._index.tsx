@@ -3,6 +3,7 @@ import {BundleSelector} from '~/components/promptos/BundleSelector';
 import {CompareBundlesTable} from '~/components/promptos/CompareBundlesTable';
 import {SectionFade} from '~/components/promptos/SectionFade';
 import {BUNDLES, PACKS, GUIDES, AUTHORITY, MEGA_BUNDLE} from '~/lib/catalog';
+import {CATALOG_STATS} from '~/lib/catalog-stats';
 import {AnimatedCounter} from '~/components/promptos/AnimatedCounter';
 
 export const meta: Route.MetaFunction = () => [
@@ -51,7 +52,7 @@ export default function BundlesIndex() {
               <AnimatedCounter to={totalTemplates} /> templates.
             </h2>
             <p style={{color: 'var(--fg-3)', fontSize: 17, marginTop: 12}}>
-              Across 20 products. One purchase. Lifetime updates on every one.
+              Across {CATALOG_STATS.totalProductsPublicClaim} products. One purchase. Lifetime updates on every one.
             </p>
           </SectionFade>
         </div>

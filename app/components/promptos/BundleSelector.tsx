@@ -1,13 +1,18 @@
 import {Link} from 'react-router';
-import {BUNDLES} from '~/lib/catalog';
+import {AUTHORITY, AUTHORITY_BUNDLE, BUNDLES} from '~/lib/catalog';
+import {CATALOG_STATS} from '~/lib/catalog-stats';
 import {SectionFade} from './SectionFade';
+
+const PB = AUTHORITY.find((a) => a.slug === 'personal-brand');
+const CE = AUTHORITY.find((a) => a.slug === 'content-engine');
+const HT = AUTHORITY.find((a) => a.slug === 'high-ticket-finder');
 
 const COPY: Record<string, {desc: string; bullets: string[]; cta: string}> = {
   packs: {
     desc: 'Every prompt pack in one library. Your daily-driver AI toolkit.',
     bullets: [
-      'All 7 prompt packs',
-      '430 prompts across 42 working sections',
+      `All ${CATALOG_STATS.totalPacks} prompt packs`,
+      `${CATALOG_STATS.promptsFromPacks} prompts across the working sections`,
       'Editable .docx + PDF',
       'Lifetime updates',
     ],
@@ -16,28 +21,28 @@ const COPY: Record<string, {desc: string; bullets: string[]; cta: string}> = {
   authority: {
     desc: 'Build your audience. Productize your expertise. The strategy, the daily content, the monetization, together.',
     bullets: [
-      'The Personal Brand Playbook ($147)',
-      'The Content Engine Pack ($39)',
-      'The High-Ticket Product Finder ($97)',
-      'Save $34 vs. buying separately',
+      `The Personal Brand Playbook ($${PB?.priceUSD ?? 147})`,
+      `The Content Engine Pack ($${CE?.priceUSD ?? 39})`,
+      `The High-Ticket Product Finder ($${HT?.priceUSD ?? 97})`,
+      `Save $${AUTHORITY_BUNDLE.savings} vs. buying separately`,
     ],
     cta: 'Get the Authority bundle',
   },
   guides: {
     desc: 'Every playbook in one library. Pick a business model and run it.',
     bullets: [
-      'All 8 business playbooks',
-      '600+ pages across 96 chapters',
-      '90 templates included',
+      `All ${CATALOG_STATS.totalPlaybooks} business playbooks`,
+      `${CATALOG_STATS.totalPlaybookPages.toLocaleString()}+ pages of operator frameworks`,
+      `${CATALOG_STATS.totalPlaybookTemplates} templates included`,
       'Lifetime updates + new playbooks free',
     ],
     cta: 'Get the guides bundle',
   },
   everything: {
-    desc: 'All 20 products. Daily prompts + Authority products + every playbook for every business.',
+    desc: `All ${CATALOG_STATS.totalProductsPublicClaim} products. Daily prompts + Authority products + every playbook for every business.`,
     bullets: [
-      'All 7 packs + all 8 guides + all 3 Authority products',
-      '535 prompts + 1,230 pages + 96 templates',
+      `All ${CATALOG_STATS.totalPacks} packs + all ${CATALOG_STATS.totalPlaybooks} guides + all ${CATALOG_STATS.totalAuthority} Authority products`,
+      `${CATALOG_STATS.totalPrompts} prompts + ${CATALOG_STATS.totalCorpusPages.toLocaleString()}+ pages + ${CATALOG_STATS.totalPlaybookTemplates}+ templates`,
       'Pair every playbook with the matching pack',
       'Lifetime updates on every product',
     ],

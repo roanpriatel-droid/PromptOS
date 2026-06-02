@@ -10,6 +10,7 @@ import {
   fetchShopifyProduct,
   type ShopifyEnrichment,
 } from '~/lib/catalog';
+import {CATALOG_STATS} from '~/lib/catalog-stats';
 import {AuthorityCover} from '~/components/promptos/AuthorityCover';
 import {ReviewsTransparencyLine} from '~/components/promptos/ReviewsTransparencyLine';
 /** Deterministic-from-day-of-week scarcity number. Cycles each day, feels real. */
@@ -185,7 +186,7 @@ function PacksBundlePage({stats, shopify}: {stats: ReturnType<typeof getReviewSt
 
       <section className="celebration">
         <SectionFade as="div">
-          <div className="num"><AnimatedCounter to={430} /></div>
+          <div className="num"><AnimatedCounter to={CATALOG_STATS.promptsFromPacks} /></div>
           <div className="sub">Tested. Editable. Yours.</div>
         </SectionFade>
       </section>
@@ -339,7 +340,7 @@ function EverythingPage({stats, shopify}: {stats: ReturnType<typeof getReviewSta
       <section className="bundle-hero-v2" style={{padding: '160px 0 96px'}}>
         <div className="bundle-hero-v2-mesh" aria-hidden />
         <div className="bundle-hero-v2-inner">
-          <span className="label">The mega bundle · all 20 products</span>
+          <span className="label">The mega bundle · all {CATALOG_STATS.totalProductsPublicClaim} products</span>
           <h1>
             Everything Promptos makes. <em>One investment.</em>
           </h1>

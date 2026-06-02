@@ -1,6 +1,7 @@
 import {Link} from 'react-router';
 import type {ReactNode} from 'react';
 import {AUTHORITY, GUIDES, PACKS, BUNDLES} from '~/lib/catalog';
+import {CATALOG_STATS} from '~/lib/catalog-stats';
 
 /**
  * The Header's four dropdowns all use this panel. Each variant is a
@@ -187,7 +188,7 @@ function PacksBundleCard() {
         ))}
       </div>
       <h4>{b.name}</h4>
-      <p className="desc">All 7 packs · 430 prompts · save ${b.savings}</p>
+      <p className="desc">All {CATALOG_STATS.totalPacks} packs · {CATALOG_STATS.promptsFromPacks} prompts · save ${b.savings}</p>
       <div className="price-row">
         <span className="now">${b.priceUSD}</span>
         <span className="save">save ${b.savings}</span>

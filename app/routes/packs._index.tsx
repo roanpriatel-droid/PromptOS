@@ -2,6 +2,7 @@ import {useSearchParams} from 'react-router';
 import {useMemo} from 'react';
 import type {Route} from './+types/packs._index';
 import {PACKS} from '~/lib/catalog';
+import {CATALOG_STATS} from '~/lib/catalog-stats';
 import {Link} from 'react-router';
 import {PackCover} from '~/components/promptos/PackCover';
 import {SectionFade} from '~/components/promptos/SectionFade';
@@ -14,8 +15,7 @@ export const meta: Route.MetaFunction = () => [
   {title: 'Prompt Packs · Promptos'},
   {
     name: 'description',
-    content:
-      'Seven battle-tested prompt packs for the work you already do. 430 prompts across marketing, writing, code, business operations, and AI workflows.',
+    content: `${CATALOG_STATS.totalPacks} battle-tested prompt packs for the work you already do. ${CATALOG_STATS.promptsFromPacks} prompts across marketing, writing, code, business operations, and AI workflows.`,
   },
 ];
 
@@ -30,7 +30,7 @@ export default function PacksIndex() {
           <span className="label section-eyebrow">Prompt Packs</span>
           <h1>Battle-tested prompts. Built for specific jobs.</h1>
           <p>
-            Seven packs, 430 prompts. Each pack solves one job: marketing, writing, code, business
+            {CATALOG_STATS.totalPacks} packs, {CATALOG_STATS.promptsFromPacks} prompts. Each pack solves one job: marketing, writing, code, business
             operations, AI workflows. All prompts ship as editable .docx and work with every major model.
           </p>
         </SectionFade>

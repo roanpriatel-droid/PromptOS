@@ -1,6 +1,7 @@
 import {useEffect, useState} from 'react';
 import {Link} from 'react-router';
 import {PACKS, GUIDES} from '~/lib/catalog';
+import {CATALOG_STATS} from '~/lib/catalog-stats';
 import {PackCover} from './PackCover';
 import {GuideCover} from './GuideCover';
 import {HeroMesh} from '~/components/atmosphere/HeroMesh';
@@ -47,7 +48,7 @@ export function HeroV2() {
           <div className="hero-v2-text">
             <div className="hero-v2-eyebrow">
               <span className="dot" aria-hidden />
-              20 products · 535 prompts · 8 playbooks · 3 Authority products
+              {CATALOG_STATS.totalProductsPublicClaim} products · {CATALOG_STATS.totalPrompts} prompts · {CATALOG_STATS.totalPlaybooks} playbooks · {CATALOG_STATS.totalAuthority} Authority products
             </div>
             <h1 className="hero-v2-headline">
               Prompts &amp; playbooks that <span className="rotor">{ROTOR_WORDS[word]}</span>.
