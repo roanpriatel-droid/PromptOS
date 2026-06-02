@@ -1,4 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap');
+/* v3.9c-tactical P7: previously this file @imported Geist /
+   Instrument Serif / JetBrains Mono from fonts.googleapis.com. The
+   external Google Fonts dependency was replaced by self-hosted
+   @fontsource declarations in app/styles/fonts.css. No font family
+   names change. */
 
 /* ============================================================
    Promptos — Colors & Type tokens

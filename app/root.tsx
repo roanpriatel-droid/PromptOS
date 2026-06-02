@@ -14,6 +14,9 @@ import type {Route} from './+types/root';
 import favicon from '~/assets/favicon.svg';
 import {FOOTER_QUERY, HEADER_QUERY} from '~/lib/fragments';
 import appStyles from '~/styles/app.css?url';
+// v3.9c-tactical P7 — self-hosted fonts. Loaded first so @font-face
+// declarations exist before any other stylesheet references them.
+import fontsStyles from './styles/fonts.css?url';
 import tailwindCss from './styles/tailwind.css?url';
 import promptosStyles from './styles/promptos.css?url';
 import promptosV2Styles from './styles/promptos-v2.css?url';
@@ -173,8 +176,9 @@ export function Layout({children}: {children?: React.ReactNode}) {
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:image" content="/og-default.png" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* v3.9c-tactical P7: Google Fonts preconnects removed — fonts
+            now self-hosted via @fontsource (loaded by fonts.css below). */}
+        <link rel="stylesheet" href={fontsStyles}></link>
         <link rel="stylesheet" href={tailwindCss}></link>
         <link rel="stylesheet" href={appStyles}></link>
         <link rel="stylesheet" href={promptosStyles}></link>
