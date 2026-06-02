@@ -376,3 +376,104 @@ git push origin main --force-with-lease
 ```
 
 Per-phase reverts post-squash: the `store-tactical-upgrade-v3.9c-tactical` branch on origin retains the 8 atomic commits if surgical reverts are needed later.
+
+---
+
+# v3.9c-mobile Diagnosis (mobile regression)
+
+## Symptom
+
+promptos.store renders the desktop layout when viewed on mobile devices instead of the proper responsive layout. Page appears zoomed-out on phones; mobile-only CSS rules (`@media (max-width: 700px|768px|900px)`) appear to not apply.
+
+## Investigation method
+
+Read-only audit of every CSS file in `app/styles/`, every component in `app/components/promptos/`, and the live HTML rendered for an iPhone User-Agent on `https://promptos.store/`. No code changes made during diagnosis per spec.
+
+## What I ruled out
+
+1. **Viewport meta tag** — present and correct in `app/root.tsx:172`:
+   ```html
+   <meta name="viewport" content="width=device-width, initial-scale=1" />
+   ```
+   Verified live HTML contains this exact tag.
+
+2. **Tailwind config breakpoints** — `app/styles/tailwind.css` uses Tailwind v4 with a clean `@theme` block (colors + fonts only). No `--breakpoint-*` overrides; default mobile-first breakpoints apply.
+
+3. **Component-level hardcoded widths** — searched for `width: NNNNpx` and `minWidth: NNN` across all v3.9a/b components. Only hits are `<table minWidth: 720>` in `ContentShells.tsx` (gated to `null` by the v3.9c-tactical P1 `published` flag, so doesn't render on prod) and SVG `width="800"` on cover viewBoxes (internal coordinates, not page pixels — scale with parent).
+
+4. **Tailwind/CSS mobile collapse rules** — every multi-column grid has a mobile collapse rule (`.bundle-cinematic-grid-4` → 1fr at 700 px, `.hero-v2-grid` → 1fr at 900 px, etc.).
+
+5. **`100vw` misuse** — every `100vw` usage is either an `<img sizes>` attribute (correct) or wrapped in `min(...)`. Safe.
+
+6. **`min-width:` on top-level elements** — only `min-width: 760px` and `min-width: 800px` on two tables, both wrapped in `overflow-x: auto` containers so they scroll internally on mobile.
+
+## Root cause (found)
+
+**`.two-sides` (the homepage Two-Sides section) is missing `overflow: hidden`**, and it contains two large `<GradientOrb>` primitives (520 px × 520 px each) that extend beyond the viewport horizontally on mobile.
+
+The v3.9a "Phase D demo on Two-Sides" added the atmospheric primitives to this one section as a preview. The CSS update in `app/styles/promptos-v39a.css:188-194` only added `position: relative` (so absolutely-positioned children would anchor to it), but did NOT add `overflow: hidden`:
+
+```css
+.two-sides {
+  position: relative;
+}
+.two-sides .two-sides-inner {
+  position: relative;
+  z-index: 2;
+}
+```
+
+Compare to the generic atmospheric wrapper added later in v3.9b (same file, lines 208–216), which DID include `overflow: hidden`:
+
+```css
+.v39a-section {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+```
+
+Every other homepage section that uses GradientOrb has the `.v39a-section` class (verified by `curl https://promptos.store/ | grep '<section.*v39a-section'`) — 11 sections, all clipped properly. HeroV2 is wrapped in `HeroMesh` → `.v39a-hero-mesh { overflow: hidden }` ✓. BundlePushCinematic has its own `.bundle-push-cinematic { overflow: hidden }` ✓.
+
+**`.two-sides` is the only section with v3.9 GradientOrbs that lacks `overflow: hidden`.**
+
+### What the orbs are doing on mobile
+
+The live HTML on prod (curl with iPhone UA) emits this:
+
+```html
+<section class="two-sides">
+  <div class="v39a-gradient-orb" data-color="purple" data-intensity="soft" aria-hidden="true"
+       style="width:520px;height:520px;top:calc(10% + -260px);right:calc(-8% + -260px)"></div>
+  <div class="v39a-gradient-orb" data-color="pink" data-intensity="soft" aria-hidden="true"
+       style="width:520px;height:520px;bottom:calc(0% + -260px);left:calc(-8% + -260px)"></div>
+  ...
+</section>
+```
+
+On a 375 px-wide mobile viewport:
+
+- Purple orb: `position: absolute` + `right: calc(-8% + -260px)` ≈ `right: -290 px`. Orb's right edge sits **290 px beyond the parent's (and the viewport's) right edge**. Orb spans `parent_right - 230 px` → `parent_right + 290 px`.
+- Pink orb: `left: calc(-8% + -260px)` ≈ `left: -290 px`. Spans `parent_left - 290 px` → `parent_left + 230 px`. Extends LEFT of viewport — no document scroll impact.
+
+The purple orb's 290 px right-side overflow is the regression. Without `overflow: hidden` on `.two-sides`, the orb participates in document layout beyond the viewport, document scroll-width grows to ~665 px on a 375 px viewport, mobile browsers detect the overflow and respond by zooming the layout out to fit. Result: **the user sees the desktop layout shrunk to fit the phone screen** — the exact symptom reported.
+
+### Why this didn't show up sooner
+
+v3.9a added the Two-Sides atmospheric demo (one section, two orbs). The 290 px overflow was real from day one but the rest of the page below it was still rendered "correctly" in source — most users probably noticed the page looked a bit zoomed out but didn't trace it. v3.9b added 17 more orbs across the homepage but every new section was scaffolded with `.v39a-section` so they were all properly clipped. The Two-Sides demo was the original prototype and never got migrated to the generalized `.v39a-section` rule.
+
+## What I'll change
+
+**One atomic fix:** add `overflow: hidden` to the `.two-sides` rule in `app/styles/promptos-v39a.css`. This is the minimal correct change — it matches what `.v39a-section` already does and brings `.two-sides` in line with every other atmospheric section.
+
+I will **not** change the brand system, the orb sizes, the orb positioning, or any component layout. The atmospheric design stays exactly as it is; the orbs just stop bleeding out of their section.
+
+Build green required before commit. Validation: re-fetch live HTML after deploy and confirm document scroll-width = viewport width at 375 / 414 / 768 px.
+
+## Secondary checks (no fix needed)
+
+- **Product page sections** (ProductGallery, ValueStack, WhatsInsideUpgraded, ExamplePromptTabs, WhoForGeneric) — all use `.v39a-section`, properly clipped.
+- **ContentShells** (WhoNotForShell / OutcomesShell / ComparisonShell) — gated `null` by v3.9c-tactical P1 `published` flag. They DO use `.v39a-section` so they'd be clipped even when published.
+- **Bundle pages** — no GradientOrb usage; existing `.bundle-hero-v2` and `.bundle-push-cinematic` have `overflow: hidden`.
+- **ProductHeroV2** — no GradientOrb; v3.9b sections added beneath it all carry `.v39a-section`.
+- **404 / 500** (v3.9c-tactical P8) — uses inline `style={{overflow: 'hidden'}}` on `<main>`. Safe.
