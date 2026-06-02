@@ -1,5 +1,5 @@
 import {Link} from 'react-router';
-import {GUIDES, BUNDLES} from '~/lib/catalog';
+import {GUIDES, GUIDES_BUNDLE} from '~/lib/catalog';
 import {GuideCard} from './GuideCard';
 import {SectionFade} from './SectionFade';
 import {GradientOrb} from '~/components/atmosphere/GradientOrb';
@@ -10,7 +10,11 @@ import {NoiseTexture} from '~/components/atmosphere/NoiseTexture';
  * plus a banner CTA to the guides bundle.
  */
 export function GuideHomeStrip() {
-  const bundle = BUNDLES[1];
+  // v3.9c-tactical fix: this strip is the homepage's GUIDES bundle CTA.
+  // Previously it pulled BUNDLES[1] (the Authority Bundle) which made
+  // the CTA "Get the guides bundle · $249" link to /bundles/authority
+  // at the wrong price. Now explicitly references GUIDES_BUNDLE.
+  const bundle = GUIDES_BUNDLE;
   return (
     <section className="packs-v2 v39a-section" id="guides-home">
       {/* v3.9b D5 — playbooks lean pink-dominant (higher-ticket energy) */}
