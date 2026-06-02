@@ -1,5 +1,6 @@
 /**
- * v3.9a Phase B — designed product covers.
+ * v3.9a Phase B (3 prototype slugs) + v3.9b Part 1 (remaining 19 slugs)
+ * — registry of all designed product covers.
  *
  * The existing Cover components (PackCover, AuthorityCover, BundleCover,
  * GuideCover) check this registry first; if a slug has a v3.9 SVG
@@ -15,18 +16,68 @@
  * image regeneration scripts).
  */
 
+// v3.9a (Phase B prototypes)
 import marketerCover from '~/assets/covers/marketer.svg';
 import personalBrandCover from '~/assets/covers/personal-brand.svg';
 import everythingCover from '~/assets/covers/everything.svg';
 
+// v3.9b — remaining packs
+import writerCover from '~/assets/covers/writer.svg';
+import developerCover from '~/assets/covers/developer.svg';
+import solopreneurCover from '~/assets/covers/solopreneur.svg';
+import contentCreatorCover from '~/assets/covers/content-creator.svg';
+import aiPowerUserCover from '~/assets/covers/ai-power-user.svg';
+import productivityCover from '~/assets/covers/productivity.svg';
+
+// v3.9b — playbooks
+import aiAutomationAgencyCover from '~/assets/covers/ai-automation-agency.svg';
+import aiAgentBuilderCover from '~/assets/covers/ai-agent-builder.svg';
+import webDesignAgencyCover from '~/assets/covers/web-design-agency.svg';
+import digitalProductsCover from '~/assets/covers/digital-products.svg';
+import newsletterBusinessCover from '~/assets/covers/newsletter-business.svg';
+import facelessContentCover from '~/assets/covers/faceless-content.svg';
+import saasSideProjectCover from '~/assets/covers/saas-side-project.svg';
+import coachingConsultingCover from '~/assets/covers/coaching-consulting.svg';
+
+// v3.9b — Authority + bundles
+import contentEngineCover from '~/assets/covers/content-engine.svg';
+import highTicketFinderCover from '~/assets/covers/high-ticket-finder.svg';
+import packsBundleCover from '~/assets/covers/packs.svg';
+import authorityBundleCover from '~/assets/covers/authority.svg';
+import guidesBundleCover from '~/assets/covers/guides.svg';
+
 const V39_COVER_MAP: Record<string, string> = {
-  // Phase B prototype slugs shipped in v3.9a
+  // v3.9a prototypes
   marketer: marketerCover,
   'personal-brand': personalBrandCover,
   everything: everythingCover,
-  // v3.9b will add: writer, developer, solopreneur, content-creator,
-  // ai-power-user, productivity, plus all guides, content-engine,
-  // high-ticket-finder, packs/authority/guides bundles.
+
+  // v3.9b packs
+  writer: writerCover,
+  developer: developerCover,
+  solopreneur: solopreneurCover,
+  'content-creator': contentCreatorCover,
+  'ai-power-user': aiPowerUserCover,
+  productivity: productivityCover,
+
+  // v3.9b playbooks
+  'ai-automation-agency': aiAutomationAgencyCover,
+  'ai-agent-builder': aiAgentBuilderCover,
+  'web-design-agency': webDesignAgencyCover,
+  'digital-products': digitalProductsCover,
+  'newsletter-business': newsletterBusinessCover,
+  'faceless-content': facelessContentCover,
+  'saas-side-project': saasSideProjectCover,
+  'coaching-consulting': coachingConsultingCover,
+
+  // v3.9b Authority (Personal Brand is in v3.9a above)
+  'content-engine': contentEngineCover,
+  'high-ticket-finder': highTicketFinderCover,
+
+  // v3.9b bundles (Everything is in v3.9a above)
+  packs: packsBundleCover,
+  authority: authorityBundleCover,
+  guides: guidesBundleCover,
 };
 
 export function hasV39Cover(slug: string): boolean {

@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="The Faceless Content Playbook">
+  <defs>
+    <radialGradient id="fc-bg" cx="50%" cy="35%" r="92%">
+      <stop offset="0%" stop-color="#2E1660"/>
+      <stop offset="55%" stop-color="#100728"/>
+      <stop offset="100%" stop-color="#02010B"/>
+    </radialGradient>
+    <radialGradient id="fc-headlight" cx="50%" cy="40%" r="42%">
+      <stop offset="0%" stop-color="#C97AE8" stop-opacity="0.30"/>
+      <stop offset="60%" stop-color="#C97AE8" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="fc-silhouette" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#0B0418"/>
+      <stop offset="100%" stop-color="#020108"/>
+    </linearGradient>
+    <linearGradient id="fc-mouth" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#EC4899"/>
+      <stop offset="50%" stop-color="#C97AE8"/>
+      <stop offset="100%" stop-color="#EC4899"/>
+    </linearGradient>
+    <filter id="fc-glow-soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="22"/>
+    </filter>
+    <filter id="fc-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="10" result="g"/>
+      <feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="fc-noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.95" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1   0 0 0 0.07 0"/>
+    </filter>
+  </defs>
+
+  <rect width="1080" height="1080" fill="url(#fc-bg)"/>
+  <rect width="1080" height="1080" fill="url(#fc-headlight)"/>
+
+  <g transform="translate(72, 80)">
+    <g>
+      <path d="M0 8 L18 22 L0 36" fill="none" stroke="#EC4899" stroke-width="4" stroke-linecap="square"/>
+      <rect x="24" y="6" width="4" height="32" fill="#FAF8F5"/>
+      <text x="42" y="32" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" letter-spacing="-0.3" fill="#FAF8F5">promptos</text>
+    </g>
+    <text x="0" y="76" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" letter-spacing="2.8" fill="rgba(250,248,245,0.55)">PLAYBOOK · FACELESS CONTENT</text>
+  </g>
+
+  <g transform="translate(1008, 100)" text-anchor="end">
+    <text font-family="'Instrument Serif', Georgia, serif" font-size="22" font-style="italic" fill="rgba(250,248,245,0.50)">PLAYBOOK</text>
+    <text x="0" y="48" font-family="'Instrument Serif', Georgia, serif" font-size="64" font-weight="500" fill="#FAF8F5">G6</text>
+  </g>
+
+  <!-- Headshot silhouette of head+shoulders, no facial features, glowing waveform across where mouth would be.
+       Center anchor (540, 600). -->
+
+  <g transform="translate(540, 600)">
+
+    <!-- Soft rear halo (suggests broadcast / audience listening) -->
+    <circle r="320" fill="rgba(201,122,232,0.18)" filter="url(#fc-glow-soft)"/>
+
+    <!-- Shoulders (trapezoid) -->
+    <path d="M -280 360 L 280 360 L 200 80 L -200 80 Z" fill="url(#fc-silhouette)"/>
+    <path d="M -280 360 L 280 360 L 200 80 L -200 80 Z" fill="none" stroke="rgba(201,122,232,0.30)" stroke-width="2"/>
+
+    <!-- Neck (subtle) -->
+    <rect x="-50" y="0" width="100" height="80" fill="url(#fc-silhouette)"/>
+
+    <!-- Head (rounded ovoid) -->
+    <ellipse cx="0" cy="-90" rx="170" ry="200" fill="url(#fc-silhouette)"/>
+    <ellipse cx="0" cy="-90" rx="170" ry="200" fill="none" stroke="rgba(201,122,232,0.30)" stroke-width="2"/>
+
+    <!-- Subtle rim light on head (left side) -->
+    <ellipse cx="-90" cy="-110" rx="14" ry="220" fill="rgba(201,122,232,0.25)" filter="url(#fc-glow-soft)"/>
+
+    <!-- The "voice" — glowing waveform where the mouth would be -->
+    <g transform="translate(0, -20)" filter="url(#fc-glow)">
+      <!-- 17 thin bars centered, varying heights, fill via gradient stroke -->
+      <g fill="url(#fc-mouth)">
+        <rect x="-130" y="-4"  width="6" height="8"  rx="3"/>
+        <rect x="-116" y="-8"  width="6" height="16" rx="3"/>
+        <rect x="-102" y="-14" width="6" height="28" rx="3"/>
+        <rect x="-88"  y="-20" width="6" height="40" rx="3"/>
+        <rect x="-74"  y="-14" width="6" height="28" rx="3"/>
+        <rect x="-60"  y="-10" width="6" height="20" rx="3"/>
+        <rect x="-46"  y="-16" width="6" height="32" rx="3"/>
+        <rect x="-32"  y="-24" width="6" height="48" rx="3"/>
+        <rect x="-18"  y="-30" width="6" height="60" rx="3"/>
+        <rect x="-4"   y="-22" width="6" height="44" rx="3"/>
+        <rect x="10"   y="-26" width="6" height="52" rx="3"/>
+        <rect x="24"   y="-18" width="6" height="36" rx="3"/>
+        <rect x="38"   y="-12" width="6" height="24" rx="3"/>
+        <rect x="52"   y="-16" width="6" height="32" rx="3"/>
+        <rect x="66"   y="-10" width="6" height="20" rx="3"/>
+        <rect x="80"   y="-6"  width="6" height="12" rx="3"/>
+        <rect x="94"   y="-4"  width="6" height="8"  rx="3"/>
+        <rect x="108"  y="-2"  width="6" height="4"  rx="3"/>
+        <rect x="122"  y="-2"  width="6" height="4"  rx="3"/>
+      </g>
+    </g>
+
+    <!-- Subtle waveform soft glow disc behind voice -->
+    <circle cx="0" cy="-20" r="80" fill="rgba(236,72,153,0.25)" filter="url(#fc-glow-soft)"/>
+
+    <!-- Tiny eye/ear absent markers — keep the face anonymous: a few subtle dots only where ears would be -->
+    <circle cx="-150" cy="-90" r="3" fill="rgba(201,122,232,0.40)"/>
+    <circle cx="150"  cy="-90" r="3" fill="rgba(201,122,232,0.40)"/>
+
+    <text y="430" text-anchor="middle" font-family="'Instrument Serif', Georgia, serif" font-size="28" font-style="italic" fill="rgba(250,248,245,0.65)">"The voice carries. The face doesn't have to."</text>
+  </g>
+
+  <g transform="translate(72, 1000)">
+    <text font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" letter-spacing="3" fill="rgba(250,248,245,0.55)">130 PAGES · 11 TEMPLATES · 9 CHAPTERS</text>
+  </g>
+
+  <rect width="1080" height="1080" filter="url(#fc-noise)" opacity="0.55"/>
+</svg>

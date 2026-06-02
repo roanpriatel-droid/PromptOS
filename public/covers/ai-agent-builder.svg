@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="The AI Agent Builder Playbook">
+  <defs>
+    <radialGradient id="ab-bg" cx="35%" cy="30%" r="92%">
+      <stop offset="0%" stop-color="#0F1B45"/>
+      <stop offset="55%" stop-color="#0C0F2E"/>
+      <stop offset="100%" stop-color="#04081A"/>
+    </radialGradient>
+    <radialGradient id="ab-cyan" cx="68%" cy="68%" r="55%">
+      <stop offset="0%" stop-color="#4FD1F0" stop-opacity="0.30"/>
+      <stop offset="65%" stop-color="#4FD1F0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="ab-purple" cx="22%" cy="22%" r="50%">
+      <stop offset="0%" stop-color="#9B6BE5" stop-opacity="0.40"/>
+      <stop offset="60%" stop-color="#9B6BE5" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ab-hex-active" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5BE5FF"/>
+      <stop offset="100%" stop-color="#9B6BE5"/>
+    </linearGradient>
+    <filter id="ab-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="16" result="g"/>
+      <feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="ab-soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="36"/>
+    </filter>
+    <filter id="ab-noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.95" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1   0 0 0 0.07 0"/>
+    </filter>
+  </defs>
+
+  <rect width="1080" height="1080" fill="url(#ab-bg)"/>
+  <rect width="1080" height="1080" fill="url(#ab-cyan)"/>
+  <rect width="1080" height="1080" fill="url(#ab-purple)"/>
+
+  <g transform="translate(72, 80)">
+    <g>
+      <path d="M0 8 L18 22 L0 36" fill="none" stroke="#EC4899" stroke-width="4" stroke-linecap="square"/>
+      <rect x="24" y="6" width="4" height="32" fill="#FAF8F5"/>
+      <text x="42" y="32" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" letter-spacing="-0.3" fill="#FAF8F5">promptos</text>
+    </g>
+    <text x="0" y="76" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" letter-spacing="2.8" fill="rgba(250,248,245,0.65)">PLAYBOOK · AI AGENT BUILDER</text>
+  </g>
+
+  <g transform="translate(1008, 100)" text-anchor="end">
+    <text font-family="'Instrument Serif', Georgia, serif" font-size="22" font-style="italic" fill="rgba(250,248,245,0.55)">PLAYBOOK</text>
+    <text x="0" y="48" font-family="'Instrument Serif', Georgia, serif" font-size="64" font-weight="500" fill="#FAF8F5">G2</text>
+  </g>
+
+  <!-- Hex grid. 5 columns by 5 rows of pointy-top hexes. R=82, horizontal step 142, vertical step 122 with row offset. Center anchor (540, 600). -->
+  <g transform="translate(540, 580)">
+
+    <!-- Soft cyan halo behind the focused hex -->
+    <circle r="220" fill="rgba(79,209,240,0.20)" filter="url(#ab-soft)"/>
+
+    <!-- Static hex grid (lattice) -->
+    <g fill="none" stroke="rgba(155,107,229,0.25)" stroke-width="1.5">
+      <!-- helper: hex points for R=82 pointy-top: (0,-82),(71,-41),(71,41),(0,82),(-71,41),(-71,-41) -->
+      <!-- row -2 (y=-244), 5 hexes at x = -284, -142, 0, 142, 284 -->
+      <g transform="translate(-284, -244)"><polygon points="0,-82 71,-41 71,41 0,82 -71,41 -71,-41"/></g>
+      <g transform="translate(-142, -244)"><polygon points="0,-82 71,-41 71,41 0,82 -71,41 -71,-41"/></g>
+      <g transform="translate(0, -244)"><polygon points="0,-82 71,-41 71,41 0,82 -71,41 -71,-41"/></g>
+      <g transform="translate(142, -244)"><polygon points="0,-82 71,-41 71,41 0,82 -71,41 -71,-41"/></g>
+      <g transform="translate(284, -244)"><polygon points="0,-82 71,-41 71,41 0,82 -71,41 -71,-41"/></g>
+      <!-- row -1 (y=-122), offset row at x = -355, -213, -71, 71, 213, 355 -->
+      <g transform="translate(-355, -122)"><polygon points="0,-82 71,-41 71,41 0,82 -71,41 -71,-41"/></g>
+      <g transform="translate(-213, -122)"><polygon points="0,-82 71,-41 71,41 0,82 -71,41 -71,-41"/></g>
+      <g transform="translate(-71, -122)"><polygon points="0,-82 71,-41 71,41 0,82 -71,41 -71,-41"/></g>
+      <g transform="translate(71, -122)"><polygon points="0,-82 71,-41 71,41 0,82 -71,41 -71,-41"/></g>
+      <g transform="translate(213, -122)"><polygon points="0,-82 71,-41 71,41 0,82 -71,41 -71,-41"/></g>
+      <g transform="translate(355, -122)"><polygon points="0,-82 71,-41 71,41 0,82 -71,41 -71,-41"/></g>
+      <!-- row 0 (y=0), 5 hexes -->
+      <g transform="translate(-284, 0)"><polygon points="0,-82 71,-41 71,41 0,82 -71,41 -71,-41"/></g>
+      <g transform="translate(-142, 0)"><polygon points="0,-82 71,-41 71,41 0,82 -71,41 -71,-41"/></g>
+      <!-- center hex omitted (highlighted below) -->
+      <g transform="translate(142, 0)"><polygon points="0,-82 71,-41 71,41 0,82 -71,41 -71,-41"/></g>
+      <g transform="translate(284, 0)"><polygon points="0,-82 71,-41 71,41 0,82 -71,41 -71,-41"/></g>
+      <!-- row +1 (y=122), offset -->
+      <g transform="translate(-355, 122)"><polygon points="0,-82 71,-41 71,41 0,82 -71,41 -71,-41"/></g>
+      <g transform="translate(-213, 122)"><polygon points="0,-82 71,-41 71,41 0,82 -71,41 -71,-41"/></g>
+      <g transform="translate(-71, 122)"><polygon points="0,-82 71,-41 71,41 0,82 -71,41 -71,-41"/></g>
+      <g transform="translate(71, 122)"><polygon points="0,-82 71,-41 71,41 0,82 -71,41 -71,-41"/></g>
+      <g transform="translate(213, 122)"><polygon points="0,-82 71,-41 71,41 0,82 -71,41 -71,-41"/></g>
+      <g transform="translate(355, 122)"><polygon points="0,-82 71,-41 71,41 0,82 -71,41 -71,-41"/></g>
+      <!-- row +2 (y=244), 5 hexes -->
+      <g transform="translate(-284, 244)"><polygon points="0,-82 71,-41 71,41 0,82 -71,41 -71,-41"/></g>
+      <g transform="translate(-142, 244)"><polygon points="0,-82 71,-41 71,41 0,82 -71,41 -71,-41"/></g>
+      <g transform="translate(0, 244)"><polygon points="0,-82 71,-41 71,41 0,82 -71,41 -71,-41"/></g>
+      <g transform="translate(142, 244)"><polygon points="0,-82 71,-41 71,41 0,82 -71,41 -71,-41"/></g>
+      <g transform="translate(284, 244)"><polygon points="0,-82 71,-41 71,41 0,82 -71,41 -71,-41"/></g>
+    </g>
+
+    <!-- The central focused hex (glowing fill + bright edge) -->
+    <g filter="url(#ab-glow)">
+      <polygon points="0,-82 71,-41 71,41 0,82 -71,41 -71,-41" fill="url(#ab-hex-active)" opacity="0.85"/>
+      <polygon points="0,-82 71,-41 71,41 0,82 -71,41 -71,-41" fill="none" stroke="#FAF8F5" stroke-width="2.5" stroke-linejoin="round"/>
+    </g>
+
+    <!-- Abstract agent silhouette inside the focused hex (geometric stand-in for an entity) -->
+    <g fill="#0F1B45">
+      <!-- Head: rounded square -->
+      <rect x="-18" y="-32" width="36" height="36" rx="10"/>
+      <!-- Body: trapezoid -->
+      <polygon points="-26,4 26,4 18,38 -18,38"/>
+      <!-- Eye dots -->
+      <circle cx="-7" cy="-14" r="2.5" fill="#5BE5FF"/>
+      <circle cx="7" cy="-14" r="2.5" fill="#5BE5FF"/>
+    </g>
+
+    <!-- Connections from focused hex to 4 adjacent hexes -->
+    <g stroke="rgba(91,229,255,0.55)" stroke-width="2" stroke-dasharray="3 6" fill="none">
+      <line x1="50" y1="-30" x2="142" y2="0"/>
+      <line x1="50" y1="30" x2="142" y2="0"/>
+      <line x1="-50" y1="-30" x2="-142" y2="0"/>
+      <line x1="-50" y1="30" x2="-142" y2="0"/>
+      <line x1="0" y1="-60" x2="0" y2="-122"/>
+      <line x1="0" y1="60" x2="0" y2="122"/>
+    </g>
+
+    <!-- Tiny dots in 4 neighboring hexes suggesting "available agent slots" -->
+    <g fill="rgba(255,255,255,0.55)">
+      <circle cx="142" cy="0" r="6"/>
+      <circle cx="-142" cy="0" r="6"/>
+      <circle cx="71" cy="-122" r="6"/>
+      <circle cx="-71" cy="122" r="6"/>
+    </g>
+
+    <text y="380" text-anchor="middle" font-family="'Instrument Serif', Georgia, serif" font-size="26" font-style="italic" fill="rgba(250,248,245,0.65)">"One agent, then the swarm."</text>
+  </g>
+
+  <g transform="translate(72, 1000)">
+    <text font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" letter-spacing="3" fill="rgba(250,248,245,0.55)">180 PAGES · 12 TEMPLATES · 11 CHAPTERS</text>
+  </g>
+
+  <rect width="1080" height="1080" filter="url(#ab-noise)" opacity="0.55"/>
+</svg>

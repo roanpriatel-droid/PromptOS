@@ -1,0 +1,166 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="The Content Engine Pack">
+  <defs>
+    <linearGradient id="ce-bg" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#22082E"/>
+      <stop offset="50%" stop-color="#5B0E5C"/>
+      <stop offset="100%" stop-color="#A23A40"/>
+    </linearGradient>
+    <radialGradient id="ce-amber" cx="50%" cy="80%" r="55%">
+      <stop offset="0%" stop-color="#FFB060" stop-opacity="0.45"/>
+      <stop offset="65%" stop-color="#FFB060" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="ce-gear-a" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFE4B0"/>
+      <stop offset="55%" stop-color="#FF7DBE"/>
+      <stop offset="100%" stop-color="#9B2D6D"/>
+    </radialGradient>
+    <radialGradient id="ce-gear-b" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFC7E2"/>
+      <stop offset="55%" stop-color="#EC4899"/>
+      <stop offset="100%" stop-color="#5B0E5C"/>
+    </radialGradient>
+    <radialGradient id="ce-gear-c" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFEBC0"/>
+      <stop offset="55%" stop-color="#FF9054"/>
+      <stop offset="100%" stop-color="#7A1C24"/>
+    </radialGradient>
+    <filter id="ce-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="14" result="g"/>
+      <feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="ce-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="22" stdDeviation="26" flood-color="#1A0410" flood-opacity="0.55"/>
+    </filter>
+    <filter id="ce-noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.95" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1   0 0 0 0.07 0"/>
+    </filter>
+    <!-- Gear path: 12 teeth, outer R=120, inner R=92, tooth depth = 28, hole r=40. -->
+  </defs>
+
+  <rect width="1080" height="1080" fill="url(#ce-bg)"/>
+  <rect width="1080" height="1080" fill="url(#ce-amber)"/>
+
+  <g transform="translate(72, 80)">
+    <g>
+      <path d="M0 8 L18 22 L0 36" fill="none" stroke="#FFE4B0" stroke-width="4" stroke-linecap="square"/>
+      <rect x="24" y="6" width="4" height="32" fill="#FAF8F5"/>
+      <text x="42" y="32" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" letter-spacing="-0.3" fill="#FAF8F5">promptos</text>
+    </g>
+    <text x="0" y="76" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" letter-spacing="2.8" fill="rgba(250,248,245,0.65)">AUTHORITY · CONTENT ENGINE</text>
+  </g>
+
+  <g transform="translate(1008, 100)" text-anchor="end">
+    <text font-family="'Instrument Serif', Georgia, serif" font-size="22" font-style="italic" fill="rgba(250,248,245,0.55)">AUTHORITY</text>
+    <text x="0" y="48" font-family="'Instrument Serif', Georgia, serif" font-size="64" font-weight="500" fill="#FAF8F5">A2</text>
+  </g>
+
+  <!-- Three interlocking gears suggesting compounding flywheel motion. Center anchor (540, 600). -->
+  <!-- Gear A: top-left, large -->
+  <!-- Gear B: top-right, medium -->
+  <!-- Gear C: bottom-center, large -->
+
+  <g transform="translate(540, 600)">
+    <!-- Connecting motion arcs (very faint) -->
+    <g fill="none" stroke="rgba(255,228,176,0.20)" stroke-width="1.5" stroke-dasharray="3 8">
+      <path d="M -150 -120 A 220 220 0 0 1 150 -120"/>
+      <path d="M 150 -120 A 220 220 0 0 1 0 200"/>
+      <path d="M 0 200 A 220 220 0 0 1 -150 -120"/>
+    </g>
+
+    <!-- Gear A (top-left) -->
+    <g transform="translate(-180, -110)" filter="url(#ce-shadow)">
+      <g filter="url(#ce-glow)">
+        <path d="
+          M 130 0
+          L 152 0 L 148 24 L 130 22
+          A 120 120 0 0 1 117 49 L 134 60 L 117 80 L 102 70
+          A 120 120 0 0 1 80 102 L 90 117 L 70 134 L 60 117
+          A 120 120 0 0 1 33 124 L 28 142 L 4 146 L 4 124
+          A 120 120 0 0 1 -23 121 L -34 136 L -55 124 L -45 108
+          A 120 120 0 0 1 -68 89 L -87 95 L -100 76 L -85 64
+          A 120 120 0 0 1 -97 33 L -116 28 L -120 4 L -100 4
+          A 120 120 0 0 1 -97 -23 L -115 -34 L -103 -55 L -86 -45
+          A 120 120 0 0 1 -65 -68 L -73 -88 L -54 -101 L -42 -86
+          A 120 120 0 0 1 -10 -97 L -8 -116 L 16 -120 L 16 -100
+          A 120 120 0 0 1 43 -97 L 54 -116 L 75 -103 L 65 -86
+          A 120 120 0 0 1 88 -65 L 108 -73 L 121 -54 L 106 -42
+          A 120 120 0 0 1 117 -10 L 136 -8 L 140 16 L 120 16
+          Z" fill="url(#ce-gear-a)"/>
+      </g>
+      <circle r="38" fill="#22082E"/>
+      <circle r="38" fill="none" stroke="rgba(255,228,176,0.55)" stroke-width="2"/>
+      <!-- icon: pen nib -->
+      <path d="M -10 -16 L 10 -16 L 14 18 L 0 28 L -14 18 Z" fill="#FFE4B0"/>
+      <circle cx="0" cy="2" r="3" fill="#22082E"/>
+    </g>
+
+    <!-- Gear B (top-right, medium, slightly rotated) -->
+    <g transform="translate(180, -110) rotate(15)" filter="url(#ce-shadow)">
+      <g filter="url(#ce-glow)">
+        <!-- 10-tooth gear, outer 100, inner 78 -->
+        <path d="
+          M 105 0 L 124 0 L 121 22 L 103 20
+          A 100 100 0 0 1 91 41 L 105 50 L 89 67 L 76 58
+          A 100 100 0 0 1 56 76 L 64 90 L 47 102 L 38 88
+          A 100 100 0 0 1 14 102 L 12 121 L -9 123 L -8 104
+          A 100 100 0 0 1 -32 96 L -42 113 L -61 102 L -52 86
+          A 100 100 0 0 1 -71 70 L -88 78 L -98 60 L -82 51
+          A 100 100 0 0 1 -90 28 L -109 24 L -111 4 L -92 4
+          A 100 100 0 0 1 -90 -22 L -108 -33 L -97 -52 L -82 -42
+          A 100 100 0 0 1 -65 -59 L -75 -77 L -57 -88 L -47 -73
+          A 100 100 0 0 1 -22 -85 L -22 -104 L -2 -107 L 0 -88
+          A 100 100 0 0 1 25 -83 L 36 -101 L 56 -89 L 47 -73
+          A 100 100 0 0 1 71 -53 L 89 -61 L 100 -43 L 84 -33
+          A 100 100 0 0 1 96 -10 L 114 -7 L 115 13 L 96 12
+          Z" fill="url(#ce-gear-b)"/>
+      </g>
+      <circle r="30" fill="#1F0A28"/>
+      <circle r="30" fill="none" stroke="rgba(255,155,206,0.65)" stroke-width="2"/>
+      <!-- icon: camera lens (circle + center dot) -->
+      <circle cx="0" cy="0" r="14" fill="none" stroke="#FFE4B0" stroke-width="3"/>
+      <circle cx="0" cy="0" r="4" fill="#FFE4B0"/>
+    </g>
+
+    <!-- Gear C (bottom, large, slightly rotated) -->
+    <g transform="translate(0, 180) rotate(-22)" filter="url(#ce-shadow)">
+      <g filter="url(#ce-glow)">
+        <path d="
+          M 130 0
+          L 152 0 L 148 24 L 130 22
+          A 120 120 0 0 1 117 49 L 134 60 L 117 80 L 102 70
+          A 120 120 0 0 1 80 102 L 90 117 L 70 134 L 60 117
+          A 120 120 0 0 1 33 124 L 28 142 L 4 146 L 4 124
+          A 120 120 0 0 1 -23 121 L -34 136 L -55 124 L -45 108
+          A 120 120 0 0 1 -68 89 L -87 95 L -100 76 L -85 64
+          A 120 120 0 0 1 -97 33 L -116 28 L -120 4 L -100 4
+          A 120 120 0 0 1 -97 -23 L -115 -34 L -103 -55 L -86 -45
+          A 120 120 0 0 1 -65 -68 L -73 -88 L -54 -101 L -42 -86
+          A 120 120 0 0 1 -10 -97 L -8 -116 L 16 -120 L 16 -100
+          A 120 120 0 0 1 43 -97 L 54 -116 L 75 -103 L 65 -86
+          A 120 120 0 0 1 88 -65 L 108 -73 L 121 -54 L 106 -42
+          A 120 120 0 0 1 117 -10 L 136 -8 L 140 16 L 120 16
+          Z" fill="url(#ce-gear-c)"/>
+      </g>
+      <circle r="38" fill="#1F0814"/>
+      <circle r="38" fill="none" stroke="rgba(255,176,96,0.55)" stroke-width="2"/>
+      <!-- icon: distribution arrow (3 small arrows outward) -->
+      <g fill="#FFE4B0" stroke="#FFE4B0" stroke-width="2">
+        <line x1="0" y1="0" x2="0" y2="-18" />
+        <line x1="0" y1="0" x2="-16" y2="10" />
+        <line x1="0" y1="0" x2="16" y2="10" />
+        <circle cx="0" cy="-18" r="2.5"/>
+        <circle cx="-16" cy="10" r="2.5"/>
+        <circle cx="16" cy="10" r="2.5"/>
+      </g>
+    </g>
+
+    <text y="380" text-anchor="middle" font-family="'Instrument Serif', Georgia, serif" font-size="26" font-style="italic" fill="rgba(250,248,245,0.65)">"Write once. Spin forever."</text>
+  </g>
+
+  <g transform="translate(72, 1000)">
+    <text font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" letter-spacing="3" fill="rgba(250,248,245,0.55)">75 PROMPTS · AUTHORITY · .DOCX + PDF</text>
+  </g>
+
+  <rect width="1080" height="1080" filter="url(#ce-noise)" opacity="0.55"/>
+</svg>

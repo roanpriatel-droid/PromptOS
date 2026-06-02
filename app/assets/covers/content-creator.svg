@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="The Content Creator Pack">
+  <defs>
+    <linearGradient id="cc-bg" x1="20%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2B0B3D"/>
+      <stop offset="50%" stop-color="#5F1450"/>
+      <stop offset="100%" stop-color="#A91D62"/>
+    </linearGradient>
+    <radialGradient id="cc-glow-pink" cx="50%" cy="42%" r="62%">
+      <stop offset="0%" stop-color="#FF7DBE" stop-opacity="0.45"/>
+      <stop offset="55%" stop-color="#EC4899" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#EC4899" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="cc-vid" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FAF8F5"/>
+      <stop offset="100%" stop-color="#F5DCE8"/>
+    </linearGradient>
+    <linearGradient id="cc-txt" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFC1DE"/>
+      <stop offset="100%" stop-color="#FF7DBE"/>
+    </linearGradient>
+    <linearGradient id="cc-aud" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF5598"/>
+      <stop offset="100%" stop-color="#9B2D6D"/>
+    </linearGradient>
+    <filter id="cc-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="28" stdDeviation="32" flood-color="#1A041A" flood-opacity="0.55"/>
+    </filter>
+    <filter id="cc-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="22" result="g"/>
+      <feMerge>
+        <feMergeNode in="g"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="cc-noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.95" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1   0 0 0 0.07 0"/>
+    </filter>
+  </defs>
+
+  <rect width="1080" height="1080" fill="url(#cc-bg)"/>
+  <rect width="1080" height="1080" fill="url(#cc-glow-pink)"/>
+
+  <!-- Wordmark + label -->
+  <g transform="translate(72, 80)">
+    <g>
+      <path d="M0 8 L18 22 L0 36" fill="none" stroke="#FFC1DE" stroke-width="4" stroke-linecap="square"/>
+      <rect x="24" y="6" width="4" height="32" fill="#FAF8F5"/>
+      <text x="42" y="32" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" letter-spacing="-0.3" fill="#FAF8F5">promptos</text>
+    </g>
+    <text x="0" y="76" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" letter-spacing="2.8" fill="rgba(250,248,245,0.65)">THE CONTENT CREATOR PACK</text>
+  </g>
+
+  <!-- Vol number -->
+  <g transform="translate(1008, 100)" text-anchor="end">
+    <text font-family="'Instrument Serif', Georgia, serif" font-size="32" font-style="italic" fill="rgba(250,248,245,0.50)">Nº</text>
+    <text x="0" y="42" font-family="'Instrument Serif', Georgia, serif" font-size="56" font-weight="500" fill="#FAF8F5">05</text>
+  </g>
+
+  <!-- Center anchor (540, 580). A massive play-triangle composed of three offset content blocks:
+       video frame on top, text bar in middle, audio waveform on bottom; arranged to
+       silhouette a play button shape pointed right. -->
+
+  <!-- Pink glow disc behind the play triangle -->
+  <g transform="translate(540, 580)" filter="url(#cc-glow)">
+    <circle r="280" fill="rgba(236,72,153,0.30)"/>
+  </g>
+
+  <!-- Play-triangle composite. We build the triangle as three horizontal "slabs" of different
+       widths stacked vertically, each made from a content-block type. The slabs widen at the
+       top and narrow at the bottom to form a right-pointing triangle when viewed at a glance. -->
+
+  <!-- Top slab: video frame card -->
+  <g transform="translate(540, 380) rotate(-3)" filter="url(#cc-shadow)">
+    <rect x="-260" y="-86" width="520" height="172" rx="22" fill="url(#cc-vid)"/>
+    <!-- Mock video preview: play icon + thumbnail bars -->
+    <g transform="translate(-220, -50)">
+      <rect width="200" height="120" rx="10" fill="#2B0B3D"/>
+      <polygon points="80,30 80,90 130,60" fill="#FF7DBE"/>
+    </g>
+    <text x="20" y="-30" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="700" letter-spacing="2.4" fill="#9B2D6D">YOUTUBE · 8-SECOND HOOK</text>
+    <g font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="500" fill="#5F1450">
+      <text x="20" y="6">"You don't need a niche. You need</text>
+      <text x="20" y="28">a story people forward."</text>
+      <text x="20" y="64" font-size="12" font-weight="600" letter-spacing="2" fill="rgba(95,20,80,0.55)">PROMPT 12 · SCRIPTED HOOK</text>
+    </g>
+  </g>
+
+  <!-- Middle slab: text/caption bar (wider, centered) -->
+  <g transform="translate(540, 580) rotate(1.5)" filter="url(#cc-shadow)">
+    <rect x="-280" y="-50" width="640" height="100" rx="18" fill="url(#cc-txt)"/>
+    <text x="-260" y="-12" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="700" letter-spacing="2.4" fill="#7A1245">NEWSLETTER · FIRST-LINE TEST</text>
+    <text x="-260" y="26" font-family="'Instrument Serif', Georgia, serif" font-size="26" font-style="italic" fill="#3B0926">"Open at 'still'. The rest you reread."</text>
+  </g>
+
+  <!-- Bottom slab: audio waveform card (narrower to taper the triangle) -->
+  <g transform="translate(540, 760) rotate(-2)" filter="url(#cc-shadow)">
+    <rect x="-200" y="-66" width="400" height="132" rx="20" fill="url(#cc-aud)"/>
+    <text x="-180" y="-30" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="700" letter-spacing="2.4" fill="rgba(250,248,245,0.85)">PODCAST · QUESTION LADDER</text>
+
+    <!-- Stylized waveform bars -->
+    <g transform="translate(-180, 32)" fill="#FAF8F5">
+      <rect x="0" y="-12" width="6" height="24" rx="3"/>
+      <rect x="14" y="-22" width="6" height="44" rx="3"/>
+      <rect x="28" y="-30" width="6" height="60" rx="3"/>
+      <rect x="42" y="-16" width="6" height="32" rx="3"/>
+      <rect x="56" y="-26" width="6" height="52" rx="3"/>
+      <rect x="70" y="-32" width="6" height="64" rx="3"/>
+      <rect x="84" y="-22" width="6" height="44" rx="3"/>
+      <rect x="98" y="-30" width="6" height="60" rx="3"/>
+      <rect x="112" y="-18" width="6" height="36" rx="3"/>
+      <rect x="126" y="-26" width="6" height="52" rx="3"/>
+      <rect x="140" y="-32" width="6" height="64" rx="3"/>
+      <rect x="154" y="-20" width="6" height="40" rx="3"/>
+      <rect x="168" y="-28" width="6" height="56" rx="3"/>
+      <rect x="182" y="-16" width="6" height="32" rx="3"/>
+      <rect x="196" y="-24" width="6" height="48" rx="3"/>
+      <rect x="210" y="-30" width="6" height="60" rx="3"/>
+      <rect x="224" y="-18" width="6" height="36" rx="3"/>
+      <rect x="238" y="-12" width="6" height="24" rx="3"/>
+      <rect x="252" y="-22" width="6" height="44" rx="3"/>
+      <rect x="266" y="-14" width="6" height="28" rx="3"/>
+      <rect x="280" y="-26" width="6" height="52" rx="3"/>
+      <rect x="294" y="-18" width="6" height="36" rx="3"/>
+      <rect x="308" y="-22" width="6" height="44" rx="3"/>
+      <rect x="322" y="-16" width="6" height="32" rx="3"/>
+      <rect x="336" y="-12" width="6" height="24" rx="3"/>
+    </g>
+  </g>
+
+  <!-- Faint outline of the implied play-triangle, tying the three slabs together -->
+  <g transform="translate(540, 580)" opacity="0.18">
+    <polygon points="-220,-220 -220,220 280,0" fill="none" stroke="#FFC1DE" stroke-width="3" stroke-linejoin="round" stroke-dasharray="4 8"/>
+  </g>
+
+  <!-- Bottom label -->
+  <g transform="translate(72, 1000)">
+    <text font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" letter-spacing="3" fill="rgba(250,248,245,0.55)">65 PROMPTS · 6 SECTIONS · .DOCX + PDF</text>
+  </g>
+
+  <!-- Noise overlay -->
+  <rect width="1080" height="1080" filter="url(#cc-noise)" opacity="0.55"/>
+</svg>
