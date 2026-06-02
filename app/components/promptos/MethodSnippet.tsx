@@ -1,5 +1,7 @@
 import {Link} from 'react-router';
 import {SectionFade} from './SectionFade';
+import {GradientOrb} from '~/components/atmosphere/GradientOrb';
+import {NoiseTexture} from '~/components/atmosphere/NoiseTexture';
 
 /**
  * Homepage method snippet — three principle cards instead of the full
@@ -25,7 +27,10 @@ const PILLARS = [
 
 export function MethodSnippet() {
   return (
-    <section className="method-snippet">
+    <section className="method-snippet v39a-section">
+      {/* v3.9b D10 — single purple orb behind the three pillars */}
+      <GradientOrb color="purple" intensity="soft" size={520} top="40%" left="50%" />
+      <NoiseTexture />
       <div className="method-snippet-inner">
         <SectionFade as="div" className="method-snippet-head">
           <div className="section-eyebrow">The method</div>

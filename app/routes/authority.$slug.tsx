@@ -43,6 +43,9 @@ import {SectionFade} from '~/components/promptos/SectionFade';
 import {RatingStars} from '~/components/promptos/RatingStars';
 import {AddToCartButton} from '~/components/AddToCartButton';
 import {BuyTrustStrip} from '~/components/promptos/BuyTrustStrip';
+import {ProductGallery} from '~/components/promptos/ProductGallery';
+import {ValueStack} from '~/components/promptos/ValueStack';
+import {ComparisonShell} from '~/components/promptos/ContentShells';
 import {
   JsonLd,
   breadcrumbSchema,
@@ -146,6 +149,24 @@ function PackStyle({
           </div>
         </section>
 
+        {/* v3.9b — ProductGallery (V1+V2+V3) */}
+        <ProductGallery
+          slug={pack.slug}
+          name={pack.name}
+          kind="authority"
+          eyebrow="AUTHORITY · A2"
+          toc={pack.sections.map((s) => ({name: s.name, meta: `${s.promptCount} prompts`}))}
+          spread={{
+            sectionLabel: pack.sections[0]?.name ?? 'Sample',
+            promptTitle: pack.sample.title,
+            promptBody: pack.sample.prompt,
+            proTip: pack.sample.proTip,
+          }}
+        />
+
+        {/* v3.9b — Section 2 NEW value stack */}
+        <ValueStack kind="authority" productName={pack.name} />
+
         <ProductSectionsV2 pack={pack} />
         <SamplePromptFull pack={pack} />
         <WhoForV2 pack={pack} />
@@ -167,6 +188,9 @@ function PackStyle({
             </div>
           </div>
         </section>
+
+        {/* v3.9b — Section 10 SHELL */}
+        <ComparisonShell productName={pack.name} />
 
         <GuaranteeBlock />
         <PairWith slug={product.slug} heading="Pair with these." />
@@ -275,6 +299,24 @@ function GuideStyle({
           </div>
         </section>
 
+        {/* v3.9b — ProductGallery (V1+V2+V3) */}
+        <ProductGallery
+          slug={product.slug}
+          name={product.name}
+          kind="authority"
+          eyebrow={`AUTHORITY · ${product.slug === 'personal-brand' ? 'A1' : 'A3'}`}
+          toc={guideShape.chapters.map((c) => ({name: c.name, meta: `${c.pageCount} pages`}))}
+          spread={{
+            sectionLabel: `Chapter ${guideShape.chapters[0]?.number ?? '01'}`,
+            promptTitle: guideShape.chapters[0]?.name ?? product.name,
+            promptBody: guideShape.chapters[0]?.description ?? product.tagline,
+            proTip: 'Authority products pair: strategy → execution → monetization.',
+          }}
+        />
+
+        {/* v3.9b — Section 2 NEW value stack */}
+        <ValueStack kind="authority" productName={product.name} />
+
         <WhoForWhoNotFor guide={guideShape} />
 
         <ThreePathsComparison
@@ -310,6 +352,9 @@ function GuideStyle({
             </div>
           </div>
         </section>
+
+        {/* v3.9b — Section 10 SHELL */}
+        <ComparisonShell productName={product.shortName} />
 
         <GuaranteeBlock />
         <PairWith slug={product.slug} heading="Operators buy these together." />

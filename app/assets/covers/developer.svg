@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="The Developer Pack">
+  <defs>
+    <linearGradient id="d-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B1226"/>
+      <stop offset="50%" stop-color="#0F0A1F"/>
+      <stop offset="100%" stop-color="#1A0F2E"/>
+    </linearGradient>
+    <radialGradient id="d-glow-blue" cx="30%" cy="35%" r="55%">
+      <stop offset="0%" stop-color="#3B7EF5" stop-opacity="0.35"/>
+      <stop offset="70%" stop-color="#3B7EF5" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="d-glow-purple" cx="75%" cy="75%" r="50%">
+      <stop offset="0%" stop-color="#7E5BD8" stop-opacity="0.40"/>
+      <stop offset="70%" stop-color="#7E5BD8" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="d-terminal" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1A1830"/>
+      <stop offset="100%" stop-color="#0E0B1F"/>
+    </linearGradient>
+    <linearGradient id="d-edge" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5BA9FF"/>
+      <stop offset="50%" stop-color="#7E5BD8"/>
+      <stop offset="100%" stop-color="#EC4899"/>
+    </linearGradient>
+    <filter id="d-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="32" stdDeviation="36" flood-color="#040814" flood-opacity="0.70"/>
+    </filter>
+    <filter id="d-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="18" result="g"/>
+      <feMerge>
+        <feMergeNode in="g"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="d-cursor-glow" x="-100%" y="-50%" width="300%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="g"/>
+      <feMerge>
+        <feMergeNode in="g"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="d-noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.95" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1   0 0 0 0.07 0"/>
+    </filter>
+  </defs>
+
+  <!-- Base -->
+  <rect width="1080" height="1080" fill="url(#d-bg)"/>
+  <rect width="1080" height="1080" fill="url(#d-glow-blue)"/>
+  <rect width="1080" height="1080" fill="url(#d-glow-purple)"/>
+
+  <!-- Wordmark + label -->
+  <g transform="translate(72, 80)">
+    <g>
+      <path d="M0 8 L18 22 L0 36" fill="none" stroke="#EC4899" stroke-width="4" stroke-linecap="square"/>
+      <rect x="24" y="6" width="4" height="32" fill="#FAF8F5"/>
+      <text x="42" y="32" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" letter-spacing="-0.3" fill="#FAF8F5">promptos</text>
+    </g>
+    <text x="0" y="76" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" letter-spacing="2.8" fill="rgba(250,248,245,0.55)">THE DEVELOPER PACK</text>
+  </g>
+
+  <!-- Vol number -->
+  <g transform="translate(1008, 100)" text-anchor="end">
+    <text font-family="'Instrument Serif', Georgia, serif" font-size="32" font-style="italic" fill="rgba(250,248,245,0.50)">Nº</text>
+    <text x="0" y="42" font-family="'Instrument Serif', Georgia, serif" font-size="56" font-weight="500" fill="#FAF8F5">03</text>
+  </g>
+
+  <!-- Code window framed by oversized brackets. Anchor center (540, 600). -->
+
+  <!-- Left bracket (huge, gradient-stroked) -->
+  <g transform="translate(120, 600)" filter="url(#d-glow)">
+    <path d="M 200 -300 L 60 -300 Q 30 -300 30 -270 L 30 270 Q 30 300 60 300 L 200 300" fill="none" stroke="url(#d-edge)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/>
+  </g>
+  <!-- Right bracket -->
+  <g transform="translate(960, 600)" filter="url(#d-glow)">
+    <path d="M -200 -300 L -60 -300 Q -30 -300 -30 -270 L -30 270 Q -30 300 -60 300 L -200 300" fill="none" stroke="url(#d-edge)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/>
+  </g>
+
+  <!-- Terminal/code window between the brackets -->
+  <g transform="translate(540, 600)" filter="url(#d-shadow)">
+    <rect x="-340" y="-300" width="680" height="600" rx="20" fill="url(#d-terminal)"/>
+    <rect x="-340" y="-300" width="680" height="600" rx="20" fill="none" stroke="rgba(123,162,255,0.20)" stroke-width="1.5"/>
+
+    <!-- Title bar with traffic-light dots + filename -->
+    <g transform="translate(-340, -300)">
+      <rect width="680" height="48" rx="20" fill="rgba(255,255,255,0.04)"/>
+      <circle cx="28" cy="24" r="7" fill="#FF6B6B"/>
+      <circle cx="52" cy="24" r="7" fill="#FFD166"/>
+      <circle cx="76" cy="24" r="7" fill="#6BE7A1"/>
+      <text x="340" y="30" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="14" fill="rgba(250,248,245,0.45)">review.ts</text>
+    </g>
+
+    <!-- Code body (syntax highlighted) -->
+    <g font-family="'JetBrains Mono', ui-monospace, monospace" font-size="22" letter-spacing="0">
+      <!-- Line numbers gutter -->
+      <g fill="rgba(250,248,245,0.20)" font-size="16">
+        <text x="-310" y="-220">01</text>
+        <text x="-310" y="-180">02</text>
+        <text x="-310" y="-140">03</text>
+        <text x="-310" y="-100">04</text>
+        <text x="-310" y="-60">05</text>
+        <text x="-310" y="-20">06</text>
+        <text x="-310" y="20">07</text>
+        <text x="-310" y="60">08</text>
+        <text x="-310" y="100">09</text>
+        <text x="-310" y="140">10</text>
+        <text x="-310" y="180">11</text>
+        <text x="-310" y="220">12</text>
+      </g>
+
+      <!-- Code -->
+      <g>
+        <text x="-260" y="-220" fill="#A89BCC">// Review this diff for security issues.</text>
+        <text x="-260" y="-180" fill="#A89BCC">// Specifically check:</text>
+        <text x="-260" y="-140" fill="#FAF8F5"><tspan fill="#C792EA">async function</tspan> <tspan fill="#82AAFF">reviewDiff</tspan>(<tspan fill="#FFCB6B">diff</tspan>: <tspan fill="#82AAFF">string</tspan>) {</text>
+        <text x="-260" y="-100" fill="#FAF8F5">  <tspan fill="#C792EA">const</tspan> issues = <tspan fill="#C792EA">await</tspan> <tspan fill="#82AAFF">scan</tspan>(diff, {</text>
+        <text x="-260" y="-60" fill="#FAF8F5">    <tspan fill="#FFCB6B">authBoundary</tspan>: <tspan fill="#C3E88D">true</tspan>,</text>
+        <text x="-260" y="-20" fill="#FAF8F5">    <tspan fill="#FFCB6B">sqlInjection</tspan>:  <tspan fill="#C3E88D">true</tspan>,</text>
+        <text x="-260" y="20" fill="#FAF8F5">    <tspan fill="#FFCB6B">secretLeak</tspan>:    <tspan fill="#C3E88D">true</tspan>,</text>
+        <text x="-260" y="60" fill="#FAF8F5">    <tspan fill="#FFCB6B">unsafeRegex</tspan>:   <tspan fill="#C3E88D">true</tspan>,</text>
+        <text x="-260" y="100" fill="#FAF8F5">  });</text>
+        <text x="-260" y="140" fill="#FAF8F5">  <tspan fill="#C792EA">return</tspan> issues.<tspan fill="#82AAFF">rank</tspan>(<tspan fill="#C3E88D">"severity"</tspan>);</text>
+        <text x="-260" y="180" fill="#FAF8F5">}</text>
+      </g>
+
+      <!-- Glowing cursor block at end of last code line, with caret -->
+      <g transform="translate(0, 188)" filter="url(#d-cursor-glow)">
+        <rect x="-260" y="-22" width="14" height="28" fill="#5BA9FF" opacity="0.95"/>
+      </g>
+    </g>
+
+    <!-- Bottom status bar -->
+    <g transform="translate(-340, 252)">
+      <rect width="680" height="48" rx="0" fill="rgba(255,255,255,0.04)"/>
+      <text x="20" y="30" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="14" fill="rgba(123,162,255,0.80)">▲ main</text>
+      <text x="120" y="30" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="14" fill="rgba(250,248,245,0.55)">UTF-8 · TypeScript · 12 prompts loaded</text>
+      <text x="660" y="30" text-anchor="end" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="14" fill="#6BE7A1">● scanning</text>
+    </g>
+  </g>
+
+  <!-- Bottom label -->
+  <g transform="translate(72, 1000)">
+    <text font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" letter-spacing="3" fill="rgba(250,248,245,0.45)">55 PROMPTS · 6 SECTIONS · .DOCX + PDF</text>
+  </g>
+
+  <!-- Noise overlay -->
+  <rect width="1080" height="1080" filter="url(#d-noise)" opacity="0.55"/>
+</svg>

@@ -1,4 +1,6 @@
 import {SectionFade} from './SectionFade';
+import {GradientOrb} from '~/components/atmosphere/GradientOrb';
+import {NoiseTexture} from '~/components/atmosphere/NoiseTexture';
 
 const ROWS = [
   {
@@ -33,7 +35,11 @@ const ROWS = [
 
 export function WhoEditorial() {
   return (
-    <section className="who-editorial">
+    <section className="who-editorial v39a-section">
+      {/* v3.9b D9 — persona section gets a purple orb top-left, pink bottom-right */}
+      <GradientOrb color="purple" intensity="soft" size={500} top="10%" left="-6%" />
+      <GradientOrb color="pink" intensity="soft" size={420} bottom="20%" right="-4%" />
+      <NoiseTexture />
       <div className="who-editorial-inner">
         <SectionFade as="div">
           <div className="section-eyebrow">Who it&apos;s for</div>

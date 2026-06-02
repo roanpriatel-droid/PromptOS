@@ -1,5 +1,7 @@
 import {Link} from 'react-router';
 import {SectionFade} from './SectionFade';
+import {GradientOrb} from '~/components/atmosphere/GradientOrb';
+import {NoiseTexture} from '~/components/atmosphere/NoiseTexture';
 
 type ThreePathsProps = {
   title?: string;
@@ -52,7 +54,11 @@ export function ThreePathsComparison({
   winnerCta = {label: 'Browse the playbooks', to: '/guides'},
 }: ThreePathsProps) {
   return (
-    <section className="three-paths">
+    <section className="three-paths v39a-section">
+      {/* v3.9b D6 — atmospheric pass + winning-path purple glow */}
+      <GradientOrb color="purple" intensity="medium" size={520} top="40%" right="8%" />
+      <GradientOrb color="purple" intensity="soft" size={380} top="10%" left="-5%" />
+      <NoiseTexture />
       <SectionFade as="div" className="three-paths-head">
         <div className="section-eyebrow">The three paths</div>
         <h2>{title}</h2>
@@ -80,8 +86,8 @@ export function ThreePathsComparison({
           <div className="footnote">{DIY.footnote}</div>
         </SectionFade>
 
-        <SectionFade as="div" className="path-card win" delayMs={280}>
-          <div className="badge">Recommended</div>
+        <SectionFade as="div" className="path-card win v39a-hover-lift v39a-hover-lift-strong" delayMs={280} style={{boxShadow: 'var(--v39a-elevation-raised)'}}>
+          <div className="badge v39a-pulse-pink">Recommended</div>
           <div className="label">Path three</div>
           <h3>Promptos Playbooks</h3>
           <p style={{fontSize: 18, fontFamily: 'var(--font-serif)', color: 'var(--paper)', marginBottom: 18}}>

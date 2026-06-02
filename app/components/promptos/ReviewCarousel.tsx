@@ -3,6 +3,8 @@ import {REVIEWS, getReviewStats} from '~/lib/reviews';
 import {ReviewCard} from './ReviewCard';
 import {RatingStars} from './RatingStars';
 import {ReviewsTransparencyLine} from './ReviewsTransparencyLine';
+import {GradientOrb} from '~/components/atmosphere/GradientOrb';
+import {NoiseTexture} from '~/components/atmosphere/NoiseTexture';
 
 /**
  * Auto-scrolling review carousel for the homepage. Hand-picks 24 strong
@@ -12,7 +14,10 @@ export function ReviewCarousel() {
   const top = REVIEWS.filter((r) => r.rating === 5 && r.body.length >= 80).slice(0, 24);
   const stats = getReviewStats();
   return (
-    <section className="review-carousel">
+    <section className="review-carousel v39a-section">
+      {/* v3.9b D8 — ambient pink glow behind the aggregate rating + section noise */}
+      <GradientOrb color="pink" intensity="soft" size={520} top="15%" right="10%" />
+      <NoiseTexture />
       <div className="review-carousel-inner">
         <div className="review-carousel-head">
           <div>

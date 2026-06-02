@@ -1,6 +1,8 @@
 import {Link} from 'react-router';
 import {SectionFade} from './SectionFade';
 import {AUTHORITY, GUIDES, PACKS} from '~/lib/catalog';
+import {GradientOrb} from '~/components/atmosphere/GradientOrb';
+import {NoiseTexture} from '~/components/atmosphere/NoiseTexture';
 
 /**
  * "Three Tiers of the Promptos System" — frames the 18 products as a
@@ -15,7 +17,11 @@ export function ThreeTiersSection() {
   const guidesHigh = Math.max(...GUIDES.map((g) => g.priceUSD));
 
   return (
-    <section className="three-tiers">
+    <section className="three-tiers v39a-section">
+      {/* v3.9b D2 — horizontal pink → purple gradient hint via orb pair */}
+      <GradientOrb color="pink" intensity="soft" size={460} top="20%" left="-6%" />
+      <GradientOrb color="purple" intensity="soft" size={520} top="40%" right="-8%" />
+      <NoiseTexture />
       <div className="three-tiers-inner">
         <SectionFade as="div" className="three-tiers-head">
           <div className="section-eyebrow">The Promptos system</div>
@@ -26,7 +32,7 @@ export function ThreeTiersSection() {
         </SectionFade>
 
         <div className="tiers-grid">
-          <SectionFade as="div" className="tier-card tier-1" delayMs={0}>
+          <SectionFade as="div" className="tier-card tier-1 v39a-hover-lift" delayMs={0}>
             <div className="tier-badge">Tier 1</div>
             <div className="tier-price">${packsLow}–${packsHigh}</div>
             <h3>Daily execution.</h3>
@@ -41,7 +47,7 @@ export function ThreeTiersSection() {
             </Link>
           </SectionFade>
 
-          <SectionFade as="div" className="tier-card tier-2" delayMs={140}>
+          <SectionFade as="div" className="tier-card tier-2 v39a-hover-lift" delayMs={140}>
             <div className="tier-badge tier-badge-mid">Tier 2 · New</div>
             <div className="tier-price">${authorityLow}–${authorityHigh}</div>
             <h3>Audience &amp; authority.</h3>
@@ -56,7 +62,7 @@ export function ThreeTiersSection() {
             </Link>
           </SectionFade>
 
-          <SectionFade as="div" className="tier-card tier-3" delayMs={280}>
+          <SectionFade as="div" className="tier-card tier-3 v39a-hover-lift v39a-hover-lift-strong" delayMs={280}>
             <div className="tier-badge">Tier 3</div>
             <div className="tier-price">${guidesLow}–${guidesHigh}</div>
             <h3>Build a business.</h3>

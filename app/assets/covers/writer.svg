@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="The Writer's Pack">
+  <defs>
+    <radialGradient id="w-bg" cx="35%" cy="25%" r="85%">
+      <stop offset="0%" stop-color="#3B1F6B"/>
+      <stop offset="55%" stop-color="#1B0E36"/>
+      <stop offset="100%" stop-color="#0B051C"/>
+    </radialGradient>
+    <radialGradient id="w-glow" cx="68%" cy="70%" r="55%">
+      <stop offset="0%" stop-color="#9B6BE5" stop-opacity="0.32"/>
+      <stop offset="60%" stop-color="#9B6BE5" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="w-paper" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FAF6EC"/>
+      <stop offset="100%" stop-color="#EFE6CF"/>
+    </linearGradient>
+    <linearGradient id="w-paper-shadow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="rgba(0,0,0,0)"/>
+      <stop offset="100%" stop-color="rgba(0,0,0,0.18)"/>
+    </linearGradient>
+    <linearGradient id="w-ink-drip" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#1A0E36" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#1A0E36" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="w-shadow-lg" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="36" stdDeviation="38" flood-color="#08041A" flood-opacity="0.70"/>
+    </filter>
+    <filter id="w-shadow-md" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="22" stdDeviation="24" flood-color="#08041A" flood-opacity="0.55"/>
+    </filter>
+    <filter id="w-noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.95" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1   0 0 0 0.07 0"/>
+    </filter>
+    <filter id="w-paper-noise">
+      <feTurbulence type="fractalNoise" baseFrequency="1.6" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix values="0 0 0 0 0.45   0 0 0 0 0.38   0 0 0 0 0.30   0 0 0 0.10 0"/>
+    </filter>
+  </defs>
+
+  <!-- Base -->
+  <rect width="1080" height="1080" fill="url(#w-bg)"/>
+  <rect width="1080" height="1080" fill="url(#w-glow)"/>
+
+  <!-- Wordmark + label -->
+  <g transform="translate(72, 80)">
+    <g>
+      <path d="M0 8 L18 22 L0 36" fill="none" stroke="#EC4899" stroke-width="4" stroke-linecap="square"/>
+      <rect x="24" y="6" width="4" height="32" fill="#FAF8F5"/>
+      <text x="42" y="32" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" letter-spacing="-0.3" fill="#FAF8F5">promptos</text>
+    </g>
+    <text x="0" y="76" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" letter-spacing="2.8" fill="rgba(250,248,245,0.55)">THE WRITER'S PACK</text>
+  </g>
+
+  <!-- Vol number -->
+  <g transform="translate(1008, 100)" text-anchor="end">
+    <text font-family="'Instrument Serif', Georgia, serif" font-size="32" font-style="italic" fill="rgba(250,248,245,0.50)">Nº</text>
+    <text x="0" y="42" font-family="'Instrument Serif', Georgia, serif" font-size="56" font-weight="500" fill="#FAF8F5">02</text>
+  </g>
+
+  <!-- Typewriter sheet with handwritten margin notes. Center anchor (540, 600). -->
+  <!-- Back card (offset, slightly rotated for layered-paper feeling) -->
+  <g transform="translate(540, 620) rotate(-3.5)" filter="url(#w-shadow-lg)">
+    <rect x="-310" y="-380" width="620" height="760" rx="6" fill="url(#w-paper)"/>
+    <rect x="-310" y="-380" width="620" height="760" rx="6" fill="url(#w-paper-noise)" opacity="0.7"/>
+    <rect x="-310" y="-380" width="620" height="760" rx="6" fill="url(#w-paper-shadow)" opacity="0.4"/>
+  </g>
+
+  <!-- Front typewriter sheet -->
+  <g transform="translate(540, 580) rotate(2)" filter="url(#w-shadow-md)">
+    <rect x="-300" y="-370" width="600" height="740" rx="6" fill="url(#w-paper)"/>
+    <rect x="-300" y="-370" width="600" height="740" rx="6" fill="url(#w-paper-noise)" opacity="0.8"/>
+
+    <!-- Top header band on the page -->
+    <text x="-260" y="-310" font-family="'Instrument Serif', Georgia, serif" font-size="22" fill="#5C4A2E" font-style="italic">Draft three — Chapter 14</text>
+    <line x1="-260" y1="-290" x2="260" y2="-290" stroke="#1A0E36" stroke-width="1" stroke-opacity="0.25"/>
+
+    <!-- Typewriter body lines (monospace-feel via JetBrains Mono fallback) -->
+    <g font-family="'JetBrains Mono', 'Courier New', ui-monospace, monospace" font-size="22" fill="#1A0E36">
+      <text x="-260" y="-240">The midpoint is where the story</text>
+      <text x="-260" y="-208">turns. He stops chasing and</text>
+      <text x="-260" y="-176">begins running. The reader</text>
+      <text x="-260" y="-144">should feel the gears change</text>
+      <text x="-260" y="-112">without being told.</text>
+      <text x="-260" y="-48">She looked at the door, then</text>
+      <text x="-260" y="-16">at the letter, then at the</text>
+      <text x="-260" y="16"><tspan fill-opacity="0.45">door again.</tspan> She knew.</text>
+      <text x="-260" y="80">"It wasn't the secret. It was</text>
+      <text x="-260" y="112">that he never planned to tell</text>
+      <text x="-260" y="144">me. Even now."</text>
+    </g>
+
+    <!-- Handwritten margin notes (rotated, casual brush serif feel via italic Instrument Serif) -->
+    <g transform="rotate(-4)" font-family="'Instrument Serif', Georgia, serif" font-style="italic" fill="#6B46C1">
+      <text x="60" y="-220" font-size="20">cut this →</text>
+      <text x="60" y="-32" font-size="22">YES.</text>
+    </g>
+    <g transform="rotate(2.5)" font-family="'Instrument Serif', Georgia, serif" font-style="italic" fill="#EC4899">
+      <text x="-280" y="-100" font-size="20">slower here</text>
+      <text x="80" y="200" font-size="22">land this</text>
+    </g>
+
+    <!-- Pen strikethrough mark across "door again." -->
+    <line x1="-100" y1="8" x2="40" y2="2" stroke="#6B46C1" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Underline under "She knew." -->
+    <line x1="60" y1="24" x2="200" y2="22" stroke="#EC4899" stroke-width="2.5" stroke-linecap="round"/>
+
+    <!-- Page number -->
+    <text x="260" y="320" text-anchor="end" font-family="'Instrument Serif', Georgia, serif" font-size="18" font-style="italic" fill="rgba(26,14,54,0.55)">— 247 —</text>
+  </g>
+
+  <!-- Ink drip from bottom edge of front sheet (suggests writing in progress) -->
+  <g transform="translate(540, 956)" opacity="0.85">
+    <path d="M 0 0 Q -4 30 0 56 Q 5 76 0 100" fill="none" stroke="#1A0E36" stroke-width="3" stroke-linecap="round" stroke-opacity="0.5"/>
+    <ellipse cx="0" cy="104" rx="6" ry="9" fill="#1A0E36" fill-opacity="0.55"/>
+    <circle cx="-12" cy="44" r="2.5" fill="#1A0E36" fill-opacity="0.4"/>
+    <circle cx="8" cy="68" r="2" fill="#1A0E36" fill-opacity="0.35"/>
+  </g>
+
+  <!-- Bottom label -->
+  <g transform="translate(72, 1000)">
+    <text font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" letter-spacing="3" fill="rgba(250,248,245,0.45)">65 PROMPTS · 6 SECTIONS · .DOCX + PDF</text>
+  </g>
+
+  <!-- Noise overlay -->
+  <rect width="1080" height="1080" filter="url(#w-noise)" opacity="0.55"/>
+</svg>

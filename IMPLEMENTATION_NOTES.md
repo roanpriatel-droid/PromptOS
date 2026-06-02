@@ -149,3 +149,116 @@ Once the user judges the live result of the marketer / personal-brand / everythi
 
 - **If the covers hit:** ship the other 19 covers in the same visual language as a single v3.9b batch + Phase D atmospheric pass on the remaining 12 homepage sections.
 - **If they don't:** iterate the 3 prototypes (style direction, density, color treatment) before committing the other 19 to the wrong direction.
+
+---
+
+# v3.9b Implementation Notes
+
+## Scope (option 2 — agreed up-front)
+
+User judged v3.9a's 3 prototype covers + hero mesh + atmosphere primitives + Two-Sides demo on prod and approved scaling the system. Three options were surfaced for v3.9b scope; **option 2** was chosen:
+
+1. **Part 1** — Generate the remaining 19 product covers in the v3.9a design language.
+2. **Part 2** — Apply atmospheric pass to all 12 remaining homepage sections (D2-D13).
+3. **Part 3** — Product page restructure (structure only, not all editorial content):
+   - Sections 1-5, 9, 11, 12, 13 fully populated.
+   - Sections 6/7/8/10 ship as **wired shells with CONTENT_NEEDED markers** the user will grep for and fill in v3.9c.
+   - ProductGallery: V1 cover + V2 spread + V3 TOC. Views 4 (template preview) and 5 (results dashboard) deferred.
+   - Supply-tier selector: **deferred entirely** until the user commits to combo pricing in v3.9c.
+
+## Commits on `store-visual-overhaul-v3.9b`
+
+| Commit | Part | What |
+|---|---|---|
+| `9374c41` | 1 | 19 SVG covers (6 packs, 8 playbooks, 2 Authority, 3 bundles) at `app/assets/covers/*.svg` + mirrors at `public/covers/*.svg`. CoverV39 registry expanded from 3 to 22 entries. |
+| `551855d` | 2 | Atmospheric pass on D2-D13. New utility classes in `promptos-v39a.css`: `.v39a-section`, `.v39a-hover-lift` + `.v39a-hover-lift-strong`, `v39a-pulse-purple/pink` keyframes, `.v39a-gradient-text`, animated gradient border on newsletter input focus, bundle card hover-lift overrides. SectionFade signature extended (`style` prop + wider `as` union) — fixes 19 pre-existing baseline TS errors. |
+| `d0fa4dc` | 3 | 5 new product-page components (ProductGallery, ValueStack, WhatsInsideUpgraded, ExamplePromptTabs, WhoForGeneric) + ContentShells (4 shells in 1 file for sections 7/8/10 — Section 6 ships with existing whoFor data via WhoForGeneric instead of a shell). Wired into packs/guides/authority routes. |
+
+## Cover quality grading (honest read)
+
+Each cover gets a 1-5 grade against the "premium SaaS benchmark" quality bar. Lower grades flag covers to revisit in v3.9c.
+
+| Cover | Grade | Notes |
+|---|---|---|
+| **marketer** (v3.9a) | 5 | Strongest of the prototypes. Layered cards + real prompt content + variable pills carries the whole concept. |
+| **personal-brand** (v3.9a) | 5 | Concentric-dot broadcast pattern is unique, brand-aligned, reads at thumbnail size. |
+| **everything** (v3.9a) | 4 | Constellation works but is denser than the others. Possible simplification in v3.9c. |
+| **writer** | 4 | Typewriter sheet + handwritten margin notes lands. Could push the ink-drip harder. |
+| **developer** | 4 | Code window + brackets + syntax highlighting reads well. Brackets compete a bit with window border. |
+| **solopreneur** | 4 | 7-pointed star with role labels lands. Sun corona could be tuned. |
+| **content-creator** | 3 | Play-triangle of stacked content blocks works conceptually but the slabs feel less unified than the strongest covers. **Candidate for manual design pass.** |
+| **ai-power-user** | 3 | Infinity loop is the right idea but the dual loops compete. **Candidate for manual design pass.** |
+| **productivity** | 5 | Strongest contrast in the set. Time-blocked grid with glowing focus cell is unambiguous. |
+| **ai-automation-agency** | 4 | System diagram with flowing dots reads as automation. Node sizing balanced. |
+| **ai-agent-builder** | 3 | Hex grid + agent silhouette is conceptually right; the agent glyph could be more distinctive. **Candidate for manual design pass.** |
+| **web-design-agency** | 5 | Three layered browser frames with gradient hero in the foreground is the most "designer" cover in the set. |
+| **digital-products** | 4 | Isometric box + price tag + pink seal is strong; box top-face perspective could be tighter. |
+| **newsletter-business** | 5 | Envelope + document + peeking newsletter + pink wax seal is a complete visual story. |
+| **faceless-content** | 4 | Silhouette + glowing waveform mouth is clear. Ears as dots feels slightly literal. |
+| **saas-side-project** | 5 | Terminal + MRR chart up-and-to-the-right + $6.4k callout is the most "money" cover. |
+| **coaching-consulting** | 4 | Two arcs converging works but session markers along each arc are subtle. |
+| **content-engine** | 3 | Three interlocking gears is the right metaphor but the gear paths are visually busy. **Candidate for manual design pass.** |
+| **high-ticket-finder** | 5 | Value pyramid + glowing gold top tier + compass rose + X-marks-the-spot is the most multi-layered cover. |
+| **packs bundle** | 4 | Fanned arc of 7 cards lands; some cards crowd the center. |
+| **authority bundle** | 4 | 3 stacked cards + central pink glow lands. A2's gear motif vs A1's dots could be more distinct. |
+| **guides bundle** | 5 | Bookshelf of 8 spines is iconic. Mixed card backgrounds read as variety, not chaos. |
+
+**Summary:** 12 of 19 grade 4-5 (publish-as-is). **4 grade 3** (publish but mark for design pass): `content-creator`, `ai-power-user`, `ai-agent-builder`, `content-engine`. None grade 1-2.
+
+## Homepage atmospheric pass — strongest vs weakest sections
+
+**Strongest (likely to just work):**
+1. **BundlePushCinematic (D7)** — 4 bundle cards now each render their v3.9 cover. Mega card has the most dramatic hover-lift (-12px). The visual centerpiece.
+2. **HowItWorks (D3)** — three step badges with purple pulse + single big orb feels intentional.
+3. **NewsletterCTA (D13)** — dual orbs + animated gradient input border on focus. Small detail that reads as "the site cares."
+4. **PackGridV2 (D4)** — purple-dominant orb pair + hover-lift on every card + bundle feature row now shows the v3.9 Packs Bundle cover.
+
+**Weakest (likely to need iteration):**
+1. **MethodSnippet (D10)** — only got one orb + noise. Spec called for "vertical separator gradients like premium magazine dividers" + "small glowing accent dots" — neither ships. **Underdone.**
+2. **FaqV2 (D12)** — section wrapper + a single orb only. Spec called for hover-background gradient hint, smooth expand animation, plus/minus icon rotation, left-border accent. None of that ships. **Underdone.**
+3. **ReviewCarousel (D8)** — got the pink orb behind the rating but the ReviewCard component itself is untouched (spec wanted border-gradient on hover + avatar ring on hover). **Half-done.**
+4. **ThreePathsComparison (D6)** — winning path got pink-pulse badge + raised elevation, but the "Recommended" pill is the existing static pill with a pulse-glow, not the animated purple-to-pink gradient loop the spec called for.
+
+## Aspirational gaps (be honest)
+
+- **Per-product editorial content for Sections 7, 8, 10** — shipped as shells with `CONTENT_NEEDED` markers. Grep `CONTENT_NEEDED` to find every outstanding slot. Section 6 on packs uses real `pack.whoFor` data (no shell) since that data already exists.
+- **ExamplePromptTabs 3-tab population** — only 1 tab populated (from `pack.sample`). 2 more example prompts per product (simple + premium difficulty) needed before the tabs deliver on the spec.
+- **ProductGallery views 4 + 5** — template preview and results dashboard mockups deferred per option 2.
+- **Supply-tier selector** — deferred entirely. The existing single CTA stays.
+- **OG image regeneration per product** — out of scope for v3.9b. The site still serves `/og-default.png` via root.tsx and that reference is still 404 on Oxygen (same root cause as the v3.9a hotfix — separate cleanup).
+- **The 4 grade-3 covers** (content-creator, ai-power-user, ai-agent-builder, content-engine) — should get a manual design pass in v3.9c.
+- **The weakest atmospheric sections** (D6 animated pill, D8 review card hover, D10 magazine dividers, D12 FAQ accordion expand + left-border) — shipped underdone vs the spec.
+- **Mobile breakpoint verification** — I can't run a browser locally. New code is responsive by construction (no fixed widths, GradientOrbs use percentages, grids use `auto-fill minmax`) but **verify mobile/tablet on prod before any paid traffic.**
+- **Lighthouse perf delta** — can't run from this environment. Each homepage section now loads 1-2 extra GPU-composited blurred divs + a SVG noise overlay; impact should be minimal but unverified.
+
+## Rollback path
+
+Backup snapshot: **`store-pre-v3.9b-snapshot`** at commit `0ce6561` (the post-hotfix v3.9a tip on `main`). Already pushed to origin.
+
+Full revert:
+```bash
+git checkout main
+git reset --hard store-pre-v3.9b-snapshot
+git push origin main --force-with-lease
+```
+
+After the squash to main, the per-part commits no longer exist on main — but the `store-visual-overhaul-v3.9b` branch on origin retains them:
+```bash
+git revert d0fa4dc   # Part 3
+git revert 551855d   # Part 2
+git revert 9374c41   # Part 1
+```
+
+## Manual user actions
+
+**None required for v3.9b.** No discount codes, email automation, app installations, or Shopify Admin changes. Oxygen auto-deploys on push to main.
+
+## CONTENT_NEEDED checklist for v3.9c
+
+Grep `CONTENT_NEEDED` in the repo to find every outstanding editorial slot. As of v3.9b merge:
+
+- **Section 7 (Who this is NOT for)** — per-product exclusion lines. 17 single-product pages × ~3 lines each.
+- **Section 8 (Outcomes)** — per-product outcome metrics + values. 17 × 4 cards. **Realistic ranges only** — no invented statistics.
+- **Section 10 (Comparison vs alternatives)** — per-product comparison table rows. 17 × 5 rows × 4 columns.
+- **ExamplePromptTabs additional samples** — 2 more sample prompts per pack (simple + premium difficulty) to fill the 3-tab structure.
+- **Supply-tier selector pricing** — once the user commits to combo prices, the supply-tier selector can be built.

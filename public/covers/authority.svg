@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="The Authority Bundle">
+  <defs>
+    <radialGradient id="ab2-bg" cx="50%" cy="30%" r="92%">
+      <stop offset="0%" stop-color="#3B1561"/>
+      <stop offset="50%" stop-color="#1B0A2E"/>
+      <stop offset="100%" stop-color="#08031A"/>
+    </radialGradient>
+    <radialGradient id="ab2-glow" cx="50%" cy="55%" r="42%">
+      <stop offset="0%" stop-color="#FFC1DE" stop-opacity="0.42"/>
+      <stop offset="55%" stop-color="#EC4899" stop-opacity="0.20"/>
+      <stop offset="100%" stop-color="#EC4899" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ab2-card-1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#C2598C"/>
+      <stop offset="100%" stop-color="#5A1D45"/>
+    </linearGradient>
+    <linearGradient id="ab2-card-2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#A23A40"/>
+      <stop offset="100%" stop-color="#3D0F1A"/>
+    </linearGradient>
+    <linearGradient id="ab2-card-3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7E5BD8"/>
+      <stop offset="100%" stop-color="#3D2480"/>
+    </linearGradient>
+    <linearGradient id="ab2-savings" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#9264E5"/>
+      <stop offset="100%" stop-color="#EC4899"/>
+    </linearGradient>
+    <radialGradient id="ab2-bind-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFE4F2"/>
+      <stop offset="35%" stop-color="#FF9BCE"/>
+      <stop offset="100%" stop-color="#EC4899" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="ab2-shadow-l" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="32" stdDeviation="36" flood-color="#04020E" flood-opacity="0.78"/>
+    </filter>
+    <filter id="ab2-glow-strong" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="24" result="g"/>
+      <feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="ab2-noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.95" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1   0 0 0 0.07 0"/>
+    </filter>
+  </defs>
+
+  <rect width="1080" height="1080" fill="url(#ab2-bg)"/>
+  <rect width="1080" height="1080" fill="url(#ab2-glow)"/>
+
+  <g transform="translate(72, 80)">
+    <g>
+      <path d="M0 8 L18 22 L0 36" fill="none" stroke="#EC4899" stroke-width="4" stroke-linecap="square"/>
+      <rect x="24" y="6" width="4" height="32" fill="#FAF8F5"/>
+      <text x="42" y="32" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" letter-spacing="-0.3" fill="#FAF8F5">promptos</text>
+    </g>
+    <text x="0" y="76" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" letter-spacing="2.8" fill="rgba(250,248,245,0.65)">BUNDLE · THE AUTHORITY</text>
+  </g>
+
+  <g transform="translate(1008, 100)" text-anchor="end">
+    <text font-family="'Instrument Serif', Georgia, serif" font-size="22" font-style="italic" fill="rgba(250,248,245,0.55)">BUNDLE</text>
+    <text x="0" y="48" font-family="'Instrument Serif', Georgia, serif" font-size="64" font-weight="500" fill="#FAF8F5">3</text>
+  </g>
+
+  <!-- Three stacked covers with central glow. Center anchor (540, 600). Stack offset reveals each card. -->
+  <g transform="translate(540, 580)">
+
+    <!-- Glow disc behind stack (binds them together) -->
+    <circle r="320" fill="url(#ab2-bind-glow)" filter="url(#ab2-glow-strong)" opacity="0.85"/>
+
+    <!-- Back card (Personal Brand — A1) -->
+    <g transform="translate(-60, 60) rotate(-8)" filter="url(#ab2-shadow-l)">
+      <rect x="-180" y="-240" width="360" height="480" rx="20" fill="url(#ab2-card-1)"/>
+      <rect x="-180" y="-240" width="360" height="480" rx="20" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1.5"/>
+      <text x="-150" y="-200" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="700" letter-spacing="2.4" fill="rgba(255,255,255,0.65)">A1</text>
+      <!-- abstract radiating dots motif -->
+      <g fill="#FAF8F5" opacity="0.85">
+        <circle cx="0" cy="-40" r="6"/>
+        <g fill="rgba(255,255,255,0.65)">
+          <circle cx="-60" cy="-40" r="3"/>
+          <circle cx="60" cy="-40" r="3"/>
+          <circle cx="-30" cy="-90" r="3"/>
+          <circle cx="30" cy="-90" r="3"/>
+          <circle cx="0" cy="-110" r="3"/>
+          <circle cx="-30" cy="10" r="3"/>
+          <circle cx="30" cy="10" r="3"/>
+          <circle cx="0" cy="40" r="3"/>
+        </g>
+      </g>
+      <text x="0" y="140" text-anchor="middle" font-family="'Instrument Serif', Georgia, serif" font-size="26" font-style="italic" fill="#FAF8F5">Personal Brand</text>
+      <text x="0" y="170" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600" letter-spacing="2.2" fill="rgba(255,255,255,0.65)">85 PAGES</text>
+    </g>
+
+    <!-- Middle card (Content Engine — A2) -->
+    <g transform="translate(0, 0) rotate(0)" filter="url(#ab2-shadow-l)">
+      <rect x="-180" y="-240" width="360" height="480" rx="20" fill="url(#ab2-card-2)"/>
+      <rect x="-180" y="-240" width="360" height="480" rx="20" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>
+      <text x="-150" y="-200" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="700" letter-spacing="2.4" fill="rgba(255,255,255,0.75)">A2</text>
+      <!-- gear motif (simple) -->
+      <g transform="translate(0, -40)">
+        <circle r="56" fill="none" stroke="rgba(255,228,176,0.65)" stroke-width="4"/>
+        <circle r="20" fill="#FFE4B0"/>
+        <g fill="rgba(255,228,176,0.65)">
+          <rect x="-4" y="-72" width="8" height="14" rx="3"/>
+          <rect x="-4" y="58" width="8" height="14" rx="3"/>
+          <rect x="-72" y="-4" width="14" height="8" rx="3"/>
+          <rect x="58" y="-4" width="14" height="8" rx="3"/>
+          <rect x="-56" y="-56" width="10" height="14" rx="3" transform="rotate(-45)"/>
+          <rect x="46" y="-56" width="10" height="14" rx="3" transform="rotate(45)"/>
+          <rect x="-56" y="46" width="10" height="14" rx="3" transform="rotate(-135)"/>
+          <rect x="46" y="46" width="10" height="14" rx="3" transform="rotate(135)"/>
+        </g>
+      </g>
+      <text x="0" y="140" text-anchor="middle" font-family="'Instrument Serif', Georgia, serif" font-size="26" font-style="italic" fill="#FAF8F5">Content Engine</text>
+      <text x="0" y="170" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600" letter-spacing="2.2" fill="rgba(255,255,255,0.65)">75 PROMPTS</text>
+    </g>
+
+    <!-- Front card (High-Ticket — A3) -->
+    <g transform="translate(60, -60) rotate(8)" filter="url(#ab2-shadow-l)">
+      <rect x="-180" y="-240" width="360" height="480" rx="20" fill="url(#ab2-card-3)"/>
+      <rect x="-180" y="-240" width="360" height="480" rx="20" fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="1.5"/>
+      <text x="-150" y="-200" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="700" letter-spacing="2.4" fill="rgba(255,255,255,0.85)">A3</text>
+      <!-- Tiny pyramid motif -->
+      <g transform="translate(0, -50)">
+        <polygon points="-90,80 90,80 70,40 -70,40" fill="rgba(255,255,255,0.18)"/>
+        <polygon points="-70,40 70,40 50,0 -50,0" fill="rgba(255,255,255,0.30)"/>
+        <polygon points="-50,0 50,0 30,-40 -30,-40" fill="rgba(255,255,255,0.45)"/>
+        <polygon points="-30,-40 30,-40 0,-80" fill="#FFE4B0"/>
+      </g>
+      <text x="0" y="140" text-anchor="middle" font-family="'Instrument Serif', Georgia, serif" font-size="26" font-style="italic" fill="#FAF8F5">High-Ticket</text>
+      <text x="0" y="170" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600" letter-spacing="2.2" fill="rgba(255,255,255,0.65)">55 PAGES</text>
+    </g>
+  </g>
+
+  <!-- Savings text -->
+  <g transform="translate(540, 980)" text-anchor="middle">
+    <text font-family="'Instrument Serif', Georgia, serif" font-size="50" font-weight="600" font-style="italic" fill="url(#ab2-savings)">Save $34. Build the moat.</text>
+    <text y="28" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" letter-spacing="3" fill="rgba(250,248,245,0.55)">3 AUTHORITY PRODUCTS · STRATEGY + EXECUTION + MONETIZATION</text>
+  </g>
+
+  <rect width="1080" height="1080" filter="url(#ab2-noise)" opacity="0.55"/>
+</svg>

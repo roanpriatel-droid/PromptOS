@@ -1,4 +1,6 @@
 import {SectionFade} from './SectionFade';
+import {GradientOrb} from '~/components/atmosphere/GradientOrb';
+import {NoiseTexture} from '~/components/atmosphere/NoiseTexture';
 
 const STEPS = [
   {
@@ -20,7 +22,10 @@ const STEPS = [
 
 export function HowItWorks() {
   return (
-    <section className="how-section">
+    <section className="how-section v39a-section">
+      {/* v3.9b D3 — purple orb anchors the "three steps" stack */}
+      <GradientOrb color="purple" intensity="soft" size={480} top="20%" left="50%" />
+      <NoiseTexture />
       <div className="how-inner">
         <SectionFade as="div" className="how-head">
           <div className="section-eyebrow">How it works</div>
@@ -29,9 +34,9 @@ export function HowItWorks() {
 
         <div className="how-grid">
           {STEPS.map((step, i) => (
-            <SectionFade key={step.n} as="div" className="how-step" delayMs={i * 120}>
+            <SectionFade key={step.n} as="div" className="how-step v39a-hover-lift" delayMs={i * 120}>
               <div className="num">{step.n}</div>
-              <div className="num-badge">{step.n}</div>
+              <div className="num-badge v39a-pulse-purple">{step.n}</div>
               <h3>{step.title}</h3>
               <p>{step.body}</p>
             </SectionFade>

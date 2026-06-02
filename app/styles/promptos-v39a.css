@@ -192,3 +192,149 @@
   position: relative;
   z-index: 2;
 }
+
+/* ============================================================
+   v3.9b Phase D — generic atmospheric section wrapper
+
+   Sections that opt into the atmospheric pass apply
+   `.v39a-section` to their outer element. GradientOrbs +
+   NoiseTexture sit at z-index 0/1 (absolutely-positioned by the
+   atmosphere primitives themselves), so we just need
+   `position: relative` + `overflow: hidden` on the section, plus
+   `z-index: 2` on the inner content wrapper to keep it above
+   the atmosphere.
+   ============================================================ */
+
+.v39a-section {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.v39a-section > *:not(.v39a-gradient-orb):not(.v39a-noise-overlay) {
+  position: relative;
+  z-index: 2;
+}
+
+/* Hover-lift utility: any card-shaped element can opt in for a
+   subtle elevation lift + shadow grow on hover. */
+.v39a-hover-lift {
+  transition:
+    transform 320ms var(--v39a-ease-out, cubic-bezier(0.22, 1, 0.36, 1)),
+    box-shadow 320ms var(--v39a-ease-out, cubic-bezier(0.22, 1, 0.36, 1));
+}
+.v39a-hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--v39a-elevation-raised);
+}
+.v39a-hover-lift-strong:hover {
+  transform: translateY(-8px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .v39a-hover-lift,
+  .v39a-hover-lift-strong {
+    transition: none;
+  }
+  .v39a-hover-lift:hover,
+  .v39a-hover-lift-strong:hover {
+    transform: none;
+  }
+}
+
+/* Pulsing soft-glow for step badges / tier numbers. */
+@keyframes v39a-pulse-purple {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(107, 70, 193, 0.55), 0 0 24px 4px rgba(107, 70, 193, 0.25); }
+  50%      { box-shadow: 0 0 0 8px rgba(107, 70, 193, 0.0),  0 0 36px 8px rgba(107, 70, 193, 0.35); }
+}
+@keyframes v39a-pulse-pink {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(236, 72, 153, 0.55), 0 0 24px 4px rgba(236, 72, 153, 0.25); }
+  50%      { box-shadow: 0 0 0 8px rgba(236, 72, 153, 0.0),  0 0 36px 8px rgba(236, 72, 153, 0.35); }
+}
+.v39a-pulse-purple { animation: v39a-pulse-purple 2.6s ease-in-out infinite; }
+.v39a-pulse-pink   { animation: v39a-pulse-pink   2.6s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .v39a-pulse-purple, .v39a-pulse-pink { animation: none; }
+}
+
+/* Gradient-text utility for "Save $XXX" callouts etc. */
+.v39a-gradient-text {
+  background: linear-gradient(135deg, #9264E5 0%, #EC4899 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Smooth, contained "Reveal" used when content is already in view
+   on first paint but should still pop in (no IntersectionObserver
+   needed — relies on a static opacity at rest). Kept here for use
+   by sections that need a subtle entry without scroll-trigger. */
+
+/* ============================================================
+   v3.9b D13 — newsletter input animated gradient border on focus
+   ============================================================ */
+
+@keyframes v39a-border-shift {
+  0%   { background-position:   0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position:   0% 50%; }
+}
+.v39a-newsletter-input:focus,
+.v39a-newsletter-input:focus-visible {
+  outline: none;
+  position: relative;
+  background-image: linear-gradient(var(--bg, #FAF8F5), var(--bg, #FAF8F5)),
+                    linear-gradient(90deg, #9264E5, #EC4899, #9264E5);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  background-size: 100% 100%, 200% 100%;
+  border: 2px solid transparent;
+  animation: v39a-border-shift 4s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .v39a-newsletter-input:focus,
+  .v39a-newsletter-input:focus-visible {
+    animation: none;
+  }
+}
+
+/* ============================================================
+   v3.9b D7 — BundlePushCinematic bundle card hover-lift override
+   ============================================================ */
+.bundle-push-cinematic .cinematic-card {
+  transition:
+    transform 320ms var(--v39a-ease-out, cubic-bezier(0.22, 1, 0.36, 1)),
+    box-shadow 320ms var(--v39a-ease-out, cubic-bezier(0.22, 1, 0.36, 1));
+}
+.bundle-push-cinematic .cinematic-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--v39a-elevation-raised);
+}
+.bundle-push-cinematic .cinematic-card.win:hover {
+  transform: translateY(-12px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bundle-push-cinematic .cinematic-card,
+  .bundle-push-cinematic .cinematic-card:hover,
+  .bundle-push-cinematic .cinematic-card.win:hover {
+    transition: none;
+    transform: none;
+  }
+}
+
+/* ============================================================
+   v3.9b D6 — winning Three Paths card subtle purple glow
+   ============================================================ */
+.three-paths .path-card.win {
+  box-shadow: var(--v39a-elevation-raised);
+}
+
+/* ============================================================
+   v3.9b D11 — founder avatar glow ring sizing
+   ============================================================ */
+.founder .signature .avatar.v39a-pulse-purple {
+  position: relative;
+  isolation: isolate;
+}
