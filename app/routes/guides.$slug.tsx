@@ -21,6 +21,9 @@ import {SectionFade} from '~/components/promptos/SectionFade';
 import {RatingStars} from '~/components/promptos/RatingStars';
 import {AddToCartButton} from '~/components/AddToCartButton';
 import {BuyTrustStrip} from '~/components/promptos/BuyTrustStrip';
+import {ProductGallery} from '~/components/promptos/ProductGallery';
+import {ValueStack} from '~/components/promptos/ValueStack';
+import {ComparisonShell} from '~/components/promptos/ContentShells';
 import {
   JsonLd,
   breadcrumbSchema,
@@ -153,6 +156,24 @@ export default function GuideRoute({loaderData}: Route.ComponentProps) {
           </div>
         </section>
 
+        {/* v3.9b — ProductGallery (Section 1 supplement: V1+V2+V3) */}
+        <ProductGallery
+          slug={guide.slug}
+          name={guide.name}
+          kind="guide"
+          eyebrow={`PLAYBOOK · G${guide.number}`}
+          toc={guide.chapters.map((c) => ({name: c.name, meta: `${c.pageCount} pages`}))}
+          spread={{
+            sectionLabel: `Chapter ${guide.chapters[0]?.number ?? '01'}`,
+            promptTitle: guide.chapters[0]?.name ?? guide.name,
+            promptBody: guide.chapters[0]?.description ?? guide.tagline,
+            proTip: 'The chapter ends with a one-page worksheet you fill in before moving on.',
+          }}
+        />
+
+        {/* v3.9b — Section 2 NEW value stack */}
+        <ValueStack kind="guide" productName={guide.name} />
+
         <WhoForWhoNotFor guide={guide} />
 
         <ThreePathsComparison
@@ -167,6 +188,9 @@ export default function GuideRoute({loaderData}: Route.ComponentProps) {
         <TemplateShowcase guide={guide} />
         <RoadmapTimeline guide={guide} />
         <WhyThisWorks />
+
+        {/* v3.9b — Section 10 SHELL — Comparison vs alternatives */}
+        <ComparisonShell productName={guide.shortName} />
 
         {/* Reviews for this guide */}
         <section style={{padding: '96px 0', background: 'var(--bone)', borderBlock: '1px solid var(--hairline)'}}>

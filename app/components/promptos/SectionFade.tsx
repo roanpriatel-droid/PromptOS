@@ -12,7 +12,7 @@ export function SectionFade({
   delayMs = 0,
   style,
 }: {
-  as?: 'div' | 'section' | 'article' | 'header' | 'footer' | 'blockquote' | 'h1' | 'h2' | 'h3' | 'h4';
+  as?: 'div' | 'section' | 'article' | 'header' | 'footer' | 'blockquote' | 'h1' | 'h2' | 'h3' | 'h4' | 'li' | 'ul' | 'ol' | 'aside' | 'p';
   children: ReactNode;
   className?: string;
   delayMs?: number;
