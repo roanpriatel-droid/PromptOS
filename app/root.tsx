@@ -242,60 +242,94 @@ export function ErrorBoundary() {
 
   const is404 = errorStatus === 404;
 
+  // v3.9c-tactical P8 — branded error pages.
+  // The 404 + 500 share the same atmospheric chrome (hero mesh +
+  // gradient orbs + noise) so they feel like the rest of the site
+  // even at the edge of an unexpected URL.
   return (
-    <main className="notfound">
-      <div className="notfound-inner">
+    <main className="notfound v39a-hero-mesh" style={{position: 'relative', overflow: 'hidden', minHeight: '100vh'}}>
+      {/* Atmospheric primitives — same as v3.9a/b */}
+      <div className="v39a-gradient-orb" data-color="purple" data-intensity="medium" aria-hidden
+        style={{width: 560, height: 560, top: 'calc(20% - 280px)', left: 'calc(15% - 280px)'}} />
+      <div className="v39a-gradient-orb" data-color="pink" data-intensity="medium" aria-hidden
+        style={{width: 520, height: 520, bottom: 'calc(10% - 260px)', right: 'calc(15% - 260px)'}} />
+      <div className="v39a-noise-overlay" aria-hidden />
+
+      <div className="notfound-inner" style={{position: 'relative', zIndex: 2}}>
         <div className="glitch" aria-hidden>{errorStatus}</div>
         <h1>
-          {is404 ? 'This page took a wrong prompt.' : 'Something tripped on our end.'}
+          {is404
+            ? 'This page isn’t here. But the catalog is.'
+            : 'Something broke on our end.'}
         </h1>
         <p>
           {is404
-            ? "It may have moved or never existed. Try one of these instead."
-            : "We hit an error rendering this page. The team has seen worse and the catalog is still up."}
+            ? "It may have moved or never existed. The whole catalog is one click away."
+            : "We’ve been notified. Try again, or shoot us an email."}
         </p>
 
         {is404 && (
           <div className="notfound-cards" aria-label="Suggested destinations">
-            <a href="/packs" className="notfound-card">
+            <a href="/packs" className="notfound-card v39a-hover-lift">
               <div className="notfound-card-eyebrow">Tier 1</div>
               <h3>Prompt Packs</h3>
               <p>Battle-tested prompts for the work you do every day.</p>
               <span className="notfound-card-cta">Browse packs <span aria-hidden>→</span></span>
             </a>
-            <a href="/authority" className="notfound-card">
+            <a href="/authority" className="notfound-card v39a-hover-lift">
               <div className="notfound-card-eyebrow">Tier 2 · New</div>
               <h3>Authority</h3>
               <p>Build an audience. Productize your expertise.</p>
               <span className="notfound-card-cta">Browse Authority <span aria-hidden>→</span></span>
             </a>
-            <a href="/guides" className="notfound-card">
+            <a href="/guides" className="notfound-card v39a-hover-lift">
               <div className="notfound-card-eyebrow">Tier 3</div>
               <h3>Playbooks</h3>
               <p>Real playbooks for the businesses operators are starting.</p>
               <span className="notfound-card-cta">Browse playbooks <span aria-hidden>→</span></span>
             </a>
+            <a href="/bundles" className="notfound-card v39a-hover-lift">
+              <div className="notfound-card-eyebrow">Bundles</div>
+              <h3>All four bundles</h3>
+              <p>Pick the scope, save up to $914 vs. buying separately.</p>
+              <span className="notfound-card-cta">See the bundles <span aria-hidden>→</span></span>
+            </a>
           </div>
         )}
 
-        <form action="/" className="notfound-search" role="search">
-          <input
-            type="search"
-            name="q"
-            placeholder="Search for a pack, playbook, or topic"
-            aria-label="Search the catalog"
-          />
-          <button type="submit">Search</button>
-        </form>
+        {!is404 && (
+          <div className="actions" style={{marginTop: 32}}>
+            <a href="/" className="btn btn-large btn-gradient btn-arrow">
+              Back to the homepage
+            </a>
+            <a href="/contact" className="btn btn-large btn-secondary">
+              Email support
+            </a>
+          </div>
+        )}
 
-        <div className="actions">
-          <a href="/" className="btn btn-large btn-gradient btn-arrow">
-            Back to the homepage
-          </a>
-          <a href="/bundles/everything" className="btn btn-large btn-secondary">
-            See the bundle
-          </a>
-        </div>
+        {is404 && (
+          <>
+            <form action="/" className="notfound-search" role="search">
+              <input
+                type="search"
+                name="q"
+                placeholder="Search for a pack, playbook, or topic"
+                aria-label="Search the catalog"
+              />
+              <button type="submit">Search</button>
+            </form>
+            <div className="actions">
+              <a href="/" className="btn btn-large btn-gradient btn-arrow">
+                Back to the homepage
+              </a>
+              <a href="/bundles/everything" className="btn btn-large btn-secondary">
+                See the bundle
+              </a>
+            </div>
+          </>
+        )}
+
         {errorMessage && !is404 && (
           <pre style={{marginTop: 40, fontSize: 12, color: 'var(--fg-3)', whiteSpace: 'pre-wrap'}}>
             {errorMessage}
