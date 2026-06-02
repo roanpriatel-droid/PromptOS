@@ -1,0 +1,185 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="The Marketer's Pack">
+  <defs>
+    <!-- Base atmospheric background -->
+    <radialGradient id="m-bg" cx="30%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#3B1F6B"/>
+      <stop offset="55%" stop-color="#1F1240"/>
+      <stop offset="100%" stop-color="#100823"/>
+    </radialGradient>
+    <radialGradient id="m-glow-pink" cx="70%" cy="78%" r="55%">
+      <stop offset="0%" stop-color="#EC4899" stop-opacity="0.50"/>
+      <stop offset="60%" stop-color="#EC4899" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="m-glow-purple" cx="22%" cy="22%" r="50%">
+      <stop offset="0%" stop-color="#7E5BD8" stop-opacity="0.45"/>
+      <stop offset="70%" stop-color="#7E5BD8" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Card surface gradient -->
+    <linearGradient id="m-card" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FAF8F5"/>
+      <stop offset="100%" stop-color="#EAE0F5"/>
+    </linearGradient>
+    <linearGradient id="m-card-dark" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#322050"/>
+      <stop offset="100%" stop-color="#1D1138"/>
+    </linearGradient>
+    <linearGradient id="m-card-mid" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#46336F"/>
+      <stop offset="100%" stop-color="#2A1B4E"/>
+    </linearGradient>
+
+    <!-- Featured card border (purple→pink gradient) -->
+    <linearGradient id="m-edge" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A584EC"/>
+      <stop offset="50%" stop-color="#EC4899"/>
+      <stop offset="100%" stop-color="#FF8EC0"/>
+    </linearGradient>
+
+    <!-- Soft shadow filter (drop) -->
+    <filter id="m-soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+    <filter id="m-shadow-l" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="32" stdDeviation="36" flood-color="#0A0418" flood-opacity="0.65"/>
+    </filter>
+    <filter id="m-shadow-m" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="22" stdDeviation="24" flood-color="#0A0418" flood-opacity="0.55"/>
+    </filter>
+    <filter id="m-shadow-s" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#0A0418" flood-opacity="0.45"/>
+    </filter>
+
+    <!-- Glow for featured card -->
+    <filter id="m-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="22" result="g"/>
+      <feMerge>
+        <feMergeNode in="g"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Fractal noise for film-grain overlay -->
+    <filter id="m-noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.95" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1   0 0 0 0.08 0"/>
+    </filter>
+  </defs>
+
+  <!-- Base -->
+  <rect width="1080" height="1080" fill="url(#m-bg)"/>
+  <rect width="1080" height="1080" fill="url(#m-glow-purple)"/>
+  <rect width="1080" height="1080" fill="url(#m-glow-pink)"/>
+
+  <!-- Wordmark + label -->
+  <g transform="translate(72, 80)">
+    <g>
+      <path d="M0 8 L18 22 L0 36" fill="none" stroke="#EC4899" stroke-width="4" stroke-linecap="square"/>
+      <rect x="24" y="6" width="4" height="32" fill="#FAF8F5"/>
+      <text x="42" y="32" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" letter-spacing="-0.3" fill="#FAF8F5">promptos</text>
+    </g>
+    <text x="0" y="76" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" letter-spacing="2.8" fill="rgba(250,248,245,0.55)">THE MARKETER'S PACK</text>
+  </g>
+
+  <!-- Vol number, anchored top-right -->
+  <g transform="translate(1008, 100)" text-anchor="end">
+    <text font-family="'Instrument Serif', Georgia, serif" font-size="32" font-style="italic" fill="rgba(250,248,245,0.50)">Nº</text>
+    <text x="0" y="42" font-family="'Instrument Serif', Georgia, serif" font-size="56" font-weight="500" fill="#FAF8F5">01</text>
+  </g>
+
+  <!-- Fanned cards stage. Cards rotate around the central x=540 y=600 anchor. -->
+
+  <!-- Back card 1 (rotated left, mid-tone) -->
+  <g transform="translate(540, 620) rotate(-14)" filter="url(#m-shadow-l)">
+    <rect x="-270" y="-360" width="540" height="720" rx="32" fill="url(#m-card-dark)"/>
+    <rect x="-270" y="-360" width="540" height="720" rx="32" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1.5"/>
+    <!-- Faint inner content lines -->
+    <g stroke="rgba(165,132,236,0.30)" stroke-width="2" stroke-linecap="round">
+      <line x1="-200" y1="-260" x2="200" y2="-260"/>
+      <line x1="-200" y1="-220" x2="120" y2="-220"/>
+    </g>
+    <g stroke="rgba(255,255,255,0.10)" stroke-width="2" stroke-linecap="round">
+      <line x1="-200" y1="-150" x2="160" y2="-150"/>
+      <line x1="-200" y1="-120" x2="180" y2="-120"/>
+      <line x1="-200" y1="-90"  x2="100" y2="-90"/>
+      <line x1="-200" y1="-30"  x2="140" y2="-30"/>
+      <line x1="-200" y1="0"    x2="180" y2="0"/>
+      <line x1="-200" y1="30"   x2="80"  y2="30"/>
+    </g>
+    <text x="-200" y="-300" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="700" letter-spacing="2.4" fill="rgba(236,72,153,0.85)">PROMPT 14</text>
+  </g>
+
+  <!-- Back card 2 (rotated right, mid-tone) -->
+  <g transform="translate(540, 620) rotate(14)" filter="url(#m-shadow-l)">
+    <rect x="-270" y="-360" width="540" height="720" rx="32" fill="url(#m-card-mid)"/>
+    <rect x="-270" y="-360" width="540" height="720" rx="32" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
+    <g stroke="rgba(255,255,255,0.10)" stroke-width="2" stroke-linecap="round">
+      <line x1="-200" y1="-260" x2="200" y2="-260"/>
+      <line x1="-200" y1="-220" x2="140" y2="-220"/>
+      <line x1="-200" y1="-150" x2="180" y2="-150"/>
+      <line x1="-200" y1="-120" x2="100" y2="-120"/>
+      <line x1="-200" y1="-90"  x2="160" y2="-90"/>
+    </g>
+    <text x="-200" y="-300" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="700" letter-spacing="2.4" fill="rgba(165,132,236,0.85)">PROMPT 27</text>
+  </g>
+
+  <!-- Featured front card (cream, gradient border, prompt-style content) -->
+  <g transform="translate(540, 580)" filter="url(#m-glow)">
+    <!-- gradient border via outer rect -->
+    <rect x="-292" y="-372" width="584" height="744" rx="36" fill="url(#m-edge)" opacity="0.85"/>
+    <g filter="url(#m-shadow-m)">
+      <rect x="-280" y="-360" width="560" height="720" rx="30" fill="url(#m-card)"/>
+    </g>
+    <!-- Top label band -->
+    <g transform="translate(-280, -360)">
+      <rect width="560" height="56" rx="30" fill="rgba(107,70,193,0.10)"/>
+      <text x="40" y="35" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="700" letter-spacing="3" fill="#6B46C1">PROMPT 03 · COLD EMAIL OPENER</text>
+    </g>
+
+    <!-- Prompt body lines -->
+    <g transform="translate(-220, -260)" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="20" fill="#1F1240">
+      <text y="0">You are a [INDUSTRY] founder</text>
+      <text y="38">writing the first line of a</text>
+      <text y="76">cold email to a [PERSONA].</text>
+      <text y="138" fill="#5C426A">Constraint: 14 words max.</text>
+      <text y="176" fill="#5C426A">No questions. No "I." No</text>
+      <text y="214" fill="#5C426A">"hope you're well." Open</text>
+      <text y="252" fill="#5C426A">with the closest pain.</text>
+    </g>
+
+    <!-- Variable pill -->
+    <g transform="translate(-220, 60)">
+      <rect width="160" height="38" rx="19" fill="#6B46C1"/>
+      <text x="80" y="25" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="#FAF8F5">[INDUSTRY]</text>
+    </g>
+    <g transform="translate(-50, 60)">
+      <rect width="150" height="38" rx="19" fill="rgba(236,72,153,0.18)" stroke="#EC4899" stroke-width="1.5"/>
+      <text x="75" y="25" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="#EC4899">[PERSONA]</text>
+    </g>
+
+    <!-- Divider -->
+    <line x1="-220" y1="148" x2="220" y2="148" stroke="rgba(107,70,193,0.20)" stroke-width="1" stroke-dasharray="2 6"/>
+
+    <!-- Bottom example output -->
+    <g transform="translate(-220, 188)" font-family="'Instrument Serif', Georgia, serif" font-size="22" fill="#1F1240">
+      <text y="0" font-style="italic" fill="#6B46C1">Example output ↓</text>
+      <text y="50" font-style="italic">"You ship for hospitals. I</text>
+      <text y="80" font-style="italic">spec'd one last week."</text>
+    </g>
+
+    <!-- Pro tip badge -->
+    <g transform="translate(-220, 290)">
+      <rect width="440" height="44" rx="22" fill="rgba(107,70,193,0.08)"/>
+      <circle cx="22" cy="22" r="8" fill="#EC4899"/>
+      <text x="42" y="29" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" fill="#1F1240">Lead with their pain. Always.</text>
+    </g>
+  </g>
+
+  <!-- Bottom label band -->
+  <g transform="translate(72, 980)">
+    <text font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" letter-spacing="3" fill="rgba(250,248,245,0.45)">65 PROMPTS · 6 SECTIONS · .DOCX + PDF</text>
+  </g>
+
+  <!-- Noise overlay -->
+  <rect width="1080" height="1080" filter="url(#m-noise)" opacity="0.55"/>
+</svg>

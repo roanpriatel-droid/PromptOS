@@ -7,6 +7,7 @@
  */
 
 import type {Pack} from '~/lib/packs';
+import {CoverV39, hasV39Cover} from './CoverV39';
 
 const SERIF = "'Instrument Serif', Georgia, serif";
 const SANS = "'Geist', system-ui, sans-serif";
@@ -15,6 +16,11 @@ const DIM = 'rgba(250,250,250,0.62)';
 const FAINT = 'rgba(255,255,255,0.18)';
 
 export function PackCover({pack}: {pack: Pack}) {
+  // v3.9a Phase B — render the designed cover if one exists for this slug,
+  // otherwise fall back to the original inline-SVG cover below.
+  if (hasV39Cover(pack.slug)) {
+    return <CoverV39 slug={pack.slug} alt={pack.name} />;
+  }
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
