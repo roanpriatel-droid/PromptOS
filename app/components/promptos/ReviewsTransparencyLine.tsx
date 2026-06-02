@@ -1,9 +1,13 @@
+import {CATALOG_STATS} from '~/lib/catalog-stats';
+
 /**
  * One-line transparency note that sits above review section headings.
  * Phase 2B of v3.8a — one honest line, no banners, no long disclaimers.
  *
  * Voice: operator-to-operator. Don't make it cute, don't soften it,
  * don't bury it. Just say the thing.
+ *
+ * v3.9c-tactical: review count now reads from CATALOG_STATS.
  */
 export function ReviewsTransparencyLine() {
   return (
@@ -19,7 +23,7 @@ export function ReviewsTransparencyLine() {
       }}
     >
       Pre-launch operators got Promptos free in exchange for honest
-      feedback. 1,407 reviews. The critical ones are still up.
+      feedback. {CATALOG_STATS.totalReviews.toLocaleString()} reviews. The critical ones are still up.
     </p>
   );
 }

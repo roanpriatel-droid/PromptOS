@@ -133,9 +133,10 @@ export function ProductGallery(props: Props) {
           })}
         </div>
 
-        <p style={{textAlign: 'center', marginTop: 18, fontSize: 12, color: 'var(--fg-3, rgba(250,248,245,0.55))', fontFamily: 'Inter, system-ui, sans-serif', letterSpacing: '1.2px'}}>
-          3 of 5 views shown. Template + results-dashboard previews ship in v3.9c.
-        </p>
+        {/* v3.9c-tactical: removed buyer-visible "3 of 5 views" + version
+            marker. The remaining 2 views (template preview + results
+            dashboard) will be added in a future cut and surfaced via
+            the same thumbnail rail above. */}
       </div>
     </section>
   );

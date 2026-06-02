@@ -30,7 +30,9 @@ import {
   JsonLd,
   breadcrumbSchema,
   productSchema,
+  withReviews,
 } from '~/components/promptos/JsonLd';
+import {getOgImageUrl} from '~/lib/og-images';
 
 const MEGA = BUNDLES[2];
 
@@ -38,6 +40,7 @@ export const meta: Route.MetaFunction = ({data: loaderData}) => {
   if (!loaderData?.pack) return [{title: 'Pack not found · Promptos'}];
   const p = loaderData.pack;
   const url = `https://promptos.store/packs/${p.slug}`;
+  const ogImage = getOgImageUrl(p.slug);
   return [
     {title: `${p.name} · Promptos`},
     {name: 'description', content: p.tagline},
@@ -48,6 +51,12 @@ export const meta: Route.MetaFunction = ({data: loaderData}) => {
     {property: 'product:price:amount', content: String(p.priceUSD)},
     {property: 'product:price:currency', content: 'USD'},
     {name: 'twitter:card', content: 'summary_large_image'},
+    ...(ogImage ? [
+      {property: 'og:image', content: ogImage},
+      {property: 'og:image:width', content: '1200'},
+      {property: 'og:image:height', content: '630'},
+      {name: 'twitter:image', content: ogImage},
+    ] : []),
     {tagName: 'link', rel: 'canonical', href: url},
   ];
 };
@@ -60,11 +69,24 @@ export async function loader({params, context}: Route.LoaderArgs) {
   const shopify = await fetchShopifyProduct(context.storefront, pack.shopifyHandle);
   const related = getRelatedProducts(pack.slug, 3).filter((p) => p.type === 'pack');
   const stats = getReviewStats(pack.id);
-  return {pack, related, stats, shopify};
+  // Top 3 reviews for JSON-LD Review schema (real review content,
+  // never fabricated). Picked deterministically: 5-star, length >= 80,
+  // first three by index.
+  const topReviews = getReviewsForProduct(pack.id)
+    .filter((r) => r.rating === 5 && r.body.length >= 80)
+    .slice(0, 3)
+    .map((r) => ({
+      author: r.name,
+      rating: r.rating,
+      title: r.title,
+      body: r.body,
+      datePublished: r.date,
+    }));
+  return {pack, related, stats, shopify, topReviews};
 }
 
 export default function PackRoute({loaderData}: Route.ComponentProps) {
-  const {pack, related, stats, shopify} = loaderData;
+  const {pack, related, stats, shopify, topReviews} = loaderData;
 
   // ProductGallery inputs derived from existing pack data.
   const galleryToC = pack.sections.map((s) => ({
@@ -105,15 +127,19 @@ export default function PackRoute({loaderData}: Route.ComponentProps) {
     <>
       <JsonLd
         data={[
-          productSchema({
-            name: pack.name,
-            description: pack.tagline,
-            slug: pack.slug,
-            category: 'Packs',
-            priceUSD: pack.priceUSD,
-            reviewCount: stats.count,
-            averageRating: stats.average,
-          }),
+          withReviews(
+            productSchema({
+              name: pack.name,
+              description: pack.tagline,
+              slug: pack.slug,
+              category: 'Packs',
+              priceUSD: pack.priceUSD,
+              reviewCount: stats.count,
+              averageRating: stats.average,
+              image: getOgImageUrl(pack.slug),
+            }),
+            topReviews,
+          ),
           breadcrumbSchema([
             {name: 'Home', path: '/'},
             {name: 'Packs', path: '/packs'},

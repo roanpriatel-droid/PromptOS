@@ -5,14 +5,17 @@ import {NoiseTexture} from '~/components/atmosphere/NoiseTexture';
 /**
  * v3.9b option-2 shells for product-page sections 6, 7, 8, 10.
  *
- * Each shell is fully wired (atmospheric pass, layout, hover states,
- * placeholder count consistent with the spec) but the actual editorial
- * content needs the user's voice. Strings marked CONTENT_NEEDED below
- * are grep-targets — search the codebase for "CONTENT_NEEDED" to find
- * everything outstanding before v3.9c.
+ * v3.9c-tactical update: each shell now renders `null` to buyers when
+ * editorial content hasn't been supplied AND the `published` flag is
+ * false (the default). This hides the previously-leaking
+ * "v3.9c · EDITORIAL CONTENT_NEEDED" pills from production buyers while
+ * keeping the components, props, atmospheric scaffolding, and
+ * CONTENT_NEEDED markers intact in code. When v3.9c-editorial supplies
+ * real content via props (personas, exclusions, outcomes, rows), the
+ * shell renders the published section regardless of the flag.
  *
- * When the user supplies real copy in v3.9c, the shells can stay (just
- * swap the prop strings) — the component scaffolds are correct.
+ * Search the codebase for `CONTENT_NEEDED` to find every editorial slot
+ * outstanding for v3.9c-editorial.
  */
 
 // ============================================================
@@ -28,6 +31,8 @@ type WhoForShellProps = {
   productName: string;
   /** Pass real personas in v3.9c. If omitted, ships the placeholder set. */
   personas?: WhoForPersona[];
+  /** Force-render the shell with placeholder content for previewing. */
+  published?: boolean;
 };
 
 const WHO_FOR_PLACEHOLDER: WhoForPersona[] = [
@@ -37,9 +42,12 @@ const WHO_FOR_PLACEHOLDER: WhoForPersona[] = [
   {line: 'CONTENT_NEEDED · Persona 4 (optional)'},
 ];
 
-export function WhoForShell({productName, personas}: WhoForShellProps) {
-  const list = personas ?? WHO_FOR_PLACEHOLDER;
+export function WhoForShell({productName, personas, published = false}: WhoForShellProps) {
   const usingPlaceholder = !personas;
+  // Hide from buyers when there's no real content and the section is not
+  // explicitly published. Keep CONTENT_NEEDED in code as a grep target.
+  if (usingPlaceholder && !published) return null;
+  const list = personas ?? WHO_FOR_PLACEHOLDER;
   return (
     <section className="v39a-section" style={{padding: '88px 0', background: 'var(--ink-deep, #0F0A1F)', color: '#FAF8F5'}}>
       <GradientOrb color="purple" intensity="soft" size={460} top="20%" left="-4%" />
@@ -84,6 +92,8 @@ type WhoNotForShellProps = {
   productName: string;
   /** 2-3 honest exclusion lines. */
   exclusions?: string[];
+  /** Force-render the shell with placeholder content for previewing. */
+  published?: boolean;
 };
 
 const WHO_NOT_FOR_PLACEHOLDER: string[] = [
@@ -92,9 +102,10 @@ const WHO_NOT_FOR_PLACEHOLDER: string[] = [
   'CONTENT_NEEDED · Exclusion 3 (optional)',
 ];
 
-export function WhoNotForShell({productName, exclusions}: WhoNotForShellProps) {
-  const list = exclusions ?? WHO_NOT_FOR_PLACEHOLDER;
+export function WhoNotForShell({productName, exclusions, published = false}: WhoNotForShellProps) {
   const usingPlaceholder = !exclusions;
+  if (usingPlaceholder && !published) return null;
+  const list = exclusions ?? WHO_NOT_FOR_PLACEHOLDER;
   return (
     <section className="v39a-section" style={{padding: '88px 0', background: 'var(--bone, #FAF8F5)'}}>
       <NoiseTexture />
@@ -142,6 +153,8 @@ export type OutcomeCard = {
 type OutcomesShellProps = {
   productName: string;
   outcomes?: OutcomeCard[];
+  /** Force-render the shell with placeholder content for previewing. */
+  published?: boolean;
 };
 
 const OUTCOMES_PLACEHOLDER: OutcomeCard[] = [
@@ -151,9 +164,10 @@ const OUTCOMES_PLACEHOLDER: OutcomeCard[] = [
   {label: 'CONTENT_NEEDED · Outcome 4 metric', value: 'CONTENT_NEEDED · value or range'},
 ];
 
-export function OutcomesShell({productName, outcomes}: OutcomesShellProps) {
-  const cards = outcomes ?? OUTCOMES_PLACEHOLDER;
+export function OutcomesShell({productName, outcomes, published = false}: OutcomesShellProps) {
   const usingPlaceholder = !outcomes;
+  if (usingPlaceholder && !published) return null;
+  const cards = outcomes ?? OUTCOMES_PLACEHOLDER;
   return (
     <section className="v39a-section" style={{padding: '96px 0', background: 'linear-gradient(180deg, #150828 0%, #0F0A1F 100%)', color: '#FAF8F5'}}>
       <GradientOrb color="pink" intensity="soft" size={520} top="40%" right="-6%" />
@@ -227,6 +241,8 @@ export type ComparisonRow = {
 type ComparisonShellProps = {
   productName: string;
   rows?: ComparisonRow[];
+  /** Force-render the shell with placeholder content for previewing. */
+  published?: boolean;
 };
 
 const COMPARISON_PLACEHOLDER: ComparisonRow[] = [
@@ -237,9 +253,10 @@ const COMPARISON_PLACEHOLDER: ComparisonRow[] = [
   {attribute: 'CONTENT_NEEDED · attribute 5 (e.g. Time to win)', product: 'CONTENT_NEEDED', course: 'CONTENT_NEEDED', free: 'CONTENT_NEEDED', diy: 'CONTENT_NEEDED'},
 ];
 
-export function ComparisonShell({productName, rows}: ComparisonShellProps) {
-  const data = rows ?? COMPARISON_PLACEHOLDER;
+export function ComparisonShell({productName, rows, published = false}: ComparisonShellProps) {
   const usingPlaceholder = !rows;
+  if (usingPlaceholder && !published) return null;
+  const data = rows ?? COMPARISON_PLACEHOLDER;
   return (
     <section className="v39a-section" style={{padding: '96px 0', background: 'var(--bone, #FAF8F5)'}}>
       <GradientOrb color="purple" intensity="soft" size={440} top="20%" right="-4%" />

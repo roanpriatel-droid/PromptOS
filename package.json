@@ -10,7 +10,11 @@
     "preview": "shopify hydrogen preview --build",
     "lint": "eslint --no-error-on-unmatched-pattern .",
     "typecheck": "react-router typegen && tsc --noEmit",
-    "codegen": "shopify hydrogen codegen && react-router typegen"
+    "codegen": "shopify hydrogen codegen && react-router typegen",
+    "audit-links": "node scripts/audit-internal-links.mjs",
+    "generate-og": "node scripts/generate-og-images.mjs",
+    "snapshot-page": "node scripts/snapshot-page.mjs",
+    "verify-page": "node scripts/verify-page.mjs"
   },
   "prettier": "@shopify/prettier-config",
   "dependencies": {
@@ -28,9 +32,13 @@
     "@eslint/compat": "^1.2.5",
     "@eslint/eslintrc": "^3.2.0",
     "@eslint/js": "^9.18.0",
+    "@fontsource/geist": "^5.2.9",
+    "@fontsource/instrument-serif": "^5.2.8",
+    "@fontsource/jetbrains-mono": "^5.2.8",
     "@graphql-codegen/cli": "5.0.2",
     "@react-router/dev": "7.14.0",
     "@react-router/fs-routes": "7.14.0",
+    "@resvg/resvg-js": "^2.6.2",
     "@shopify/cli": "3.93.2",
     "@shopify/hydrogen-codegen": "0.3.3",
     "@shopify/mini-oxygen": "4.1.0",

@@ -3,7 +3,9 @@ import {BundleSelector} from '~/components/promptos/BundleSelector';
 import {CompareBundlesTable} from '~/components/promptos/CompareBundlesTable';
 import {SectionFade} from '~/components/promptos/SectionFade';
 import {BUNDLES, PACKS, GUIDES, AUTHORITY, MEGA_BUNDLE} from '~/lib/catalog';
+import {CATALOG_STATS} from '~/lib/catalog-stats';
 import {AnimatedCounter} from '~/components/promptos/AnimatedCounter';
+import {JsonLd, itemListSchema, SITE_URL} from '~/components/promptos/JsonLd';
 
 export const meta: Route.MetaFunction = () => [
   {title: 'Bundles · Promptos'},
@@ -26,6 +28,16 @@ export default function BundlesIndex() {
     AUTHORITY.reduce((s, a) => s + (a.templateCount ?? 0), 0);
   return (
     <main id="main" className="page is-active" data-page="bundles-index">
+      <JsonLd
+        data={itemListSchema({
+          name: 'Promptos Bundles',
+          items: BUNDLES.map((b) => ({
+            name: b.name,
+            url: `${SITE_URL}/bundles/${b.slug}`,
+            description: b.tagline,
+          })),
+        })}
+      />
       <section className="catalog-hero">
         <SectionFade as="div" className="catalog-hero-inner">
           <span className="label section-eyebrow">Bundles</span>
@@ -51,7 +63,7 @@ export default function BundlesIndex() {
               <AnimatedCounter to={totalTemplates} /> templates.
             </h2>
             <p style={{color: 'var(--fg-3)', fontSize: 17, marginTop: 12}}>
-              Across 20 products. One purchase. Lifetime updates on every one.
+              Across {CATALOG_STATS.totalProductsPublicClaim} products. One purchase. Lifetime updates on every one.
             </p>
           </SectionFade>
         </div>

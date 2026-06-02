@@ -58,7 +58,7 @@ export function ProductHeroV2({
           <BuyTrustStrip />
           <p className="product-upsell">
             Or get all 7 packs for ${BUNDLE.priceUSD}.{' '}
-            <Link to="/packs/complete-bundle" prefetch="intent">See the bundle →</Link>
+            <Link to="/bundles/packs" prefetch="intent">See the bundle →</Link>
           </p>
 
           <div className="product-quickstats">

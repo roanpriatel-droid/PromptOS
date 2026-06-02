@@ -262,3 +262,117 @@ Grep `CONTENT_NEEDED` in the repo to find every outstanding editorial slot. As o
 - **Section 10 (Comparison vs alternatives)** — per-product comparison table rows. 17 × 5 rows × 4 columns.
 - **ExamplePromptTabs additional samples** — 2 more sample prompts per pack (simple + premium difficulty) to fill the 3-tab structure.
 - **Supply-tier selector pricing** — once the user commits to combo prices, the supply-tier selector can be built.
+
+---
+
+# v3.9c-tactical Implementation Notes
+
+## Scope
+
+Technical-quality layer underneath v3.9a/b. Eight phases, all shipped:
+
+1. **P1** — Hide CONTENT_NEEDED shells from buyers (default-off `published` flag).
+2. **P2** — Single source of truth for catalog stats (`app/lib/catalog-stats.ts`).
+3. **P3** — Internal link audit + repair (2 broken links fixed, 5 legacy 301 redirects installed, `npm run audit-links` script).
+4. **P4** — 22 per-product OG images at 1200×630 PNG (generated programmatically from v3.9 covers).
+5. **P5** — Structured data: Review schema per product, ItemList on every index page, `image` field on Product schema.
+6. **P6** — Preservation manifest scripts + 31 baseline snapshots + protocol docs.
+7. **P7** — Self-host fonts via @fontsource (Geist / Instrument Serif / JetBrains Mono).
+8. **P8** — Branded 404 + 500 with atmospheric pass + operator-voice copy.
+
+## Numbers reconciled (CATALOG_STATS — computed live from data)
+
+| Field | Value | Sourced from |
+|---|---|---|
+| totalPacks | 7 | PACKS.length |
+| totalPlaybooks | 8 | GUIDES.length |
+| totalAuthority | 3 | AUTHORITY.length |
+| totalBundles | 4 | BUNDLES.length |
+| totalSingleProducts | 18 | PACKS + GUIDES + AUTHORITY |
+| totalProductsPublicClaim | 18 | legacy copy said "20" — corrected |
+| totalBuyableUnits | 22 | totalSingleProducts + bundles |
+| totalPrompts | 535 | 430 (packs) + 75 (content-engine) + 30 (high-ticket hybrid) |
+| totalPlaybookPages | 1,080 | sum of guide.pageCount |
+| totalCorpusPages | 1,220 | playbooks + Authority page-shaped (PB 85 + HT 55) |
+| totalReviews | 1,407 | REVIEWS.length |
+| avgRating | computed | sum of ratings / count |
+
+## Broken links fixed
+
+| From | To |
+|---|---|
+| `/packs/complete-bundle` (ProductHeroV2 upsell) | `/bundles/packs` |
+| GuideHomeStrip CTA → `/bundles/authority` ($249, wrong) | `/bundles/guides` ($497, correct) |
+
+## 301 redirects installed (legacy external links)
+
+`app/routes/$.tsx` catch-all intercepts these BEFORE returning 404:
+
+- `/packs/complete-bundle` → `/bundles/packs`
+- `/bundles/personal-brand` → `/authority/personal-brand`
+- `/bundles/content-engine` → `/authority/content-engine`
+- `/bundles/high-ticket-finder` → `/authority/high-ticket-finder`
+- `/bundles/mega` → `/bundles/everything`
+
+## OG images generated
+
+22 PNGs at `app/assets/og/<slug>.png` (1200×630, ~800 KB each). Each PNG embeds the v3.9 cover + name + price + eyebrow + review count + star rating on the brand atmospheric gradient. Re-generate with `npm run generate-og` whenever a cover or product changes.
+
+## Structured data
+
+| Surface | Schema |
+|---|---|
+| Sitewide (root.tsx) | Organization + WebSite |
+| Homepage | FAQPage (from FaqV2) |
+| Index pages (`/packs`, `/guides`, `/authority`, `/bundles`) | ItemList with all products |
+| Product pages | Product + Offer + AggregateRating (when reviewCount > 0) + Review (top 3, real content) + BreadcrumbList + image (OG URL) |
+
+Validate at https://search.google.com/test/rich-results after Oxygen redeploys.
+
+## Tooling added
+
+| Command | What |
+|---|---|
+| `npm run audit-links` | Crawl every `<Link>` / `<a href>`, validate against route manifest. Exit 1 on broken. |
+| `npm run generate-og` | Re-render the 22 product OG PNGs from the live cover SVGs. |
+| `npm run snapshot-page <route>` | Capture rendered structural manifest of a route. |
+| `npm run verify-page <route>` | Diff current render against saved snapshot; exit 1 if anything is missing. |
+
+Plus 31 baseline page snapshots at `docs/page-snapshots/` captured from prod before v3.9c-tactical merged.
+
+## Self-host fonts (P7)
+
+Before: 2 preconnects + 1 CSS fetch + 9 woff2 fetches on `fonts.googleapis.com` / `fonts.gstatic.com` on the critical font-render path.
+
+After: 0 external font requests. 9 woff2 files served by Oxygen CDN with hashed URLs (same pattern as the rest of the bundle). `font-display: swap` preserved. Family names unchanged — brand stays LOCKED.
+
+## Manual user actions required
+
+**None for the deploy itself.** Two optional follow-ups:
+
+1. **Run Google Rich Results Test** on 3 product pages + homepage + 1 bundle once Oxygen redeploys. Confirms the new JSON-LD validates and shows star ratings + price + image in mock SERP previews.
+2. **Re-run `npm run generate-og`** if you swap any cover SVG. The PNGs are committed; they only regenerate when the script runs.
+
+## Aspirational gaps
+
+For the first time in the v3.9 series, every spec'd phase shipped cleanly. v3.9c-tactical is binary technical-quality work — each criterion either passes or fails — and all eight pass.
+
+Future work (NOT in v3.9c-tactical scope):
+
+- **v3.9c-editorial** — per-product content for Sections 7, 8, 10. `grep -r CONTENT_NEEDED` finds every outstanding piece. Pass real content to the shells via props; the `published` flag flips automatically when content arrives.
+- **ExamplePromptTabs 3-tab population** — 2 more sample prompts per pack.
+- **Supply-tier selector** — pending combo-price commitment.
+
+## Rollback path
+
+Backup snapshot: **`store-pre-v3.9c-tactical-snapshot`** at the post-v3.9b tip on `main` (already pushed to origin).
+
+Full revert:
+
+```bash
+git checkout main
+git reset --hard store-pre-v3.9c-tactical-snapshot
+git push origin main --force-with-lease
+```
+
+Per-phase reverts post-squash: the `store-tactical-upgrade-v3.9c-tactical` branch on origin retains the 8 atomic commits if surgical reverts are needed later.

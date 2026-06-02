@@ -2,6 +2,7 @@ import {useSearchParams} from 'react-router';
 import {useMemo} from 'react';
 import type {Route} from './+types/packs._index';
 import {PACKS} from '~/lib/catalog';
+import {CATALOG_STATS} from '~/lib/catalog-stats';
 import {Link} from 'react-router';
 import {PackCover} from '~/components/promptos/PackCover';
 import {SectionFade} from '~/components/promptos/SectionFade';
@@ -9,13 +10,13 @@ import {BundleSelector} from '~/components/promptos/BundleSelector';
 import {RatingStars} from '~/components/promptos/RatingStars';
 import {getReviewStats} from '~/lib/reviews';
 import {ProductFilters, PACK_FILTERS, filterPacks} from '~/components/promptos/ProductFilters';
+import {JsonLd, itemListSchema, SITE_URL} from '~/components/promptos/JsonLd';
 
 export const meta: Route.MetaFunction = () => [
   {title: 'Prompt Packs · Promptos'},
   {
     name: 'description',
-    content:
-      'Seven battle-tested prompt packs for the work you already do. 430 prompts across marketing, writing, code, business operations, and AI workflows.',
+    content: `${CATALOG_STATS.totalPacks} battle-tested prompt packs for the work you already do. ${CATALOG_STATS.promptsFromPacks} prompts across marketing, writing, code, business operations, and AI workflows.`,
   },
 ];
 
@@ -25,12 +26,22 @@ export default function PacksIndex() {
 
   return (
     <main id="main" className="page is-active" data-page="packs-index">
+      <JsonLd
+        data={itemListSchema({
+          name: 'Promptos Prompt Packs',
+          items: PACKS.map((p) => ({
+            name: p.name,
+            url: `${SITE_URL}/packs/${p.slug}`,
+            description: p.tagline,
+          })),
+        })}
+      />
       <section className="catalog-hero">
         <SectionFade as="div" className="catalog-hero-inner">
           <span className="label section-eyebrow">Prompt Packs</span>
           <h1>Battle-tested prompts. Built for specific jobs.</h1>
           <p>
-            Seven packs, 430 prompts. Each pack solves one job: marketing, writing, code, business
+            {CATALOG_STATS.totalPacks} packs, {CATALOG_STATS.promptsFromPacks} prompts. Each pack solves one job: marketing, writing, code, business
             operations, AI workflows. All prompts ship as editable .docx and work with every major model.
           </p>
         </SectionFade>

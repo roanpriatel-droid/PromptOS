@@ -10,6 +10,7 @@ import {
   fetchShopifyProduct,
   type ShopifyEnrichment,
 } from '~/lib/catalog';
+import {CATALOG_STATS} from '~/lib/catalog-stats';
 import {AuthorityCover} from '~/components/promptos/AuthorityCover';
 import {ReviewsTransparencyLine} from '~/components/promptos/ReviewsTransparencyLine';
 /** Deterministic-from-day-of-week scarcity number. Cycles each day, feels real. */
@@ -43,12 +44,15 @@ import {
   JsonLd,
   breadcrumbSchema,
   productSchema,
+  withReviews,
 } from '~/components/promptos/JsonLd';
+import {getOgImageUrl} from '~/lib/og-images';
 
 export const meta: Route.MetaFunction = ({data: loaderData}) => {
   if (!loaderData?.bundle) return [{title: 'Bundle not found · Promptos'}];
   const b = loaderData.bundle;
   const url = `https://promptos.store/bundles/${b.slug}`;
+  const ogImage = getOgImageUrl(b.slug);
   return [
     {title: `${b.name} · Promptos`},
     {name: 'description', content: b.tagline},
@@ -59,6 +63,12 @@ export const meta: Route.MetaFunction = ({data: loaderData}) => {
     {property: 'product:price:amount', content: String(b.priceUSD)},
     {property: 'product:price:currency', content: 'USD'},
     {name: 'twitter:card', content: 'summary_large_image'},
+    ...(ogImage ? [
+      {property: 'og:image', content: ogImage},
+      {property: 'og:image:width', content: '1200'},
+      {property: 'og:image:height', content: '630'},
+      {name: 'twitter:image', content: ogImage},
+    ] : []),
     {tagName: 'link', rel: 'canonical', href: url},
   ];
 };
@@ -71,24 +81,38 @@ export async function loader({params, context}: Route.LoaderArgs) {
   const shopify = await fetchShopifyProduct(context.storefront, bundle.shopifyHandle);
   const reviews = getReviewsForProduct(bundle.id);
   const stats = getReviewStats(bundle.id);
-  return {bundle, reviews, stats, shopify};
+  const topReviews = reviews
+    .filter((r) => r.rating === 5 && r.body.length >= 80)
+    .slice(0, 3)
+    .map((r) => ({
+      author: r.name,
+      rating: r.rating,
+      title: r.title,
+      body: r.body,
+      datePublished: r.date,
+    }));
+  return {bundle, reviews, stats, shopify, topReviews};
 }
 
 export default function BundleRoute({loaderData}: Route.ComponentProps) {
-  const {bundle, stats, shopify} = loaderData;
+  const {bundle, stats, shopify, topReviews} = loaderData;
   return (
     <>
       <JsonLd
         data={[
-          productSchema({
-            name: bundle.name,
-            description: bundle.tagline,
-            slug: bundle.slug,
-            category: 'Bundles',
-            priceUSD: bundle.priceUSD,
-            reviewCount: stats.count,
-            averageRating: stats.average,
-          }),
+          withReviews(
+            productSchema({
+              name: bundle.name,
+              description: bundle.tagline,
+              slug: bundle.slug,
+              category: 'Bundles',
+              priceUSD: bundle.priceUSD,
+              reviewCount: stats.count,
+              averageRating: stats.average,
+              image: getOgImageUrl(bundle.slug),
+            }),
+            topReviews,
+          ),
           breadcrumbSchema([
             {name: 'Home', path: '/'},
             {name: 'Bundles', path: '/bundles'},
@@ -185,7 +209,7 @@ function PacksBundlePage({stats, shopify}: {stats: ReturnType<typeof getReviewSt
 
       <section className="celebration">
         <SectionFade as="div">
-          <div className="num"><AnimatedCounter to={430} /></div>
+          <div className="num"><AnimatedCounter to={CATALOG_STATS.promptsFromPacks} /></div>
           <div className="sub">Tested. Editable. Yours.</div>
         </SectionFade>
       </section>
@@ -339,7 +363,7 @@ function EverythingPage({stats, shopify}: {stats: ReturnType<typeof getReviewSta
       <section className="bundle-hero-v2" style={{padding: '160px 0 96px'}}>
         <div className="bundle-hero-v2-mesh" aria-hidden />
         <div className="bundle-hero-v2-inner">
-          <span className="label">The mega bundle · all 20 products</span>
+          <span className="label">The mega bundle · all {CATALOG_STATS.totalProductsPublicClaim} products</span>
           <h1>
             Everything Promptos makes. <em>One investment.</em>
           </h1>

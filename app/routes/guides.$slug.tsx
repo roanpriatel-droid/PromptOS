@@ -28,7 +28,9 @@ import {
   JsonLd,
   breadcrumbSchema,
   productSchema,
+  withReviews,
 } from '~/components/promptos/JsonLd';
+import {getOgImageUrl} from '~/lib/og-images';
 
 const MEGA = BUNDLES[2];
 
@@ -36,6 +38,7 @@ export const meta: Route.MetaFunction = ({data: loaderData}) => {
   if (!loaderData?.guide) return [{title: 'Playbook not found · Promptos'}];
   const g = loaderData.guide;
   const url = `https://promptos.store/guides/${g.slug}`;
+  const ogImage = getOgImageUrl(g.slug);
   return [
     {title: `${g.name} · Promptos`},
     {name: 'description', content: g.tagline},
@@ -46,6 +49,12 @@ export const meta: Route.MetaFunction = ({data: loaderData}) => {
     {property: 'product:price:amount', content: String(g.priceUSD)},
     {property: 'product:price:currency', content: 'USD'},
     {name: 'twitter:card', content: 'summary_large_image'},
+    ...(ogImage ? [
+      {property: 'og:image', content: ogImage},
+      {property: 'og:image:width', content: '1200'},
+      {property: 'og:image:height', content: '630'},
+      {name: 'twitter:image', content: ogImage},
+    ] : []),
     {tagName: 'link', rel: 'canonical', href: url},
   ];
 };
@@ -58,25 +67,39 @@ export async function loader({params, context}: Route.LoaderArgs) {
   const shopify = await fetchShopifyProduct(context.storefront, guide.shopifyHandle);
   const reviews = getReviewsForProduct(guide.id);
   const stats = getReviewStats(guide.id);
-  return {guide, reviews, stats, shopify};
+  const topReviews = reviews
+    .filter((r) => r.rating === 5 && r.body.length >= 80)
+    .slice(0, 3)
+    .map((r) => ({
+      author: r.name,
+      rating: r.rating,
+      title: r.title,
+      body: r.body,
+      datePublished: r.date,
+    }));
+  return {guide, reviews, stats, shopify, topReviews};
 }
 
 export default function GuideRoute({loaderData}: Route.ComponentProps) {
-  const {guide, stats, shopify} = loaderData;
+  const {guide, stats, shopify, topReviews} = loaderData;
   const canBuy = !!shopify?.variantId && shopify.availableForSale;
   return (
     <>
       <JsonLd
         data={[
-          productSchema({
-            name: guide.name,
-            description: guide.tagline,
-            slug: guide.slug,
-            category: 'Playbooks',
-            priceUSD: guide.priceUSD,
-            reviewCount: stats.count,
-            averageRating: stats.average,
-          }),
+          withReviews(
+            productSchema({
+              name: guide.name,
+              description: guide.tagline,
+              slug: guide.slug,
+              category: 'Playbooks',
+              priceUSD: guide.priceUSD,
+              reviewCount: stats.count,
+              averageRating: stats.average,
+              image: getOgImageUrl(guide.slug),
+            }),
+            topReviews,
+          ),
           breadcrumbSchema([
             {name: 'Home', path: '/'},
             {name: 'Playbooks', path: '/guides'},

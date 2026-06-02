@@ -5,6 +5,7 @@ import {AuthorityCard} from '~/components/promptos/AuthorityCard';
 import {AuthorityCover} from '~/components/promptos/AuthorityCover';
 import {SectionFade} from '~/components/promptos/SectionFade';
 import {BundleSelector} from '~/components/promptos/BundleSelector';
+import {JsonLd, itemListSchema, SITE_URL} from '~/components/promptos/JsonLd';
 
 export const meta: Route.MetaFunction = () => [
   {title: 'Authority · Promptos'},
@@ -18,6 +19,16 @@ export const meta: Route.MetaFunction = () => [
 export default function AuthorityIndex() {
   return (
     <main id="main" className="page is-active" data-page="authority-index">
+      <JsonLd
+        data={itemListSchema({
+          name: 'Promptos Authority Products',
+          items: AUTHORITY.map((a) => ({
+            name: a.name,
+            url: `${SITE_URL}/authority/${a.slug}`,
+            description: a.tagline,
+          })),
+        })}
+      />
       <section className="catalog-hero">
         <SectionFade as="div" className="catalog-hero-inner">
           <span className="label section-eyebrow">Authority</span>

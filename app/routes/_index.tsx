@@ -1,4 +1,5 @@
 import type {Route} from './+types/_index';
+import {CATALOG_STATS} from '~/lib/catalog-stats';
 import {HeroV2} from '~/components/promptos/HeroV2';
 import {MarqueeStrip} from '~/components/promptos/MarqueeStrip';
 import {TwoSidesSection} from '~/components/promptos/TwoSidesSection';
@@ -17,15 +18,15 @@ import {FounderNote} from '~/components/promptos/FounderNote';
 import {FaqV2} from '~/components/promptos/FaqV2';
 import {NewsletterCTA} from '~/components/promptos/NewsletterCTA';
 
+const {totalProductsPublicClaim, totalPrompts, totalPlaybookPages} = CATALOG_STATS;
+const META_DESCRIPTION = `${totalProductsPublicClaim} products. ${totalPrompts} prompts. ${totalPlaybookPages.toLocaleString()}+ pages of playbooks. Built for operators who use AI every day and want to ship faster. Works with Claude, ChatGPT, Gemini, Grok, and every major LLM.`;
+const OG_DESCRIPTION = `${totalProductsPublicClaim} products. ${totalPrompts} prompts. ${totalPlaybookPages.toLocaleString()}+ pages of playbooks. Built for operators who ship every day.`;
+
 export const meta: Route.MetaFunction = () => [
   {title: 'Promptos · Prompts and playbooks that actually work'},
-  {
-    name: 'description',
-    content:
-      '20 products. 535 prompts. 1,080+ pages of playbooks. Built for operators who use AI every day and want to ship faster. Works with Claude, ChatGPT, Gemini, Grok, and every major LLM.',
-  },
+  {name: 'description', content: META_DESCRIPTION},
   {property: 'og:title', content: 'Promptos · Prompts and playbooks that actually work'},
-  {property: 'og:description', content: '20 products. 535 prompts. 1,080+ pages of playbooks. Built for operators who ship every day.'},
+  {property: 'og:description', content: OG_DESCRIPTION},
   {property: 'og:type', content: 'website'},
   {property: 'og:url', content: 'https://promptos.store/'},
   {name: 'twitter:card', content: 'summary_large_image'},

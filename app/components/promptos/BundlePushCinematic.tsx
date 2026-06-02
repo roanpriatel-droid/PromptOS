@@ -1,5 +1,6 @@
 import {Link} from 'react-router';
 import {BUNDLES, PACKS, GUIDES, AUTHORITY, AUTHORITY_BUNDLE, MEGA_BUNDLE, PACKS_BUNDLE, GUIDES_BUNDLE} from '~/lib/catalog';
+import {CATALOG_STATS} from '~/lib/catalog-stats';
 import {LaunchDiscountLine} from './LaunchDiscountLine';
 import {CoverV39, hasV39Cover} from './CoverV39';
 import {PackCover} from './PackCover';
@@ -65,7 +66,7 @@ export function BundlePushCinematic() {
               <div className="meta">
                 <div className="kicker">For daily tools</div>
                 <h3>{PACKS_BUNDLE.name}</h3>
-                <p className="desc">All 7 packs · 430 prompts · save ${PACKS_BUNDLE.savings}.</p>
+                <p className="desc">All {CATALOG_STATS.totalPacks} packs · {CATALOG_STATS.promptsFromPacks} prompts · save ${PACKS_BUNDLE.savings}.</p>
                 <div className="price-row">
                   <span className="price">${PACKS_BUNDLE.priceUSD}</span>
                   <span className="strike">${PACKS_BUNDLE.individualTotal}</span>
@@ -150,7 +151,7 @@ export function BundlePushCinematic() {
                 </div>
               )}
               <div className="meta">
-                <div className="kicker">All 20 products</div>
+                <div className="kicker">All {CATALOG_STATS.totalProductsPublicClaim} products</div>
                 <h3>{MEGA_BUNDLE.name}</h3>
                 <p className="desc">
                   Every pack + Authority + playbook. {totalPrompts} prompts + {totalPages}+ pages. Save ${MEGA_BUNDLE.savings}.

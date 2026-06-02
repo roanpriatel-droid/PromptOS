@@ -1,5 +1,6 @@
 import {Link} from 'react-router';
 import {PACKS, PACKS_BUNDLE} from '~/lib/catalog';
+import {CATALOG_STATS} from '~/lib/catalog-stats';
 import {getReviewStats} from '~/lib/reviews';
 import {PackCover} from './PackCover';
 import {BundleCover} from './BundleCover';
@@ -106,7 +107,7 @@ function BundleFeatureRow() {
           <span className="badge">Best value</span>
           <h3>The Packs Bundle</h3>
           <p className="lede">
-            All seven packs. {PACKS_BUNDLE.includesProductIds.length === PACKS.length ? '430 prompts' : ''}. One file you can edit, fork, and ship. Pay once. Updated forever.
+            All {CATALOG_STATS.totalPacks} packs. {PACKS_BUNDLE.includesProductIds.length === PACKS.length ? `${CATALOG_STATS.promptsFromPacks} prompts` : ''}. One file you can edit, fork, and ship. Pay once. Updated forever.
           </p>
           <div className="bundle-feature-price">
             <span className="strike">${PACKS_BUNDLE.individualTotal}</span>

@@ -1546,15 +1546,27 @@ const guidesIndividualTotal = GUIDES.reduce((s, g) => s + g.priceUSD, 0);
 const authorityIndividualTotal = AUTHORITY.reduce((s, a) => s + a.priceUSD, 0);
 const allIndividualTotal = packsIndividualTotal + guidesIndividualTotal + authorityIndividualTotal;
 
+// v3.9c-tactical: computed stat helpers used by bundle headlines.
+// catalog-stats.ts re-exports these via a non-circular path; we mirror
+// the same arithmetic locally so the bundle metadata stays
+// self-contained.
+const packsPromptTotal = PACKS.reduce((s, p) => s + p.promptCount, 0);
+const guidesPageTotal = GUIDES.reduce((s, g) => s + g.pageCount, 0);
+const authorityPromptTotal = AUTHORITY.reduce((s, a) => s + (a.promptCount ?? 0), 0);
+const authorityPageTotal = AUTHORITY.reduce((s, a) => s + (a.pageCount ?? 0), 0);
+const allSinglePromptTotal = packsPromptTotal + authorityPromptTotal;
+const allSinglePageTotal = guidesPageTotal + authorityPageTotal;
+const totalSingleProductsClaim = PACKS.length + GUIDES.length + AUTHORITY.length;
+
 export const PACKS_BUNDLE: Bundle = {
   id: 'packs',
   type: 'bundle',
   slug: 'packs',
   shopifyHandle: 'packs',
   name: 'The Packs Bundle',
-  headline: 'All 7 packs. 430 prompts. Save $154.',
+  headline: `All ${PACKS.length} packs. ${packsPromptTotal} prompts. Save $${packsIndividualTotal - 99}.`,
   shortName: 'Packs Bundle',
-  tagline: 'All 7 prompt packs. 430 prompts. One price.',
+  tagline: `All ${PACKS.length} prompt packs. ${packsPromptTotal} prompts. One price.`,
   description:
     'Every prompt pack we ship, in one library. Built for people who use AI across more than one job, and who are tired of rebuilding the same prompts from scratch.',
   priceUSD: 99,
@@ -1564,7 +1576,7 @@ export const PACKS_BUNDLE: Bundle = {
   savings: packsIndividualTotal - 99,
   tone: 'ink',
   color: '#1F2937',
-  highlight: `All 7 packs · 430 prompts · save $${packsIndividualTotal - 99}`,
+  highlight: `All ${PACKS.length} packs · ${packsPromptTotal} prompts · save $${packsIndividualTotal - 99}`,
 };
 
 export const AUTHORITY_BUNDLE: Bundle = {
@@ -1573,7 +1585,7 @@ export const AUTHORITY_BUNDLE: Bundle = {
   slug: 'authority',
   shopifyHandle: 'authority',
   name: 'The Authority Bundle',
-  headline: 'Build the audience. Productize it. Save $34.',
+  headline: `Build the audience. Productize it. Save $${authorityIndividualTotal - 249}.`,
   shortName: 'Authority Bundle',
   tagline: 'Build your audience. Productize your expertise. One bundle.',
   description:
@@ -1585,7 +1597,7 @@ export const AUTHORITY_BUNDLE: Bundle = {
   savings: authorityIndividualTotal - 249,
   tone: 'pink',
   color: '#9D174D',
-  highlight: `All 3 Authority products · save $${authorityIndividualTotal - 249}`,
+  highlight: `All ${AUTHORITY.length} Authority products · save $${authorityIndividualTotal - 249}`,
 };
 
 export const GUIDES_BUNDLE: Bundle = {
@@ -1594,9 +1606,9 @@ export const GUIDES_BUNDLE: Bundle = {
   slug: 'guides',
   shopifyHandle: 'guides',
   name: 'The Guides Bundle',
-  headline: 'Every playbook. 1,220+ pages. Save $679.',
+  headline: `Every playbook. ${guidesPageTotal.toLocaleString()}+ pages. Save $${guidesIndividualTotal - 497}.`,
   shortName: 'Guides Bundle',
-  tagline: 'Every Promptos playbook. One price. 600+ pages of real frameworks.',
+  tagline: `Every Promptos playbook. One price. ${guidesPageTotal.toLocaleString()}+ pages of real frameworks.`,
   description:
     'All 8 playbooks bundled at the lowest possible price. For operators choosing one path to a real business, or hedging between two.',
   priceUSD: 497,
@@ -1606,7 +1618,7 @@ export const GUIDES_BUNDLE: Bundle = {
   savings: guidesIndividualTotal - 497,
   tone: 'midnight',
   color: '#1E1B4B',
-  highlight: `All 8 guides · 600+ pages · save $${guidesIndividualTotal - 497}`,
+  highlight: `All ${GUIDES.length} guides · ${guidesPageTotal.toLocaleString()}+ pages · save $${guidesIndividualTotal - 497}`,
 };
 
 /**
@@ -1630,11 +1642,10 @@ export const MEGA_BUNDLE: Bundle = {
   slug: 'everything',
   shopifyHandle: 'everything',
   name: 'Everything',
-  headline: 'Every product. One investment. Save $914.',
+  headline: `Every product. One investment. Save $${allIndividualTotal - 798}.`,
   shortName: 'Everything',
   tagline: 'Every pack. Every playbook. Every Authority product. One investment. Done.',
-  description:
-    'All 20 Promptos products in one library, every pack, every playbook, every Authority product. For operators who are running, building, and broadcasting at the same time.',
+  description: `All ${totalSingleProductsClaim} Promptos products in one library, every pack, every playbook, every Authority product. For operators who are running, building, and broadcasting at the same time.`,
   priceUSD: 798,
   format: 'mixed',
   includesProductIds: [
@@ -1646,7 +1657,7 @@ export const MEGA_BUNDLE: Bundle = {
   savings: allIndividualTotal - 798,
   tone: 'midnight',
   color: '#0F0A1F',
-  highlight: `All 20 products · ${PACKS.reduce((s, p) => s + p.promptCount, 0) + (AUTHORITY[1].promptCount ?? 0) + (AUTHORITY[2].promptCount ?? 0)} prompts + ${GUIDES.reduce((s, g) => s + g.pageCount, 0)}+ pages · save $${allIndividualTotal - 798}`,
+  highlight: `All ${totalSingleProductsClaim} products · ${allSinglePromptTotal} prompts + ${guidesPageTotal.toLocaleString()}+ pages · save $${allIndividualTotal - 798}`,
 };
 
 export const BUNDLES: Bundle[] = [PACKS_BUNDLE, AUTHORITY_BUNDLE, GUIDES_BUNDLE, MEGA_BUNDLE];

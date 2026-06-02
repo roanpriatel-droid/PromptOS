@@ -50,7 +50,9 @@ import {
   JsonLd,
   breadcrumbSchema,
   productSchema,
+  withReviews,
 } from '~/components/promptos/JsonLd';
+import {getOgImageUrl} from '~/lib/og-images';
 
 const MEGA = BUNDLES[3];
 
@@ -58,6 +60,7 @@ export const meta: Route.MetaFunction = ({data: loaderData}) => {
   if (!loaderData?.product) return [{title: 'Authority product not found · Promptos'}];
   const a = loaderData.product;
   const url = `https://promptos.store/authority/${a.slug}`;
+  const ogImage = getOgImageUrl(a.slug);
   return [
     {title: `${a.name} · Promptos`},
     {name: 'description', content: a.tagline},
@@ -68,6 +71,12 @@ export const meta: Route.MetaFunction = ({data: loaderData}) => {
     {property: 'product:price:amount', content: String(a.priceUSD)},
     {property: 'product:price:currency', content: 'USD'},
     {name: 'twitter:card', content: 'summary_large_image'},
+    ...(ogImage ? [
+      {property: 'og:image', content: ogImage},
+      {property: 'og:image:width', content: '1200'},
+      {property: 'og:image:height', content: '630'},
+      {name: 'twitter:image', content: ogImage},
+    ] : []),
     {tagName: 'link', rel: 'canonical', href: url},
   ];
 };
@@ -80,24 +89,38 @@ export async function loader({params, context}: Route.LoaderArgs) {
   const shopify = await fetchShopifyProduct(context.storefront, product.shopifyHandle);
   const related = getRelatedProducts(product.slug, 3);
   const stats = getReviewStats(product.id);
-  return {product, related, stats, shopify};
+  const topReviews = getReviewsForProduct(product.id)
+    .filter((r) => r.rating === 5 && r.body.length >= 80)
+    .slice(0, 3)
+    .map((r) => ({
+      author: r.name,
+      rating: r.rating,
+      title: r.title,
+      body: r.body,
+      datePublished: r.date,
+    }));
+  return {product, related, stats, shopify, topReviews};
 }
 
 export default function AuthorityRoute({loaderData}: Route.ComponentProps) {
-  const {product, stats, shopify} = loaderData;
+  const {product, stats, shopify, topReviews} = loaderData;
   return (
     <>
       <JsonLd
         data={[
-          productSchema({
-            name: product.name,
-            description: product.tagline,
-            slug: product.slug,
-            category: 'Authority',
-            priceUSD: product.priceUSD,
-            reviewCount: stats.count,
-            averageRating: stats.average,
-          }),
+          withReviews(
+            productSchema({
+              name: product.name,
+              description: product.tagline,
+              slug: product.slug,
+              category: 'Authority',
+              priceUSD: product.priceUSD,
+              reviewCount: stats.count,
+              averageRating: stats.average,
+              image: getOgImageUrl(product.slug),
+            }),
+            topReviews,
+          ),
           breadcrumbSchema([
             {name: 'Home', path: '/'},
             {name: 'Authority', path: '/authority'},

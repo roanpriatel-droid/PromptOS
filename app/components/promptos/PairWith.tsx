@@ -1,5 +1,6 @@
 import {Link} from 'react-router';
-import {getPairWithSuggestions, type AnyProduct} from '~/lib/catalog';
+import {getPairWithSuggestions, MEGA_BUNDLE, type AnyProduct} from '~/lib/catalog';
+import {CATALOG_STATS} from '~/lib/catalog-stats';
 import {PackCover} from './PackCover';
 import {GuideCover} from './GuideCover';
 import {SectionFade} from './SectionFade';
@@ -99,17 +100,17 @@ function MegaUpsellCard() {
             padding: '0 20px',
           }}
         >
-          All 17.<br/><em style={{color: '#EC4899'}}>One price.</em>
+          All {CATALOG_STATS.totalProductsPublicClaim}.<br/><em style={{color: '#EC4899'}}>One price.</em>
         </div>
       </div>
       <div className="meta" style={{background: 'var(--ink-deep)', color: 'var(--paper)'}}>
         <div className="vol" style={{color: '#EC4899'}}>The mega bundle</div>
-        <div className="name" style={{color: 'var(--paper)'}}>Everything, $798</div>
+        <div className="name" style={{color: 'var(--paper)'}}>Everything, ${MEGA_BUNDLE.priceUSD}</div>
         <p className="promise" style={{color: 'rgba(255,255,255,0.7)'}}>
-          All 20 products: 7 packs, 8 playbooks, 3 Authority products. Save $914 vs. buying separately.
+          All {CATALOG_STATS.totalProductsPublicClaim} products: {CATALOG_STATS.totalPacks} packs, {CATALOG_STATS.totalPlaybooks} playbooks, {CATALOG_STATS.totalAuthority} Authority products. Save ${MEGA_BUNDLE.savings} vs. buying separately.
         </p>
         <div className="footer-row" style={{borderTopColor: 'rgba(255,255,255,0.12)'}}>
-          <span className="price" style={{color: 'var(--paper)'}}>$798</span>
+          <span className="price" style={{color: 'var(--paper)'}}>${MEGA_BUNDLE.priceUSD}</span>
           <span className="view" style={{color: '#EC4899', opacity: 1, transform: 'none'}}>See the bundle →</span>
         </div>
       </div>
