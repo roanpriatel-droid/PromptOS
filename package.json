@@ -12,7 +12,9 @@
     "typecheck": "react-router typegen && tsc --noEmit",
     "codegen": "shopify hydrogen codegen && react-router typegen",
     "audit-links": "node scripts/audit-internal-links.mjs",
-    "generate-og": "node scripts/generate-og-images.mjs"
+    "generate-og": "node scripts/generate-og-images.mjs",
+    "snapshot-page": "node scripts/snapshot-page.mjs",
+    "verify-page": "node scripts/verify-page.mjs"
   },
   "prettier": "@shopify/prettier-config",
   "dependencies": {
