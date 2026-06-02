@@ -172,10 +172,12 @@ export function Layout({children}: {children?: React.ReactNode}) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#6B46C1" />
         <meta name="msapplication-TileColor" content="#6B46C1" />
-        <meta property="og:image" content="/og-default.png" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta name="twitter:image" content="/og-default.png" />
+        {/* v3.9c-tactical hotfix: removed static og:image / twitter:image
+            tags. They pointed at /og-default.png which Oxygen does not
+            serve (public/ root assets 404 — verified post-v3.9a deploy).
+            Per-route meta functions now own og:image entirely. The
+            homepage adds its own og:image via _index.tsx; product pages
+            add theirs via the per-product OG bundle from Phase 4. */}
         {/* v3.9c-tactical P7: Google Fonts preconnects removed — fonts
             now self-hosted via @fontsource (loaded by fonts.css below). */}
         <link rel="stylesheet" href={fontsStyles}></link>

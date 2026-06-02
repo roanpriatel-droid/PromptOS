@@ -1,5 +1,6 @@
 import type {Route} from './+types/_index';
 import {CATALOG_STATS} from '~/lib/catalog-stats';
+import {getOgImageUrl} from '~/lib/og-images';
 import {HeroV2} from '~/components/promptos/HeroV2';
 import {MarqueeStrip} from '~/components/promptos/MarqueeStrip';
 import {TwoSidesSection} from '~/components/promptos/TwoSidesSection';
@@ -21,6 +22,9 @@ import {NewsletterCTA} from '~/components/promptos/NewsletterCTA';
 const {totalProductsPublicClaim, totalPrompts, totalPlaybookPages} = CATALOG_STATS;
 const META_DESCRIPTION = `${totalProductsPublicClaim} products. ${totalPrompts} prompts. ${totalPlaybookPages.toLocaleString()}+ pages of playbooks. Built for operators who use AI every day and want to ship faster. Works with Claude, ChatGPT, Gemini, Grok, and every major LLM.`;
 const OG_DESCRIPTION = `${totalProductsPublicClaim} products. ${totalPrompts} prompts. ${totalPlaybookPages.toLocaleString()}+ pages of playbooks. Built for operators who ship every day.`;
+// Homepage shares the Everything Bundle OG as its hero share image —
+// it's the most representative single image of the whole catalog.
+const HOMEPAGE_OG = getOgImageUrl('everything');
 
 export const meta: Route.MetaFunction = () => [
   {title: 'Promptos · Prompts and playbooks that actually work'},
@@ -31,6 +35,12 @@ export const meta: Route.MetaFunction = () => [
   {property: 'og:url', content: 'https://promptos.store/'},
   {name: 'twitter:card', content: 'summary_large_image'},
   {name: 'twitter:site', content: '@promptos'},
+  ...(HOMEPAGE_OG ? [
+    {property: 'og:image', content: HOMEPAGE_OG},
+    {property: 'og:image:width', content: '1200'},
+    {property: 'og:image:height', content: '630'},
+    {name: 'twitter:image', content: HOMEPAGE_OG},
+  ] : []),
   {tagName: 'link', rel: 'canonical', href: 'https://promptos.store/'},
 ];
 
