@@ -50,6 +50,7 @@ import {
   JsonLd,
   breadcrumbSchema,
   productSchema,
+  withReviews,
 } from '~/components/promptos/JsonLd';
 
 const MEGA = BUNDLES[3];
@@ -80,24 +81,37 @@ export async function loader({params, context}: Route.LoaderArgs) {
   const shopify = await fetchShopifyProduct(context.storefront, product.shopifyHandle);
   const related = getRelatedProducts(product.slug, 3);
   const stats = getReviewStats(product.id);
-  return {product, related, stats, shopify};
+  const topReviews = getReviewsForProduct(product.id)
+    .filter((r) => r.rating === 5 && r.body.length >= 80)
+    .slice(0, 3)
+    .map((r) => ({
+      author: r.name,
+      rating: r.rating,
+      title: r.title,
+      body: r.body,
+      datePublished: r.date,
+    }));
+  return {product, related, stats, shopify, topReviews};
 }
 
 export default function AuthorityRoute({loaderData}: Route.ComponentProps) {
-  const {product, stats, shopify} = loaderData;
+  const {product, stats, shopify, topReviews} = loaderData;
   return (
     <>
       <JsonLd
         data={[
-          productSchema({
-            name: product.name,
-            description: product.tagline,
-            slug: product.slug,
-            category: 'Authority',
-            priceUSD: product.priceUSD,
-            reviewCount: stats.count,
-            averageRating: stats.average,
-          }),
+          withReviews(
+            productSchema({
+              name: product.name,
+              description: product.tagline,
+              slug: product.slug,
+              category: 'Authority',
+              priceUSD: product.priceUSD,
+              reviewCount: stats.count,
+              averageRating: stats.average,
+            }),
+            topReviews,
+          ),
           breadcrumbSchema([
             {name: 'Home', path: '/'},
             {name: 'Authority', path: '/authority'},

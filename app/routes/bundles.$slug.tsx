@@ -44,6 +44,7 @@ import {
   JsonLd,
   breadcrumbSchema,
   productSchema,
+  withReviews,
 } from '~/components/promptos/JsonLd';
 
 export const meta: Route.MetaFunction = ({data: loaderData}) => {
@@ -72,24 +73,37 @@ export async function loader({params, context}: Route.LoaderArgs) {
   const shopify = await fetchShopifyProduct(context.storefront, bundle.shopifyHandle);
   const reviews = getReviewsForProduct(bundle.id);
   const stats = getReviewStats(bundle.id);
-  return {bundle, reviews, stats, shopify};
+  const topReviews = reviews
+    .filter((r) => r.rating === 5 && r.body.length >= 80)
+    .slice(0, 3)
+    .map((r) => ({
+      author: r.name,
+      rating: r.rating,
+      title: r.title,
+      body: r.body,
+      datePublished: r.date,
+    }));
+  return {bundle, reviews, stats, shopify, topReviews};
 }
 
 export default function BundleRoute({loaderData}: Route.ComponentProps) {
-  const {bundle, stats, shopify} = loaderData;
+  const {bundle, stats, shopify, topReviews} = loaderData;
   return (
     <>
       <JsonLd
         data={[
-          productSchema({
-            name: bundle.name,
-            description: bundle.tagline,
-            slug: bundle.slug,
-            category: 'Bundles',
-            priceUSD: bundle.priceUSD,
-            reviewCount: stats.count,
-            averageRating: stats.average,
-          }),
+          withReviews(
+            productSchema({
+              name: bundle.name,
+              description: bundle.tagline,
+              slug: bundle.slug,
+              category: 'Bundles',
+              priceUSD: bundle.priceUSD,
+              reviewCount: stats.count,
+              averageRating: stats.average,
+            }),
+            topReviews,
+          ),
           breadcrumbSchema([
             {name: 'Home', path: '/'},
             {name: 'Bundles', path: '/bundles'},

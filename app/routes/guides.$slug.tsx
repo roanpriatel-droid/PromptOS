@@ -28,6 +28,7 @@ import {
   JsonLd,
   breadcrumbSchema,
   productSchema,
+  withReviews,
 } from '~/components/promptos/JsonLd';
 
 const MEGA = BUNDLES[2];
@@ -58,25 +59,38 @@ export async function loader({params, context}: Route.LoaderArgs) {
   const shopify = await fetchShopifyProduct(context.storefront, guide.shopifyHandle);
   const reviews = getReviewsForProduct(guide.id);
   const stats = getReviewStats(guide.id);
-  return {guide, reviews, stats, shopify};
+  const topReviews = reviews
+    .filter((r) => r.rating === 5 && r.body.length >= 80)
+    .slice(0, 3)
+    .map((r) => ({
+      author: r.name,
+      rating: r.rating,
+      title: r.title,
+      body: r.body,
+      datePublished: r.date,
+    }));
+  return {guide, reviews, stats, shopify, topReviews};
 }
 
 export default function GuideRoute({loaderData}: Route.ComponentProps) {
-  const {guide, stats, shopify} = loaderData;
+  const {guide, stats, shopify, topReviews} = loaderData;
   const canBuy = !!shopify?.variantId && shopify.availableForSale;
   return (
     <>
       <JsonLd
         data={[
-          productSchema({
-            name: guide.name,
-            description: guide.tagline,
-            slug: guide.slug,
-            category: 'Playbooks',
-            priceUSD: guide.priceUSD,
-            reviewCount: stats.count,
-            averageRating: stats.average,
-          }),
+          withReviews(
+            productSchema({
+              name: guide.name,
+              description: guide.tagline,
+              slug: guide.slug,
+              category: 'Playbooks',
+              priceUSD: guide.priceUSD,
+              reviewCount: stats.count,
+              averageRating: stats.average,
+            }),
+            topReviews,
+          ),
           breadcrumbSchema([
             {name: 'Home', path: '/'},
             {name: 'Playbooks', path: '/guides'},

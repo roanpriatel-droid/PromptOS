@@ -30,6 +30,7 @@ import {
   JsonLd,
   breadcrumbSchema,
   productSchema,
+  withReviews,
 } from '~/components/promptos/JsonLd';
 
 const MEGA = BUNDLES[2];
@@ -60,11 +61,24 @@ export async function loader({params, context}: Route.LoaderArgs) {
   const shopify = await fetchShopifyProduct(context.storefront, pack.shopifyHandle);
   const related = getRelatedProducts(pack.slug, 3).filter((p) => p.type === 'pack');
   const stats = getReviewStats(pack.id);
-  return {pack, related, stats, shopify};
+  // Top 3 reviews for JSON-LD Review schema (real review content,
+  // never fabricated). Picked deterministically: 5-star, length >= 80,
+  // first three by index.
+  const topReviews = getReviewsForProduct(pack.id)
+    .filter((r) => r.rating === 5 && r.body.length >= 80)
+    .slice(0, 3)
+    .map((r) => ({
+      author: r.name,
+      rating: r.rating,
+      title: r.title,
+      body: r.body,
+      datePublished: r.date,
+    }));
+  return {pack, related, stats, shopify, topReviews};
 }
 
 export default function PackRoute({loaderData}: Route.ComponentProps) {
-  const {pack, related, stats, shopify} = loaderData;
+  const {pack, related, stats, shopify, topReviews} = loaderData;
 
   // ProductGallery inputs derived from existing pack data.
   const galleryToC = pack.sections.map((s) => ({
@@ -105,15 +119,18 @@ export default function PackRoute({loaderData}: Route.ComponentProps) {
     <>
       <JsonLd
         data={[
-          productSchema({
-            name: pack.name,
-            description: pack.tagline,
-            slug: pack.slug,
-            category: 'Packs',
-            priceUSD: pack.priceUSD,
-            reviewCount: stats.count,
-            averageRating: stats.average,
-          }),
+          withReviews(
+            productSchema({
+              name: pack.name,
+              description: pack.tagline,
+              slug: pack.slug,
+              category: 'Packs',
+              priceUSD: pack.priceUSD,
+              reviewCount: stats.count,
+              averageRating: stats.average,
+            }),
+            topReviews,
+          ),
           breadcrumbSchema([
             {name: 'Home', path: '/'},
             {name: 'Packs', path: '/packs'},

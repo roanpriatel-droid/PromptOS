@@ -1,8 +1,10 @@
 import type {Route} from './+types/guides._index';
+import {GUIDES} from '~/lib/catalog';
 import {GuideGrid} from '~/components/promptos/GuideGrid';
 import {BundleSelector} from '~/components/promptos/BundleSelector';
 import {SectionFade} from '~/components/promptos/SectionFade';
 import {ThreePathsComparison} from '~/components/promptos/ThreePathsComparison';
+import {JsonLd, itemListSchema, SITE_URL} from '~/components/promptos/JsonLd';
 
 export const meta: Route.MetaFunction = () => [
   {title: 'Playbooks · Promptos'},
@@ -16,6 +18,16 @@ export const meta: Route.MetaFunction = () => [
 export default function GuidesIndex() {
   return (
     <main id="main" className="page is-active" data-page="guides-index">
+      <JsonLd
+        data={itemListSchema({
+          name: 'Promptos Playbooks',
+          items: GUIDES.map((g) => ({
+            name: g.name,
+            url: `${SITE_URL}/guides/${g.slug}`,
+            description: g.tagline,
+          })),
+        })}
+      />
       <section className="catalog-hero">
         <SectionFade as="div" className="catalog-hero-inner">
           <span className="label section-eyebrow">Playbooks</span>
