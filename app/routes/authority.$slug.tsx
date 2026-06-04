@@ -172,20 +172,10 @@ function PackStyle({
           </div>
         </section>
 
-        {/* v3.9b — ProductGallery (V1+V2+V3) */}
-        <ProductGallery
-          slug={pack.slug}
-          name={pack.name}
-          kind="authority"
-          eyebrow="AUTHORITY · A2"
-          toc={pack.sections.map((s) => ({name: s.name, meta: `${s.promptCount} prompts`}))}
-          spread={{
-            sectionLabel: pack.sections[0]?.name ?? 'Sample',
-            promptTitle: pack.sample.title,
-            promptBody: pack.sample.prompt,
-            proTip: pack.sample.proTip,
-          }}
-        />
+        {/* v3.9d Bug 1 fix: removed duplicate ProductGallery render.
+            ProductHeroV2 above already shows the cover; the gallery's
+            tabs ship in a future cut once the purchase block migrates
+            into the gallery component. */}
 
         {/* v3.9b — Section 2 NEW value stack */}
         <ValueStack kind="authority" productName={pack.name} />
@@ -322,20 +312,11 @@ function GuideStyle({
           </div>
         </section>
 
-        {/* v3.9b — ProductGallery (V1+V2+V3) */}
-        <ProductGallery
-          slug={product.slug}
-          name={product.name}
-          kind="authority"
-          eyebrow={`AUTHORITY · ${product.slug === 'personal-brand' ? 'A1' : 'A3'}`}
-          toc={guideShape.chapters.map((c) => ({name: c.name, meta: `${c.pageCount} pages`}))}
-          spread={{
-            sectionLabel: `Chapter ${guideShape.chapters[0]?.number ?? '01'}`,
-            promptTitle: guideShape.chapters[0]?.name ?? product.name,
-            promptBody: guideShape.chapters[0]?.description ?? product.tagline,
-            proTip: 'Authority products pair: strategy → execution → monetization.',
-          }}
-        />
+        {/* v3.9d Bug 1 fix: removed duplicate ProductGallery render for
+            the Authority guide-style layout (Personal Brand /
+            High-Ticket Finder). guide-hero above already shows the cover
+            + purchase block. ProductGallery.tsx + the import remain in
+            place. */}
 
         {/* v3.9b — Section 2 NEW value stack */}
         <ValueStack kind="authority" productName={product.name} />

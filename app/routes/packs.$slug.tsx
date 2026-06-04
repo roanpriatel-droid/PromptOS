@@ -151,15 +151,15 @@ export default function PackRoute({loaderData}: Route.ComponentProps) {
         {/* Section 1: HERO (existing, kept) */}
         <ProductHeroV2 pack={pack} shopify={shopify} />
 
-        {/* Section 1 supplement: ProductGallery (NEW v3.9b — V1+V2+V3) */}
-        <ProductGallery
-          slug={pack.slug}
-          name={pack.name}
-          kind="pack"
-          eyebrow={`PACK Nº ${pack.number}`}
-          toc={galleryToC}
-          spread={gallerySpread}
-        />
+        {/* v3.9d Bug 1 fix: ProductGallery (v3.9b) was rendering a second
+            cover + eyebrow below ProductHeroV2, which already shows the
+            cover alongside the purchase block. ProductGallery's tabbed
+            cover/spread/index views are still valuable but until the
+            purchase block migrates into it (deferred to a later cut),
+            the duplicate render hurts more than the tabs help. Removed
+            from this route's component tree only. ProductGallery.tsx,
+            its imports, and the loader-derived galleryToC / gallerySpread
+            data computations all stay in place. */}
 
         {/* Reviews summary widget under hero (existing, kept) */}
         <section style={{padding: '0 0 32px'}}>

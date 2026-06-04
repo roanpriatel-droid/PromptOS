@@ -179,20 +179,11 @@ export default function GuideRoute({loaderData}: Route.ComponentProps) {
           </div>
         </section>
 
-        {/* v3.9b — ProductGallery (Section 1 supplement: V1+V2+V3) */}
-        <ProductGallery
-          slug={guide.slug}
-          name={guide.name}
-          kind="guide"
-          eyebrow={`PLAYBOOK · G${guide.number}`}
-          toc={guide.chapters.map((c) => ({name: c.name, meta: `${c.pageCount} pages`}))}
-          spread={{
-            sectionLabel: `Chapter ${guide.chapters[0]?.number ?? '01'}`,
-            promptTitle: guide.chapters[0]?.name ?? guide.name,
-            promptBody: guide.chapters[0]?.description ?? guide.tagline,
-            proTip: 'The chapter ends with a one-page worksheet you fill in before moving on.',
-          }}
-        />
+        {/* v3.9d Bug 1 fix: removed duplicate ProductGallery render. The
+            guide-hero above already shows the cover; ProductGallery added
+            a second cover + eyebrow with no purchase block. Component
+            file + import stay intact for a future cut where the gallery
+            tabs migrate into the hero alongside the buy block. */}
 
         {/* v3.9b — Section 2 NEW value stack */}
         <ValueStack kind="guide" productName={guide.name} />
