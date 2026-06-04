@@ -27,7 +27,7 @@ export function WhoForGeneric({eyebrow = 'Who this is for', heading, whoFor}: Pr
       <div style={{maxWidth: 960, margin: '0 auto', padding: '0 var(--space-5)'}}>
         <SectionFade as="div" style={{maxWidth: 640, marginBottom: 32}}>
           <div className="section-eyebrow" style={{color: '#9264E5'}}>{eyebrow}</div>
-          <h2 style={{fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 'clamp(30px, 4vw, 48px)', letterSpacing: '-0.02em', lineHeight: 1.05, margin: '8px 0 12px'}}>
+          <h2 style={{fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 'clamp(30px, 4vw, 48px)', letterSpacing: '-0.02em', lineHeight: 1.05, margin: '8px 0 12px', color: '#FAF8F5'}}>
             {heading}
           </h2>
         </SectionFade>

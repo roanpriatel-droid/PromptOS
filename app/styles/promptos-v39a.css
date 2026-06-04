@@ -150,7 +150,10 @@
   background:
     radial-gradient(circle at 20% 30%, rgba(107, 70, 193, 0.45), transparent 35%),
     radial-gradient(circle at 80% 70%, rgba(236, 72, 153, 0.32), transparent 35%);
-  animation: v39a-mesh-drift-a 28s ease-in-out infinite;
+  /* v3.9d Bug 4: slowed from 28s to 60s. Mesh should feel alive, not
+     busy. At 60s the user reads the headline before the drift moves
+     enough to draw the eye. */
+  animation: v39a-mesh-drift-a 60s ease-in-out infinite;
   filter: blur(60px);
   opacity: 0.95;
 }
@@ -158,7 +161,8 @@
   background:
     radial-gradient(circle at 60% 20%, rgba(186, 100, 220, 0.30), transparent 40%),
     radial-gradient(circle at 25% 85%, rgba(255, 130, 170, 0.22), transparent 35%);
-  animation: v39a-mesh-drift-b 36s ease-in-out -8s infinite;
+  /* v3.9d Bug 4: slowed from 36s to 72s. */
+  animation: v39a-mesh-drift-b 72s ease-in-out -8s infinite;
   filter: blur(80px);
   opacity: 0.8;
 }
@@ -346,4 +350,88 @@
 .founder .signature .avatar.v39a-pulse-purple {
   position: relative;
   isolation: isolate;
+}
+
+/* ============================================================
+   v3.9d Bug 3 — mobile + reduced-motion perf throttle
+
+   The v3.9a/b atmospheric pass shipped several infinite CSS
+   animations that compose poorly on mobile GPUs:
+
+   - .v39a-hero-mesh::before / ::after — 28s + 36s drift with
+     blur(60–80px) filters. Heavy on mobile.
+   - .bundle-push-cinematic-mesh — 18s mesh-shift with blur(28px).
+   - .bundle-hero-v2-mesh — 18s mesh-shift with blur(20px).
+   - .hero-v2-stage .float — 7 floats × 14s drift translate.
+     Cheap individually but seven concurrent compositor layers
+     on mobile is noticeable.
+   - .v39a-pulse-purple / .v39a-pulse-pink — animated box-shadow
+     glow on step badges + founder avatar + win badge.
+
+   On viewports ≤768 px, freeze every one of these to static
+   states (animation: none). The atmospheric DESIGN stays — the
+   gradients, the orbs, the noise overlay, the elevation glows
+   are all still painted; only the continuous animation is paused.
+   Result: mobile gets the visual identity at a fraction of the
+   GPU cost.
+
+   The same elements are also added to the prefers-reduced-motion
+   block lower down so accessibility preferences are honored on
+   desktop too.
+   ============================================================ */
+
+@media (max-width: 768px) {
+  .v39a-hero-mesh::before,
+  .v39a-hero-mesh::after,
+  .bundle-push-cinematic-mesh,
+  .bundle-hero-v2-mesh,
+  .hero-v2-stage .float,
+  .v39a-pulse-purple,
+  .v39a-pulse-pink,
+  .v39a-newsletter-input:focus,
+  .v39a-newsletter-input:focus-visible {
+    animation: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bundle-push-cinematic-mesh,
+  .bundle-hero-v2-mesh,
+  .hero-v2-stage .float {
+    animation: none;
+  }
+}
+
+/* ============================================================
+   v3.9d Bug 4 — homepage hero text color overrides
+
+   The pre-v3.9a homepage hero rendered on a light background.
+   `.hero-v2-headline { color: var(--ink) }` (dark ink) and
+   `.hero-v2-sub { color: var(--fg-3) }` (slate) were legible.
+
+   v3.9a wrapped the hero in <HeroMesh>, which sets a deep purple
+   gradient background via .v39a-hero-mesh. The pre-existing text
+   color rules were not updated, so the headline rendered dark-ink
+   on dark-purple — barely visible. ("Be sure to fix that dumbass
+   hero section" — user.)
+
+   Scope the override to `.v39a-hero-mesh .hero-v2-*` so it only
+   takes effect when the hero is inside HeroMesh. If a future cut
+   ever renders <HeroV2> outside HeroMesh, the original light-bg
+   colors still apply.
+   ============================================================ */
+
+.v39a-hero-mesh .hero-v2-eyebrow {
+  color: rgba(250, 248, 245, 0.70);
+}
+.v39a-hero-mesh .hero-v2-headline {
+  color: #FAF8F5;
+}
+.v39a-hero-mesh .hero-v2-headline .rotor {
+  /* Brighter pink-magenta accent on dark — the original
+     --promptos-purple (#6B46C1) reads too close to the background. */
+  color: #FF9BCE;
+}
+.v39a-hero-mesh .hero-v2-sub {
+  color: rgba(250, 248, 245, 0.78);
 }
