@@ -477,3 +477,58 @@ Build green required before commit. Validation: re-fetch live HTML after deploy 
 - **Bundle pages** — no GradientOrb usage; existing `.bundle-hero-v2` and `.bundle-push-cinematic` have `overflow: hidden`.
 - **ProductHeroV2** — no GradientOrb; v3.9b sections added beneath it all carry `.v39a-section`.
 - **404 / 500** (v3.9c-tactical P8) — uses inline `style={{overflow: 'hidden'}}` on `<main>`. Safe.
+
+---
+
+# v3.9d Surgical Fixes
+
+## Bugs fixed (one atomic commit per bug)
+
+| # | Bug | Commit | What changed |
+|---|---|---|---|
+| 1 | Cover rendered twice on every product page | `77cfd52` | Removed `<ProductGallery>` render from `packs.$slug.tsx`, `guides.$slug.tsx`, `authority.$slug.tsx` (both PackStyle + GuideStyle). Pre-existing `<ProductHeroV2>` / `guide-hero` stays because it carries the price + Add to cart + buy trust strip + upsell line that ProductGallery does not. ProductGallery.tsx file, imports, and loader data all intact. |
+| 2 | Low-contrast headlines on dark v3.9b sections | `020d79d` | Added `color: '#FAF8F5'` to the h2/h3 inline styles in `ValueStack.tsx`, `ExamplePromptTabs.tsx`, `WhoForGeneric.tsx`. Card h3 in ValueStack also got `fontWeight: 600` per the spec. Root cause: global `h2, h3 { color: var(--fg-1) }` rule in promptos.css resolved to `#1F2937` on the `#0F0A1F` dark gradient — element-selector specificity beat the inherited cream color from the parent section. |
+| 3 | Site feels glitchy / slow on mobile | `70e7e2d` | New `@media (max-width: 768px) { animation: none !important }` block in `promptos-v39a.css` covering: `.v39a-hero-mesh::before/::after`, `.bundle-push-cinematic-mesh`, `.bundle-hero-v2-mesh`, `.hero-v2-stage .float`, `.v39a-pulse-purple/pink`, `.v39a-newsletter-input` focus border. Atmospheric gradients + orbs + noise stay painted (static); only the continuous keyframes are paused. Also extended `prefers-reduced-motion` block to cover the same animations regardless of viewport. |
+| 4 | Homepage hero "dumbass" — headline barely readable + mesh too busy | `a303e83` | (a) New scoped color overrides in `promptos-v39a.css` for `.v39a-hero-mesh .hero-v2-*`: eyebrow `rgba(250,248,245,0.70)`, headline `#FAF8F5`, rotor `#FF9BCE`, sub `rgba(250,248,245,0.78)`. Fixes dark-ink-on-dark-purple headline. (b) Slowed mesh-drift animations: `v39a-mesh-drift-a` 28 s → 60 s, `v39a-mesh-drift-b` 36 s → 72 s — mesh stays alive but stops competing with the headline. Mobile gets the mesh fully paused via Bug 3's `@media`. |
+
+## Files
+
+- Modified: 6 (`packs.$slug.tsx`, `guides.$slug.tsx`, `authority.$slug.tsx`, `ValueStack.tsx`, `ExamplePromptTabs.tsx`, `WhoForGeneric.tsx`, `promptos-v39a.css`)
+- Added: 0
+- Deleted: 0
+
+## TypeScript
+
+5 pre-existing baseline errors. Zero new from v3.9d.
+
+## Lighthouse perf (CSS-only diagnosis)
+
+I can't run Lighthouse from this environment. The expected mobile perf delta from Bug 3 is significant on devices that were struggling with the v3.9a/b animation stack:
+
+- Before: 6 infinite CSS animations stacking (hero mesh ×2 with blur 60–80 px + BPC mesh with blur 28 px + 7 hero floats + pulses). Heavy on mobile GPUs.
+- After (mobile): 0 of those running. The MarqueeStrip's pure-CSS transform marquee is the only animation on mobile, and it's compositor-only (no filter, no blur).
+
+You should verify Lighthouse mobile perf hit `≥ 70` on a real device or DevTools throttled mobile after Oxygen redeploys.
+
+## What I did NOT do
+
+Per the spec's hard rule #5 (don't half-ship a complex fix), I stayed surgical. Specifically I did NOT:
+
+- **Restructure the hero** — the spec said "Hero is the WebGL mesh + headline + CTAs + product marquee" but Bug 4 didn't call for a layout change. The hero structure stays.
+- **Migrate the purchase block into ProductGallery** — that was the spec's literal "ProductGallery wins" recommendation. Deferred; would have regressed the buy flow if shipped naively. Re-enabling ProductGallery once the purchase block is integrated into it is a future cut. ProductGallery.tsx + imports + loader data preserved so it ships in one diff when ready.
+- **Add a JS-driven feature-detection + static PNG fallback for the hero mesh** — the CSS `@media (max-width: 768px)` covers the mobile case adequately. JS feature-detection would add complexity for limited gain.
+- **Add a vignette overlay behind the hero text** — the color-only fix on `.hero-v2-headline / .hero-v2-sub / .hero-v2-eyebrow / .rotor` resolves the readability without a new overlay element.
+- **Reduce blur intensity on the static mesh background** — the brand visual identity wants the soft atmospheric character. Slowing the animation was enough.
+
+## Rollback
+
+Backup snapshot: **`store-pre-v3.9d-snapshot`** at the post-v3.9c-mobile tip (already pushed to origin).
+
+Full revert:
+```bash
+git checkout main
+git reset --hard store-pre-v3.9d-snapshot
+git push origin main --force-with-lease
+```
+
+Per-bug reverts: each of the four commits is atomic and can be reverted independently on the `store-fixes-v3.9d` branch (which stays on origin post-squash).
