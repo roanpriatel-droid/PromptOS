@@ -59,7 +59,7 @@ export function ExamplePromptTabs({kind, prompts, totalAvailable}: Props) {
       <div style={{maxWidth: 1080, margin: '0 auto', padding: '0 var(--space-5)'}}>
         <SectionFade as="div" style={{maxWidth: 680, marginBottom: 36}}>
           <div className="section-eyebrow" style={{color: '#FF9BCE'}}>Real example {wordCountPlural}</div>
-          <h2 style={{fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 'clamp(32px, 4.4vw, 52px)', letterSpacing: '-0.02em', lineHeight: 1.05, margin: '8px 0 12px'}}>
+          <h2 style={{fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 'clamp(32px, 4.4vw, 52px)', letterSpacing: '-0.02em', lineHeight: 1.05, margin: '8px 0 12px', color: '#FAF8F5'}}>
             Three {wordCountPlural} you can read right now.
           </h2>
           <p style={{fontSize: 16, lineHeight: 1.55, color: 'rgba(250,248,245,0.70)', maxWidth: 540}}>

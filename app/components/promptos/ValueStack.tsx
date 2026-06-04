@@ -68,7 +68,7 @@ export function ValueStack({kind, items, productName}: Props) {
       <div style={{maxWidth: 1180, margin: '0 auto', padding: '0 var(--space-5)'}}>
         <SectionFade as="div" style={{maxWidth: 720, marginBottom: 56}}>
           <div className="section-eyebrow" style={{color: '#EC4899'}}>What you actually get</div>
-          <h2 style={{fontFamily: 'var(--font-serif, "Instrument Serif", Georgia, serif)', fontSize: 'clamp(36px, 4.4vw, 56px)', letterSpacing: '-0.02em', lineHeight: 1.05, margin: '8px 0 16px'}}>
+          <h2 style={{fontFamily: 'var(--font-serif, "Instrument Serif", Georgia, serif)', fontSize: 'clamp(36px, 4.4vw, 56px)', letterSpacing: '-0.02em', lineHeight: 1.05, margin: '8px 0 16px', color: '#FAF8F5'}}>
             {productName ? `Inside ${productName}.` : 'Inside the product.'}
           </h2>
           <p style={{fontSize: 17, lineHeight: 1.55, color: 'rgba(250,248,245,0.75)', maxWidth: 560}}>
@@ -102,7 +102,7 @@ export function ValueStack({kind, items, productName}: Props) {
                 }} aria-hidden>
                   <Glyph kind={it.glyph} />
                 </div>
-                <h3 style={{fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 22, fontStyle: 'italic', margin: 0}}>{it.title}</h3>
+                <h3 style={{fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 22, fontStyle: 'italic', fontWeight: 600, margin: 0, color: '#FAF8F5'}}>{it.title}</h3>
                 {it.body ? (
                   <p style={{fontSize: 14, lineHeight: 1.55, color: 'rgba(250,248,245,0.70)', margin: 0}}>{it.body}</p>
                 ) : null}
