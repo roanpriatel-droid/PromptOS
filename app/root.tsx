@@ -200,6 +200,46 @@ export function Layout({children}: {children?: React.ReactNode}) {
         {children}
         <ScrollRestoration nonce={nonce} />
         <Scripts nonce={nonce} />
+        {/* v3.9d-perf Fix 2: shared IntersectionObserver that toggles a
+            .is-offscreen class on any element with data-perf-pause when
+            it scrolls out of view. CSS rules in promptos-v39a.css use
+            that class to pause continuous animations on hero mesh,
+            BPC mesh, bundle-hero mesh, and the hero floats — they
+            don't need to keep computing GPU work for content the user
+            can't see. Invisible to behavior; pure compositor cost
+            reduction. */}
+        <script
+          nonce={nonce}
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(){
+                if (typeof IntersectionObserver === 'undefined') return;
+                var io = new IntersectionObserver(function(entries){
+                  for (var i = 0; i < entries.length; i++) {
+                    var e = entries[i];
+                    if (e.isIntersecting) e.target.classList.remove('is-offscreen');
+                    else e.target.classList.add('is-offscreen');
+                  }
+                }, { rootMargin: '128px 0px' });
+                function observeAll(){
+                  var els = document.querySelectorAll('[data-perf-pause]');
+                  for (var i = 0; i < els.length; i++) io.observe(els[i]);
+                }
+                if (document.readyState === 'loading') {
+                  document.addEventListener('DOMContentLoaded', observeAll, { once: true });
+                } else {
+                  observeAll();
+                }
+                // Re-scan on react-router navigations: route changes swap the DOM but the
+                // observer doesn't know about the new elements until we observe them.
+                var mo = new MutationObserver(function(){
+                  observeAll();
+                });
+                mo.observe(document.body, { childList: true, subtree: true });
+              })();
+            `,
+          }}
+        />
       </body>
     </html>
   );

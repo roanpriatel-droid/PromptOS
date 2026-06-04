@@ -142,7 +142,7 @@ function PacksBundlePage({stats, shopify}: {stats: ReturnType<typeof getReviewSt
   return (
     <main id="main" className="page is-active" data-page="bundle-packs">
       {/* Hero */}
-      <section className="bundle-hero-v2">
+      <section className="bundle-hero-v2" data-perf-pause="bundle-hero-mesh">
         <div className="bundle-hero-v2-mesh" aria-hidden />
         <div className="bundle-hero-v2-inner">
           <span className="label">The packs bundle</span>
@@ -246,7 +246,7 @@ function GuidesBundlePage({stats, shopify}: {stats: ReturnType<typeof getReviewS
   const bundle = BUNDLES[1];
   return (
     <main id="main" className="page is-active" data-page="bundle-guides">
-      <section className="bundle-hero-v2">
+      <section className="bundle-hero-v2" data-perf-pause="bundle-hero-mesh">
         <div className="bundle-hero-v2-mesh" aria-hidden />
         <div className="bundle-hero-v2-inner">
           <span className="label">The guides bundle</span>
@@ -360,7 +360,7 @@ function EverythingPage({stats, shopify}: {stats: ReturnType<typeof getReviewSta
   const everyProduct = [...PACKS, ...GUIDES, ...AUTHORITY];
   return (
     <main id="main" className="page is-active" data-page="bundle-everything">
-      <section className="bundle-hero-v2" style={{padding: '160px 0 96px'}}>
+      <section className="bundle-hero-v2" data-perf-pause="bundle-hero-mesh" style={{padding: '160px 0 96px'}}>
         <div className="bundle-hero-v2-mesh" aria-hidden />
         <div className="bundle-hero-v2-inner">
           <span className="label">The mega bundle · all {CATALOG_STATS.totalProductsPublicClaim} products</span>
@@ -524,7 +524,7 @@ function AuthorityBundlePage({stats, shopify}: {stats: ReturnType<typeof getRevi
   const bundle = AUTHORITY_BUNDLE;
   return (
     <main id="main" className="page is-active" data-page="bundle-authority">
-      <section className="bundle-hero-v2">
+      <section className="bundle-hero-v2" data-perf-pause="bundle-hero-mesh">
         <div className="bundle-hero-v2-mesh" aria-hidden />
         <div className="bundle-hero-v2-inner">
           <span className="label">The Authority bundle · all 3 products</span>

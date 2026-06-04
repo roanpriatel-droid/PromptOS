@@ -376,8 +376,11 @@ body { overflow-x: hidden; }
    ============================================================ */
 .appnav {
   position: sticky; top: 0; z-index: 50;
-  background: rgba(255,255,255,0.92);
-  backdrop-filter: blur(12px);
+  /* v3.9d-perf: dropped backdrop-filter blur(12px) from the legacy
+     `.appnav` rule. The current header is `.appnav.v2` (v2 nav); this
+     rule is the legacy fallback. Same justification as the v2 rule —
+     background already nearly opaque, blur was barely visible. */
+  background: rgba(255, 255, 255, 0.96);
   border-bottom: 1px solid var(--border-1);
 }
 .appnav-inner {
