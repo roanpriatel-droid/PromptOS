@@ -28,16 +28,40 @@ const STAGE = [
 export function HeroV2() {
   const [word, setWord] = useState(0);
   const [spotlight, setSpotlight] = useState(0);
+  // v3.9d-perf Fix 3: gate the two setIntervals on whether the hero
+  // is currently visible. Before this, both timers fired forever —
+  // triggering React state updates + re-renders of the 7 floats —
+  // even when the hero had scrolled an entire page out of view.
+  // We piggyback on the existing data-perf-pause="hero-mesh" attribute
+  // that HeroMesh already emits (so we don't need a separate ref
+  // wired through the component).
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
+    if (typeof window === 'undefined' || typeof IntersectionObserver === 'undefined') return;
+    const node = document.querySelector('[data-perf-pause="hero-mesh"]');
+    if (!node) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) setIsVisible(e.isIntersecting);
+      },
+      {rootMargin: '128px 0px'},
+    );
+    io.observe(node);
+    return () => io.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!isVisible) return;
     const t = setInterval(() => setWord((w) => (w + 1) % ROTOR_WORDS.length), ROTOR_INTERVAL);
     return () => clearInterval(t);
-  }, []);
+  }, [isVisible]);
 
   useEffect(() => {
+    if (!isVisible) return;
     const t = setInterval(() => setSpotlight((s) => (s + 1) % STAGE.length), 4000);
     return () => clearInterval(t);
-  }, []);
+  }, [isVisible]);
 
   return (
     <HeroMesh as="section" className="hero-v2">
