@@ -403,6 +403,37 @@
 }
 
 /* ============================================================
+   v3.9d-perf Fix 2 — pause continuous animations when offscreen
+
+   A shared IntersectionObserver in root.tsx toggles the
+   `.is-offscreen` class on any element with the
+   `data-perf-pause` attribute. When that class is present, we
+   pause the continuous animations inside.
+
+   This is the largest non-visual perf win available: animating
+   blurred composites for sections the user can't see is pure
+   wasted GPU work. The user never notices a paused animation
+   they aren't looking at.
+   ============================================================ */
+
+/* Hero mesh (homepage) */
+.v39a-hero-mesh.is-offscreen::before,
+.v39a-hero-mesh.is-offscreen::after,
+.v39a-hero-mesh.is-offscreen .hero-v2-stage .float {
+  animation-play-state: paused;
+}
+
+/* BundlePushCinematic (homepage) */
+.bundle-push-cinematic.is-offscreen .bundle-push-cinematic-mesh {
+  animation-play-state: paused;
+}
+
+/* Bundle page heroes */
+.bundle-hero-v2.is-offscreen .bundle-hero-v2-mesh {
+  animation-play-state: paused;
+}
+
+/* ============================================================
    v3.9d Bug 4 — homepage hero text color overrides
 
    The pre-v3.9a homepage hero rendered on a light background.

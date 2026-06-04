@@ -22,7 +22,7 @@ export function BundlePushCinematic() {
     AUTHORITY.reduce((s, a) => s + (a.pageCount ?? 0), 0);
 
   return (
-    <section className="bundle-push-cinematic">
+    <section className="bundle-push-cinematic" data-perf-pause="bpc-mesh">
       <div className="bundle-push-cinematic-mesh" aria-hidden />
       <div className="bundle-push-cinematic-inner">
         <SectionFade as="div" className="bundle-push-cinematic-head">

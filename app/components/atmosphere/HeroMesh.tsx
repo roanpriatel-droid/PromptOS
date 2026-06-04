@@ -30,6 +30,10 @@ export function HeroMesh({children, className, as = 'section', style}: Props) {
     <Tag
       className={`v39a-hero-mesh${className ? ` ${className}` : ''}`}
       style={style}
+      /* v3.9d-perf: declares to the shared pause-when-offscreen observer
+         (installed in root.tsx) that this section's mesh-drift animation
+         should be pause-able when the user scrolls past. */
+      data-perf-pause="hero-mesh"
     >
       {children}
     </Tag>
