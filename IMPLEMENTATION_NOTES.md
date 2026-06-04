@@ -532,3 +532,118 @@ git push origin main --force-with-lease
 ```
 
 Per-bug reverts: each of the four commits is atomic and can be reverted independently on the `store-fixes-v3.9d` branch (which stays on origin post-squash).
+
+---
+
+# v3.9d-perf Diagnosis (desktop performance)
+
+## Naming note
+
+The spec asked for `store-pre-v3.9d-snapshot` as the backup. That name was already used by the previous surgical v3.9d cut (4 bugs). To avoid clobbering the existing snapshot, this work's backup is `store-pre-v3.9d-perf-snapshot` at the post-v3.9d main tip. The tag will be `v3.9d-perf` (the `v3.9d` tag from the previous cut stays).
+
+## Constraint on the diagnosis itself
+
+I cannot run Chrome DevTools / Lighthouse / a real GPU profiler from this environment. The spec asks for "Profile each fix. Numbers, not vibes" — I do not have a way to produce empirical millisecond deltas. The substitute is **static analysis with expected-impact estimates grounded in the rendering pipeline**: counting blur radii, IntersectionObserver instances, infinite-loop animations, setInterval handlers, and judging cost by which CSS properties trigger which layer of the pipeline.
+
+This is honest tradeoff for the cut. The user can verify the numbers in Chrome DevTools after deploy.
+
+## Static inventory
+
+### Backdrop-filter (the most expensive GPU op per the spec)
+
+| Location | Element | Blur | Currently active |
+|---|---|---|---|
+| `promptos.css:380` | `.appnav` (legacy nav class) | 12 px | If any page still uses the legacy nav — sticky, persistent |
+| `promptos-v2.css:60` | `.appnav.v2.is-scrolled` | 20 px | **Sticky header on every page, active whenever scrolled past hero** |
+| `promptos-v2.css:236` | `.mobile-overlay` | 8 px | Only when mobile drawer open |
+| `promptos-v2.css:1468` | bundle `.sticky-purchase` | 20 px | Bottom bar on bundle pages once scrolled |
+| `promptos-v3.css:1031` | `.sticky-purchase` | 20 px | **Bottom bar on every product page, active most of the visit** |
+| `promptos-v3.css:2183` | `.ei-overlay` (exit-intent modal) | 8 px | Only when modal is open |
+
+The two `blur(20px)` entries that ship on every product/page during normal scrolling — `.appnav.v2.is-scrolled` and `.sticky-purchase` — are the biggest persistent costs. Both have backgrounds that are already 85% and 94% opaque, respectively. The blur is mostly invisible in practice because the background nearly covers the page behind. **This is the spec's pattern #6 case-in-point**: "where the page behind is mostly solid color, replace with a solid semi-transparent background. Visually nearly identical but GPU cost drops 90%."
+
+### Continuously-running CSS animations (v3.9a/b)
+
+| Animation | Cost | Persistent |
+|---|---|---|
+| `.v39a-hero-mesh::before` 60 s drift + `filter: blur(60px)` | HIGH (blur composite continuously interpolated) | Homepage hero |
+| `.v39a-hero-mesh::after` 72 s drift + `filter: blur(80px)` | HIGH | Homepage hero |
+| `.bundle-push-cinematic-mesh` 18 s mesh-shift + `filter: blur(28px)` | MEDIUM-HIGH | Homepage (in BundlePushCinematic) + bundle pages (in `.bundle-hero-v2-mesh`) |
+| `.hero-v2-stage .float` × 7 — 14 s drift each (translate only) | LOW-MEDIUM (7 layers but cheap each) | Homepage hero |
+| `.marquee-track` 40 s linear marquee (pure transform) | NEGLIGIBLE | Every page |
+| `.v39a-pulse-purple` / `.v39a-pulse-pink` (box-shadow pulse) | LOW (on small badges only) | Few small badges |
+| `.v39a-newsletter-input:focus` 4 s gradient border shift | NEGLIGIBLE (only when input focused) | One element |
+
+All of these run continuously on desktop today regardless of whether the element is visible. v3.9d Bug 3 already paused them on mobile (`@media (max-width: 768px)`) and on `prefers-reduced-motion`. **Desktop has no off-screen pause.** Animating a blurred composite for a section that's scrolled half a page off-screen is pure wasted GPU work.
+
+### JS animation handlers
+
+| Handler | Status |
+|---|---|
+| `Magnetic.tsx` mousemove → RAF | Well-built, RAF-throttled, skips touch + reduced-motion. **But never imported anywhere** — dead code, zero cost. |
+| `Parallax.tsx` scroll → RAF | Well-built, RAF-throttled. Not currently used in any route. |
+| `AnimatedCounter.tsx` one-shot RAF | Used on `/bundles` index. One-shot per element, not continuous. Fine. |
+| `HeroV2.tsx` two `setInterval` (rotor 2.2 s + spotlight 4 s) | **Continuously run even when the hero is scrolled out of view.** Each tick triggers a React `setState` which re-renders HeroV2 + its 7 floats. Persistent below-the-fold cost. |
+| `Header.tsx` `setTimeout` on hover | Fine. |
+
+### IntersectionObserver instances
+
+- `SectionFade` is used 156 times across the codebase. Each instance creates a new `IntersectionObserver`. On the homepage alone the rendered count is ~30-40 instances → ~30-40 observers.
+- `FadeUp`, `Reveal`, `AnimatedCounter` each create their own observer per instance.
+
+Each observer is cheap individually but the observer notification + the React re-render they trigger compounds.
+
+### GradientOrbs
+
+- 19 instances on the homepage (verified via curl).
+- Each is a `position: absolute` div with `filter: blur(64px)` set as a STATIC CSS rule (not animated).
+- The CSS rule has no compositor hint (`transform: translateZ(0)` / `will-change`). Browsers may or may not promote each orb to its own compositor layer — when they don't, a single repaint can re-paint multiple orbs together.
+
+### SVG covers — already migrated to `<img>` in v3.9a hotfix
+
+The 22 product covers (v3.9a + v3.9b) all render via `<CoverV39>` → `<img src={importedHashedUrl}>`. Browser caches the raster; parent re-renders don't recompute SVG paths. **No fix needed for this item from the spec's #8 list.**
+
+## Top bottlenecks ordered by expected impact
+
+1. **`.appnav.v2.is-scrolled` + `.sticky-purchase` backdrop-filter blur(20px) on every page during normal browsing.** Sticky elements with backdrop-filter trigger GPU composite work on every scroll frame even when nothing else changes. Background already 85-94% opaque → the blur effect is mostly invisible.
+
+2. **HeroMesh `::before/::after` blur(60-80px) animations running continuously when hero is offscreen.** User scrolls past the hero in 1-2 seconds but the animation continues to consume GPU forever after.
+
+3. **BundlePushCinematic mesh-shift animation running continuously when section is offscreen.** Same shape as #2.
+
+4. **HeroV2 setInterval timers triggering React re-renders when hero is offscreen.**
+
+5. **156 separate IntersectionObserver instances from SectionFade.** Compound observation overhead.
+
+6. **19 static GradientOrbs without compositor-layer promotion.** Browser may repaint multiple orbs on a single composite frame.
+
+## Fix plan — atomic commits, in this order
+
+Each fix below is one commit. Visual must stay identical (or visually-nearly-identical for the backdrop-filter case the spec explicitly green-lights). Build green at every commit.
+
+| # | Fix | Visual impact | Expected perf delta |
+|---|---|---|---|
+| 1 | Replace `backdrop-filter: blur(20px)` on `.appnav.v2.is-scrolled` and both `.sticky-purchase` rules with a solid semi-transparent background (raise opacity from 0.85/0.94 to ~0.96 to compensate). Keep the legacy `.appnav` for now (unused on current routes). | Visually nearly identical (background already nearly opaque; blur was invisible). Per spec pattern #6. | **Largest single win.** Eliminates the most expensive GPU op on every page during normal scrolling. |
+| 2 | Pause `.v39a-hero-mesh::before/::after`, `.bundle-push-cinematic-mesh`, `.bundle-hero-v2-mesh`, `.hero-v2-stage .float` animations when their parent section is offscreen, via a shared IntersectionObserver toggling `animation-play-state` on a CSS class. | Visually identical (paused animations are invisible when scrolled out of view). | Eliminates continuous GPU cost for off-screen animated blurs. |
+| 3 | Pause HeroV2's two `setInterval` timers when the hero is offscreen (Intersection Observer). | Visually identical. | Eliminates persistent React re-renders below the fold. |
+| 4 | Add `transform: translateZ(0); will-change: transform;` to `.v39a-gradient-orb`. | Visually identical (compositor hint only). | Each orb gets its own compositor layer; reduces paint thrashing. |
+| 5 | Consolidate `SectionFade` IntersectionObservers to a single shared singleton observer with many targets. | Behavior identical. | Reduces observer overhead from O(N) per-section instances to O(1) singleton. |
+
+## What I will NOT do (per spec)
+
+- **No `prefers-reduced-motion` exits as perf fix** — already in place from v3.9d-mobile.
+- **No "performance mode" toggle.** No new UI.
+- **No removing components, layers, or atmosphere.** Cost-reduction only.
+- **No mobile changes.** v3.9d-mobile already paused everything on mobile via `@media (max-width: 768px)`.
+- **No layout edits, copy edits, color changes, font changes, spacing changes.** Pure perf.
+- **No code-splitting / lazy-load below-fold sections** — would introduce a visible loading state shift, which the spec rules out as a visual change. Skipping.
+- **No blur radius reduction on the static `filter: blur()` orbs.** Lowering blur changes the visible character. Skipping. (The pause-when-offscreen fix #2 covers the animated case; static orbs get the compositor layer promotion in #4 instead.)
+- **No slowing the hero mesh animation further.** The previous v3.9d Bug 4 already slowed it from 28/36 s → 60/72 s. Anything slower starts to look static.
+
+## How I will verify (without a profiler)
+
+- **Build green** after each commit.
+- **Zero new TS errors** vs baseline (5).
+- **Live HTML / CSS diff post-deploy**: confirm each rule shipped in the deployed CSS.
+- **Visual identity**: each fix is either a perf hint (translateZ, will-change, compositor promotion) or a backdrop-filter swap on a nearly-opaque background. None should produce a visible diff.
+- **The user verifies the real perf gain in Chrome DevTools / Task Manager after deploy.** I will leave the before/after measurement to the user since I cannot run the profiler.
