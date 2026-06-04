@@ -100,6 +100,14 @@
   border-radius: 9999px;
   filter: blur(64px);
   z-index: 0;
+  /* v3.9d-perf Fix 4: promote each orb to its own compositor layer.
+     Without these hints, the browser can repaint multiple orbs on a
+     single composite frame (filter: blur is layout-affecting and
+     expensive). With them, the orbs are isolated GPU layers that
+     don't trigger paint on the rest of the page when a sibling
+     above changes. Pure perf hint — visually identical. */
+  transform: translateZ(0);
+  will-change: transform;
 }
 .v39a-gradient-orb[data-color='purple'] {
   background: radial-gradient(circle at center, rgba(107, 70, 193, 0.55), rgba(107, 70, 193, 0) 70%);
