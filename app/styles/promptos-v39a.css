@@ -347,3 +347,53 @@
   position: relative;
   isolation: isolate;
 }
+
+/* ============================================================
+   v3.9d Bug 3 — mobile + reduced-motion perf throttle
+
+   The v3.9a/b atmospheric pass shipped several infinite CSS
+   animations that compose poorly on mobile GPUs:
+
+   - .v39a-hero-mesh::before / ::after — 28s + 36s drift with
+     blur(60–80px) filters. Heavy on mobile.
+   - .bundle-push-cinematic-mesh — 18s mesh-shift with blur(28px).
+   - .bundle-hero-v2-mesh — 18s mesh-shift with blur(20px).
+   - .hero-v2-stage .float — 7 floats × 14s drift translate.
+     Cheap individually but seven concurrent compositor layers
+     on mobile is noticeable.
+   - .v39a-pulse-purple / .v39a-pulse-pink — animated box-shadow
+     glow on step badges + founder avatar + win badge.
+
+   On viewports ≤768 px, freeze every one of these to static
+   states (animation: none). The atmospheric DESIGN stays — the
+   gradients, the orbs, the noise overlay, the elevation glows
+   are all still painted; only the continuous animation is paused.
+   Result: mobile gets the visual identity at a fraction of the
+   GPU cost.
+
+   The same elements are also added to the prefers-reduced-motion
+   block lower down so accessibility preferences are honored on
+   desktop too.
+   ============================================================ */
+
+@media (max-width: 768px) {
+  .v39a-hero-mesh::before,
+  .v39a-hero-mesh::after,
+  .bundle-push-cinematic-mesh,
+  .bundle-hero-v2-mesh,
+  .hero-v2-stage .float,
+  .v39a-pulse-purple,
+  .v39a-pulse-pink,
+  .v39a-newsletter-input:focus,
+  .v39a-newsletter-input:focus-visible {
+    animation: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bundle-push-cinematic-mesh,
+  .bundle-hero-v2-mesh,
+  .hero-v2-stage .float {
+    animation: none;
+  }
+}
