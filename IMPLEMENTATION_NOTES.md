@@ -647,3 +647,55 @@ Each fix below is one commit. Visual must stay identical (or visually-nearly-ide
 - **Live HTML / CSS diff post-deploy**: confirm each rule shipped in the deployed CSS.
 - **Visual identity**: each fix is either a perf hint (translateZ, will-change, compositor promotion) or a backdrop-filter swap on a nearly-opaque background. None should produce a visible diff.
 - **The user verifies the real perf gain in Chrome DevTools / Task Manager after deploy.** I will leave the before/after measurement to the user since I cannot run the profiler.
+
+## v3.9d-perf Final Report
+
+### Fixes shipped (atomic commits)
+
+| # | Commit | What |
+|---|---|---|
+| 1 | `e0afb85` | Removed `backdrop-filter: blur(20px)` from `.appnav.v2.is-scrolled` (sticky header), both `.sticky-purchase` rules (product + bundle bottom bars), and legacy `.appnav`. Backgrounds were already 85–94% opaque; bumped to 96–97% to compensate. Per spec pattern #6: visually nearly identical, GPU cost drops ~90%. |
+| 2 | `7eba838` | Shared `IntersectionObserver` script in `root.tsx` toggles `.is-offscreen` on every `[data-perf-pause]` element. New CSS rules in `promptos-v39a.css` pause `animation-play-state` on `.v39a-hero-mesh ::before/::after`, hero floats, `.bundle-push-cinematic-mesh`, and `.bundle-hero-v2-mesh` when their section is `.is-offscreen`. JSX tagged: HeroMesh (`hero-mesh`), BundlePushCinematic (`bpc-mesh`), all 4 bundle-hero-v2 sections (`bundle-hero-mesh`). |
+| 3 | `a918e2f` | HeroV2's two `setInterval` timers (rotor + spotlight) now gated on an `isVisible` state set by a local IO that picks up the existing `data-perf-pause="hero-mesh"` attribute. When the hero scrolls out of view, the timers clear; on re-entry they restart at current state (no jarring restart at index 0). |
+| 4 | `3977db5` | Added `transform: translateZ(0); will-change: transform;` to `.v39a-gradient-orb` (19 instances on homepage). Each orb now gets its own GPU compositor layer; blur is computed once and cached rather than re-paintable by adjacent sections. |
+
+### Fix 5 NOT shipped (consolidate SectionFade observers)
+
+Considered: `SectionFade` is imported 156 times across the codebase; each instance creates its own `IntersectionObserver`. Refactoring to a shared singleton observer would reduce observer overhead.
+
+Skipped because: (a) IntersectionObserver is cheap individually — browsers consolidate IO callbacks into a single per-frame check, so the real cost is the React `setSeen(true)` re-render which fires once per element regardless of observer count, (b) the refactor touches a primitive used 156 times — moderate risk of behavior regression on a fix with unclear measurable benefit, (c) the v3.9d-perf spec explicitly says "if a fix doesn't measurably improve perf, REVERT it." Without a profiler I can't measure, so I'm not shipping speculatively.
+
+If profiling after this cut still shows high JS time during scrolling, Fix 5 is the next thing to try in a follow-up cut.
+
+### Visual identity check
+
+Every fix shipped is either:
+- A perf hint (`translateZ(0)`, `will-change: transform`) that has no visual output.
+- A pause-when-offscreen behavior change — animations paused while the user can't see them, identical motion when the user IS looking.
+- A backdrop-filter swap on a background that was already 85–94% opaque — the blur was visually marginal to begin with; bumping opacity 2–4 points compensates.
+
+No layout, no copy, no color tokens, no font, no spacing, no component changes.
+
+### What the user should verify post-deploy
+
+1. Open the homepage on the same desktop that was struggling. Scroll the full page. Should feel measurably smoother.
+2. Open Chrome Task Manager (`Shift+Esc` in Chrome). Watch the tab's GPU + CPU while scrolling. Both should be lower than pre-fix.
+3. Lighthouse desktop perf. Expected improvement, but I can't predict by how much without a profiler.
+4. Visual diff: homepage + a product page + a bundle page should look identical to pre-fix.
+
+### Honest limit
+
+I do not have access to Chrome DevTools / Lighthouse / a GPU profiler in this environment. The fixes are grounded in static analysis + the rendering-pipeline cost of each CSS property + the spec's own pattern recommendations. If any individual fix doesn't measurably help, it's safe to revert individually — each commit is atomic and self-contained.
+
+### Rollback
+
+Backup snapshot: `store-pre-v3.9d-perf-snapshot` at the post-v3.9d main tip (pushed to origin).
+
+Full revert:
+```bash
+git checkout main
+git reset --hard store-pre-v3.9d-perf-snapshot
+git push origin main --force-with-lease
+```
+
+Per-fix reverts: each of `e0afb85`, `7eba838`, `a918e2f`, `3977db5` is atomic on the `store-perf-fix-v3.9d` branch and can be cherry-pick-reverted independently.
